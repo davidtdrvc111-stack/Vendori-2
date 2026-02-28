@@ -19,7 +19,7 @@ const path = require('path');
 const sharp = require('sharp');
 
 const CONFIG = {
-  baseUrl: 'http://localhost:3001',
+  baseUrl: 'http://localhost:3000',
   screenshotsBaseDir: path.join(__dirname, '..', 'screenshots'),
   maxImageDimension: 2000, // Max width/height für Claude AI Analyse
   viewports: {

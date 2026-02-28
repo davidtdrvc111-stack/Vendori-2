@@ -34,7 +34,7 @@ export function StickyHeader({ className = '' }: StickyHeaderProps) {
       className={`
         fixed top-0 left-0 right-0 z-50 transition-all duration-500
         ${showBlurredHeader
-          ? 'bg-white/95 dark:bg-slate-800/90 backdrop-blur-2xl shadow-2xl'
+          ? 'bg-white/95 dark:bg-neutral-800/90 backdrop-blur-2xl shadow-2xl'
           : 'bg-transparent'
         }
         ${className}
@@ -69,8 +69,8 @@ export function StickyHeader({ className = '' }: StickyHeaderProps) {
                 className={`
                   font-medium transition-colors duration-300
                   ${isDarkText
-                    ? 'text-slate-700 hover:text-purple-600 dark:text-white dark:hover:text-purple-400'
-                    : 'text-white hover:text-purple-400'
+                    ? 'text-neutral-700 hover:text-primary-600 dark:text-white dark:hover:text-primary-400'
+                    : 'text-white hover:text-primary-400'
                   }
                 `}
               >
@@ -87,7 +87,7 @@ export function StickyHeader({ className = '' }: StickyHeaderProps) {
               className={`
                 md:hidden p-2 rounded-lg transition-all duration-300
                 ${isDarkText
-                  ? 'text-slate-700 dark:text-white'
+                  ? 'text-neutral-700 dark:text-white'
                   : 'text-white'
                 }
               `}
@@ -115,7 +115,7 @@ export function StickyHeader({ className = '' }: StickyHeaderProps) {
               href="#contact"
               className={`
                 hidden md:flex px-6 py-2.5 rounded-lg font-medium transition-all duration-300
-                bg-purple-600 text-white hover:bg-purple-700
+                bg-primary-600 text-white hover:bg-primary-700
                 ${isDarkText ? 'shadow-md' : ''}
               `}
             >
@@ -135,8 +135,8 @@ export function StickyHeader({ className = '' }: StickyHeaderProps) {
                 className={`
                   block py-3 font-medium transition-colors duration-300 text-center
                   ${isDarkText
-                    ? 'text-slate-700 hover:text-purple-600 dark:text-white dark:hover:text-purple-400'
-                    : 'text-white hover:text-purple-400'
+                    ? 'text-neutral-700 hover:text-primary-600 dark:text-white dark:hover:text-primary-400'
+                    : 'text-white hover:text-primary-400'
                   }
                 `}
               >
@@ -150,7 +150,7 @@ export function StickyHeader({ className = '' }: StickyHeaderProps) {
               onClick={() => setIsMobileMenuOpen(false)}
               className="
                 block mt-4 py-3 px-4 text-center rounded-lg font-medium transition-all duration-300 md:hidden
-                bg-purple-600 text-white hover:bg-purple-700
+                bg-primary-600 text-white hover:bg-primary-700
               "
             >
               Kontakt aufnehmen

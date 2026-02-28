@@ -120,24 +120,24 @@ export function CookieSettingsModal({ isOpen, onClose }: CookieSettingsModalProp
               aria-modal="true"
               aria-labelledby="cookie-settings-title"
               className="
-                bg-white dark:bg-slate-800 rounded-2xl shadow-2xl
-                border border-slate-200/50 dark:border-slate-700/50
+                bg-white dark:bg-neutral-800 rounded-2xl shadow-2xl
+                border border-neutral-200/50 dark:border-neutral-700/50
                 w-full max-w-2xl max-h-[90vh]
                 overflow-hidden
                 flex flex-col
               "
             >
               {/* Header */}
-              <div className="p-6 md:p-8 border-b border-slate-200 dark:border-slate-700">
+              <div className="p-6 md:p-8 border-b border-neutral-200 dark:border-neutral-700">
                 <div className="flex items-start justify-between">
                   <div>
                     <h2
                       id="cookie-settings-title"
-                      className="text-xl md:text-2xl font-bold text-slate-900 dark:text-white font-[family-name:var(--font-space-grotesk)]"
+                      className="text-xl md:text-2xl font-bold text-neutral-900 dark:text-white font-[family-name:var(--font-space-grotesk)]"
                     >
                       Cookie-Einstellungen
                     </h2>
-                    <p className="text-sm md:text-base text-slate-600 dark:text-slate-400 mt-2">
+                    <p className="text-sm md:text-base text-neutral-600 dark:text-neutral-400 mt-2">
                       Wir respektieren Ihre Privatsphäre. Sie können selbst entscheiden, welche
                       Cookies Sie zulassen möchten.
                     </p>
@@ -147,9 +147,9 @@ export function CookieSettingsModal({ isOpen, onClose }: CookieSettingsModalProp
                     aria-label="Schließen"
                     className="
                       p-2 rounded-lg transition-colors
-                      text-slate-400 hover:text-slate-600 dark:hover:text-slate-300
-                      hover:bg-slate-100 dark:hover:bg-slate-800
-                      focus:outline-none focus:ring-2 focus:ring-purple-600
+                      text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-300
+                      hover:bg-neutral-100 dark:hover:bg-neutral-800
+                      focus:outline-none focus:ring-2 focus:ring-primary-600
                     "
                   >
                     <svg
@@ -197,7 +197,7 @@ export function CookieSettingsModal({ isOpen, onClose }: CookieSettingsModalProp
               </div>
 
               {/* Footer - Buttons */}
-              <div className="p-6 md:p-8 border-t border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-700/50">
+              <div className="p-6 md:p-8 border-t border-neutral-200 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-700/50">
                 <div className="flex flex-col sm:flex-row gap-3">
                   <button
                     onClick={handleSavePreferences}

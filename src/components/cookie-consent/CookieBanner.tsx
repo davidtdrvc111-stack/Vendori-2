@@ -42,18 +42,18 @@ export function CookieBanner({ className = '' }: CookieBannerProps) {
             <div className="container mx-auto px-4 pb-6 md:pb-8 flex justify-center">
               <div
                 className="
-                  bg-white/95 dark:bg-slate-800/90 backdrop-blur-2xl shadow-2xl rounded-2xl
-                  border border-slate-200/50 dark:border-slate-700/50
+                  bg-white/95 dark:bg-neutral-800/90 backdrop-blur-2xl shadow-2xl rounded-2xl
+                  border border-neutral-200/50 dark:border-neutral-700/50
                   p-6 md:p-8
                   w-full max-w-3xl
                 "
               >
                 {/* Content */}
                 <div className="mb-6">
-                  <h2 className="text-lg md:text-xl lg:text-2xl font-bold text-slate-900 dark:text-white mb-3 font-[family-name:var(--font-space-grotesk)]">
+                  <h2 className="text-lg md:text-xl lg:text-2xl font-bold text-neutral-900 dark:text-white mb-3 font-[family-name:var(--font-space-grotesk)]">
                     Diese Website nutzt Cookies
                   </h2>
-                  <p className="text-sm md:text-base text-slate-700 dark:text-slate-300 leading-relaxed">
+                  <p className="text-sm md:text-base text-neutral-700 dark:text-neutral-300 leading-relaxed">
                     Wir verwenden Cookies, um Ihre Erfahrung auf unserer Website zu verbessern.
                     Notwendige Cookies sind immer aktiv. Mit Ihrer Zustimmung können wir auch
                     Analyse-Cookies verwenden, um unsere Website zu optimieren.
@@ -67,12 +67,12 @@ export function CookieBanner({ className = '' }: CookieBannerProps) {
                     onClick={acceptAll}
                     className="
                       flex-1 px-8 py-3 min-h-[44px]
-                      bg-purple-600 text-white font-semibold rounded-lg
+                      bg-primary-600 text-white font-semibold rounded-lg
                       transition-colors shadow-lg
-                      hover:bg-purple-700
-                      dark:bg-purple-600 dark:hover:bg-purple-700
+                      hover:bg-primary-700
+                      dark:bg-primary-600 dark:hover:bg-primary-700
                       border-2 border-transparent
-                      focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2
+                      focus:outline-none focus:ring-2 focus:ring-primary-600 focus:ring-offset-2
                     "
                   >
                     Alle akzeptieren
@@ -83,11 +83,11 @@ export function CookieBanner({ className = '' }: CookieBannerProps) {
                     onClick={() => setIsSettingsOpen(true)}
                     className="
                       flex-1 px-8 py-3 min-h-[44px]
-                      bg-transparent text-purple-600 dark:text-purple-400 font-semibold rounded-lg
+                      bg-transparent text-primary-600 dark:text-primary-400 font-semibold rounded-lg
                       transition-colors
-                      border-2 border-purple-500 dark:border-purple-400
-                      hover:bg-purple-50 dark:hover:bg-purple-950/20
-                      focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2
+                      border-2 border-primary-500 dark:border-primary-400
+                      hover:bg-primary-50 dark:hover:bg-primary-950/20
+                      focus:outline-none focus:ring-2 focus:ring-primary-600 focus:ring-offset-2
                     "
                   >
                     Einstellungen
@@ -98,10 +98,10 @@ export function CookieBanner({ className = '' }: CookieBannerProps) {
                     onClick={acceptNecessary}
                     className="
                       flex-1 px-8 py-3 min-h-[44px]
-                      bg-transparent text-purple-600 dark:text-purple-400 font-semibold rounded-lg
+                      bg-transparent text-primary-600 dark:text-primary-400 font-semibold rounded-lg
                       transition-colors
-                      hover:bg-purple-50 dark:hover:bg-purple-950/20
-                      focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2
+                      hover:bg-primary-50 dark:hover:bg-primary-950/20
+                      focus:outline-none focus:ring-2 focus:ring-primary-600 focus:ring-offset-2
                     "
                   >
                     Nur Notwendige
