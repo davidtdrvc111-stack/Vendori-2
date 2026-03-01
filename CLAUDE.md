@@ -357,6 +357,8 @@ Siehe `.env.example` - Kopiere zu `.env.local` für lokale Entwicklung.
 ## Wichtige Links
 
 - 📱 [Mobile-First Design](./docs/MOBILE-FIRST.md)
+- 🎨 [Farbpalette & Design System](./docs/COLORS.md)
+- 🎯 [Brand Guide](./docs/BRAND-GUIDE.md)
 - ✍️ [Copywriting Guidelines](./docs/COPYWRITING.md)
 - 🔍 [SEO-Optimierung](./docs/SEO.md)
 - 🤖 [AEO-Optimierung (KI)](./docs/AEO.md)

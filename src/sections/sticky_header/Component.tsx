@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { ThemeToggle } from '@/components/ui/theme-toggle';
 import { StickyHeaderProps, NavItem } from './types';
 
 const navigationItems: NavItem[] = [
@@ -79,8 +80,11 @@ export function StickyHeader({ className = '' }: StickyHeaderProps) {
             ))}
           </nav>
 
-          {/* Right Side: Menu Button (Mobile Only) + CTA */}
+          {/* Right Side: Theme Toggle + Menu Button (Mobile Only) + CTA (prominenteste Position) */}
           <div className="flex items-center gap-3 md:gap-4">
+            {/* Theme Toggle - Weniger wichtig, daher weiter links */}
+            <ThemeToggle />
+
             {/* Menu Button - Mobile Only */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -110,7 +114,7 @@ export function StickyHeader({ className = '' }: StickyHeaderProps) {
               </svg>
             </button>
 
-            {/* CTA Button - Hidden on Mobile, Visible on Desktop/Tablet */}
+            {/* CTA Button - Ganz rechts (prominenteste Position), Hidden on Mobile */}
             <Link
               href="#contact"
               className={`

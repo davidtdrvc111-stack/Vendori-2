@@ -1,7 +1,7 @@
 import { StickyHeader } from '@/sections/sticky_header';
 import { HeroSection } from '@/sections/hero_section';
 import { ServicesSection } from '@/sections/services_section';
-import { AwardsSection } from '@/sections/awards_section';
+import { ShopShowcaseSection } from '@/sections/shop_showcase_section';
 import { FooterSection } from '@/sections/footer_section';
 
 export default function Home() {
@@ -11,7 +11,7 @@ export default function Home() {
       <HeroSection />
 
       <ServicesSection />
-      <AwardsSection />
+      <ShopShowcaseSection />
 
       {/* Platzhalter: Über uns Section (wird später implementiert) */}
       <section id="about" className="py-20 bg-gray-50 dark:bg-neutral-800">
