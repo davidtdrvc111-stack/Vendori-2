@@ -3,16 +3,18 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { ThemeToggle } from '@/components/ui/theme-toggle';
 import { StickyHeaderProps, NavItem } from './types';
 
 const navigationItems: NavItem[] = [
-  { label: 'Über uns', href: '#about' },
-  { label: 'Services', href: '#services' },
-  { label: 'Kontakt', href: '#contact' },
+  { label: 'Über uns', href: '/#about' },
+  { label: 'Services', href: '/#services' },
+  { label: 'Kontakt', href: '/#contact' },
 ];
 
 export function StickyHeader({ className = '' }: StickyHeaderProps) {
+  const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -27,8 +29,8 @@ export function StickyHeader({ className = '' }: StickyHeaderProps) {
 
   // Blur-Effekt wenn gescrollt ODER Menu offen
   const showBlurredHeader = isScrolled || isMobileMenuOpen;
-  // Immer helle Schrift, da wir keinen weißen Hintergrund mehr haben
-  const isDarkText = false;
+  // Dunkle Schrift auf /ueber-uns Seite (wegen hellem Gradient), sonst helle Schrift
+  const isDarkText = pathname === '/ueber-uns' && !isScrolled;
 
   return (
     <header
@@ -83,7 +85,7 @@ export function StickyHeader({ className = '' }: StickyHeaderProps) {
           {/* Right Side: Theme Toggle + Menu Button (Mobile Only) + CTA (prominenteste Position) */}
           <div className="flex items-center gap-3 md:gap-4">
             {/* Theme Toggle - Weniger wichtig, daher weiter links */}
-            <ThemeToggle />
+            <ThemeToggle darkText={isDarkText} />
 
             {/* Menu Button - Mobile Only */}
             <button
@@ -116,7 +118,7 @@ export function StickyHeader({ className = '' }: StickyHeaderProps) {
 
             {/* CTA Button - Ganz rechts (prominenteste Position), Hidden on Mobile */}
             <Link
-              href="#contact"
+              href="/#contact"
               className={`
                 hidden md:flex px-6 py-2.5 rounded-lg font-medium transition-all duration-300
                 bg-primary-600 text-white hover:bg-primary-700
@@ -150,7 +152,7 @@ export function StickyHeader({ className = '' }: StickyHeaderProps) {
 
             {/* Mobile CTA Button */}
             <Link
-              href="#contact"
+              href="/#contact"
               onClick={() => setIsMobileMenuOpen(false)}
               className="
                 block mt-4 py-3 px-4 text-center rounded-lg font-medium transition-all duration-300 md:hidden

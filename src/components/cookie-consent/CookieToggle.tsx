@@ -8,7 +8,7 @@
 import { CookieToggleProps } from './types';
 
 export function CookieToggle({
-  category,
+  category: _category,
   label,
   description,
   enabled,

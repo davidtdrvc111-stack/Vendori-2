@@ -7,7 +7,7 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import { CookieConsent, CookieCategory, ConsentChangedEventDetail } from './types';
-import { getConsent, setConsent, hasConsentRecord, DEFAULT_CONSENT } from './storage';
+import { getConsent, setConsent, hasConsentRecord } from './storage';
 
 /**
  * Custom Hook für Cookie Consent Management

@@ -4,7 +4,11 @@ import * as React from 'react';
 import { Moon, Sun } from 'lucide-react';
 import { useTheme } from 'next-themes';
 
-export function ThemeToggle() {
+interface ThemeToggleProps {
+  darkText?: boolean;
+}
+
+export function ThemeToggle({ darkText = false }: ThemeToggleProps) {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = React.useState(false);
 
@@ -24,14 +28,16 @@ export function ThemeToggle() {
   return (
     <button
       onClick={() => setTheme(isDark ? 'light' : 'dark')}
-      className="
+      className={`
         relative inline-flex h-9 w-9 items-center justify-center
         rounded-lg
-        text-white
-        hover:bg-white/10
+        ${darkText
+          ? 'text-neutral-700 hover:bg-neutral-100 dark:text-white dark:hover:bg-white/10'
+          : 'text-white hover:bg-white/10'
+        }
         transition-colors
         focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2
-      "
+      `}
       aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
     >
       <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
