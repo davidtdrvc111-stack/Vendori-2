@@ -2,6 +2,7 @@ import { StickyHeader } from '@/sections/sticky_header';
 import { HeroSection } from '@/sections/hero_section';
 import { ServicesSection } from '@/sections/services_section';
 import { AwardsSection } from '@/sections/awards_section';
+import { FooterSection } from '@/sections/footer_section';
 
 export default function Home() {
   return (
@@ -35,6 +36,8 @@ export default function Home() {
           </p>
         </div>
       </section>
+
+      <FooterSection />
     </main>
   );
 }

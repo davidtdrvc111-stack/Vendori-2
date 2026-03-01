@@ -23,8 +23,7 @@ export function ServicesSection({ className = '' }: ServicesSectionProps) {
       id="services"
       className={cn(
         'py-16 md:py-20 lg:py-24',
-        'bg-gradient-to-b from-neutral-400 via-neutral-200 to-zinc-50',
-        'dark:bg-gradient-to-b dark:from-zinc-900 dark:via-neutral-800 dark:to-neutral-700',
+        'bg-gradient-to-b from-zinc-900 to-white dark:from-zinc-900 dark:to-neutral-900',
         className
       )}
     >
@@ -33,13 +32,13 @@ export function ServicesSection({ className = '' }: ServicesSectionProps) {
         <div className="max-w-3xl mx-auto text-center mb-12 md:mb-16">
           <h2 className={cn(
             'text-3xl md:text-4xl lg:text-5xl font-bold',
-            'text-neutral-900 dark:text-white',
+            'text-white dark:text-white', // Top of section is dark, use white
             'mb-4',
             'font-[family-name:var(--font-space-grotesk)]'
           )}>
             E-Commerce-Wachstum ohne Agentur-Experimente.
           </h2>
-          <p className="text-lg md:text-xl text-neutral-600 dark:text-neutral-200">
+          <p className="text-lg md:text-xl text-neutral-200 dark:text-neutral-200">
             Statt auf Annahmen setzen wir auf Fakten: die praxiserprobten Hebel aus unseren eigenen, erfolgreichen E-Commerce-Marken.
           </p>
         </div>

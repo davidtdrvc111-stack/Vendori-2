@@ -26,15 +26,15 @@ export function StickyHeader({ className = '' }: StickyHeaderProps) {
 
   // Blur-Effekt wenn gescrollt ODER Menu offen
   const showBlurredHeader = isScrolled || isMobileMenuOpen;
-  // Dunkle Schrift nur wenn gescrollt (über weißem Hintergrund)
-  const isDarkText = isScrolled;
+  // Immer helle Schrift, da wir keinen weißen Hintergrund mehr haben
+  const isDarkText = false;
 
   return (
     <header
       className={`
         fixed top-0 left-0 right-0 z-50 transition-all duration-500
         ${showBlurredHeader
-          ? 'bg-white/95 dark:bg-neutral-800/90 backdrop-blur-2xl shadow-2xl'
+          ? 'bg-neutral-800/90 backdrop-blur-2xl shadow-2xl'
           : 'bg-transparent'
         }
         ${className}

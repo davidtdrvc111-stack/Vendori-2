@@ -130,8 +130,7 @@ export function AwardsSection({ className = '' }: AwardsSectionProps) {
       id="awards"
       className={cn(
         'py-16 md:py-20 lg:py-24',
-        'bg-gradient-to-b from-zinc-50 via-neutral-200 to-neutral-400',
-        'dark:bg-gradient-to-b dark:from-neutral-700 dark:via-neutral-800 dark:to-zinc-900',
+        'bg-white dark:bg-neutral-900',
         className
       )}
     >
@@ -159,8 +158,8 @@ export function AwardsSection({ className = '' }: AwardsSectionProps) {
       {/* Marquee Container - Volle Breite Edge-to-Edge */}
       <div className="relative overflow-hidden w-full">
         {/* Gradient Fade-Out Effekte an den Rändern - nur auf Tablet/Desktop */}
-        <div className="hidden md:block absolute left-0 top-0 bottom-0 w-48 bg-gradient-to-r from-zinc-50 via-zinc-50/80 to-transparent dark:from-neutral-700 dark:via-neutral-700/80 dark:to-transparent z-10 pointer-events-none" />
-        <div className="hidden md:block absolute right-0 top-0 bottom-0 w-48 bg-gradient-to-l from-zinc-50 via-zinc-50/80 to-transparent dark:from-neutral-700 dark:via-neutral-700/80 dark:to-transparent z-10 pointer-events-none" />
+        <div className="hidden md:block absolute left-0 top-0 bottom-0 w-48 bg-gradient-to-r from-white via-white/80 to-transparent dark:from-neutral-900 dark:via-neutral-900/80 dark:to-transparent z-10 pointer-events-none" />
+        <div className="hidden md:block absolute right-0 top-0 bottom-0 w-48 bg-gradient-to-l from-white via-white/80 to-transparent dark:from-neutral-900 dark:via-neutral-900/80 dark:to-transparent z-10 pointer-events-none" />
 
         {/* Marquee Track - Startet am linken Rand, Animation pausiert beim Hover */}
         <div className="flex animate-marquee-fast md:animate-marquee hover:[animation-play-state:paused]">
