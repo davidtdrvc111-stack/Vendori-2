@@ -25,7 +25,7 @@ export function HeroSection({ className = '' }: HeroSectionProps) {
               <span className="text-primary-400">
                 echte Umsätze
               </span>
-              .
+              <span className="text-primary-400">.</span>
             </h1>
 
             <p className="text-lg sm:text-xl md:text-2xl text-neutral-200 max-w-2xl mx-auto">

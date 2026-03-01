@@ -65,7 +65,7 @@ export function FooterSection({ className = '' }: FooterSectionProps) {
                     <p>© {new Date().getFullYear()} VENDORi GmbH. Alle Rechte vorbehalten.</p>
                     <div className="flex gap-8">
                         <Link href="/impressum" className="hover:text-white transition-colors">Impressum</Link>
-                        <Link href="/privacy" className="hover:text-white transition-colors">Datenschutz</Link>
+                        <Link href="/datenschutz" className="hover:text-white transition-colors">Datenschutz</Link>
                     </div>
                 </div>
             </div>
