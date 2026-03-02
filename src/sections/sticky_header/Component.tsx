@@ -7,7 +7,7 @@ import { usePathname } from 'next/navigation';
 import { ThemeToggle } from '@/components/ui/theme-toggle';
 import { StickyHeaderProps, NavItem } from './types';
 
-const navigationItems: NavItem[] = [
+const baseNavigationItems: NavItem[] = [
   { label: 'Services', href: '/#services' },
   { label: 'Über uns', href: '/#about' },
   { label: 'Kontakt', href: '/#contact' },
@@ -18,6 +18,13 @@ export function StickyHeader({ className = '' }: StickyHeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isInLightSection, setIsInLightSection] = useState(false);
+
+  // Dynamische Navigation-Items basierend auf aktuellem Pfad
+  // Auf Homepage: verwende #hash, auf anderen Seiten: verwende /#hash
+  const navigationItems = baseNavigationItems.map(item => ({
+    ...item,
+    href: pathname === '/' ? item.href.replace('/', '') : item.href
+  }));
 
   useEffect(() => {
     const handleScroll = () => {
