@@ -13,6 +13,10 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   title: 'VENDORi GmbH',
   description: 'Ihre Partner für digitale Lösungen und innovative Technologie',
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
+    { media: '(prefers-color-scheme: dark)', color: '#1e293b' }, // neutral-800
+  ],
 };
 
 export default function RootLayout({
