@@ -3,12 +3,9 @@
 import { cn } from '@/lib/utils';
 import { AboutFullSectionProps } from './types';
 import {
-  TrendingUp,
-  Globe,
   Zap,
   Target,
   Rocket,
-  Award,
   Users,
 } from 'lucide-react';
 
@@ -29,9 +26,8 @@ export function AboutFullSection({ className = '' }: AboutFullSectionProps) {
   return (
     <section
       className={cn(
-        'py-16 md:py-20 lg:py-24',
-        'bg-gradient-to-br from-purple-100 via-primary-100 to-slate-200',
-        'dark:bg-gradient-to-br dark:from-neutral-900 dark:via-primary-950/30 dark:to-neutral-800',
+        'relative py-16 md:py-20 lg:py-24 overflow-hidden',
+        'bg-gradient-to-b from-white to-slate-200 dark:from-neutral-900 dark:to-neutral-800',
         className
       )}
     >
@@ -46,7 +42,7 @@ export function AboutFullSection({ className = '' }: AboutFullSectionProps) {
               'font-[family-name:var(--font-space-grotesk)]'
             )}
           >
-            Vom Seller zum Partner
+            Aus Sellern wurden Partner.
           </h2>
 
           <div className="grid md:grid-cols-5 gap-8 md:gap-12 lg:gap-16 items-center">
@@ -54,21 +50,16 @@ export function AboutFullSection({ className = '' }: AboutFullSectionProps) {
             <div className="md:col-span-3">
               <div className="space-y-4 md:space-y-5 text-base md:text-lg text-neutral-600 dark:text-neutral-300 leading-relaxed">
                 <p>
-                  VENDORi entstand aus der Praxis. Wir starteten selbst als E-Commerce-Seller,
-                  bauten erfolgreiche D2C-Marken auf und expandierten international über Amazon,
-                  Shopify und weitere Marktplätze.
+                  VENDORi ist <span className="text-primary-600 dark:text-primary-400 font-medium">kein Agentur-Konstrukt</span>. Wir starteten als E-Commerce-Seller, bauten eigene D2C-Marken auf und expandierten über Amazon, Shopify und internationale Marktplätze.
                 </p>
                 <p>
-                  Dabei merkten wir: Die meisten Agenturen reden viel, verstehen aber die operative
-                  Realität nicht. Sie verkaufen Strategien, die in der Praxis scheitern.
+                  Dabei merkten wir: Die meisten Agenturen reden viel, verstehen aber das echte Tagesgeschäft nicht. Sie verkaufen Strategien, die <span className="text-primary-600 dark:text-primary-400 font-medium">in der Praxis scheitern</span>.
                 </p>
                 <p className="font-semibold text-neutral-900 dark:text-white">
-                  Wir machen es anders. Jede Strategie, die wir empfehlen, haben wir bereits in
-                  unseren eigenen Shops validiert. Kein Experiment auf Ihre Kosten.
+                  Wir machen es anders. Jede Strategie, die wir empfehlen, haben wir bereits in unseren eigenen Shops validiert. Kein Experiment auf Ihre Kosten.
                 </p>
                 <p>
-                  Diese Hands-on-Erfahrung macht den Unterschied. Wir wissen, welche Stellschrauben
-                  in der Praxis funktionieren – und welche nur in Theorie gut klingen.
+                  Das ist VENDORi. Kein Beratungsprodukt. Ein Team, das täglich selbst im E-Commerce operiert – und genau deshalb die Hebel kennt, die Ihren Umsatz tatsächlich skalieren. <span className="text-primary-600 dark:text-primary-400 font-medium">Ohne Umwege. Ohne Theorie.</span>
                 </p>
               </div>
             </div>
@@ -109,166 +100,6 @@ export function AboutFullSection({ className = '' }: AboutFullSectionProps) {
           </div>
         </div>
 
-        {/* Expertise Cards */}
-        <div className="mb-24 md:mb-28 lg:mb-32">
-          <h3
-            className={cn(
-              'text-2xl md:text-3xl lg:text-4xl font-bold text-center',
-              'text-neutral-900 dark:text-white',
-              'mb-8 md:mb-12',
-              'font-[family-name:var(--font-space-grotesk)]'
-            )}
-          >
-            Unsere Expertise
-          </h3>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
-            {/* Card 1 */}
-            <div
-              className={cn(
-                'relative',
-                'bg-slate-800',
-                'rounded-3xl',
-                'p-6 md:p-8',
-                'min-h-[280px]',
-                'overflow-hidden',
-                'flex flex-col',
-                'ring-1 ring-white/5',
-                'hover:ring-white/10',
-                'transition-all duration-300'
-              )}
-            >
-              <NoiseOverlay />
-
-              <div className="mb-4">
-                <div
-                  className={cn(
-                    'w-12 h-12',
-                    'rounded-xl',
-                    'bg-primary-600/10',
-                    'flex items-center justify-center',
-                    'ring-1 ring-primary-600/20'
-                  )}
-                >
-                  <TrendingUp className="w-6 h-6 text-primary-600" strokeWidth={1.5} />
-                </div>
-              </div>
-
-              <h4
-                className={cn(
-                  'text-xl md:text-2xl font-bold',
-                  'text-white',
-                  'mb-3',
-                  'font-[family-name:var(--font-space-grotesk)]'
-                )}
-              >
-                Praxiserprobte Expertise
-              </h4>
-
-              <p className="text-sm md:text-base text-neutral-300 leading-relaxed">
-                Über 50.000 Orders in unseren eigenen Shops. Jede Empfehlung basiert auf echten
-                Daten, nicht auf Vermutungen.
-              </p>
-            </div>
-
-            {/* Card 2 */}
-            <div
-              className={cn(
-                'relative',
-                'bg-slate-800',
-                'rounded-3xl',
-                'p-6 md:p-8',
-                'min-h-[280px]',
-                'overflow-hidden',
-                'flex flex-col',
-                'ring-1 ring-white/5',
-                'hover:ring-white/10',
-                'transition-all duration-300'
-              )}
-            >
-              <NoiseOverlay />
-
-              <div className="mb-4">
-                <div
-                  className={cn(
-                    'w-12 h-12',
-                    'rounded-xl',
-                    'bg-primary-600/10',
-                    'flex items-center justify-center',
-                    'ring-1 ring-primary-600/20'
-                  )}
-                >
-                  <Globe className="w-6 h-6 text-primary-600" strokeWidth={1.5} />
-                </div>
-              </div>
-
-              <h4
-                className={cn(
-                  'text-xl md:text-2xl font-bold',
-                  'text-white',
-                  'mb-3',
-                  'font-[family-name:var(--font-space-grotesk)]'
-                )}
-              >
-                Internationale Reichweite
-              </h4>
-
-              <p className="text-sm md:text-base text-neutral-300 leading-relaxed">
-                Erfolgreich in 10+ Ländern aktiv. Wir kennen die Abkürzungen durch Logistik, Recht
-                und Lokalisierung.
-              </p>
-            </div>
-
-            {/* Card 3 */}
-            <div
-              className={cn(
-                'relative',
-                'bg-slate-800',
-                'rounded-3xl',
-                'p-6 md:p-8',
-                'min-h-[280px]',
-                'overflow-hidden',
-                'flex flex-col',
-                'ring-1 ring-white/5',
-                'hover:ring-white/10',
-                'transition-all duration-300'
-              )}
-            >
-              <NoiseOverlay />
-
-              <div className="mb-4">
-                <div
-                  className={cn(
-                    'w-12 h-12',
-                    'rounded-xl',
-                    'bg-primary-600/10',
-                    'flex items-center justify-center',
-                    'ring-1 ring-primary-600/20'
-                  )}
-                >
-                  <Award className="w-6 h-6 text-primary-600" strokeWidth={1.5} />
-                </div>
-              </div>
-
-              <h4
-                className={cn(
-                  'text-xl md:text-2xl font-bold',
-                  'text-white',
-                  'mb-3',
-                  'font-[family-name:var(--font-space-grotesk)]'
-                )}
-              >
-                Bewährte Prozesse
-              </h4>
-
-              <p className="text-sm md:text-base text-neutral-300 leading-relaxed">
-                Live-optimierte Abläufe aus 15+ Jahren E-Commerce. Von der Produktfindung bis zur
-                Skalierung.
-              </p>
-            </div>
-          </div>
-        </div>
-
         {/* Values Section */}
         <div className="mb-16 md:mb-20">
           <h3
@@ -286,18 +117,22 @@ export function AboutFullSection({ className = '' }: AboutFullSectionProps) {
             {/* Value 1 */}
             <div
               className={cn(
-                'relative',
-                'bg-slate-800',
+                'group relative',
+                'bg-stone-800 dark:bg-stone-800',
+                'backdrop-blur-md',
                 'rounded-3xl',
                 'p-6 md:p-8',
                 'min-h-[280px]',
                 'overflow-hidden',
                 'flex flex-col',
-                'ring-1 ring-white/5',
-                'hover:ring-white/10',
-                'transition-all duration-300'
+                'border border-white/10',
+                'hover:border-primary-500/50',
+                'shadow-xl shadow-black/20',
+                'transition-all duration-500 ease-out',
+                'hover:-translate-y-2'
               )}
             >
+              <div className="absolute inset-0 bg-gradient-to-br from-primary-600/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <NoiseOverlay />
 
               <div className="mb-4">
@@ -326,25 +161,29 @@ export function AboutFullSection({ className = '' }: AboutFullSectionProps) {
               </h4>
 
               <p className="text-sm md:text-base text-neutral-300 leading-relaxed">
-                Im E-Commerce zählt Tempo. Wir setzen schnell um, testen und optimieren laufend.
+                Während andere noch im Meeting sitzen, haben wir bereits getestet, optimiert und skaliert. Im E-Commerce entscheiden Wochen – nicht Quartale.
               </p>
             </div>
 
             {/* Value 2 */}
             <div
               className={cn(
-                'relative',
-                'bg-slate-800',
+                'group relative',
+                'bg-stone-800 dark:bg-stone-800',
+                'backdrop-blur-md',
                 'rounded-3xl',
                 'p-6 md:p-8',
                 'min-h-[280px]',
                 'overflow-hidden',
                 'flex flex-col',
-                'ring-1 ring-white/5',
-                'hover:ring-white/10',
-                'transition-all duration-300'
+                'border border-white/10',
+                'hover:border-primary-500/50',
+                'shadow-xl shadow-black/20',
+                'transition-all duration-500 ease-out',
+                'hover:-translate-y-2'
               )}
             >
+              <div className="absolute inset-0 bg-gradient-to-br from-primary-600/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <NoiseOverlay />
 
               <div className="mb-4">
@@ -369,29 +208,33 @@ export function AboutFullSection({ className = '' }: AboutFullSectionProps) {
                   'font-[family-name:var(--font-space-grotesk)]'
                 )}
               >
-                Ergebnisorientiert
+                Fokus
               </h4>
 
               <p className="text-sm md:text-base text-neutral-300 leading-relaxed">
-                Kein Bullshit. Wir fokussieren uns auf messbare Ergebnisse und echte Umsätze.
+                Unser einziger KPI ist Ihr Umsatz. Keine schönen Reports, keine Aktivitäts-Metriken. Wenn Ihre Zahlen nicht wachsen, haben wir versagt.
               </p>
             </div>
 
             {/* Value 3 */}
             <div
               className={cn(
-                'relative',
-                'bg-slate-800',
+                'group relative',
+                'bg-stone-800 dark:bg-stone-800',
+                'backdrop-blur-md',
                 'rounded-3xl',
                 'p-6 md:p-8',
                 'min-h-[280px]',
                 'overflow-hidden',
                 'flex flex-col',
-                'ring-1 ring-white/5',
-                'hover:ring-white/10',
-                'transition-all duration-300'
+                'border border-white/10',
+                'hover:border-primary-500/50',
+                'shadow-xl shadow-black/20',
+                'transition-all duration-500 ease-out',
+                'hover:-translate-y-2'
               )}
             >
+              <div className="absolute inset-0 bg-gradient-to-br from-primary-600/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <NoiseOverlay />
 
               <div className="mb-4">
@@ -416,11 +259,11 @@ export function AboutFullSection({ className = '' }: AboutFullSectionProps) {
                   'font-[family-name:var(--font-space-grotesk)]'
                 )}
               >
-                Partnerschaftlich
+                Partnerschaft
               </h4>
 
               <p className="text-sm md:text-base text-neutral-300 leading-relaxed">
-                Wir sind kein externer Dienstleister, sondern Ihr erweitertes E-Commerce-Team.
+                Wir denken in Ihrem Business, nicht in Stundensätzen. Was gut für Ihren Umsatz ist, ist gut für uns – das ist die einzige Partnerschaft, die zählt.
               </p>
             </div>
           </div>

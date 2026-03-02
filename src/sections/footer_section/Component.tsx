@@ -45,16 +45,21 @@ export function FooterSection({ className = '' }: FooterSectionProps) {
 
                     {/* Column 3: Contact & Hours */}
                     <div className="space-y-6">
-                        <h3 className="text-lg font-bold font-[family-name:var(--font-space-grotesk)]">Kontakt</h3>
+                        <h3 className="text-lg font-bold font-[family-name:var(--font-space-grotesk)]">Unsere Adresse</h3>
                         <div className="space-y-4 text-neutral-400">
                             <div className="space-y-1">
-                                <p className="text-white font-medium">Zentrale Waldbrunn</p>
+                                <p className="text-white font-medium">VENDORi GmbH</p>
                                 <p>Hahnenfeldstr. 25</p>
                                 <p>69429 Waldbrunn</p>
+                                <p>Deutschland</p>
+                            </div>
+                            <div className="space-y-1 pt-2">
+                                <p className="text-white font-medium">Öffnungszeiten:</p>
+                                <p>Mo-Fr. 8:00 - 17:00 Uhr</p>
                             </div>
                             <div className="space-y-1 pt-2">
                                 <p>Tel: + 49 (0) 6274 9278157</p>
-                                <p>Mail: <a href="mailto:info@vendori.eu" className="text-primary-400 hover:text-primary-300">info@vendori.eu</a></p>
+                                <p>Mail: <a href="mailto:info@vendori.eu" className="text-primary-400 hover:text-primary-300 transition-colors">info@vendori.eu</a></p>
                             </div>
                         </div>
                     </div>

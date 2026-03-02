@@ -17,152 +17,198 @@ function NoiseOverlay() {
   );
 }
 
-// Shop Data - Die 4 Shops von VENDORi
+// Shop Data - Konsolidiert und optimiert
 const SHOPS: Shop[] = [
   {
-    id: 'mytoolstore-de',
+    id: 'mytoolstore',
     name: 'myToolStore',
-    domain: 'mytoolstore.de',
-    domainExtension: '.de',
-    url: 'https://www.mytoolstore.de',
     logo: '/images/shops/mytoolstore-logo.png',
-    logoAlt: 'myToolStore Deutschland Logo',
-    metric: '50.000+ Orders',
+    logoAlt: 'myToolStore Multi-Market E-Commerce',
+    markets: [
+      {
+        domain: 'mytoolstore.de',
+        domainExtension: '.de',
+        url: 'https://www.mytoolstore.de',
+        flag: '🇩🇪',
+      },
+      {
+        domain: 'mytoolstore.fr',
+        domainExtension: '.fr',
+        url: 'https://www.mytoolstore.fr',
+        flag: '🇫🇷',
+      },
+      {
+        domain: 'mytoolstore.nl',
+        domainExtension: '.nl',
+        url: 'https://www.mytoolstore.nl',
+        flag: '🇳🇱',
+      },
+    ],
+    metrics: ['1.000.000+ Bestellungen', '3 Märkte aktiv'],
     isOwnBrand: false,
+    spanColumns: 2, // Nimmt 2 Spalten auf Desktop ein
   },
   {
-    id: 'mytoolstore-fr',
-    name: 'myToolStore',
-    domain: 'mytoolstore.fr',
-    domainExtension: '.fr',
-    url: 'https://www.mytoolstore.fr',
-    logo: '/images/shops/mytoolstore-logo.png',
-    logoAlt: 'myToolStore France Logo',
-    metric: '3 Länder aktiv',
-    isOwnBrand: false,
-  },
-  {
-    id: 'mytoolstore-nl',
-    name: 'myToolStore',
-    domain: 'mytoolstore.nl',
-    domainExtension: '.nl',
-    url: 'https://www.mytoolstore.nl',
-    logo: '/images/shops/mytoolstore-logo.png',
-    logoAlt: 'myToolStore Nederland Logo',
-    metric: 'Premium Sortiment',
-    isOwnBrand: false,
-  },
-  {
-    id: 'showernizr-com',
+    id: 'showernizr',
     name: 'ShowerNIZR',
-    domain: 'showernizr.com',
-    domainExtension: '.com',
-    url: 'https://www.showernizr.com',
     logo: '/images/shops/showernizr-logo.png',
-    logoAlt: 'ShowerNIZR Eigenmarke Logo',
-    metric: 'Eigenmarke seit 2020',
+    logoAlt: 'ShowerNIZR Eigenmarke',
+    markets: [
+      {
+        domain: 'showernizr.com',
+        domainExtension: '.com',
+        url: 'https://www.showernizr.com',
+      },
+    ],
+    metrics: ['Eigenmarke', 'Neu auf dem Markt'],
     isOwnBrand: true,
+    spanColumns: 2, // Nimmt 2 Spalten auf Desktop ein
   },
 ];
 
-// Shop Card Component - Minimalistisch und selbstbewusst
+// Shop Card Component - Optimiert mit subtilen Akzenten
 function ShopCard({ shop }: { shop: Shop }) {
+  // Primary market für den Haupt-Link (erster Markt im Array)
+  const primaryMarket = shop.markets[0];
+
   return (
-    <a
-      href={shop.url}
-      target="_blank"
-      rel="noopener noreferrer"
+    <div
       className={cn(
         'group',
         'relative',
+        // Bento Grid Style - Stone-800 (braun-gräulich wie Services Section)
         'bg-stone-800',
         'rounded-3xl',
-        'p-8 md:p-10 lg:p-12',
+        'p-6 md:p-8 lg:p-10',
         'flex flex-col items-center justify-center',
-        'min-h-[320px] md:min-h-[380px]',
+        // Reduzierte Höhe für kompaktere Proportionen
+        'min-h-[280px] md:min-h-[320px]',
         'transition-all duration-500 ease-out',
-        'hover:scale-[1.02]',
-        'hover:shadow-2xl hover:shadow-primary-600/10',
+        'hover:shadow-2xl hover:shadow-primary-600/20',
         'overflow-hidden',
-        // Subtiler Ring-Effekt
-        'ring-1 ring-white/5',
-        'hover:ring-white/10'
+        // Primary Purple Border für myToolStore (Haupt-Shop)
+        !shop.isOwnBrand && 'border-2 border-primary-500',
+        !shop.isOwnBrand && 'hover:border-primary-400',
+        // Subtiler Border für ShowerNIZR (Eigenmarke)
+        shop.isOwnBrand && 'border border-white/10',
+        shop.isOwnBrand && 'hover:border-primary-500/50',
+        // Hover Lift
+        'hover:-translate-y-2',
+        // Grid-Span Support (statische Klassen für Tailwind)
+        shop.spanColumns === 2 && 'lg:col-span-2',
+        shop.spanColumns === 3 && 'lg:col-span-3'
       )}
     >
       <NoiseOverlay />
 
-      {/* Logo Container */}
-      <div className="relative z-10 mb-6 md:mb-8">
+      {/* Gradient-Lichteffekt beim Hover */}
+      <div
+        className={cn(
+          'absolute inset-0 z-0',
+          'bg-gradient-to-br from-primary-600/0 via-primary-500/5 to-primary-600/0',
+          'opacity-0',
+          'group-hover:opacity-100',
+          'transition-opacity duration-700',
+          'pointer-events-none'
+        )}
+      />
+
+      {/* Logo Container - MIT subtiler Hintergrund für Sichtbarkeit */}
+      <div className="relative z-10 mb-5 md:mb-6">
         <div
           className={cn(
-            'w-28 h-28 md:w-32 md:h-32 lg:w-36 lg:h-36',
+            'w-36 h-36 md:w-40 md:h-40 lg:w-44 lg:h-44',
             'rounded-2xl',
-            'bg-white',
+            // Subtiler weißer Hintergrund für Logo-Kontrast
+            'bg-white/95',
             'p-4 md:p-5',
             'flex items-center justify-center',
             'transition-all duration-500',
             'group-hover:scale-105',
+            'group-hover:bg-white',
             // Subtiler Shadow für Depth
-            'shadow-lg shadow-black/5'
+            'shadow-lg shadow-black/10'
           )}
         >
           <Image
             src={shop.logo}
             alt={shop.logoAlt}
-            width={160}
-            height={160}
+            width={176}
+            height={176}
             className="object-contain w-full h-full"
             priority
           />
         </div>
       </div>
 
-      {/* Domain Extension */}
-      <div className="relative z-10 mb-3 md:mb-4">
-        <p
-          className={cn(
-            'text-base md:text-lg font-medium',
-            'text-neutral-400',
-            'transition-colors duration-300',
-            'group-hover:text-neutral-300'
-          )}
-        >
-          {shop.domainExtension}
-        </p>
+      {/* Markets - Zeigt alle Domains */}
+      <div className="relative z-10 mb-4 md:mb-6">
+        <div className="flex flex-wrap items-center justify-center gap-2 md:gap-3">
+          {shop.markets.map((market) => (
+            <a
+              key={market.domain}
+              href={market.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={cn(
+                'inline-flex items-center gap-1.5',
+                'px-3 py-1.5 md:px-4 md:py-2',
+                'bg-white/5 hover:bg-white/10',
+                'border border-white/10 hover:border-primary-400/50',
+                'rounded-full',
+                'text-sm md:text-base font-medium',
+                'text-neutral-300 hover:text-primary-400',
+                'transition-all duration-300',
+                'hover:scale-105'
+              )}
+            >
+              {market.flag && <span className="text-base md:text-lg">{market.flag}</span>}
+              <span>{market.domainExtension}</span>
+            </a>
+          ))}
+        </div>
       </div>
 
-      {/* Key Metric - Hauptfokus */}
-      <div className="relative z-10 mb-6">
-        <h3
-          className={cn(
-            'text-2xl md:text-3xl lg:text-4xl font-bold text-center',
-            'text-white',
-            'font-[family-name:var(--font-space-grotesk)]',
-            'transition-all duration-300',
-            'group-hover:text-primary-400'
-          )}
-        >
-          {shop.metric}
-        </h3>
+      {/* Key Metrics - Zeigt alle Metriken */}
+      <div className="relative z-10 mb-4 flex flex-col gap-2 md:gap-3">
+        {shop.metrics.map((metric, index) => (
+          <h3
+            key={index}
+            className={cn(
+              'text-xl md:text-2xl lg:text-3xl font-bold text-center',
+              'text-white',
+              'font-[family-name:var(--font-space-grotesk)]',
+              'transition-all duration-300',
+              'group-hover:text-primary-400',
+              // Erster Metric ist größer
+              index === 0 && 'text-2xl md:text-3xl lg:text-4xl'
+            )}
+          >
+            {metric}
+          </h3>
+        ))}
       </div>
 
-      {/* Hover: External Link Icon */}
-      <div
+      {/* Shop besuchen - Immer sichtbar */}
+      <a
+        href={primaryMarket.url}
+        target="_blank"
+        rel="noopener noreferrer"
         className={cn(
           'relative z-10',
           'inline-flex items-center gap-2',
+          'px-4 py-2',
           'text-sm font-medium',
-          'text-primary-400',
-          'opacity-0 translate-y-2',
-          'group-hover:opacity-100 group-hover:translate-y-0',
-          'transition-all duration-300'
+          'text-primary-400 hover:text-primary-300',
+          'transition-all duration-300',
+          'hover:scale-105'
         )}
       >
-        <span>Zum Shop</span>
+        <span>Shop besuchen</span>
         <ExternalLink className="w-4 h-4" strokeWidth={2} />
-      </div>
+      </a>
 
-      {/* Optional: Eigenmarke Badge */}
+      {/* Eigenmarke Badge - Immer sichtbar */}
       {shop.isOwnBrand && (
         <div
           className={cn(
@@ -173,15 +219,15 @@ function ShopCard({ shop }: { shop: Shop }) {
             'rounded-full',
             'text-xs font-semibold',
             'text-primary-400',
-            'opacity-0',
-            'group-hover:opacity-100',
-            'transition-opacity duration-300'
+            'transition-all duration-300',
+            'group-hover:bg-primary-600/30',
+            'group-hover:border-primary-500/50'
           )}
         >
           Eigenmarke
         </div>
       )}
-    </a>
+    </div>
   );
 }
 
@@ -192,7 +238,7 @@ export function ShopShowcaseSection({ className = '' }: ShopShowcaseSectionProps
       id="shops"
       className={cn(
         'py-16 md:py-20 lg:py-24',
-        'bg-white dark:bg-neutral-900',
+        'bg-gradient-to-b from-stone-100 to-stone-300 dark:from-neutral-900 dark:to-neutral-800',
         className
       )}
     >

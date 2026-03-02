@@ -50,3 +50,5 @@ next-env.d.ts
 
 # Claude CLI local settings
 /.claude
+nul
+dev-server-restart.log

@@ -198,7 +198,7 @@ ${sanitizedData.message}`;
       id="contact"
       className={cn(
         'py-16 md:py-20 lg:py-24',
-        'bg-gradient-to-b from-slate-200 to-zinc-950 dark:from-neutral-800 dark:to-zinc-950',
+        'bg-gradient-to-b from-stone-300 to-zinc-950 dark:from-neutral-800 dark:to-zinc-950',
         className
       )}
     >

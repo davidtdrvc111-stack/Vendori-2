@@ -8,8 +8,8 @@ import { ThemeToggle } from '@/components/ui/theme-toggle';
 import { StickyHeaderProps, NavItem } from './types';
 
 const navigationItems: NavItem[] = [
-  { label: 'Über uns', href: '/#about' },
   { label: 'Services', href: '/#services' },
+  { label: 'Über uns', href: '/#about' },
   { label: 'Kontakt', href: '/#contact' },
 ];
 
@@ -17,6 +17,7 @@ export function StickyHeader({ className = '' }: StickyHeaderProps) {
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isInLightSection, setIsInLightSection] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,10 +28,27 @@ export function StickyHeader({ className = '' }: StickyHeaderProps) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Blur-Effekt wenn gescrollt ODER Menu offen
-  const showBlurredHeader = isScrolled || isMobileMenuOpen;
-  // Dunkle Schrift auf /ueber-uns Seite (wegen hellem Gradient), sonst helle Schrift
-  const isDarkText = pathname === '/ueber-uns' && !isScrolled;
+  // Intersection Observer für About-Section (heller Hintergrund)
+  useEffect(() => {
+    const aboutSection = document.getElementById('about');
+    if (!aboutSection) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        // Header ausfahren, wenn About-Section im oberen Bereich des Viewports ist
+        setIsInLightSection(entry.isIntersecting && entry.boundingClientRect.top < 100);
+      },
+      { threshold: [0, 0.1, 0.2], rootMargin: '-80px 0px 0px 0px' }
+    );
+
+    observer.observe(aboutSection);
+    return () => observer.disconnect();
+  }, []);
+
+  // Blur-Effekt wenn gescrollt ODER Menu offen ODER in About-Section (heller Hintergrund)
+  const showBlurredHeader = isScrolled || isMobileMenuOpen || isInLightSection;
+  // Dunkle Schrift auf Seiten mit hellem Hintergrund im Ghost-Zustand
+  const isDarkText = (pathname === '/impressum' || pathname === '/datenschutz' || pathname === '/ueber-uns') && !isScrolled;
 
   return (
     <header

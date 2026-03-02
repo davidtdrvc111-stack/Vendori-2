@@ -31,7 +31,7 @@ export function AboutSection({ className = '' }: AboutSectionProps) {
       id="about"
       className={cn(
         'py-16 md:py-20 lg:py-24',
-        'bg-gradient-to-b from-white to-slate-200 dark:from-neutral-900 dark:to-neutral-800',
+        'bg-gradient-to-b from-stone-300 via-stone-200 to-stone-300 dark:from-neutral-800 dark:via-neutral-850 dark:to-neutral-800',
         className
       )}
     >
@@ -40,24 +40,24 @@ export function AboutSection({ className = '' }: AboutSectionProps) {
         <div className="max-w-3xl mx-auto text-center mb-12 md:mb-16">
           <h2
             className={cn(
-              'text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold',
+              'font-bold',
               'text-neutral-900 dark:text-white',
               'mb-4 md:mb-6',
               'font-[family-name:var(--font-space-grotesk)]',
-              'leading-tight'
+              'leading-tight',
+              'text-3xl md:text-4xl lg:text-5xl xl:text-6xl'
             )}
           >
-            Keine Theorie-Agentur.{' '}
-            <span className="text-primary-600">Praktiker mit eigenen Marken.</span>
+            <span className="block">Wir reden nicht.</span>
+            <span className="block">Wir <span className="text-primary-600">verkaufen.</span></span>
           </h2>
           <p className="text-lg md:text-xl text-neutral-600 dark:text-neutral-300 leading-relaxed">
-            Wir haben selbst als E-Commerce-Seller angefangen und wissen, welche Hebel wirklich
-            funktionieren. Diese Hands-on-Erfahrung macht den Unterschied.
+            Unsere Shops laufen. Unsere Zahlen stimmen. Und genau diese Erfahrung bringen wir in Ihr Business.
           </p>
         </div>
 
         {/* Stats Grid - Social Proof */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-12 md:mb-16 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16 lg:gap-20 mb-12 md:mb-16 max-w-5xl mx-auto">
           <div className="text-center">
             <div
               className={cn(
@@ -67,10 +67,10 @@ export function AboutSection({ className = '' }: AboutSectionProps) {
                 'font-[family-name:var(--font-space-grotesk)]'
               )}
             >
-              50.000<span className="text-primary-600">+</span>
+              1.000.000<span className="text-primary-600">+</span>
             </div>
             <p className="text-sm md:text-base text-slate-500 dark:text-slate-400">
-              Orders verarbeitet
+              Kunden in unseren Shops
             </p>
           </div>
 
@@ -83,10 +83,10 @@ export function AboutSection({ className = '' }: AboutSectionProps) {
                 'font-[family-name:var(--font-space-grotesk)]'
               )}
             >
-              10<span className="text-primary-600">+</span>
+              20<span className="text-primary-600">+</span>
             </div>
             <p className="text-sm md:text-base text-slate-500 dark:text-slate-400">
-              Länder erschlossen
+              Länder beliefert
             </p>
           </div>
 
@@ -99,26 +99,10 @@ export function AboutSection({ className = '' }: AboutSectionProps) {
                 'font-[family-name:var(--font-space-grotesk)]'
               )}
             >
-              15<span className="text-primary-600">+</span>
+              22<span className="text-primary-600">+</span>
             </div>
             <p className="text-sm md:text-base text-slate-500 dark:text-slate-400">
-              Jahre E-Commerce
-            </p>
-          </div>
-
-          <div className="text-center">
-            <div
-              className={cn(
-                'text-4xl md:text-5xl lg:text-6xl font-bold',
-                'text-neutral-900 dark:text-white',
-                'mb-2',
-                'font-[family-name:var(--font-space-grotesk)]'
-              )}
-            >
-              4
-            </div>
-            <p className="text-sm md:text-base text-slate-500 dark:text-slate-400">
-              Eigene D2C-Marken
+              Jahre im E-Commerce
             </p>
           </div>
         </div>

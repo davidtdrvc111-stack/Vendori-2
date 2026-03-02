@@ -23,7 +23,7 @@ export function ServicesSection({ className = '' }: ServicesSectionProps) {
       id="services"
       className={cn(
         'py-16 md:py-20 lg:py-24',
-        'bg-gradient-to-b from-zinc-900 to-white dark:from-zinc-900 dark:to-neutral-900',
+        'bg-gradient-to-b from-zinc-900 to-stone-100 dark:from-zinc-900 dark:to-neutral-900',
         className
       )}
     >

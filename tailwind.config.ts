@@ -108,7 +108,7 @@ const config: Config = {
         },
       },
       animation: {
-        aurora: "aurora 90s linear infinite",
+        aurora: "aurora 80s linear infinite",
         marquee: "marquee 40s linear infinite",
         'marquee-fast': "marquee 20s linear infinite", // 50% schneller für Mobile
       },
