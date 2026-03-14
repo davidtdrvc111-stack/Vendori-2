@@ -27,7 +27,7 @@ export function AboutFullSection({ className = '' }: AboutFullSectionProps) {
     <section
       className={cn(
         'relative py-16 md:py-20 lg:py-24 overflow-hidden',
-        'bg-gradient-to-b from-white to-slate-200 dark:from-neutral-900 dark:to-neutral-800',
+        'bg-gradient-to-b from-white to-stone-300 dark:from-neutral-900 dark:to-neutral-800',
         className
       )}
     >

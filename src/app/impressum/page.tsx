@@ -152,23 +152,7 @@ export default function Impressum() {
 
                             <div className="space-y-12 text-neutral-700 dark:text-neutral-400 leading-[1.8] text-base md:text-lg font-light tracking-wide">
                                 <section className="space-y-5">
-                                    <h2 className="text-3xl font-black text-neutral-900 dark:text-white font-heading font-bold">EU-Streitschlichtung</h2>
-                                    <p>
-                                        Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:
-                                        <a
-                                            href="https://ec.europa.eu/consumers/odr"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="text-primary-600 dark:text-primary-400 hover:underline ml-1 transition-all duration-300 decoration-primary-600/30 underline-offset-4"
-                                        >
-                                            https://ec.europa.eu/consumers/odr
-                                        </a>.
-                                    </p>
-                                    <p>Unsere E-Mail-Adresse finden Sie oben im Impressum.</p>
-                                </section>
-
-                                <section className="space-y-5">
-                                    <h2 className="text-3xl font-black text-neutral-900 dark:text-white font-heading font-bold">Verbraucherstreitbeilegung/Universalschlichtungsstelle</h2>
+                                    <h2 className="text-3xl font-black text-neutral-900 dark:text-white font-heading font-bold break-words hyphens-auto">Verbraucherstreitbeilegung / Universalschlichtungsstelle</h2>
                                     <p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
                                 </section>
                             </div>
