@@ -57,14 +57,14 @@ export function ServicesSection({ className = '' }: ServicesSectionProps) {
             'relative',
             'md:row-span-2',
             'bg-stone-800',
-            'shadow-inner-glow-primary',
             'rounded-3xl',
             'p-8',
             'min-h-[300px] md:min-h-[600px]',
-            'transition-shadow duration-300',
-            'hover:shadow-inner-glow-primary-hover',
             'overflow-hidden',
-            'flex flex-col'
+            'flex flex-col',
+            'transition-all duration-300 ease-in-out',
+            'hover:bg-stone-700 hover:scale-[1.01]',
+            'cursor-pointer'
           )}>
             <NoiseOverlay />
 
@@ -158,14 +158,14 @@ export function ServicesSection({ className = '' }: ServicesSectionProps) {
           <div className={cn(
             'relative',
             'bg-stone-800',
-            'shadow-inner-glow',
             'rounded-3xl',
             'p-6',
             'min-h-[250px] md:min-h-[290px]',
-            'transition-shadow duration-300',
-            'hover:shadow-inner-glow-hover',
             'overflow-hidden',
-            'flex flex-col'
+            'flex flex-col',
+            'transition-all duration-300 ease-in-out',
+            'hover:bg-stone-700 hover:scale-[1.02]',
+            'cursor-pointer'
           )}>
             <NoiseOverlay />
 
@@ -199,7 +199,7 @@ export function ServicesSection({ className = '' }: ServicesSectionProps) {
               'leading-relaxed',
               'mb-6 md:mb-8'
             )}>
-              Sie haben das Produkt, wir das praxiserprobte E-Com-Team. So überholen Sie die Konkurrenz, ohne Zeit für Recruiting oder Theorie-Agenturen zu verschwenden.
+              Sie haben das Produkt, wir das praxiserprobte E-Com-Team. So überholen Sie die Konkurrenz, ohne Zeit und Geld für Recruiting oder Theorie-Agenturen zu verschwenden.
             </p>
 
             {/* CTA Link */}
@@ -225,14 +225,14 @@ export function ServicesSection({ className = '' }: ServicesSectionProps) {
           <div className={cn(
             'relative',
             'bg-stone-800',
-            'shadow-inner-glow',
             'rounded-3xl',
             'p-6',
             'min-h-[250px] md:min-h-[290px]',
-            'transition-shadow duration-300',
-            'hover:shadow-inner-glow-hover',
             'overflow-hidden',
-            'flex flex-col'
+            'flex flex-col',
+            'transition-all duration-300 ease-in-out',
+            'hover:bg-stone-700 hover:scale-[1.02]',
+            'cursor-pointer'
           )}>
             <NoiseOverlay />
 
@@ -256,7 +256,7 @@ export function ServicesSection({ className = '' }: ServicesSectionProps) {
               'mb-3 md:mb-4',
               'font-heading font-bold'
             )}>
-              Neue Märkte ohne Kopfschmerz.
+              Neue Märkte ohne Kopfschmerz
             </h3>
 
             {/* Beschreibungstext */}
@@ -264,10 +264,49 @@ export function ServicesSection({ className = '' }: ServicesSectionProps) {
               'text-sm md:text-base',
               'text-neutral-300',
               'leading-relaxed',
-              'mb-6 md:mb-8'
+              'mb-4 md:mb-6'
             )}>
               Wir kennen die Abkürzungen durch den Logistik- und Rechts-Dschungel. Rollen Sie Ihre Marke international aus, während wir die Komplexität im Hintergrund lautlos lösen.
             </p>
+
+            {/* Key Features / Bullet Points - 2 Spalten Grid */}
+            <div className="grid grid-cols-2 gap-x-3 gap-y-2 md:gap-y-3 mb-6 md:mb-8">
+              <div className="flex items-start gap-2">
+                <div className="flex-shrink-0 mt-0.5">
+                  <Check className="w-4 h-4 text-primary-400" strokeWidth={2.5} />
+                </div>
+                <span className="text-sm md:text-base text-white font-medium">
+                  Übersetzung
+                </span>
+              </div>
+
+              <div className="flex items-start gap-2">
+                <div className="flex-shrink-0 mt-0.5">
+                  <Check className="w-4 h-4 text-primary-400" strokeWidth={2.5} />
+                </div>
+                <span className="text-sm md:text-base text-white font-medium">
+                  Service
+                </span>
+              </div>
+
+              <div className="flex items-start gap-2">
+                <div className="flex-shrink-0 mt-0.5">
+                  <Check className="w-4 h-4 text-primary-400" strokeWidth={2.5} />
+                </div>
+                <span className="text-sm md:text-base text-white font-medium">
+                  Selling Bilder
+                </span>
+              </div>
+
+              <div className="flex items-start gap-2">
+                <div className="flex-shrink-0 mt-0.5">
+                  <Check className="w-4 h-4 text-primary-400" strokeWidth={2.5} />
+                </div>
+                <span className="text-sm md:text-base text-white font-medium">
+                  Impressum
+                </span>
+              </div>
+            </div>
 
             {/* CTA Link */}
             <div className="mt-auto">

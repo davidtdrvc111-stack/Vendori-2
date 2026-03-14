@@ -2,10 +2,10 @@
 
 import { cn } from '@/lib/utils';
 import { AboutFullSectionProps } from './types';
+import Image from 'next/image';
 import {
   Zap,
   Target,
-  Rocket,
   Users,
 } from 'lucide-react';
 
@@ -45,9 +45,9 @@ export function AboutFullSection({ className = '' }: AboutFullSectionProps) {
             Aus Sellern wurden Partner.
           </h2>
 
-          <div className="grid md:grid-cols-5 gap-8 md:gap-12 lg:gap-16 items-center">
-            {/* Left Column - Content (60% / 3 cols) */}
-            <div className="md:col-span-3">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
+            {/* Left Column - Content (50%) */}
+            <div>
               <div className="space-y-4 md:space-y-5 text-base md:text-lg text-neutral-600 dark:text-neutral-300 leading-relaxed">
                 <p>
                   VENDORi ist <span className="text-primary-600 dark:text-primary-400 font-medium">kein Agentur-Konstrukt</span>. Wir starteten als E-Commerce-Seller, bauten eigene D2C-Marken auf und expandierten über Amazon, Shopify und internationale Marktplätze.
@@ -64,37 +64,26 @@ export function AboutFullSection({ className = '' }: AboutFullSectionProps) {
               </div>
             </div>
 
-            {/* Right Column - Visual (40% / 2 cols) - Team Photo */}
-            <div className="md:col-span-2 flex items-center">
+            {/* Right Column - Visual (50%) - Team Photo */}
+            <div className="flex items-center">
               <div
                 className={cn(
                   'relative w-full',
-                  'aspect-square md:aspect-[4/5]',
+                  'aspect-[4/3]',
                   'rounded-3xl',
                   'bg-gradient-to-br from-neutral-800 to-neutral-900 dark:from-neutral-800 dark:to-neutral-950',
                   'overflow-hidden',
-                  'ring-1 ring-white/5',
-                  'flex items-center justify-center'
+                  'ring-1 ring-white/5'
                 )}
               >
-                <NoiseOverlay />
-                {/* Placeholder for Team Photo */}
-                <div className="relative z-10 text-center p-8">
-                  <div
-                    className={cn(
-                      'w-20 h-20 md:w-24 md:h-24 mx-auto mb-4',
-                      'rounded-2xl',
-                      'bg-primary-600/10',
-                      'flex items-center justify-center',
-                      'ring-1 ring-primary-600/20'
-                    )}
-                  >
-                    <Rocket className="w-10 h-10 md:w-12 md:h-12 text-primary-600" strokeWidth={1.5} />
-                  </div>
-                  <p className="text-sm md:text-base text-neutral-400">
-                    Platzhalter für Team-Foto
-                  </p>
-                </div>
+                <Image
+                  src="/teamfoto.png"
+                  alt="VENDORi Team"
+                  fill
+                  className="object-contain"
+                  sizes="(max-width: 768px) 100vw, 40vw"
+                  priority
+                />
               </div>
             </div>
           </div>
