@@ -73,12 +73,12 @@ export function StickyHeader({ className = '' }: StickyHeaderProps) {
           {/* Logo - Left */}
           <Link href="/" className="flex-shrink-0">
             <Image
-              src="/VENDORi-Logo.png"
+              src="/Logo_Vendori_rgb_anthrazit.svg"
               alt="VENDORi Logo"
-              width={120}
-              height={40}
+              width={364}
+              height={121}
               className={`
-                h-8 md:h-10 w-auto transition-all duration-500
+                h-[98px] md:h-[121px] w-auto transition-all duration-500
                 ${isDarkText
                   ? 'brightness-0 dark:brightness-100 dark:invert'
                   : 'brightness-0 invert'

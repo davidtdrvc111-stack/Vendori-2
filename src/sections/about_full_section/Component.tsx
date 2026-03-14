@@ -50,7 +50,7 @@ export function AboutFullSection({ className = '' }: AboutFullSectionProps) {
             <div>
               <div className="space-y-4 md:space-y-5 text-base md:text-lg text-neutral-600 dark:text-neutral-300 leading-relaxed">
                 <p>
-                  VENDORi ist <span className="text-primary-600 dark:text-primary-400 font-medium">kein Agentur-Konstrukt</span>. Wir starteten als E-Commerce-Seller, bauen eigene D2C-Marken auf und expandierten europaweit über eigene Online-Shops und über internationale relevante Marktplätze.
+                  VENDORi ist <span className="text-primary-600 dark:text-primary-400 font-medium">kein Agentur-Konstrukt</span>. Wir starteten als E-Commerce-Seller, bauen eigene D2C-Marken auf und expandierten europaweit über eigene Online-Shops und internationale Marktplätze in <span className="text-primary-600 dark:text-primary-400 font-medium">20+ Ländern</span>¹ – mit über <span className="text-primary-600 dark:text-primary-400 font-medium">1.500.000 Kunden</span> in unseren Shops.
                 </p>
                 <p>
                   Dabei merkten wir: Die meisten Agenturen reden viel, verstehen aber das echte Tagesgeschäft nicht. Sie verkaufen Strategien, die <span className="text-primary-600 dark:text-primary-400 font-medium">in der Praxis scheitern</span>.
@@ -59,7 +59,10 @@ export function AboutFullSection({ className = '' }: AboutFullSectionProps) {
                   Wir machen es anders. Jede Strategie, die wir empfehlen, haben wir bereits in unseren eigenen Shops validiert. Kein Experiment auf Ihre Kosten.
                 </p>
                 <p>
-                  Das ist VENDORi. Kein Beratungsprodukt. Ein Team, das täglich selbst im E-Commerce operiert – und genau deshalb die Hebel kennt, die Ihren Umsatz tatsächlich skalieren. <span className="text-primary-600 dark:text-primary-400 font-medium">Ohne Umwege. Ohne Theorie.</span>
+                  Das ist VENDORi. Kein Beratungsprodukt. Ein Team mit <span className="text-primary-600 dark:text-primary-400 font-medium">22+ Jahren E-Commerce-Erfahrung</span>, das täglich selbst im Markt operiert – und genau deshalb die Hebel kennt, die Ihren Umsatz tatsächlich skalieren. <span className="text-primary-600 dark:text-primary-400 font-medium">Ohne Umwege. Ohne Theorie.</span>
+                </p>
+                <p className="text-sm text-neutral-400 dark:text-neutral-500">
+                  ¹ Aus eigenen Shops und direkten Anbindungen auf relevanten Marktplätzen.
                 </p>
               </div>
             </div>

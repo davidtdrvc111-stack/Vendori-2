@@ -150,7 +150,7 @@ function ShopCard({ shop }: { shop: Shop }) {
         {/* Highlight-Text */}
         <h3
           className={cn(
-            'text-4xl md:text-5xl lg:text-6xl font-bold text-center',
+            'text-2xl md:text-3xl lg:text-4xl font-bold text-center',
             'text-white',
             'font-sans',
             'transition-all duration-300',

@@ -46,7 +46,7 @@ export function AboutSection({ className = '' }: AboutSectionProps) {
                 'font-heading font-bold'
               )}
             >
-              1.000.000<span className="text-primary-600">+</span>
+              1.500.000<span className="text-primary-600">+</span>
             </div>
             <p className="text-sm md:text-base text-slate-500 dark:text-slate-400">
               Kunden in unseren Shops
