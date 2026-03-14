@@ -77,30 +77,23 @@ const SHOPS: Shop[] = [
   },
 ];
 
-// Shop Card Component - Überarbeitetes Layout mit klarer Struktur
+// Shop Card Component - Split Header Layout
 function ShopCard({ shop }: { shop: Shop }) {
   return (
     <div
       className={cn(
         'group',
         'relative',
-        // Bento Grid Style - Stone-800 (braun-gräulich wie Services Section)
         'bg-stone-800',
         'rounded-3xl',
-        'p-4 md:p-5 lg:p-6',
-        // Flexbox für Layout-Struktur
-        'flex flex-col items-center',
-        // Feste Höhe für beide Karten (20% kleiner als Original)
-        'h-[324px] md:h-[365px] lg:h-[405px]',
+        'overflow-hidden',
+        'flex flex-col',
+        'h-[320px] md:h-[360px] lg:h-[400px]',
         'transition-all duration-500 ease-out',
         'hover:shadow-2xl hover:shadow-primary-600/20',
-        'overflow-hidden',
-        // Subtiler Border für beide Karten, Orange nur auf Hover
         'border-2 border-white/10',
         'hover:border-primary-500',
-        // Hover Lift
         'hover:-translate-y-2',
-        // Grid-Span Support (statische Klassen für Tailwind)
         shop.spanColumns === 2 && 'lg:col-span-2',
         shop.spanColumns === 3 && 'lg:col-span-3'
       )}
@@ -119,14 +112,19 @@ function ShopCard({ shop }: { shop: Shop }) {
         )}
       />
 
-      {/* Logo - Oben mit Trennlinie */}
-      <div className="relative z-10 flex-shrink-0 flex flex-col items-center gap-4 md:gap-5 lg:gap-6 w-full -mt-4 md:-mt-5 lg:-mt-6">
+      {/* Logo-Header Bereich */}
+      <div
+        className={cn(
+          'relative z-10',
+          'bg-stone-700',
+          'h-[35%]',
+          'flex items-center justify-center',
+          'px-6'
+        )}
+      >
         <div
           className={cn(
-            'w-32 h-32 md:w-36 md:h-36 lg:w-40 lg:h-40',
-            'rounded-2xl',
-            'bg-transparent',
-            'p-1 md:p-1 lg:p-2',
+            'w-36 h-24 md:w-40 md:h-28 lg:w-48 lg:h-32',
             'flex items-center justify-center',
             'transition-all duration-500',
             'group-hover:scale-105'
@@ -135,49 +133,49 @@ function ShopCard({ shop }: { shop: Shop }) {
           <Image
             src={shop.logo}
             alt={shop.logoAlt}
-            width={160}
-            height={160}
+            width={192}
+            height={128}
             className="object-contain w-full h-full"
             priority
           />
         </div>
-        {/* Horizontale Trennlinie */}
-        <div className="w-full h-0.5 bg-primary-500 -mt-9" />
       </div>
 
-      {/* Hauptmetrik - Mitte (nimmt den meisten Platz ein) */}
-      <div className="relative z-10 flex-1 flex flex-col items-center justify-center gap-2">
-        {/* Highlight-Text */}
-        <h3
-          className={cn(
-            'text-2xl md:text-3xl lg:text-4xl font-bold text-center',
-            'text-white',
-            'font-sans',
-            'transition-all duration-300',
-            'group-hover:text-primary-400',
-            'leading-tight'
-          )}
-        >
-          {shop.metrics[0]}
-        </h3>
-        {/* Beschreibung (falls vorhanden) */}
-        {shop.metrics[1] && (
-          <p
+      {/* Trennlinie */}
+      <div className="relative z-10 h-0.5 bg-primary-500 w-full flex-shrink-0" />
+
+      {/* Content-Bereich */}
+      <div className="relative z-10 flex-1 flex flex-col items-center justify-between p-6 md:p-7 lg:p-8 gap-4">
+        {/* Hauptmetrik */}
+        <div className="flex-1 flex flex-col items-center justify-center gap-1.5">
+          <h3
             className={cn(
-              'text-base md:text-lg lg:text-xl font-normal text-center',
-              'text-neutral-300',
+              'text-2xl md:text-3xl lg:text-4xl font-bold text-center',
+              'text-white',
               'font-sans',
               'transition-all duration-300',
-              'group-hover:text-neutral-200'
+              'group-hover:text-primary-400',
+              'leading-tight'
             )}
           >
-            {shop.metrics[1]}
-          </p>
-        )}
-      </div>
+            {shop.metrics[0]}
+          </h3>
+          {shop.metrics[1] && (
+            <p
+              className={cn(
+                'text-base md:text-lg lg:text-xl font-normal text-center',
+                'text-neutral-300',
+                'font-sans',
+                'transition-all duration-300',
+                'group-hover:text-neutral-200'
+              )}
+            >
+              {shop.metrics[1]}
+            </p>
+          )}
+        </div>
 
-      {/* Länder-Badges - Unten */}
-      <div className="relative z-10 flex-shrink-0 w-full">
+        {/* Länder-Badges */}
         <div className="flex flex-wrap items-center justify-center gap-2">
           {shop.markets.map((market) => (
             <a
