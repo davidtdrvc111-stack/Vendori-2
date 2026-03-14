@@ -204,7 +204,7 @@ export function ServicesSection({ className = '' }: ServicesSectionProps) {
               </p>
 
               {/* "Wir übernehmen für Sie:" Label */}
-              <p className="text-sm text-gray-400 mb-2">
+              <p className="text-sm text-neutral-200 mb-2">
                 Wir übernehmen für Sie:
               </p>
 

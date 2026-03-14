@@ -83,7 +83,7 @@ export function CookieBanner({ className = '' }: CookieBannerProps) {
                     onClick={() => setIsSettingsOpen(true)}
                     className="
                       flex-1 px-8 py-3 min-h-[44px]
-                      bg-transparent text-primary-600 dark:text-primary-400 font-semibold rounded-lg
+                      bg-transparent text-primary-700 dark:text-primary-400 font-semibold rounded-lg
                       transition-colors
                       border-2 border-primary-500 dark:border-primary-400
                       hover:bg-primary-50 dark:hover:bg-primary-950/20
@@ -98,7 +98,7 @@ export function CookieBanner({ className = '' }: CookieBannerProps) {
                     onClick={acceptNecessary}
                     className="
                       flex-1 px-8 py-3 min-h-[44px]
-                      bg-transparent text-primary-600 dark:text-primary-400 font-semibold rounded-lg
+                      bg-transparent text-primary-700 dark:text-primary-400 font-semibold rounded-lg
                       transition-colors
                       hover:bg-primary-50 dark:hover:bg-primary-950/20
                       focus:outline-none focus:ring-2 focus:ring-primary-600 focus:ring-offset-2

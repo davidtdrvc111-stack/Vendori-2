@@ -61,7 +61,7 @@ export function AboutFullSection({ className = '' }: AboutFullSectionProps) {
                 <p>
                   Das ist VENDORi. Kein Beratungsprodukt. Ein Team mit <span className="text-primary-600 dark:text-primary-400 font-medium">22+ Jahren E-Commerce-Erfahrung</span>, das täglich selbst im Markt operiert – und genau deshalb die Hebel kennt, die Ihren Umsatz tatsächlich skalieren. <span className="text-primary-600 dark:text-primary-400 font-medium">Ohne Umwege. Ohne Theorie.</span>
                 </p>
-                <p className="text-sm text-neutral-400 dark:text-neutral-500">
+                <p className="text-sm text-neutral-600 dark:text-neutral-400">
                   ¹ Aus eigenen Shops und direkten Anbindungen auf relevanten Marktplätzen.
                 </p>
               </div>

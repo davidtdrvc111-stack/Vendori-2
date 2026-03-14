@@ -67,7 +67,7 @@ function FormField({
           'w-full min-h-[44px] px-4 py-3',
           'text-base md:text-lg rounded-lg',
           'bg-neutral-800 border border-neutral-700 text-white',
-          'placeholder:text-neutral-500',
+          'placeholder:text-neutral-400',
           'focus:outline-none focus:ring-2 focus:ring-primary-600',
           'transition-colors duration-200',
           showError && 'border-error-500',

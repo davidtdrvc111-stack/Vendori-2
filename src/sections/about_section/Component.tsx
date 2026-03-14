@@ -48,7 +48,7 @@ export function AboutSection({ className = '' }: AboutSectionProps) {
             >
               1.500.000<span className="text-primary-600">+</span>
             </div>
-            <p className="text-sm md:text-base text-slate-500 dark:text-slate-400">
+            <p className="text-sm md:text-base text-slate-600 dark:text-slate-300">
               Kunden in unseren Shops
             </p>
           </div>
@@ -64,7 +64,7 @@ export function AboutSection({ className = '' }: AboutSectionProps) {
             >
               20<span className="text-primary-600">+</span>
             </div>
-            <p className="text-sm md:text-base text-slate-500 dark:text-slate-400">
+            <p className="text-sm md:text-base text-slate-600 dark:text-slate-300">
               Länder beliefert
             </p>
           </div>
@@ -80,7 +80,7 @@ export function AboutSection({ className = '' }: AboutSectionProps) {
             >
               22<span className="text-primary-600">+</span>
             </div>
-            <p className="text-sm md:text-base text-slate-500 dark:text-slate-400">
+            <p className="text-sm md:text-base text-slate-600 dark:text-slate-300">
               Jahre im E-Commerce
             </p>
           </div>
