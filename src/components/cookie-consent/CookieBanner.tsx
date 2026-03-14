@@ -50,7 +50,7 @@ export function CookieBanner({ className = '' }: CookieBannerProps) {
               >
                 {/* Content */}
                 <div className="mb-6">
-                  <h2 className="text-lg md:text-xl lg:text-2xl font-bold text-neutral-900 dark:text-white mb-3 font-[family-name:var(--font-space-grotesk)]">
+                  <h2 className="text-lg md:text-xl lg:text-2xl font-bold text-neutral-900 dark:text-white mb-3 font-display font-bold">
                     Diese Website nutzt Cookies
                   </h2>
                   <p className="text-sm md:text-base text-neutral-700 dark:text-neutral-300 leading-relaxed">

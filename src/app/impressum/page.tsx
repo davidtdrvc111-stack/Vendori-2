@@ -54,7 +54,7 @@ export default function Impressum() {
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary-600/10 border border-primary-600/20 text-primary-600 dark:text-primary-400 text-[10px] font-black uppercase tracking-widest font-[family-name:var(--font-space-grotesk)]"
+                            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary-600/10 border border-primary-600/20 text-primary-600 dark:text-primary-400 text-[10px] font-black uppercase tracking-widest font-heading font-bold"
                         >
                             Rechtliche Bestimmungen
                         </motion.div>
@@ -63,7 +63,7 @@ export default function Impressum() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.1 }}
-                            className="text-5xl md:text-7xl lg:text-8xl font-black text-neutral-900 dark:text-white font-[family-name:var(--font-space-grotesk)] leading-[0.95] tracking-tighter"
+                            className="text-5xl md:text-7xl lg:text-8xl font-black text-neutral-900 dark:text-white font-heading font-bold leading-[0.95] tracking-tighter"
                         >
                             Impressum<br />
                             <span className="text-primary-600">VENDORi GmbH.</span>
@@ -93,7 +93,7 @@ export default function Impressum() {
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-base md:text-lg text-neutral-700 dark:text-neutral-400 leading-[1.8] font-light tracking-wide">
                                 <section className="space-y-8">
                                     <div>
-                                        <h2 className="text-2xl font-black text-neutral-900 dark:text-white mb-4 font-[family-name:var(--font-space-grotesk)]">Angaben gemäß § 5 TMG</h2>
+                                        <h2 className="text-2xl font-black text-neutral-900 dark:text-white mb-4 font-heading font-bold">Angaben gemäß § 5 TMG</h2>
                                         <p className="font-medium">
                                             VENDORi GmbH<br />
                                             Hahnenfeldstr. 25<br />
@@ -102,21 +102,21 @@ export default function Impressum() {
                                     </div>
 
                                     <div className="space-y-3">
-                                        <h2 className="text-2xl font-black text-neutral-900 dark:text-white mb-4 font-[family-name:var(--font-space-grotesk)]">Kontakt</h2>
+                                        <h2 className="text-2xl font-black text-neutral-900 dark:text-white mb-4 font-heading font-bold">Kontakt</h2>
                                         <p>Telefon: + 49 (0) 6274 9278157</p>
                                         <p>E-Mail: <a href="mailto:info@vendori.eu" className="text-primary-600 dark:text-primary-400 hover:underline transition-all duration-300 decoration-primary-600/30 underline-offset-4">info@vendori.eu</a></p>
                                         <p>Internet: <a href="https://vendori.eu" className="text-primary-600 dark:text-primary-400 hover:underline transition-all duration-300 decoration-primary-600/30 underline-offset-4">vendori.eu</a></p>
                                     </div>
 
                                     <div>
-                                        <h2 className="text-2xl font-black text-neutral-900 dark:text-white mb-4 font-[family-name:var(--font-space-grotesk)]">Öffnungszeiten</h2>
+                                        <h2 className="text-2xl font-black text-neutral-900 dark:text-white mb-4 font-heading font-bold">Öffnungszeiten</h2>
                                         <p>Mo-Fr. 8:00 - 17:00 Uhr</p>
                                     </div>
                                 </section>
 
                                 <section className="space-y-8">
                                     <div>
-                                        <h2 className="text-2xl font-black text-neutral-900 dark:text-white mb-4 font-[family-name:var(--font-space-grotesk)]">Retouren-Adresse</h2>
+                                        <h2 className="text-2xl font-black text-neutral-900 dark:text-white mb-4 font-heading font-bold">Retouren-Adresse</h2>
                                         <p>
                                             VENDORi GmbH<br />
                                             Hahnenfeldstr. 25<br />
@@ -125,19 +125,19 @@ export default function Impressum() {
                                     </div>
 
                                     <div className="space-y-3">
-                                        <h2 className="text-2xl font-black text-neutral-900 dark:text-white mb-4 font-[family-name:var(--font-space-grotesk)]">Vertreten durch</h2>
+                                        <h2 className="text-2xl font-black text-neutral-900 dark:text-white mb-4 font-heading font-bold">Vertreten durch</h2>
                                         <p>Dejan Todorovic (Geschäftsführer)</p>
                                     </div>
 
                                     <div className="space-y-3">
-                                        <h2 className="text-2xl font-black text-neutral-900 dark:text-white mb-4 font-[family-name:var(--font-space-grotesk)]">Registereintrag</h2>
+                                        <h2 className="text-2xl font-black text-neutral-900 dark:text-white mb-4 font-heading font-bold">Registereintrag</h2>
                                         <p>Eintragung im Handelsregister.</p>
                                         <p>Registergericht: Amtsgericht Mannheim</p>
                                         <p>Registernummer: HRB 749014</p>
                                     </div>
 
                                     <div className="space-y-3">
-                                        <h2 className="text-2xl font-black text-neutral-900 dark:text-white mb-4 font-[family-name:var(--font-space-grotesk)]">Umsatzsteuer-ID</h2>
+                                        <h2 className="text-2xl font-black text-neutral-900 dark:text-white mb-4 font-heading font-bold">Umsatzsteuer-ID</h2>
                                         <p>Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:</p>
                                         <p>DE364269226</p>
                                     </div>
@@ -152,7 +152,7 @@ export default function Impressum() {
 
                             <div className="space-y-12 text-neutral-700 dark:text-neutral-400 leading-[1.8] text-base md:text-lg font-light tracking-wide">
                                 <section className="space-y-5">
-                                    <h2 className="text-3xl font-black text-neutral-900 dark:text-white font-[family-name:var(--font-space-grotesk)]">EU-Streitschlichtung</h2>
+                                    <h2 className="text-3xl font-black text-neutral-900 dark:text-white font-heading font-bold">EU-Streitschlichtung</h2>
                                     <p>
                                         Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:
                                         <a
@@ -168,7 +168,7 @@ export default function Impressum() {
                                 </section>
 
                                 <section className="space-y-5">
-                                    <h2 className="text-3xl font-black text-neutral-900 dark:text-white font-[family-name:var(--font-space-grotesk)]">Verbraucherstreitbeilegung/Universalschlichtungsstelle</h2>
+                                    <h2 className="text-3xl font-black text-neutral-900 dark:text-white font-heading font-bold">Verbraucherstreitbeilegung/Universalschlichtungsstelle</h2>
                                     <p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
                                 </section>
                             </div>
@@ -178,7 +178,7 @@ export default function Impressum() {
                     {/* Footer Help */}
                     <div className="mt-20 p-12 rounded-[40px] bg-neutral-900 dark:bg-zinc-900 border border-white/5 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left shadow-2xl">
                         <div className="space-y-2">
-                            <h5 className="text-xl font-bold font-[family-name:var(--font-space-grotesk)] text-white">
+                            <h5 className="text-xl font-bold font-heading font-bold text-white">
                                 Noch Fragen zum Impressum?
                             </h5>
                             <p className="text-neutral-400 text-sm">

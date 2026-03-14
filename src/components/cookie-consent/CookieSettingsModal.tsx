@@ -133,7 +133,7 @@ export function CookieSettingsModal({ isOpen, onClose }: CookieSettingsModalProp
                   <div>
                     <h2
                       id="cookie-settings-title"
-                      className="text-xl md:text-2xl font-bold text-neutral-900 dark:text-white font-[family-name:var(--font-space-grotesk)]"
+                      className="text-xl md:text-2xl font-bold text-neutral-900 dark:text-white font-display font-bold"
                     >
                       Cookie-Einstellungen
                     </h2>

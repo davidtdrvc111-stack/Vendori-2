@@ -95,7 +95,14 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
+        // Body text, paragraphs, UI elements
+        sans: ['var(--font-plus-jakarta)', 'system-ui', 'sans-serif'],
+        // Main headlines (h1, h2) - Professional, clean
+        display: ['var(--font-plus-jakarta)', 'system-ui', 'sans-serif'],
+        // Sub-headers (h3, h4, h5, h6) - Tech-forward, distinctive
+        heading: ['var(--font-geist-mono)', 'ui-monospace', 'monospace'],
+        // Monospace utility (code, technical content)
+        mono: ['var(--font-geist-mono)', 'ui-monospace', 'monospace'],
       },
       container: {
         center: true,

@@ -210,7 +210,7 @@ ${sanitizedData.message}`;
               'text-3xl md:text-4xl lg:text-5xl font-bold',
               'text-neutral-900 dark:text-white',
               'mb-4',
-              'font-[family-name:var(--font-space-grotesk)]'
+              'font-display font-bold'
             )}
           >
             Lassen Sie uns sprechen

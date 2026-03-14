@@ -683,7 +683,7 @@ https://help.instagram.com/519522125107875`;
             if (isMainHeader) {
                 return (
                     <span key={index} className="block mt-16 mb-8 first:mt-0">
-                        <span className="text-3xl md:text-4xl font-black text-neutral-900 dark:text-white font-[family-name:var(--font-space-grotesk)] tracking-tight">
+                        <span className="text-3xl md:text-4xl font-black text-neutral-900 dark:text-white font-display font-bold tracking-tight">
                             {renderLineContent(line)}
                         </span>
                         <div className="h-1.5 w-16 bg-primary-600 rounded-full mt-3" />
@@ -693,7 +693,7 @@ https://help.instagram.com/519522125107875`;
 
             if (isSubHeader) {
                 return (
-                    <span key={index} className="block mt-10 mb-5 font-black text-xl md:text-2xl text-neutral-800 dark:text-neutral-200 font-[family-name:var(--font-space-grotesk)]">
+                    <span key={index} className="block mt-10 mb-5 font-black text-xl md:text-2xl text-neutral-800 dark:text-neutral-200 font-display font-bold">
                         {renderLineContent(line)}
                     </span>
                 );
@@ -744,7 +744,7 @@ https://help.instagram.com/519522125107875`;
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary-600/10 border border-primary-600/20 text-primary-600 dark:text-primary-400 text-[10px] font-black uppercase tracking-widest font-[family-name:var(--font-space-grotesk)]"
+                            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary-600/10 border border-primary-600/20 text-primary-600 dark:text-primary-400 text-[10px] font-black uppercase tracking-widest font-display font-bold"
                         >
                             Rechtliche Bestimmungen
                         </motion.div>
@@ -753,7 +753,7 @@ https://help.instagram.com/519522125107875`;
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.1 }}
-                            className="text-5xl md:text-7xl lg:text-8xl font-black text-neutral-900 dark:text-white font-[family-name:var(--font-space-grotesk)] leading-[0.95] tracking-tighter"
+                            className="text-5xl md:text-7xl lg:text-8xl font-black text-neutral-900 dark:text-white font-display font-bold leading-[0.95] tracking-tighter"
                         >
                             Datenschutz<br />
                             <span className="text-primary-600">Erklärung.</span>
@@ -789,7 +789,7 @@ https://help.instagram.com/519522125107875`;
                     {/* Footer Help */}
                     <div className="mt-20 p-12 rounded-[40px] bg-neutral-900 dark:bg-zinc-900 border border-white/5 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left shadow-2xl">
                         <div className="space-y-2">
-                            <h5 className="text-xl font-bold font-[family-name:var(--font-space-grotesk)] text-white">
+                            <h5 className="text-xl font-bold font-display font-bold text-white">
                                 Noch Fragen zum Datenschutz?
                             </h5>
                             <p className="text-neutral-400 text-sm">

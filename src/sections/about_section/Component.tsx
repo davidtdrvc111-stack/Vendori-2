@@ -22,7 +22,7 @@ export function AboutSection({ className = '' }: AboutSectionProps) {
               'font-bold',
               'text-neutral-900 dark:text-white',
               'mb-4 md:mb-6',
-              'font-[family-name:var(--font-space-grotesk)]',
+              'font-display font-extrabold',
               'leading-tight',
               'text-3xl md:text-4xl lg:text-5xl xl:text-6xl'
             )}
@@ -43,7 +43,7 @@ export function AboutSection({ className = '' }: AboutSectionProps) {
                 'text-4xl md:text-5xl lg:text-6xl font-bold',
                 'text-neutral-900 dark:text-white',
                 'mb-2',
-                'font-[family-name:var(--font-space-grotesk)]'
+                'font-heading font-bold'
               )}
             >
               1.000.000<span className="text-primary-600">+</span>
@@ -59,7 +59,7 @@ export function AboutSection({ className = '' }: AboutSectionProps) {
                 'text-4xl md:text-5xl lg:text-6xl font-bold',
                 'text-neutral-900 dark:text-white',
                 'mb-2',
-                'font-[family-name:var(--font-space-grotesk)]'
+                'font-heading font-bold'
               )}
             >
               20<span className="text-primary-600">+</span>
@@ -75,7 +75,7 @@ export function AboutSection({ className = '' }: AboutSectionProps) {
                 'text-4xl md:text-5xl lg:text-6xl font-bold',
                 'text-neutral-900 dark:text-white',
                 'mb-2',
-                'font-[family-name:var(--font-space-grotesk)]'
+                'font-heading font-bold'
               )}
             >
               22<span className="text-primary-600">+</span>

@@ -34,7 +34,7 @@ export function FooterSection({ className = '' }: FooterSectionProps) {
 
                     {/* Column 2: Quick Links */}
                     <div className="space-y-6">
-                        <h3 className="text-lg font-bold font-[family-name:var(--font-space-grotesk)]">Navigation</h3>
+                        <h3 className="text-lg font-bold font-display font-bold">Navigation</h3>
                         <nav className="flex flex-col space-y-3">
                             <Link href="#about" className="text-neutral-400 hover:text-primary-400 transition-colors">Über uns</Link>
                             <Link href="#services" className="text-neutral-400 hover:text-primary-400 transition-colors">Services</Link>
@@ -45,7 +45,7 @@ export function FooterSection({ className = '' }: FooterSectionProps) {
 
                     {/* Column 3: Contact & Hours */}
                     <div className="space-y-6">
-                        <h3 className="text-lg font-bold font-[family-name:var(--font-space-grotesk)]">Unsere Adresse</h3>
+                        <h3 className="text-lg font-bold font-display font-bold">Unsere Adresse</h3>
                         <div className="space-y-4 text-neutral-400">
                             <div className="space-y-1">
                                 <p className="text-white font-medium">VENDORi GmbH</p>

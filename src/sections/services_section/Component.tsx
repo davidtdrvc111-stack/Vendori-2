@@ -34,7 +34,7 @@ export function ServicesSection({ className = '' }: ServicesSectionProps) {
             'text-3xl md:text-4xl lg:text-5xl font-bold',
             'text-white dark:text-white', // Top of section is dark, use white
             'mb-4',
-            'font-[family-name:var(--font-space-grotesk)]'
+            'font-heading font-bold'
           )}>
             E-Commerce-Wachstum ohne Agentur-Experimente.
           </h2>
@@ -86,7 +86,7 @@ export function ServicesSection({ className = '' }: ServicesSectionProps) {
               'text-2xl md:text-3xl lg:text-4xl font-bold',
               'text-white',
               'mb-7 md:mb-10',
-              'font-[family-name:var(--font-space-grotesk)]'
+              'font-heading font-bold'
             )}>
               Umsatz statt grauer Theorie
             </h3>
@@ -187,7 +187,7 @@ export function ServicesSection({ className = '' }: ServicesSectionProps) {
               'text-xl md:text-2xl font-bold',
               'text-white',
               'mb-3 md:mb-4',
-              'font-[family-name:var(--font-space-grotesk)]'
+              'font-heading font-bold'
             )}>
               Mehr als nur Berater
             </h3>
@@ -254,7 +254,7 @@ export function ServicesSection({ className = '' }: ServicesSectionProps) {
               'text-xl md:text-2xl font-bold',
               'text-white',
               'mb-3 md:mb-4',
-              'font-[family-name:var(--font-space-grotesk)]'
+              'font-heading font-bold'
             )}>
               Neue Märkte ohne Kopfschmerz.
             </h3>

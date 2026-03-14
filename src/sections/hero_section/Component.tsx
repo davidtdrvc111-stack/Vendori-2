@@ -20,7 +20,7 @@ export function HeroSection({ className = '' }: HeroSectionProps) {
         {/* Content */}
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
           <div className="max-w-4xl mx-auto space-y-6 md:space-y-8">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight font-[family-name:var(--font-space-grotesk)]">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold text-white leading-[1.1] tracking-tight">
               Wir skalieren keine Theorie, sondern{' '}
               <span className="text-primary-400">
                 echte Umsätze
@@ -28,9 +28,9 @@ export function HeroSection({ className = '' }: HeroSectionProps) {
               <span className="text-primary-400">.</span>
             </h1>
 
-            <p className="text-lg sm:text-xl md:text-2xl text-neutral-200 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-neutral-200 max-w-2xl mx-auto font-sans font-normal leading-relaxed">
               Täglich beweisen wir in unseren{' '}
-              <span className="text-primary-400">
+              <span className="text-primary-400 font-medium">
                 eigenen Shops
               </span>
               , was funktioniert. Profitieren Sie von echter E-Commerce-Expertise.

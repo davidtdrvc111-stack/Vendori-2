@@ -177,7 +177,7 @@ function ShopCard({ shop }: { shop: Shop }) {
             className={cn(
               'text-xl md:text-2xl lg:text-3xl font-bold text-center',
               'text-white',
-              'font-[family-name:var(--font-space-grotesk)]',
+              'font-heading font-bold',
               'transition-all duration-300',
               'group-hover:text-primary-400',
               // Erster Metric ist größer
@@ -250,8 +250,8 @@ export function ShopShowcaseSection({ className = '' }: ShopShowcaseSectionProps
               'text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold',
               'text-neutral-900 dark:text-white',
               'mb-4 md:mb-6',
-              'font-[family-name:var(--font-space-grotesk)]',
-              'leading-tight'
+              'font-display',
+              'leading-tight tracking-tight'
             )}
           >
             Unsere Shops. Unser Beweis.
