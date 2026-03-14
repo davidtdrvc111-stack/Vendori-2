@@ -154,162 +154,102 @@ export function ServicesSection({ className = '' }: ServicesSectionProps) {
             </div>
           </div>
 
-          {/* Card 2 - Standard-Karte (Small, right top) */}
+          {/* Card 2 - "Neue Märkte ohne Kopfschmerz" (Top right, larger) */}
           <div className={cn(
             'relative',
             'bg-stone-800',
             'rounded-3xl',
             'p-6',
-            'min-h-[250px] md:min-h-[290px]',
+            'min-h-[350px] md:min-h-[380px]',
             'overflow-hidden',
-            'flex flex-col',
+            'flex flex-col justify-between',
             'transition-all duration-300 ease-in-out',
             'hover:bg-stone-700 hover:scale-[1.02]',
             'cursor-pointer'
           )}>
             <NoiseOverlay />
 
-            {/* Icon */}
-            <div className="mb-4 md:mb-6">
-              <div className={cn(
-                'w-10 h-10 md:w-12 md:h-12',
-                'rounded-xl',
-                'bg-primary-600/10',
-                'flex items-center justify-center',
-                'ring-1 ring-primary-600/20'
+            <div>
+              {/* Icon */}
+              <div className="mb-4 md:mb-6">
+                <div className={cn(
+                  'w-10 h-10 md:w-12 md:h-12',
+                  'rounded-xl',
+                  'bg-primary-600/10',
+                  'flex items-center justify-center',
+                  'ring-1 ring-primary-600/20'
+                )}>
+                  <Compass className="w-5 h-5 md:w-6 md:h-6 text-primary-600" strokeWidth={1.5} />
+                </div>
+              </div>
+
+              {/* Überschrift */}
+              <h3 className={cn(
+                'text-xl md:text-2xl font-bold',
+                'text-white',
+                'mb-3 md:mb-4',
+                'font-heading font-bold'
               )}>
-                <Users className="w-5 h-5 md:w-6 md:h-6 text-primary-600" strokeWidth={1.5} />
-              </div>
-            </div>
+                Neue Märkte ohne Kopfschmerz
+              </h3>
 
-            {/* Überschrift */}
-            <h3 className={cn(
-              'text-xl md:text-2xl font-bold',
-              'text-white',
-              'mb-3 md:mb-4',
-              'font-heading font-bold'
-            )}>
-              Mehr als nur Berater
-            </h3>
-
-            {/* Beschreibungstext */}
-            <p className={cn(
-              'text-sm md:text-base',
-              'text-neutral-300',
-              'leading-relaxed',
-              'mb-6 md:mb-8'
-            )}>
-              Sie haben das Produkt, wir das praxiserprobte E-Com-Team. So überholen Sie die Konkurrenz, ohne Zeit und Geld für Recruiting oder Theorie-Agenturen zu verschwenden.
-            </p>
-
-            {/* CTA Link */}
-            <div className="mt-auto">
-              <a
-                href="#contact"
-                className={cn(
-                  'inline-flex items-center gap-2',
-                  'text-primary-400 hover:text-primary-300',
-                  'font-medium',
-                  'transition-colors duration-200',
-                  'text-sm md:text-base',
-                  'group'
-                )}
-              >
-                <span>So funktioniert's</span>
-                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-              </a>
-            </div>
-          </div>
-
-          {/* Card 3 - Standard-Karte (Small, right bottom) */}
-          <div className={cn(
-            'relative',
-            'bg-stone-800',
-            'rounded-3xl',
-            'p-6',
-            'min-h-[250px] md:min-h-[290px]',
-            'overflow-hidden',
-            'flex flex-col',
-            'transition-all duration-300 ease-in-out',
-            'hover:bg-stone-700 hover:scale-[1.02]',
-            'cursor-pointer'
-          )}>
-            <NoiseOverlay />
-
-            {/* Icon */}
-            <div className="mb-4 md:mb-6">
-              <div className={cn(
-                'w-10 h-10 md:w-12 md:h-12',
-                'rounded-xl',
-                'bg-primary-600/10',
-                'flex items-center justify-center',
-                'ring-1 ring-primary-600/20'
+              {/* Beschreibungstext */}
+              <p className={cn(
+                'text-sm md:text-base',
+                'text-neutral-300',
+                'leading-relaxed',
+                'mb-4 md:mb-6'
               )}>
-                <Compass className="w-5 h-5 md:w-6 md:h-6 text-primary-600" strokeWidth={1.5} />
-              </div>
-            </div>
+                Wir kennen die Abkürzungen durch den Logistik- und Rechts-Dschungel. Rollen Sie Ihre Marke international aus, während wir die Komplexität im Hintergrund lautlos lösen.
+              </p>
 
-            {/* Überschrift */}
-            <h3 className={cn(
-              'text-xl md:text-2xl font-bold',
-              'text-white',
-              'mb-3 md:mb-4',
-              'font-heading font-bold'
-            )}>
-              Neue Märkte ohne Kopfschmerz
-            </h3>
+              {/* "Wir übernehmen für Sie:" Label */}
+              <p className="text-sm text-gray-400 mb-2">
+                Wir übernehmen für Sie:
+              </p>
 
-            {/* Beschreibungstext */}
-            <p className={cn(
-              'text-sm md:text-base',
-              'text-neutral-300',
-              'leading-relaxed',
-              'mb-4 md:mb-6'
-            )}>
-              Wir kennen die Abkürzungen durch den Logistik- und Rechts-Dschungel. Rollen Sie Ihre Marke international aus, während wir die Komplexität im Hintergrund lautlos lösen.
-            </p>
-
-            {/* Key Features / Bullet Points - 2 Spalten Grid */}
-            <div className="grid grid-cols-2 gap-x-3 gap-y-2 md:gap-y-3 mb-6 md:mb-8">
-              <div className="flex items-start gap-2">
-                <div className="flex-shrink-0 mt-0.5">
-                  <Check className="w-4 h-4 text-primary-400" strokeWidth={2.5} />
+              {/* Key Features / Bullet Points - 2 Spalten Grid */}
+              <div className="grid grid-cols-2 gap-x-3 gap-y-2 md:gap-y-3 mb-6 md:mb-8">
+                <div className="flex items-start gap-2">
+                  <div className="flex-shrink-0 mt-0.5">
+                    <Check className="w-4 h-4 text-primary-400" strokeWidth={2.5} />
+                  </div>
+                  <span className="text-sm md:text-base text-white font-medium">
+                    Alle Übersetzungen
+                  </span>
                 </div>
-                <span className="text-sm md:text-base text-white font-medium">
-                  Übersetzung
-                </span>
-              </div>
 
-              <div className="flex items-start gap-2">
-                <div className="flex-shrink-0 mt-0.5">
-                  <Check className="w-4 h-4 text-primary-400" strokeWidth={2.5} />
+                <div className="flex items-start gap-2">
+                  <div className="flex-shrink-0 mt-0.5">
+                    <Check className="w-4 h-4 text-primary-400" strokeWidth={2.5} />
+                  </div>
+                  <span className="text-sm md:text-base text-white font-medium">
+                    Den Kundenservice
+                  </span>
                 </div>
-                <span className="text-sm md:text-base text-white font-medium">
-                  Service
-                </span>
-              </div>
 
-              <div className="flex items-start gap-2">
-                <div className="flex-shrink-0 mt-0.5">
-                  <Check className="w-4 h-4 text-primary-400" strokeWidth={2.5} />
+                <div className="flex items-start gap-2">
+                  <div className="flex-shrink-0 mt-0.5">
+                    <Check className="w-4 h-4 text-primary-400" strokeWidth={2.5} />
+                  </div>
+                  <span className="text-sm md:text-base text-white font-medium">
+                    Die Selling-Bilder
+                  </span>
                 </div>
-                <span className="text-sm md:text-base text-white font-medium">
-                  Selling Bilder
-                </span>
-              </div>
 
-              <div className="flex items-start gap-2">
-                <div className="flex-shrink-0 mt-0.5">
-                  <Check className="w-4 h-4 text-primary-400" strokeWidth={2.5} />
+                <div className="flex items-start gap-2">
+                  <div className="flex-shrink-0 mt-0.5">
+                    <Check className="w-4 h-4 text-primary-400" strokeWidth={2.5} />
+                  </div>
+                  <span className="text-sm md:text-base text-white font-medium">
+                    Impressum/Verkauf
+                  </span>
                 </div>
-                <span className="text-sm md:text-base text-white font-medium">
-                  Impressum
-                </span>
               </div>
             </div>
 
             {/* CTA Link */}
-            <div className="mt-auto">
+            <div>
               <a
                 href="#contact"
                 className={cn(
@@ -322,6 +262,75 @@ export function ServicesSection({ className = '' }: ServicesSectionProps) {
                 )}
               >
                 <span>Expansions-Check starten</span>
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              </a>
+            </div>
+          </div>
+
+          {/* Card 3 - "Mehr als nur Berater" (Bottom right, smaller) */}
+          <div className={cn(
+            'relative',
+            'bg-stone-800',
+            'rounded-3xl',
+            'p-6',
+            'min-h-[200px] md:min-h-[210px]',
+            'overflow-hidden',
+            'flex flex-col justify-between',
+            'transition-all duration-300 ease-in-out',
+            'hover:bg-stone-700 hover:scale-[1.02]',
+            'cursor-pointer'
+          )}>
+            <NoiseOverlay />
+
+            <div>
+              {/* Icon */}
+              <div className="mb-4 md:mb-6">
+                <div className={cn(
+                  'w-10 h-10 md:w-12 md:h-12',
+                  'rounded-xl',
+                  'bg-primary-600/10',
+                  'flex items-center justify-center',
+                  'ring-1 ring-primary-600/20'
+                )}>
+                  <Users className="w-5 h-5 md:w-6 md:h-6 text-primary-600" strokeWidth={1.5} />
+                </div>
+              </div>
+
+              {/* Überschrift */}
+              <h3 className={cn(
+                'text-xl md:text-2xl font-bold',
+                'text-white',
+                'mb-3 md:mb-4',
+                'font-heading font-bold'
+              )}>
+                Mehr als nur Berater
+              </h3>
+
+              {/* Beschreibungstext */}
+              <p className={cn(
+                'text-sm md:text-base',
+                'text-neutral-300',
+                'leading-relaxed',
+                'mb-6 md:mb-8'
+              )}>
+                Sie haben das Produkt, wir das praxiserprobte E-Com-Team. So überholen Sie die Konkurrenz, ohne Zeit und Geld für Recruiting oder Theorie-Agenturen zu verschwenden.
+              </p>
+            </div>
+
+            {/* CTA Link */}
+            <div>
+              <a
+                href="#contact"
+                className={cn(
+                  'inline-flex items-center gap-2',
+                  'text-primary-400 hover:text-primary-300',
+                  'font-medium',
+                  'transition-colors duration-200',
+                  'text-sm md:text-base',
+                  'group'
+                )}
+              >
+                <span>So funktioniert's</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </a>
             </div>

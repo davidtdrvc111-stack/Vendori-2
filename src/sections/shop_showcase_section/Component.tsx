@@ -2,7 +2,6 @@
 
 import { cn } from '@/lib/utils';
 import { ShopShowcaseSectionProps, Shop } from './types';
-import { ExternalLink } from 'lucide-react';
 import Image from 'next/image';
 
 // Noise Overlay Component für subtile Textur
@@ -22,7 +21,7 @@ const SHOPS: Shop[] = [
   {
     id: 'mytoolstore',
     name: 'myToolStore',
-    logo: '/images/shops/mytoolstore-logo.png',
+    logo: '/mytoolstore.svg',
     logoAlt: 'myToolStore Multi-Market E-Commerce',
     markets: [
       {
@@ -43,15 +42,27 @@ const SHOPS: Shop[] = [
         url: 'https://www.mytoolstore.nl',
         flag: '🇳🇱',
       },
+      {
+        domain: 'mytoolstore.at',
+        domainExtension: '.at',
+        url: 'https://www.mytoolstore.at',
+        flag: '🇦🇹',
+      },
+      {
+        domain: 'mytoolstore.be',
+        domainExtension: '.be',
+        url: 'https://www.mytoolstore.be',
+        flag: '🇧🇪',
+      },
     ],
-    metrics: ['1.000.000+ Bestellungen', '3 Märkte aktiv'],
+    metrics: ['1,5 Mio.+', 'Erfolgreiche Bestellungen'],
     isOwnBrand: false,
     spanColumns: 2, // Nimmt 2 Spalten auf Desktop ein
   },
   {
     id: 'showernizr',
     name: 'ShowerNIZR',
-    logo: '/images/shops/showernizr-logo.png',
+    logo: '/showernizr.svg',
     logoAlt: 'ShowerNIZR Eigenmarke',
     markets: [
       {
@@ -60,17 +71,14 @@ const SHOPS: Shop[] = [
         url: 'https://www.showernizr.com',
       },
     ],
-    metrics: ['Eigenmarke', 'Neu auf dem Markt'],
+    metrics: ['Eigenmarke'],
     isOwnBrand: true,
     spanColumns: 2, // Nimmt 2 Spalten auf Desktop ein
   },
 ];
 
-// Shop Card Component - Optimiert mit subtilen Akzenten
+// Shop Card Component - Überarbeitetes Layout mit klarer Struktur
 function ShopCard({ shop }: { shop: Shop }) {
-  // Primary market für den Haupt-Link (erster Markt im Array)
-  const primaryMarket = shop.markets[0];
-
   return (
     <div
       className={cn(
@@ -79,19 +87,17 @@ function ShopCard({ shop }: { shop: Shop }) {
         // Bento Grid Style - Stone-800 (braun-gräulich wie Services Section)
         'bg-stone-800',
         'rounded-3xl',
-        'p-6 md:p-8 lg:p-10',
-        'flex flex-col items-center justify-center',
-        // Reduzierte Höhe für kompaktere Proportionen
-        'min-h-[280px] md:min-h-[320px]',
+        'p-4 md:p-5 lg:p-6',
+        // Flexbox für Layout-Struktur
+        'flex flex-col items-center',
+        // Feste Höhe für beide Karten (20% kleiner als Original)
+        'h-[324px] md:h-[365px] lg:h-[405px]',
         'transition-all duration-500 ease-out',
         'hover:shadow-2xl hover:shadow-primary-600/20',
         'overflow-hidden',
-        // Primary Purple Border für myToolStore (Haupt-Shop)
-        !shop.isOwnBrand && 'border-2 border-primary-500',
-        !shop.isOwnBrand && 'hover:border-primary-400',
-        // Subtiler Border für ShowerNIZR (Eigenmarke)
-        shop.isOwnBrand && 'border border-white/10',
-        shop.isOwnBrand && 'hover:border-primary-500/50',
+        // Subtiler Border für beide Karten, Orange nur auf Hover
+        'border-2 border-white/10',
+        'hover:border-primary-500',
         // Hover Lift
         'hover:-translate-y-2',
         // Grid-Span Support (statische Klassen für Tailwind)
@@ -113,37 +119,66 @@ function ShopCard({ shop }: { shop: Shop }) {
         )}
       />
 
-      {/* Logo Container - MIT subtiler Hintergrund für Sichtbarkeit */}
-      <div className="relative z-10 mb-5 md:mb-6">
+      {/* Logo - Oben mit Trennlinie */}
+      <div className="relative z-10 flex-shrink-0 flex flex-col items-center gap-4 md:gap-5 lg:gap-6 w-full -mt-4 md:-mt-5 lg:-mt-6">
         <div
           className={cn(
-            'w-36 h-36 md:w-40 md:h-40 lg:w-44 lg:h-44',
+            'w-32 h-32 md:w-36 md:h-36 lg:w-40 lg:h-40',
             'rounded-2xl',
-            // Subtiler weißer Hintergrund für Logo-Kontrast
-            'bg-white/95',
-            'p-4 md:p-5',
+            'bg-transparent',
+            'p-1 md:p-1 lg:p-2',
             'flex items-center justify-center',
             'transition-all duration-500',
-            'group-hover:scale-105',
-            'group-hover:bg-white',
-            // Subtiler Shadow für Depth
-            'shadow-lg shadow-black/10'
+            'group-hover:scale-105'
           )}
         >
           <Image
             src={shop.logo}
             alt={shop.logoAlt}
-            width={176}
-            height={176}
+            width={160}
+            height={160}
             className="object-contain w-full h-full"
             priority
           />
         </div>
+        {/* Horizontale Trennlinie */}
+        <div className="w-full h-0.5 bg-primary-500 -mt-9" />
       </div>
 
-      {/* Markets - Zeigt alle Domains */}
-      <div className="relative z-10 mb-4 md:mb-6">
-        <div className="flex flex-wrap items-center justify-center gap-2 md:gap-3">
+      {/* Hauptmetrik - Mitte (nimmt den meisten Platz ein) */}
+      <div className="relative z-10 flex-1 flex flex-col items-center justify-center gap-2">
+        {/* Highlight-Text */}
+        <h3
+          className={cn(
+            'text-4xl md:text-5xl lg:text-6xl font-bold text-center',
+            'text-white',
+            'font-sans',
+            'transition-all duration-300',
+            'group-hover:text-primary-400',
+            'leading-tight'
+          )}
+        >
+          {shop.metrics[0]}
+        </h3>
+        {/* Beschreibung (falls vorhanden) */}
+        {shop.metrics[1] && (
+          <p
+            className={cn(
+              'text-base md:text-lg lg:text-xl font-normal text-center',
+              'text-neutral-300',
+              'font-sans',
+              'transition-all duration-300',
+              'group-hover:text-neutral-200'
+            )}
+          >
+            {shop.metrics[1]}
+          </p>
+        )}
+      </div>
+
+      {/* Länder-Badges - Unten */}
+      <div className="relative z-10 flex-shrink-0 w-full">
+        <div className="flex flex-wrap items-center justify-center gap-2">
           {shop.markets.map((market) => (
             <a
               key={market.domain}
@@ -152,81 +187,24 @@ function ShopCard({ shop }: { shop: Shop }) {
               rel="noopener noreferrer"
               className={cn(
                 'inline-flex items-center gap-1.5',
-                'px-3 py-1.5 md:px-4 md:py-2',
-                'bg-white/5 hover:bg-white/10',
-                'border border-white/10 hover:border-primary-400/50',
+                'px-4 py-2',
+                'bg-white/10 hover:bg-primary-500',
+                'border border-white/20 hover:border-primary-500',
                 'rounded-full',
-                'text-sm md:text-base font-medium',
-                'text-neutral-300 hover:text-primary-400',
+                'text-sm font-semibold',
+                'text-neutral-200 hover:text-white',
                 'transition-all duration-300',
-                'hover:scale-105'
+                'hover:scale-110',
+                'cursor-pointer',
+                'hover:shadow-lg hover:shadow-primary-500/30'
               )}
             >
-              {market.flag && <span className="text-base md:text-lg">{market.flag}</span>}
+              {market.flag && <span className="text-sm">{market.flag}</span>}
               <span>{market.domainExtension}</span>
             </a>
           ))}
         </div>
       </div>
-
-      {/* Key Metrics - Zeigt alle Metriken */}
-      <div className="relative z-10 mb-4 flex flex-col gap-2 md:gap-3">
-        {shop.metrics.map((metric, index) => (
-          <h3
-            key={index}
-            className={cn(
-              'text-xl md:text-2xl lg:text-3xl font-bold text-center',
-              'text-white',
-              'font-heading font-bold',
-              'transition-all duration-300',
-              'group-hover:text-primary-400',
-              // Erster Metric ist größer
-              index === 0 && 'text-2xl md:text-3xl lg:text-4xl'
-            )}
-          >
-            {metric}
-          </h3>
-        ))}
-      </div>
-
-      {/* Shop besuchen - Immer sichtbar */}
-      <a
-        href={primaryMarket.url}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={cn(
-          'relative z-10',
-          'inline-flex items-center gap-2',
-          'px-4 py-2',
-          'text-sm font-medium',
-          'text-primary-400 hover:text-primary-300',
-          'transition-all duration-300',
-          'hover:scale-105'
-        )}
-      >
-        <span>Shop besuchen</span>
-        <ExternalLink className="w-4 h-4" strokeWidth={2} />
-      </a>
-
-      {/* Eigenmarke Badge - Immer sichtbar */}
-      {shop.isOwnBrand && (
-        <div
-          className={cn(
-            'absolute top-4 right-4 z-20',
-            'px-3 py-1.5',
-            'bg-primary-600/20 backdrop-blur-sm',
-            'border border-primary-600/30',
-            'rounded-full',
-            'text-xs font-semibold',
-            'text-primary-400',
-            'transition-all duration-300',
-            'group-hover:bg-primary-600/30',
-            'group-hover:border-primary-500/50'
-          )}
-        >
-          Eigenmarke
-        </div>
-      )}
     </div>
   );
 }

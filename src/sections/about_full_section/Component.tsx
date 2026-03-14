@@ -50,7 +50,7 @@ export function AboutFullSection({ className = '' }: AboutFullSectionProps) {
             <div>
               <div className="space-y-4 md:space-y-5 text-base md:text-lg text-neutral-600 dark:text-neutral-300 leading-relaxed">
                 <p>
-                  VENDORi ist <span className="text-primary-600 dark:text-primary-400 font-medium">kein Agentur-Konstrukt</span>. Wir starteten als E-Commerce-Seller, bauten eigene D2C-Marken auf und expandierten über Amazon, Shopify und internationale Marktplätze.
+                  VENDORi ist <span className="text-primary-600 dark:text-primary-400 font-medium">kein Agentur-Konstrukt</span>. Wir starteten als E-Commerce-Seller, bauen eigene D2C-Marken auf und expandierten europaweit über eigene Online-Shops und über internationale relevante Marktplätze.
                 </p>
                 <p>
                   Dabei merkten wir: Die meisten Agenturen reden viel, verstehen aber das echte Tagesgeschäft nicht. Sie verkaufen Strategien, die <span className="text-primary-600 dark:text-primary-400 font-medium">in der Praxis scheitern</span>.
@@ -71,7 +71,7 @@ export function AboutFullSection({ className = '' }: AboutFullSectionProps) {
                   'relative w-full',
                   'aspect-[4/3]',
                   'rounded-3xl',
-                  'bg-gradient-to-br from-neutral-800 to-neutral-900 dark:from-neutral-800 dark:to-neutral-950',
+                  'bg-gradient-to-br from-stone-800 to-stone-900 dark:from-neutral-800 dark:to-neutral-950',
                   'overflow-hidden',
                   'ring-1 ring-white/5'
                 )}
