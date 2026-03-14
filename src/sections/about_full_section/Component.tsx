@@ -50,16 +50,16 @@ export function AboutFullSection({ className = '' }: AboutFullSectionProps) {
             <div className="md:col-span-3">
               <div className="space-y-4 md:space-y-5 text-base md:text-lg text-neutral-600 dark:text-neutral-300 leading-relaxed">
                 <p>
-                  VENDORi ist <span className="text-bronze-600 dark:text-bronze-400 font-medium">kein Agentur-Konstrukt</span>. Wir starteten als E-Commerce-Seller, bauten eigene D2C-Marken auf und expandierten über Amazon, Shopify und internationale Marktplätze.
+                  VENDORi ist <span className="text-primary-600 dark:text-primary-400 font-medium">kein Agentur-Konstrukt</span>. Wir starteten als E-Commerce-Seller, bauten eigene D2C-Marken auf und expandierten über Amazon, Shopify und internationale Marktplätze.
                 </p>
                 <p>
-                  Dabei merkten wir: Die meisten Agenturen reden viel, verstehen aber das echte Tagesgeschäft nicht. Sie verkaufen Strategien, die <span className="text-bronze-600 dark:text-bronze-400 font-medium">in der Praxis scheitern</span>.
+                  Dabei merkten wir: Die meisten Agenturen reden viel, verstehen aber das echte Tagesgeschäft nicht. Sie verkaufen Strategien, die <span className="text-primary-600 dark:text-primary-400 font-medium">in der Praxis scheitern</span>.
                 </p>
                 <p className="font-semibold text-neutral-900 dark:text-white">
                   Wir machen es anders. Jede Strategie, die wir empfehlen, haben wir bereits in unseren eigenen Shops validiert. Kein Experiment auf Ihre Kosten.
                 </p>
                 <p>
-                  Das ist VENDORi. Kein Beratungsprodukt. Ein Team, das täglich selbst im E-Commerce operiert – und genau deshalb die Hebel kennt, die Ihren Umsatz tatsächlich skalieren. <span className="text-bronze-600 dark:text-bronze-400 font-medium">Ohne Umwege. Ohne Theorie.</span>
+                  Das ist VENDORi. Kein Beratungsprodukt. Ein Team, das täglich selbst im E-Commerce operiert – und genau deshalb die Hebel kennt, die Ihren Umsatz tatsächlich skalieren. <span className="text-primary-600 dark:text-primary-400 font-medium">Ohne Umwege. Ohne Theorie.</span>
                 </p>
               </div>
             </div>
@@ -84,12 +84,12 @@ export function AboutFullSection({ className = '' }: AboutFullSectionProps) {
                     className={cn(
                       'w-20 h-20 md:w-24 md:h-24 mx-auto mb-4',
                       'rounded-2xl',
-                      'bg-cobalt-600/10',
+                      'bg-primary-600/10',
                       'flex items-center justify-center',
-                      'ring-1 ring-cobalt-600/20'
+                      'ring-1 ring-primary-600/20'
                     )}
                   >
-                    <Rocket className="w-10 h-10 md:w-12 md:h-12 text-cobalt-600" strokeWidth={1.5} />
+                    <Rocket className="w-10 h-10 md:w-12 md:h-12 text-primary-600" strokeWidth={1.5} />
                   </div>
                   <p className="text-sm md:text-base text-neutral-400">
                     Platzhalter für Team-Foto
@@ -126,13 +126,13 @@ export function AboutFullSection({ className = '' }: AboutFullSectionProps) {
                 'overflow-hidden',
                 'flex flex-col',
                 'border border-white/10',
-                'hover:border-cobalt-500/50',
+                'hover:border-primary-500/50',
                 'shadow-xl shadow-black/20',
                 'transition-all duration-500 ease-out',
                 'hover:-translate-y-2'
               )}
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-cobalt-600/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-br from-primary-600/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <NoiseOverlay />
 
               <div className="mb-4">
@@ -140,12 +140,12 @@ export function AboutFullSection({ className = '' }: AboutFullSectionProps) {
                   className={cn(
                     'w-12 h-12',
                     'rounded-xl',
-                    'bg-cobalt-600/10',
+                    'bg-primary-600/10',
                     'flex items-center justify-center',
-                    'ring-1 ring-cobalt-600/20'
+                    'ring-1 ring-primary-600/20'
                   )}
                 >
-                  <Zap className="w-6 h-6 text-cobalt-600" strokeWidth={1.5} />
+                  <Zap className="w-6 h-6 text-primary-600" strokeWidth={1.5} />
                 </div>
               </div>
 
@@ -177,13 +177,13 @@ export function AboutFullSection({ className = '' }: AboutFullSectionProps) {
                 'overflow-hidden',
                 'flex flex-col',
                 'border border-white/10',
-                'hover:border-cobalt-500/50',
+                'hover:border-primary-500/50',
                 'shadow-xl shadow-black/20',
                 'transition-all duration-500 ease-out',
                 'hover:-translate-y-2'
               )}
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-cobalt-600/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-br from-primary-600/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <NoiseOverlay />
 
               <div className="mb-4">
@@ -191,12 +191,12 @@ export function AboutFullSection({ className = '' }: AboutFullSectionProps) {
                   className={cn(
                     'w-12 h-12',
                     'rounded-xl',
-                    'bg-cobalt-600/10',
+                    'bg-primary-600/10',
                     'flex items-center justify-center',
-                    'ring-1 ring-cobalt-600/20'
+                    'ring-1 ring-primary-600/20'
                   )}
                 >
-                  <Target className="w-6 h-6 text-cobalt-600" strokeWidth={1.5} />
+                  <Target className="w-6 h-6 text-primary-600" strokeWidth={1.5} />
                 </div>
               </div>
 
@@ -228,13 +228,13 @@ export function AboutFullSection({ className = '' }: AboutFullSectionProps) {
                 'overflow-hidden',
                 'flex flex-col',
                 'border border-white/10',
-                'hover:border-cobalt-500/50',
+                'hover:border-primary-500/50',
                 'shadow-xl shadow-black/20',
                 'transition-all duration-500 ease-out',
                 'hover:-translate-y-2'
               )}
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-cobalt-600/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-br from-primary-600/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <NoiseOverlay />
 
               <div className="mb-4">
@@ -242,12 +242,12 @@ export function AboutFullSection({ className = '' }: AboutFullSectionProps) {
                   className={cn(
                     'w-12 h-12',
                     'rounded-xl',
-                    'bg-cobalt-600/10',
+                    'bg-primary-600/10',
                     'flex items-center justify-center',
-                    'ring-1 ring-cobalt-600/20'
+                    'ring-1 ring-primary-600/20'
                   )}
                 >
-                  <Users className="w-6 h-6 text-cobalt-600" strokeWidth={1.5} />
+                  <Users className="w-6 h-6 text-primary-600" strokeWidth={1.5} />
                 </div>
               </div>
 
@@ -276,11 +276,11 @@ export function AboutFullSection({ className = '' }: AboutFullSectionProps) {
             className={cn(
               'inline-flex items-center justify-center gap-2',
               'px-8 py-4',
-              'bg-bronze-600 text-white',
+              'bg-primary-600 text-white',
               'font-semibold rounded-xl',
               'transition-all duration-200',
-              'hover:bg-bronze-700 hover:scale-105',
-              'shadow-lg shadow-bronze-600/20'
+              'hover:bg-primary-700 hover:scale-105',
+              'shadow-lg shadow-primary-600/20'
             )}
           >
             <span>Kennenlern-Gespräch vereinbaren</span>

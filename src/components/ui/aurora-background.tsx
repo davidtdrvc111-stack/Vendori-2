@@ -28,8 +28,8 @@ export const AuroraBackground = ({
             [--white-gradient:repeating-linear-gradient(100deg,var(--white)_0%,var(--white)_7%,var(--transparent)_10%,var(--transparent)_12%,var(--white)_16%)]
             [--dark-gradient:repeating-linear-gradient(100deg,var(--black)_0%,var(--black)_7%,var(--transparent)_10%,var(--transparent)_12%,var(--black)_16%)]
 
-            /* Einheitliche Farben für alle Breakpoints (Mobile-Farben) */
-            [--aurora:repeating-linear-gradient(100deg,var(--blue-500)_10%,var(--indigo-300)_15%,var(--blue-300)_20%,var(--violet-200)_25%,var(--blue-400)_30%)]
+            /* Einheitliche Farben für alle Breakpoints - Titanium Edge Industrial Gradient */
+            [--aurora:repeating-linear-gradient(100deg,var(--aurora-steel-blue)_10%,var(--aurora-warm-bronze)_15%,var(--aurora-deep-slate)_20%,var(--aurora-copper-glow)_25%,var(--aurora-charcoal)_30%)]
             blur-[10px] opacity-50
             [--aurora-speed:40s] md:[--aurora-speed:60s]
 

@@ -14,47 +14,41 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // VENDORi brand colors - Purple as primary accent color
+        // VENDORi brand colors - Bronze as primary accent color (Titanium Edge)
         primary: {
-          50: '#faf5ff',   // Sehr helles Purple (Backgrounds, Hover)
-          100: '#f3e8ff',  // Helles Purple
-          200: '#e9d5ff',  // Light Purple
-          300: '#d8b4fe',  // Medium-Light Purple
-          400: '#c084fc',  // Medium Purple (Dark Mode Links, Hovers)
-          500: '#a855f7',  // Base Purple (Text Accents)
-          600: '#9333ea',  // Primary Purple (CTAs, Buttons) - HAUPTFARBE
-          700: '#7e22ce',  // Dark Purple (Hover States)
-          800: '#6b21a8',  // Darker Purple
-          900: '#581c87',  // Very Dark Purple
-          950: '#3b0764',  // Darkest Purple (Backgrounds mit Opacity)
+          50: '#fef9f3',   // Lightest cream, subtle warmth
+          100: '#fef3e7',  // Light bronze tint
+          200: '#fce5ca',  // Soft bronze
+          300: '#f8d1a8',  // Light bronze
+          400: '#f2b279',  // Medium bronze (Dark Mode Links, Hovers)
+          500: '#e89043',  // Base bronze (Text Accents, Highlights)
+          600: '#d47020',  // Primary Bronze (CTAs, Buttons) - HAUPTFARBE
+          700: '#b25a18',  // Dark Bronze (Hover States)
+          800: '#8f4816',  // Darker bronze
+          900: '#763c15',  // Very dark bronze
+          950: '#431f0a',  // Darkest bronze (Backgrounds mit Opacity)
         },
-        // Neutral grays for text, backgrounds, borders
+        // Neutral grays for text, backgrounds, borders (Titanium Grays)
         neutral: {
-          50: '#f8fafc',   // Fast White (Backgrounds)
-          100: '#f1f5f9',  // Sehr helles Gray
-          200: '#e2e8f0',  // Helles Gray (Borders)
-          300: '#cbd5e1',  // Light Gray
-          400: '#94a3b8',  // Medium-Light Gray (Placeholder Text)
-          500: '#64748b',  // Medium Gray (Secondary Text)
-          600: '#475569',  // Dark Gray (Body Text)
-          700: '#334155',  // Darker Gray (Headings)
-          800: '#1e293b',  // Very Dark Gray (Header Dark Mode)
-          900: '#0f172a',  // Almost Black (Primary Text)
-          950: '#020617',  // True Black Alternative
+          50: '#f9fafb',   // Near white, subtle blue tint
+          100: '#f3f4f6',  // Very light gray
+          200: '#e5e7eb',  // Light gray (Borders)
+          300: '#d1d5db',  // Medium-light gray (Secondary Text Dark Mode)
+          400: '#9ca3af',  // Placeholder text
+          500: '#6b7280',  // Secondary text
+          600: '#4b5563',  // Body text (Light Mode)
+          700: '#374151',  // Headings, dark borders
+          800: '#1f2937',  // Header dark mode
+          900: '#111827',  // Primary text (Light Mode)
+          950: '#030712',  // True black
         },
-        // Aurora gradient colors for animated backgrounds
+        // Aurora gradient colors for animated backgrounds (Industrial palette)
         aurora: {
-          blue: {
-            light: '#93c5fd',   // blue-300
-            medium: '#60a5fa',  // blue-400
-            base: '#3b82f6',    // blue-500
-          },
-          indigo: {
-            light: '#a5b4fc',   // indigo-300
-          },
-          violet: {
-            light: '#ddd6fe',   // violet-200
-          },
+          'steel-blue': '#64748b',   // Cool metallic
+          'warm-bronze': '#e89043',  // Warm glow
+          'deep-slate': '#334155',   // Depth
+          'copper-glow': '#f2b279',  // Highlight
+          'charcoal': '#1f2937',     // Shadow
         },
         // Surface colors for backgrounds and cards
         surface: {
@@ -136,8 +130,8 @@ const config: Config = {
       boxShadow: {
         'inner-glow': 'inset 0 0 0 1px rgba(255, 255, 255, 0.1)',
         'inner-glow-hover': 'inset 0 0 0 1px rgba(255, 255, 255, 0.15)',
-        'inner-glow-primary': 'inset 0 0 0 2px rgba(147, 51, 234, 0.6)',
-        'inner-glow-primary-hover': 'inset 0 0 0 2px rgba(168, 85, 247, 0.8)',
+        'inner-glow-primary': 'inset 0 0 0 2px rgba(212, 112, 32, 0.6)',        // Bronze #d47020
+        'inner-glow-primary-hover': 'inset 0 0 0 2px rgba(232, 144, 67, 0.8)', // Bronze #e89043
       },
     },
   },
