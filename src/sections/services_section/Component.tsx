@@ -1,5 +1,3 @@
-'use client';
-
 import { cn } from '@/lib/utils';
 import { ServicesSectionProps } from './types';
 import { Store, Check, ArrowRight, Users, Compass } from 'lucide-react';

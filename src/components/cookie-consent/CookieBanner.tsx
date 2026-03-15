@@ -70,12 +70,12 @@ export function CookieBanner({ className = '' }: CookieBannerProps) {
                     onClick={acceptAll}
                     className="
                       flex-1 px-8 py-3 min-h-[44px]
-                      bg-primary-600 text-white font-semibold rounded-lg
+                      bg-primary-700 text-white font-semibold rounded-lg
                       transition-colors shadow-lg
-                      hover:bg-primary-700
-                      dark:bg-primary-600 dark:hover:bg-primary-700
+                      hover:bg-primary-800
+                      dark:bg-primary-700 dark:hover:bg-primary-800
                       border-2 border-transparent
-                      focus:outline-none focus:ring-2 focus:ring-primary-600 focus:ring-offset-2
+                      focus:outline-none focus:ring-2 focus:ring-primary-700 focus:ring-offset-2
                     "
                   >
                     Alle akzeptieren

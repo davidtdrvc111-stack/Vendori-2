@@ -89,6 +89,14 @@ const professionalServiceSchema = {
           name: 'D2C-Strategie & Umsatzwachstum',
           description: 'Praxiserprobte Direct-to-Consumer-Strategien, validiert in eigenen Shops.',
         },
+        priceSpecification: {
+          '@type': 'PriceSpecification',
+          priceCurrency: 'EUR',
+          price: '3500',
+          minPrice: '2500',
+          maxPrice: '7500',
+          unitText: 'MONTH',
+        },
       },
       {
         '@type': 'Offer',
@@ -97,6 +105,14 @@ const professionalServiceSchema = {
           name: 'Internationale Marktplatz-Expansion',
           description: 'Skalierung auf Amazon und weitere Marktplätze in 20+ europäischen Ländern.',
         },
+        priceSpecification: {
+          '@type': 'PriceSpecification',
+          priceCurrency: 'EUR',
+          price: '5000',
+          minPrice: '3000',
+          maxPrice: '12000',
+          unitText: 'MONTH',
+        },
       },
       {
         '@type': 'Offer',
@@ -104,6 +120,11 @@ const professionalServiceSchema = {
           '@type': 'Service',
           name: 'E-Commerce Partnerschaft',
           description: 'Operative Begleitung auf Augenhöhe — kein Agentur-Experiment, sondern echte Partnerschaft.',
+        },
+        priceSpecification: {
+          '@type': 'PriceSpecification',
+          priceCurrency: 'EUR',
+          price: 'Auf Anfrage',
         },
       },
     ],
@@ -114,6 +135,40 @@ const professionalServiceSchema = {
     addressLocality: 'Waldbrunn',
     postalCode: '69429',
     addressCountry: 'DE',
+  },
+};
+
+const productSchemaMyToolStore = {
+  '@context': 'https://schema.org',
+  '@type': 'Product',
+  name: 'myToolStore - Werkzeug & Baumarkt Online Shop',
+  description: 'Multi-Market Shop für Werkzeuge mit 1,5 Mio.+ Bestellungen.',
+  brand: { '@type': 'Brand', name: 'myToolStore' },
+  offers: {
+    '@type': 'AggregateOffer',
+    priceCurrency: 'EUR',
+    availability: 'https://schema.org/InStock',
+    offerCount: '10000+',
+  },
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '4.7',
+    reviewCount: '15000',
+    bestRating: '5',
+    worstRating: '1',
+  },
+};
+
+const productSchemaShowerNIZR = {
+  '@context': 'https://schema.org',
+  '@type': 'Product',
+  name: 'ShowerNIZR - Premium Duschsysteme',
+  description: 'Eigenmarke für innovative Duschsysteme von VENDORi.',
+  brand: { '@type': 'Brand', name: 'ShowerNIZR' },
+  offers: {
+    '@type': 'Offer',
+    priceCurrency: 'EUR',
+    availability: 'https://schema.org/InStock',
   },
 };
 
@@ -135,6 +190,14 @@ export function JsonLd() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(professionalServiceSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchemaMyToolStore) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchemaShowerNIZR) }}
       />
     </>
   );

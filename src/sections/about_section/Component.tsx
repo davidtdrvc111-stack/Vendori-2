@@ -93,12 +93,12 @@ export function AboutSection({ className = '' }: AboutSectionProps) {
             className={cn(
               'inline-flex items-center justify-center gap-2',
               'px-8 py-4',
-              'bg-primary-600 text-white',
+              'bg-primary-700 text-white',
               'font-semibold rounded-xl',
               'transition-all duration-200',
-              'hover:bg-primary-700 hover:scale-105',
-              'shadow-lg shadow-primary-600/20',
-              'focus:outline-none focus:ring-2 focus:ring-primary-600 focus:ring-offset-2'
+              'hover:bg-primary-800 hover:scale-105',
+              'shadow-lg shadow-primary-700/20',
+              'focus:outline-none focus:ring-2 focus:ring-primary-700 focus:ring-offset-2'
             )}
           >
             <span>Unsere ganze Geschichte</span>

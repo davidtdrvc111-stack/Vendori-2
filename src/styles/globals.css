@@ -3,38 +3,12 @@
 @tailwind utilities;
 
 /* ========================================
-   FONT HIERARCHY - VENDORi GmbH
+   FONTS werden via Next.js localFont geladen
+   Siehe: src/app/layout.tsx
    ======================================== */
 
-/* Geist Mono - Variable Font (Headlines h1, h2) */
-/* Tech-forward, distinctive, unexpected for B2B */
-@font-face {
-  font-family: 'Geist Mono';
-  src: url('/fonts/GeistMonoVF.woff2') format('woff2-variations');
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: swap;
-}
-
-/* Plus Jakarta Sans - Variable Font (Sub-Headers & Body) */
-/* Professional, clean, readable */
-@font-face {
-  font-family: 'Plus Jakarta Sans';
-  src: url('/fonts/PlusJakartaSans-Variable.woff2') format('woff2-variations');
-  font-weight: 200 800;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Plus Jakarta Sans';
-  src: url('/fonts/PlusJakartaSans-VariableItalic.woff2') format('woff2-variations');
-  font-weight: 200 800;
-  font-style: italic;
-  font-display: swap;
-}
-
 @layer base {
+  /* Kritische Base Styles - minimal halten */
   html {
     scroll-behavior: smooth;
   }
@@ -45,6 +19,7 @@
 }
 
 @layer utilities {
+  /* Custom Utilities */
   .text-balance {
     text-wrap: balance;
   }

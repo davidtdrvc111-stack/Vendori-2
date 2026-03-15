@@ -23,7 +23,7 @@ export function AboutFullSection({ className = '' }: AboutFullSectionProps) {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero Section - Two Column Layout */}
         <div className="max-w-6xl mx-auto mb-24 md:mb-28 lg:mb-32">
-          <h2
+          <h1
             className={cn(
               'text-3xl md:text-4xl lg:text-5xl font-bold text-center',
               'text-neutral-900 dark:text-white',
@@ -32,7 +32,7 @@ export function AboutFullSection({ className = '' }: AboutFullSectionProps) {
             )}
           >
             Aus Sellern wurden Partner.
-          </h2>
+          </h1>
 
           <div className="grid md:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
             {/* Left Column - Content (50%) */}
@@ -85,7 +85,7 @@ export function AboutFullSection({ className = '' }: AboutFullSectionProps) {
 
         {/* Values Section */}
         <div className="mb-16 md:mb-20">
-          <h3
+          <h2
             className={cn(
               'text-2xl md:text-3xl lg:text-4xl font-bold text-center',
               'text-neutral-900 dark:text-white',
@@ -94,7 +94,7 @@ export function AboutFullSection({ className = '' }: AboutFullSectionProps) {
             )}
           >
             Was uns antreibt
-          </h3>
+          </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
             {/* Value 1 */}
@@ -132,7 +132,7 @@ export function AboutFullSection({ className = '' }: AboutFullSectionProps) {
                 </div>
               </div>
 
-              <h4
+              <h3
                 className={cn(
                   'text-xl md:text-2xl font-bold',
                   'text-white',
@@ -141,7 +141,7 @@ export function AboutFullSection({ className = '' }: AboutFullSectionProps) {
                 )}
               >
                 Geschwindigkeit
-              </h4>
+              </h3>
 
               <p className="text-sm md:text-base text-neutral-300 leading-relaxed">
                 Während andere noch im Meeting sitzen, haben wir bereits getestet, optimiert und skaliert. Im E-Commerce entscheiden Wochen – nicht Quartale.
@@ -183,7 +183,7 @@ export function AboutFullSection({ className = '' }: AboutFullSectionProps) {
                 </div>
               </div>
 
-              <h4
+              <h3
                 className={cn(
                   'text-xl md:text-2xl font-bold',
                   'text-white',
@@ -192,7 +192,7 @@ export function AboutFullSection({ className = '' }: AboutFullSectionProps) {
                 )}
               >
                 Fokus
-              </h4>
+              </h3>
 
               <p className="text-sm md:text-base text-neutral-300 leading-relaxed">
                 Unser einziger KPI ist Ihr Umsatz. Keine schönen Reports, keine Aktivitäts-Metriken. Wenn Ihre Zahlen nicht wachsen, haben wir versagt.
@@ -234,7 +234,7 @@ export function AboutFullSection({ className = '' }: AboutFullSectionProps) {
                 </div>
               </div>
 
-              <h4
+              <h3
                 className={cn(
                   'text-xl md:text-2xl font-bold',
                   'text-white',
@@ -243,7 +243,7 @@ export function AboutFullSection({ className = '' }: AboutFullSectionProps) {
                 )}
               >
                 Partnerschaft
-              </h4>
+              </h3>
 
               <p className="text-sm md:text-base text-neutral-300 leading-relaxed">
                 Wir denken in Ihrem Business, nicht in Stundensätzen. Was gut für Ihren Umsatz ist, ist gut für uns – das ist die einzige Partnerschaft, die zählt.
@@ -259,11 +259,11 @@ export function AboutFullSection({ className = '' }: AboutFullSectionProps) {
             className={cn(
               'inline-flex items-center justify-center gap-2',
               'px-8 py-4',
-              'bg-primary-600 text-white',
+              'bg-primary-700 text-white',
               'font-semibold rounded-xl',
               'transition-all duration-200',
-              'hover:bg-primary-700 hover:scale-105',
-              'shadow-lg shadow-primary-600/20'
+              'hover:bg-primary-800 hover:scale-105',
+              'shadow-lg shadow-primary-700/20'
             )}
           >
             <span>Kennenlern-Gespräch vereinbaren</span>

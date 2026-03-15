@@ -40,7 +40,7 @@ export const AuroraBackground = ({
 
             /* Einheitliche Farben für alle Breakpoints - Titanium Edge Industrial Gradient */
             [--aurora:repeating-linear-gradient(100deg,var(--aurora-steel-blue)_10%,var(--aurora-warm-bronze)_15%,var(--aurora-deep-slate)_20%,var(--aurora-copper-glow)_25%,var(--aurora-charcoal)_30%)]
-            blur-[10px] opacity-50
+            blur-[8px] opacity-50
             [--aurora-speed:32s] md:[--aurora-speed:60s]
 
             [background-image:var(--dark-gradient),var(--aurora)]
@@ -59,6 +59,8 @@ export const AuroraBackground = ({
           style={{
             animationDuration: prefersReducedMotion ? '0s' : 'var(--aurora-speed)',
             animation: prefersReducedMotion ? 'none' : undefined,
+            willChange: prefersReducedMotion ? 'auto' : 'transform',
+            filter: prefersReducedMotion ? 'blur(5px)' : 'blur(8px)',
           } as React.CSSProperties}
         ></div>
         {/* Soft transition fade at the bottom */}

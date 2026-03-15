@@ -28,7 +28,6 @@ export default function AboutPage() {
       <BreadcrumbJsonLd items={[{ name: 'Über uns', url: 'https://vendori.eu/ueber-uns' }]} />
       <StickyHeader />
       <Breadcrumb items={[{ label: 'Über uns' }]} />
-      <h1 className="sr-only">Über VENDORi GmbH — Aus Sellern wurden Partner</h1>
       <AboutFullSection />
       <ContactSection />
       <FooterSection />

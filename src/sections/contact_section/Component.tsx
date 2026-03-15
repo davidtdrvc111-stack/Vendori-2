@@ -399,14 +399,14 @@ ${sanitizedData.message}`;
                 className={cn(
                   'w-full md:w-auto md:min-w-[200px]',
                   'px-8 py-4',
-                  'bg-primary-600 hover:bg-primary-700',
+                  'bg-primary-700 hover:bg-primary-800',
                   'text-white font-semibold',
                   'rounded-xl',
                   'transition-all duration-200',
                   'flex items-center justify-center gap-2',
                   'disabled:opacity-50 disabled:cursor-not-allowed',
                   'text-base md:text-lg',
-                  'ring-2 ring-primary-600/50 hover:ring-primary-500'
+                  'ring-2 ring-primary-700/50 hover:ring-primary-600'
                 )}
               >
                 {status === 'loading' ? (

@@ -175,7 +175,7 @@ export function StickyHeader({ className = '' }: StickyHeaderProps) {
               href="/#contact"
               className={`
                 hidden md:flex px-6 py-2.5 rounded-lg font-medium transition-all duration-300
-                bg-primary-600 text-white hover:bg-primary-700
+                bg-primary-700 text-white hover:bg-primary-800
                 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2
                 ${isDarkText ? 'shadow-md' : ''}
               `}
@@ -187,7 +187,12 @@ export function StickyHeader({ className = '' }: StickyHeaderProps) {
 
         {/* Mobile Navigation Menu */}
         {isMobileMenuOpen && (
-          <nav id="mobile-menu" aria-label="Mobile Navigation" className="py-4 transition-colors duration-300">
+          <nav
+            id="mobile-menu"
+            aria-label="Mobile Navigation"
+            role="navigation"
+            className="py-4 transition-colors duration-300"
+          >
             {navigationItems.map((item, index) => (
               <Link
                 key={item.href}
@@ -213,7 +218,7 @@ export function StickyHeader({ className = '' }: StickyHeaderProps) {
               onClick={() => setIsMobileMenuOpen(false)}
               className="
                 block mt-4 py-3 px-4 text-center rounded-lg font-medium transition-all duration-300 md:hidden
-                bg-primary-600 text-white hover:bg-primary-700
+                bg-primary-700 text-white hover:bg-primary-800
               "
             >
               Kontakt aufnehmen

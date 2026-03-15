@@ -65,6 +65,23 @@ export default function RootLayout({
 }) {
   return (
     <html lang="de" suppressHydrationWarning>
+      <head>
+        {/* Preload kritische Font-Dateien für bessere Performance */}
+        <link
+          rel="preload"
+          href="/fonts/GeistMonoVF.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/PlusJakartaSans-Variable.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+      </head>
       <body className={`${plusJakartaSans.className} ${plusJakartaSans.variable} ${geistMono.variable}`}>
         {/* Skip Link für Tastaturnavigation */}
         <a

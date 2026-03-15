@@ -242,12 +242,12 @@ export function CookieSettingsModal({ isOpen, onClose }: CookieSettingsModalProp
                     onClick={handleSavePreferences}
                     className="
                       flex-1 px-8 py-3 min-h-[44px]
-                      bg-purple-600 text-white font-semibold rounded-lg
+                      bg-primary-700 text-white font-semibold rounded-lg
                       transition-colors shadow-lg
-                      hover:bg-purple-700
-                      dark:bg-purple-600 dark:hover:bg-purple-700
+                      hover:bg-primary-800
+                      dark:bg-primary-700 dark:hover:bg-primary-800
                       border-2 border-transparent
-                      focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2
+                      focus:outline-none focus:ring-2 focus:ring-primary-700 focus:ring-offset-2
                     "
                   >
                     Einstellungen speichern
@@ -256,11 +256,11 @@ export function CookieSettingsModal({ isOpen, onClose }: CookieSettingsModalProp
                     onClick={handleAcceptAll}
                     className="
                       flex-1 px-8 py-3 min-h-[44px]
-                      bg-transparent text-purple-600 dark:text-purple-400 font-semibold rounded-lg
+                      bg-transparent text-primary-700 dark:text-primary-400 font-semibold rounded-lg
                       transition-colors
-                      border-2 border-purple-500 dark:border-purple-400
-                      hover:bg-purple-50 dark:hover:bg-purple-950/20
-                      focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2
+                      border-2 border-primary-500 dark:border-primary-400
+                      hover:bg-primary-50 dark:hover:bg-primary-950/20
+                      focus:outline-none focus:ring-2 focus:ring-primary-600 focus:ring-offset-2
                     "
                   >
                     Alle akzeptieren

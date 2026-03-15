@@ -4,6 +4,7 @@ import React from 'react';
 import { StickyHeader } from '@/sections/sticky_header';
 import { FooterSection } from '@/sections/footer_section';
 import { Breadcrumb } from '@/components/ui/Breadcrumb';
+import { BreadcrumbJsonLd } from '@/components/seo/JsonLd';
 import { motion, useScroll, useSpring } from 'framer-motion';
 
 export function DatenschutzContent() {
@@ -387,6 +388,7 @@ https://help.instagram.com/519522125107875`;
             </div>
 
             <StickyHeader />
+            <BreadcrumbJsonLd items={[{ name: 'Datenschutz', url: 'https://vendori.eu/datenschutz' }]} />
             <Breadcrumb items={[{ label: 'Datenschutzerklärung' }]} />
 
             <div className="relative pt-32 pb-32">
@@ -452,7 +454,7 @@ https://help.instagram.com/519522125107875`;
                         <div className="flex flex-col sm:flex-row gap-4">
                             <a
                                 href="mailto:info@vendori.eu"
-                                className="px-8 py-4 bg-primary-600 hover:bg-primary-700 text-white rounded-2xl font-black text-sm transition-all hover:scale-105 shadow-xl shadow-primary-600/20 active:scale-95 whitespace-nowrap"
+                                className="px-8 py-4 bg-primary-700 hover:bg-primary-800 text-white rounded-2xl font-black text-sm transition-all hover:scale-105 shadow-xl shadow-primary-700/20 active:scale-95 whitespace-nowrap"
                             >
                                 Jetzt Kontaktieren
                             </a>

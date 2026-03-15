@@ -1,12 +1,38 @@
+import dynamic from 'next/dynamic';
 import type { Metadata } from 'next';
 import { JsonLd } from '@/components/seo/JsonLd';
-import { StickyHeader } from '@/sections/sticky_header';
-import { HeroSection } from '@/sections/hero_section';
-import { ServicesSection } from '@/sections/services_section';
-import { ShopShowcaseSection } from '@/sections/shop_showcase_section';
-import { AboutSection } from '@/sections/about_section';
-import { ContactSection } from '@/sections/contact_section';
-import { FooterSection } from '@/sections/footer_section';
+import { StickyHeader } from '@/sections/sticky_header';  // Nicht lazy
+
+// Dynamic Imports für below-fold
+const HeroSection = dynamic(() =>
+  import('@/sections/hero_section').then(mod => ({ default: mod.HeroSection })),
+  { loading: () => <div className="h-screen bg-zinc-900" /> }
+);
+
+const ServicesSection = dynamic(() =>
+  import('@/sections/services_section').then(mod => ({ default: mod.ServicesSection })),
+  { loading: () => <div className="min-h-screen bg-zinc-900" /> }
+);
+
+const ShopShowcaseSection = dynamic(() =>
+  import('@/sections/shop_showcase_section').then(mod => ({ default: mod.ShopShowcaseSection })),
+  { loading: () => <div className="min-h-screen bg-stone-100 dark:bg-neutral-900" /> }
+);
+
+const AboutSection = dynamic(() =>
+  import('@/sections/about_section').then(mod => ({ default: mod.AboutSection })),
+  { loading: () => <div className="min-h-screen bg-stone-300 dark:bg-neutral-800" /> }
+);
+
+const ContactSection = dynamic(() =>
+  import('@/sections/contact_section').then(mod => ({ default: mod.ContactSection })),
+  { loading: () => <div className="min-h-screen bg-zinc-900" /> }
+);
+
+const FooterSection = dynamic(() =>
+  import('@/sections/footer_section').then(mod => ({ default: mod.FooterSection })),
+  { loading: () => <div className="bg-zinc-900" /> }
+);
 
 export const metadata: Metadata = {
   title: 'E-Commerce Wachstum aus der Praxis',
@@ -48,6 +74,62 @@ const faqSchema = {
       acceptedAnswer: {
         '@type': 'Answer',
         text: 'VENDORi ist in 20+ europäischen Ländern aktiv, unter anderem in Deutschland, Frankreich, den Niederlanden, Österreich und Belgien. Unsere eigenen Shops beliefern Kunden in ganz Europa über Online-Shops und internationale Marktplätze.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Welche Services bietet VENDORi konkret an?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'VENDORi bietet drei Hauptservices: 1) D2C-Strategie & Umsatzwachstum mit praxiserprobten Strategien, 2) Internationale Marktplatz-Expansion auf Amazon in 20+ Ländern, 3) E-Commerce Partnerschaft mit operativer Begleitung.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Wie schnell kann ich mit VENDORi starten?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Nach einem kostenlosen Kennenlern-Gespräch können wir innerhalb von 2-3 Wochen starten. Keine monatelangen Strategiephasen.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Was kostet die Zusammenarbeit mit VENDORi?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Die Kosten richten sich nach Ihrem individuellen Bedarf. Wir arbeiten projektbasiert oder im Retainer-Modell. Im Erstgespräch erstellen wir ein transparentes Angebot.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Auf welchen Marktplätzen ist VENDORi aktiv?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Hauptsächlich Amazon (alle EU-Marktplätze), aber auch eBay, Kaufland, Otto und internationale Plattformen. Unsere Shops bedienen 20+ europäische Länder.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Wie lange dauert es bis erste Ergebnisse sichtbar sind?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Erste Tests starten in Woche 1-2. Messbare Umsatzsteigerungen nach 4-8 Wochen. Wir arbeiten agil mit schnellen Iterationen.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Welche Branchen betreut VENDORi?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Branchenübergreifend mit B2B und D2C-Marken. Besonders stark in technischen Produkten, Werkzeugen, Home & Living. Entscheidend ist das Skalierungspotenzial.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Brauche ich eigene E-Commerce-Erfahrung?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Nein. Wir bringen das komplette Know-how mit und übernehmen operative Tasks. Sie konzentrieren sich auf Ihr Kerngeschäft.',
       },
     },
   ],
