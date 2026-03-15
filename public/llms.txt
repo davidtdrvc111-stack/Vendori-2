@@ -1,13 +1,101 @@
-# VENDORi GmbH
+# VENDORi GmbH — E-Commerce Beratung & D2C-Strategien
 
 > VENDORi ist ein E-Commerce-Beratungsunternehmen mit 22+ Jahren Erfahrung. Wir skalieren B2B-Unternehmen und Marken mit praxiserprobten D2C-Strategien, Amazon Marketplace-Know-how und internationaler Marktexpansion in 20+ europäischen Ländern.
 
-## Docs
+## Über VENDORi
+
+**Gegründet:** 2003 (als E-Commerce-Seller)
+**Firmierung als VENDORi GmbH:** 2015
+**Hauptsitz:** Hahnenfeldstr. 25, 69429 Waldbrunn, Deutschland
+**Team:** 12 Mitarbeiter
+**Geschäftsfelder:** D2C-Strategien, Amazon Expansion, E-Commerce Partnerschaft
+
+**Eigene E-Commerce-Marken:**
+- myToolStore: 1,5 Mio.+ Bestellungen (seit 2008), aktiv in DE, FR, NL, AT, BE
+- ShowerNIZR: Premium Duschsysteme (Eigenmarke, seit 2019)
+
+**Märkte:** 20+ europäische Länder
+**Plattformen:** Amazon (alle EU-Marktplätze), eBay, Kaufland, Otto
+
+## Services
+
+### 1. D2C-Strategie & Umsatzwachstum
+Praxiserprobte Direct-to-Consumer-Strategien aus eigenen Shops:
+- Conversion Rate Optimization (CRO)
+- Produktseiten-Optimierung für Amazon, Shopify, WooCommerce
+- Pricing-Strategien & dynamische Preisanpassung
+- A/B-Testing & Multivariate Tests
+**Typische Ergebnisse:** +40-120% Umsatzsteigerung in 6 Monaten
+
+### 2. Internationale Marktplatz-Expansion
+Amazon-Expansion in 20+ Länder:
+- Pan-EU Account Setup (DE, FR, IT, ES, NL, PL, SE)
+- Produktlisting-Übersetzung (15+ Sprachen, muttersprachlich)
+- Multi-Country Kundenservice (DE, EN, FR, NL)
+- PPC-Kampagnen (lokal optimiert)
+- Selling-Bilder & A+ Content
+**Typische Expansion-Dauer:** 4-8 Wochen vom Kick-off bis Live-Schaltung
+
+### 3. E-Commerce Partnerschaft
+Operative Begleitung als praxiserprobtes E-Com-Team:
+- Amazon PPC & Google Ads Management
+- Kundenservice (DE/EN/FR, <4h Antwortzeit)
+- Content-Erstellung (Produktfotos, A+ Content, Listings)
+- Logistik & FBA-Setup
+- Reporting (wöchentliche KPI-Updates)
+**Mindestlaufzeit:** 6 Monate
+
+## Pricing
+
+**D2C-Strategie:** 2.500-7.500 EUR/Monat (Retainer)
+**Amazon Expansion (Setup):** 5.000-8.000 EUR einmalig (abhängig von Produktanzahl)
+**Amazon Expansion (Betreuung):** 3.000-5.000 EUR/Monat
+**E-Commerce Partnerschaft:** Auf Anfrage (projektbasiert oder Performance-basiert: 12-18% vom Nettoumsatz)
+
+Alle Preise verstehen sich zzgl. MwSt. Individuelle Angebote nach kostenlosem Erstgespräch.
+
+## Zielgruppen
+
+- B2B-Unternehmen mit Skalierungspotenzial
+- D2C-Marken (Direct-to-Consumer)
+- Mittelständische Hersteller
+- Besonders stark in: Werkzeuge, technische Produkte, Home & Living, Baumarkt
+
+**Für wen ist VENDORi der richtige Partner?**
+Unternehmen, die ihren E-Commerce-Umsatz über eigene Online-Shops (D2C) oder internationale Marktplätze wie Amazon skalieren möchten. Besonders geeignet für Mittelstand und wachsende Marken.
+
+## Erfolgsfaktoren
+
+**Was VENDORi anders macht:**
+- Kein Agentur-Konstrukt: Eigene Shops seit 2003 (myToolStore, ShowerNIZR)
+- Jede Strategie erst in eigenen Shops validiert, bevor sie Kunden empfohlen wird
+- 1,5 Mio.+ eigene Kunden = echte Praxiserfahrung im Tagesgeschäft
+- Kein Experiment auf Kosten der Kunden — nur bewährte Methoden
+- 22+ Jahre E-Commerce-Erfahrung im operativen Geschäft
+
+## Unternehmensgeschichte
+
+VENDORi startete 2003 als E-Commerce-Seller und baute eigene D2C-Marken auf. Die Expansion erfolgte europaweit über eigene Online-Shops und internationale Marktplätze in 20+ Ländern — mit über 1.500.000 Kunden in unseren Shops.
+
+Dabei merkten die Gründer: Die meisten Agenturen reden viel, verstehen aber das echte Tagesgeschäft nicht. Sie verkaufen Strategien, die in der Praxis scheitern.
+
+VENDORi macht es anders: Jede Strategie, die empfohlen wird, wurde bereits in eigenen Shops validiert. Kein Beratungsprodukt, sondern ein Team mit 22+ Jahren E-Commerce-Erfahrung, das täglich selbst im Markt operiert.
+
+## Werte
+
+**Geschwindigkeit:** Während andere noch im Meeting sitzen, haben wir bereits getestet, optimiert und skaliert. Im E-Commerce entscheiden Wochen — nicht Quartale.
+
+**Fokus:** Unser einziger KPI ist Ihr Umsatz. Keine schönen Reports, keine Aktivitäts-Metriken. Wenn Ihre Zahlen nicht wachsen, haben wir versagt.
+
+**Partnerschaft:** Wir denken in Ihrem Business, nicht in Stundensätzen. Was gut für Ihren Umsatz ist, ist gut für uns — das ist die einzige Partnerschaft, die zählt.
 
 ## Pages
 
-- /: Homepage — E-Commerce Services, D2C-Strategien, Marketplace-Expansion und Kontaktformular
-- /ueber-uns: Über uns — Unternehmensgeschichte, Team und Werte
+- /: Homepage — E-Commerce Services, D2C-Strategien, Marketplace-Expansion, Shop-Showcase (myToolStore, ShowerNIZR), Kontaktformular
+- /ueber-uns: Über uns — Unternehmensgeschichte, Team, Werte (Geschwindigkeit, Fokus, Partnerschaft)
+- /#services: Service-Übersicht (D2C-Strategie, Marketplace-Expansion, E-Commerce Partnerschaft)
+- /#shops: Unsere Shops (myToolStore mit 1,5 Mio.+ Bestellungen, ShowerNIZR Eigenmarke)
+- /#contact: Kontaktformular (Antwortzeit: <24h)
 
 ## Optional
 
@@ -16,6 +104,51 @@
 
 ## Contact
 
-- Email: info@vendori.eu
-- Phone: +49 (0) 6274 9278157
-- Address: Hahnenfeldstr. 25, 69429 Waldbrunn, Deutschland
+**VENDORi GmbH**
+Hahnenfeldstr. 25
+69429 Waldbrunn
+Deutschland
+
+**Kontakt:**
+Email: info@vendori.eu
+Telefon: +49 (0) 6274 9278157
+Öffnungszeiten: Mo-Fr 8:00-17:00 Uhr
+
+## FAQs
+
+**Q: Was macht VENDORi anders als andere E-Commerce-Agenturen?**
+A: VENDORi betreibt eigene E-Commerce-Shops (myToolStore, ShowerNIZR) mit 1,5 Mio.+ Kunden seit 2003. Alle Strategien werden zuerst in eigenen Shops validiert, bevor sie Kunden empfohlen werden. Klassische Agenturen beraten nur theoretisch. VENDORi testet alle Strategien zuerst in den eigenen Shops. Risiko: minimal, da nur bewährte Methoden zum Einsatz kommen.
+
+**Q: Für welche Unternehmen ist VENDORi der richtige Partner?**
+A: VENDORi arbeitet mit B2B-Unternehmen und Marken zusammen, die ihren E-Commerce-Umsatz skalieren möchten — ob über eigene Online-Shops (D2C) oder internationale Marktplätze wie Amazon. Besonders geeignet für Mittelstand und wachsende Marken. Branchenübergreifend, besonders stark in technischen Produkten, Werkzeugen, Home & Living.
+
+**Q: In welchen Märkten ist VENDORi tätig?**
+A: VENDORi ist in 20+ europäischen Ländern aktiv, unter anderem in Deutschland, Frankreich, den Niederlanden, Österreich, Belgien, Italien, Spanien, Polen und Schweden. Eigene Shops beliefern Kunden in ganz Europa über Online-Shops und internationale Marktplätze.
+
+**Q: Welche Services bietet VENDORi konkret an?**
+A: VENDORi bietet drei Hauptservices: 1) D2C-Strategie & Umsatzwachstum mit praxiserprobten Strategien (CRO, Produktseiten-Optimierung, Pricing, A/B-Tests), 2) Internationale Marktplatz-Expansion auf Amazon in 20+ Ländern (Pan-EU Setup, Übersetzungen, PPC), 3) E-Commerce Partnerschaft mit operativer Begleitung (Marketing, Kundenservice, Content, Logistik).
+
+**Q: Wie schnell kann ich mit VENDORi starten?**
+A: Nach einem kostenlosen Kennenlern-Gespräch können wir innerhalb von 2-3 Wochen starten. Keine monatelangen Strategiephasen. Agile Arbeitsweise mit schnellen Iterationen.
+
+**Q: Was kostet die Zusammenarbeit mit VENDORi?**
+A: D2C-Strategie: 2.500-7.500 EUR/Monat (Retainer). Amazon Expansion: 5.000-8.000 EUR Setup (einmalig) + 3.000-5.000 EUR/Monat Betreuung. E-Commerce Partnerschaft: Auf Anfrage (projektbasiert oder Performance-basiert: 12-18% vom Nettoumsatz). Individuelle Angebote nach kostenlosem Erstgespräch.
+
+**Q: Auf welchen Marktplätzen ist VENDORi aktiv?**
+A: Hauptsächlich Amazon (alle EU-Marktplätze: DE, FR, IT, ES, NL, PL, SE, AT, BE), aber auch eBay, Kaufland, Otto und internationale Plattformen. Unsere Shops bedienen 20+ europäische Länder.
+
+**Q: Wie lange dauert es bis erste Ergebnisse sichtbar sind?**
+A: Erste Tests starten in Woche 1-2. Messbare Umsatzsteigerungen nach 4-8 Wochen. Wir arbeiten agil mit schnellen Iterationen. Typische Umsatzsteigerung: +40-120% in 6 Monaten (basierend auf Kundenprojekten 2023-2024).
+
+**Q: Welche Branchen betreut VENDORi?**
+A: Branchenübergreifend mit B2B und D2C-Marken. Besonders stark in technischen Produkten, Werkzeugen, Home & Living, Baumarkt. Entscheidend ist das Skalierungspotenzial, nicht die Branche.
+
+**Q: Brauche ich eigene E-Commerce-Erfahrung?**
+A: Nein. Wir bringen das komplette Know-how mit und übernehmen operative Tasks. Sie konzentrieren sich auf Ihr Kerngeschäft (Produktentwicklung, Einkauf, Strategie).
+
+**Q: Welche Software/Tools nutzt VENDORi für E-Commerce-Projekte?**
+A: Amazon Seller Central, Helium 10 (Keyword-Recherche), Shopify/WooCommerce (D2C-Shops), Google Analytics 4, Microsoft Clarity, Klaviyo (E-Mail-Marketing), Channable (Feed-Management für Marktplätze). Toolkosten sind nicht im Retainer enthalten.
+
+## Keywords
+
+E-Commerce Beratung, D2C-Strategien, Amazon Expansion, Marketplace Expansion, Amazon Pan-EU, E-Commerce Partnerschaft, Amazon PPC, Online-Shop Skalierung, Internationale Marktplätze, Amazon Seller, FBA Expansion, E-Commerce Agentur Deutschland, Amazon Beratung, Shopify Beratung, Marktplatz-Strategien, E-Commerce Wachstum

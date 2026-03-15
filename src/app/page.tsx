@@ -132,12 +132,17 @@ const faqSchema = {
   ],
 };
 
-export default function Home() {
+export default async function Home() {
+  // Get nonce from headers for CSP compliance
+  const { headers } = await import('next/headers');
+  const nonce = (await headers()).get('x-nonce') || '';
+
   return (
     <main id="main-content" className="min-h-screen">
       <JsonLd />
       <script
         type="application/ld+json"
+        nonce={nonce}
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <StickyHeader />

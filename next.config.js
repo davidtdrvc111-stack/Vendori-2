@@ -79,58 +79,12 @@ const nextConfig = {
   },
 
   // Security headers
-  async headers() {
-    return [
-      {
-        source: '/:path*',
-        headers: [
-          {
-            key: 'X-DNS-Prefetch-Control',
-            value: 'on'
-          },
-          {
-            key: 'Strict-Transport-Security',
-            value: 'max-age=63072000; includeSubDomains; preload'
-          },
-          {
-            key: 'X-Frame-Options',
-            value: 'SAMEORIGIN'
-          },
-          {
-            key: 'X-Content-Type-Options',
-            value: 'nosniff'
-          },
-          {
-            key: 'X-XSS-Protection',
-            value: '1; mode=block'
-          },
-          {
-            key: 'Referrer-Policy',
-            value: 'strict-origin-when-cross-origin'
-          },
-          {
-            key: 'Permissions-Policy',
-            value: 'camera=(), microphone=(), geolocation=()'
-          },
-          {
-            key: 'Content-Security-Policy',
-            value: [
-              "default-src 'self'",
-              "script-src 'self' 'unsafe-inline' 'unsafe-eval'",
-              "style-src 'self' 'unsafe-inline'",
-              "img-src 'self' data: blob:",
-              "font-src 'self'",
-              "connect-src 'self'",
-              "frame-src 'none'",
-              "object-src 'none'",
-              "base-uri 'self'",
-              "form-action 'self' mailto:",
-            ].join('; ')
-          }
-        ],
-      },
-    ]
-  },
+  // NOTE: Security headers (including CSP) are now handled in middleware.ts
+  // This provides better control over nonce generation for CSP compliance
+  // The middleware implements:
+  // - Nonce-based CSP for inline scripts (JSON-LD)
+  // - HSTS, X-Frame-Options, and all OWASP recommended headers
+  // - Modern Cross-Origin policies (COEP, COOP, CORP)
 }
 
 module.exports = nextConfig

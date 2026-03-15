@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { ImpressumContent } from './ImpressumContent';
+import { BreadcrumbJsonLd } from '@/components/seo/JsonLd';
 
 export const metadata: Metadata = {
     title: 'Impressum — Rechtliche Angaben',
@@ -8,6 +9,11 @@ export const metadata: Metadata = {
     alternates: { canonical: 'https://vendori.eu/impressum' },
 };
 
-export default function ImpressumPage() {
-    return <ImpressumContent />;
+export default async function ImpressumPage() {
+    return (
+        <>
+            <BreadcrumbJsonLd items={[{ name: 'Impressum', url: 'https://vendori.eu/impressum' }]} />
+            <ImpressumContent />
+        </>
+    );
 }

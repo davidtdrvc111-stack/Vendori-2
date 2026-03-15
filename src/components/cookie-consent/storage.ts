@@ -51,13 +51,19 @@ export function getConsent(): CookieConsent | null {
       typeof parsed.timestamp !== 'number' ||
       typeof parsed.version !== 'number'
     ) {
-      console.warn('[Cookie Consent] Invalid consent structure in localStorage');
+      // Only log in development to prevent information disclosure
+      if (process.env.NODE_ENV === 'development') {
+        console.warn('[Cookie Consent] Invalid consent structure in localStorage');
+      }
       return null;
     }
 
     return parsed;
   } catch (error) {
-    console.error('[Cookie Consent] Error reading consent from localStorage:', error);
+    // Only log in development to prevent information disclosure
+    if (process.env.NODE_ENV === 'development') {
+      console.error('[Cookie Consent] Error reading consent from localStorage:', error);
+    }
     return null;
   }
 }
@@ -77,7 +83,10 @@ export function setConsent(consent: CookieConsent): void {
     const serialized = JSON.stringify(consent);
     localStorage.setItem(STORAGE_KEY, serialized);
   } catch (error) {
-    console.error('[Cookie Consent] Error saving consent to localStorage:', error);
+    // Only log in development to prevent information disclosure
+    if (process.env.NODE_ENV === 'development') {
+      console.error('[Cookie Consent] Error saving consent to localStorage:', error);
+    }
   }
 }
 
@@ -103,6 +112,9 @@ export function clearConsent(): void {
   try {
     localStorage.removeItem(STORAGE_KEY);
   } catch (error) {
-    console.error('[Cookie Consent] Error clearing consent from localStorage:', error);
+    // Only log in development to prevent information disclosure
+    if (process.env.NODE_ENV === 'development') {
+      console.error('[Cookie Consent] Error clearing consent from localStorage:', error);
+    }
   }
 }

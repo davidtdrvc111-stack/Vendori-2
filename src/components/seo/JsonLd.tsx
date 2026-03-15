@@ -121,11 +121,8 @@ const professionalServiceSchema = {
           name: 'E-Commerce Partnerschaft',
           description: 'Operative Begleitung auf Augenhöhe — kein Agentur-Experiment, sondern echte Partnerschaft.',
         },
-        priceSpecification: {
-          '@type': 'PriceSpecification',
-          priceCurrency: 'EUR',
-          price: 'Auf Anfrage',
-        },
+        // Note: No priceSpecification for "on request" pricing (per Schema.org spec)
+        availability: 'https://schema.org/InStock',
       },
     ],
   },
@@ -148,7 +145,7 @@ const productSchemaMyToolStore = {
     '@type': 'AggregateOffer',
     priceCurrency: 'EUR',
     availability: 'https://schema.org/InStock',
-    offerCount: '10000+',
+    offerCount: 10000,
   },
   aggregateRating: {
     '@type': 'AggregateRating',
@@ -172,31 +169,41 @@ const productSchemaShowerNIZR = {
   },
 };
 
-export function JsonLd() {
+export async function JsonLd() {
+  // Get nonce from headers for CSP compliance
+  const { headers } = await import('next/headers');
+  const nonce = (await headers()).get('x-nonce') || '';
+
   return (
     <>
       <script
         type="application/ld+json"
+        nonce={nonce}
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
       />
       <script
         type="application/ld+json"
+        nonce={nonce}
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
       />
       <script
         type="application/ld+json"
+        nonce={nonce}
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
       />
       <script
         type="application/ld+json"
+        nonce={nonce}
         dangerouslySetInnerHTML={{ __html: JSON.stringify(professionalServiceSchema) }}
       />
       <script
         type="application/ld+json"
+        nonce={nonce}
         dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchemaMyToolStore) }}
       />
       <script
         type="application/ld+json"
+        nonce={nonce}
         dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchemaShowerNIZR) }}
       />
     </>
@@ -204,7 +211,11 @@ export function JsonLd() {
 }
 
 // Wiederverwendbare BreadcrumbList-Komponente für Unterseiten
-export function BreadcrumbJsonLd({ items }: { items: { name: string; url: string }[] }) {
+export async function BreadcrumbJsonLd({ items }: { items: { name: string; url: string }[] }) {
+  // Get nonce from headers for CSP compliance
+  const { headers } = await import('next/headers');
+  const nonce = (await headers()).get('x-nonce') || '';
+
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -227,6 +238,7 @@ export function BreadcrumbJsonLd({ items }: { items: { name: string; url: string
   return (
     <script
       type="application/ld+json"
+      nonce={nonce}
       dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
     />
   );

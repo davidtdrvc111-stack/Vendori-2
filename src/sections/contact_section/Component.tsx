@@ -95,6 +95,7 @@ export function ContactSection({ className = '' }: ContactSectionProps) {
   const [status, setStatus] = useState<FormStatus>('idle');
   const [touched, setTouched] = useState<Set<keyof FormData>>(new Set());
   const [honeypot, setHoneypot] = useState(''); // Bot-Schutz
+  const [lastSubmission, setLastSubmission] = useState<number>(0); // Rate limiting
 
   const handleChange = (name: keyof FormData, value: string | boolean) => {
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -139,6 +140,16 @@ export function ContactSection({ className = '' }: ContactSectionProps) {
       new Set(['firstName', 'lastName', 'email', 'message', 'privacyAccepted'])
     );
 
+    // Rate limiting check (5 seconds between submissions)
+    const now = Date.now();
+    const RATE_LIMIT_MS = 5000;
+    if (now - lastSubmission < RATE_LIMIT_MS) {
+      setErrors({
+        general: 'Bitte warten Sie 5 Sekunden zwischen Anfragen.'
+      });
+      return;
+    }
+
     // Client-side validation
     const validationErrors = validateForm(formData);
     if (Object.keys(validationErrors).length > 0) {
@@ -146,11 +157,13 @@ export function ContactSection({ className = '' }: ContactSectionProps) {
       return;
     }
 
-    // Honeypot check (silent fail)
+    // Honeypot check (silent fail - no logging to avoid revealing bot detection mechanism)
     if (honeypot.trim() !== '') {
-      console.log('Bot detected');
       return;
     }
+
+    // Update last submission timestamp
+    setLastSubmission(now);
 
     setStatus('loading');
 
@@ -162,6 +175,9 @@ export function ContactSection({ className = '' }: ContactSectionProps) {
       message: sanitizeInput(formData.message),
     };
 
+    // Get contact email from environment variable (fallback to default)
+    const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'info@vendori.eu';
+
     // Create mailto link with pre-filled data
     const subject = `Kontaktanfrage von ${sanitizedData.firstName} ${sanitizedData.lastName}`;
     const body = `Name: ${sanitizedData.firstName} ${sanitizedData.lastName}
@@ -171,7 +187,7 @@ Nachricht:
 ${sanitizedData.message}`;
 
     // Open email client
-    window.location.href = `mailto:info@vendori.eu?subject=${encodeURIComponent(
+    window.location.href = `mailto:${contactEmail}?subject=${encodeURIComponent(
       subject
     )}&body=${encodeURIComponent(body)}`;
 
@@ -251,6 +267,30 @@ ${sanitizedData.message}`;
             </div>
           )}
 
+          {/* General Error Message (e.g., rate limiting) */}
+          {errors.general && (
+            <div
+              role="alert"
+              aria-live="polite"
+              aria-atomic="true"
+              className={cn(
+                'p-6 rounded-lg mb-6',
+                'bg-error-500/10 border border-error-500/20',
+                'flex items-start gap-3'
+              )}
+            >
+              <AlertCircle className="w-6 h-6 text-error-500 flex-shrink-0" aria-hidden="true" />
+              <div>
+                <h3 className="font-semibold text-error-500 mb-1">
+                  Fehler
+                </h3>
+                <p className="text-sm text-error-600 dark:text-error-400">
+                  {errors.general}
+                </p>
+              </div>
+            </div>
+          )}
+
           {/* Privacy Notice */}
           <p className="text-sm text-neutral-400 mb-6">
             * Pflichtfeld. Ihre Daten werden ausschließlich zur Bearbeitung
@@ -320,7 +360,7 @@ ${sanitizedData.message}`;
               onChange={(e) => setHoneypot(e.target.value)}
               tabIndex={-1}
               autoComplete="off"
-              style={{ position: 'absolute', left: '-9999px', width: '1px', height: '1px', opacity: 0 }}
+              className="absolute opacity-0 pointer-events-none w-0 h-0"
               aria-hidden="true"
             />
 

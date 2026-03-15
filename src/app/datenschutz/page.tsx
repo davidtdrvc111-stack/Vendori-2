@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { DatenschutzContent } from './DatenschutzContent';
+import { BreadcrumbJsonLd } from '@/components/seo/JsonLd';
 
 export const metadata: Metadata = {
     title: 'Datenschutzerklärung',
@@ -8,6 +9,11 @@ export const metadata: Metadata = {
     alternates: { canonical: 'https://vendori.eu/datenschutz' },
 };
 
-export default function DatenschutzPage() {
-    return <DatenschutzContent />;
+export default async function DatenschutzPage() {
+    return (
+        <>
+            <BreadcrumbJsonLd items={[{ name: 'Datenschutz', url: 'https://vendori.eu/datenschutz' }]} />
+            <DatenschutzContent />
+        </>
+    );
 }

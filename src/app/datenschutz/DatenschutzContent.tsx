@@ -4,7 +4,6 @@ import React, { useEffect } from 'react';
 import { StickyHeader } from '@/sections/sticky_header';
 import { FooterSection } from '@/sections/footer_section';
 import { Breadcrumb } from '@/components/ui/Breadcrumb';
-import { BreadcrumbJsonLd } from '@/components/seo/JsonLd';
 import { motion } from 'framer-motion';
 
 export function DatenschutzContent() {
@@ -395,8 +394,9 @@ https://help.instagram.com/519522125107875`;
             </div>
 
             <StickyHeader />
-            <BreadcrumbJsonLd items={[{ name: 'Datenschutz', url: 'https://vendori.eu/datenschutz' }]} />
-            <Breadcrumb items={[{ label: 'Datenschutzerklärung' }]} />
+            <div className="hidden">
+                <Breadcrumb items={[{ label: 'Datenschutzerklärung' }]} />
+            </div>
 
             <div className="relative pt-32 pb-32">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
