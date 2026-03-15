@@ -30,11 +30,19 @@ export function StickyHeader({ className = '' }: StickyHeaderProps) {
   }));
 
   useEffect(() => {
+    let ticking = false;
+
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setIsScrolled(window.scrollY > 20);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -67,7 +75,7 @@ export function StickyHeader({ className = '' }: StickyHeaderProps) {
         // Header ausfahren, wenn About-Section im oberen Bereich des Viewports ist
         setIsInLightSection(entry.isIntersecting && entry.boundingClientRect.top < 100);
       },
-      { threshold: [0, 0.1, 0.2], rootMargin: '-80px 0px 0px 0px' }
+      { threshold: 0.1, rootMargin: '-80px 0px 0px 0px' }
     );
 
     observer.observe(aboutSection);

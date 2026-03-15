@@ -1,8 +1,14 @@
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
+import dynamic from 'next/dynamic';
 import '@/styles/globals.css';
-import { CookieBanner } from '@/components/cookie-consent';
 import { ThemeProvider } from '@/components/theme-provider';
+
+// Lazy load CookieBanner (includes framer-motion) - not critical for initial render
+const CookieBanner = dynamic(
+  () => import('@/components/cookie-consent').then(mod => ({ default: mod.CookieBanner })),
+  { ssr: false }
+);
 
 // Geist Mono - Headlines (h1, h2) - DSGVO-konform (lokal gehostet)
 const geistMono = localFont({
@@ -66,13 +72,19 @@ export default function RootLayout({
   return (
     <html lang="de" suppressHydrationWarning>
       <head>
-        {/* Preload NUR kritische Above-the-fold Font */}
+        {/* Preload critical above-the-fold assets */}
         <link
           rel="preload"
           href="/fonts/PlusJakartaSans-Variable.woff2"
           as="font"
           type="font/woff2"
           crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/Logo_Vendori_rgb_anthrazit.svg"
+          as="image"
+          type="image/svg+xml"
         />
         {/* GeistMono wird lazy geladen (nur für Sub-Headers below-the-fold) */}
       </head>

@@ -5,7 +5,7 @@
 
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { CookieSettingsModalProps, CookieCategoryInfo } from './types';
 import { CookieToggle } from './CookieToggle';
@@ -68,6 +68,16 @@ export function CookieSettingsModal({ isOpen, onClose }: CookieSettingsModalProp
     }
   }, [isOpen]);
 
+  // Memoize focusable elements to avoid DOM query on every keydown
+  const focusableElements = useMemo(() => {
+    if (!isOpen || !modalRef.current) return [];
+    return Array.from(
+      modalRef.current.querySelectorAll<HTMLElement>(
+        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+      )
+    );
+  }, [isOpen]);
+
   // Handle ESC key + Focus-Trap
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -76,12 +86,9 @@ export function CookieSettingsModal({ isOpen, onClose }: CookieSettingsModalProp
         return;
       }
 
-      if (e.key === 'Tab' && isOpen && modalRef.current) {
-        const focusable = modalRef.current.querySelectorAll<HTMLElement>(
-          'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
-        );
-        const first = focusable[0];
-        const last = focusable[focusable.length - 1];
+      if (e.key === 'Tab' && isOpen && focusableElements.length > 0) {
+        const first = focusableElements[0];
+        const last = focusableElements[focusableElements.length - 1];
 
         if (e.shiftKey) {
           if (document.activeElement === first) {

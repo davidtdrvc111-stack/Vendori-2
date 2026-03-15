@@ -4,16 +4,19 @@ const nextConfig = {
   poweredByHeader: false,
   compress: true,
 
+  // Production optimizations
+  output: 'standalone', // Smaller deployment bundles
+  productionBrowserSourceMaps: false, // No source maps in production
+
   // Performance Optimierung
   experimental: {
-    optimizePackageImports: ['lucide-react'], // Tree-shaking für große Packages
-    // framer-motion entfernt - wird nur on-demand für Cookie-Banner/Impressum geladen
+    optimizePackageImports: ['lucide-react', 'framer-motion'], // Tree-shaking
+    optimizeCss: true, // CSS optimization
   },
 
   // Compiler Optimierung - Moderne Browser nur
   compiler: {
-    // Entfernt console.* in Production (optional)
-    // removeConsole: process.env.NODE_ENV === 'production',
+    removeConsole: process.env.NODE_ENV === 'production', // Remove console.* in production
   },
 
   // SWC Minifier ist bereits Standard in Next.js 14

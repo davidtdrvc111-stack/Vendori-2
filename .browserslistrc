@@ -1,21 +1,17 @@
-# Moderne Browser - keine Legacy-Polyfills
-# Reduziert Bundle-Größe und entfernt unnötige Transforms
+# Nur moderne Browser (2022+) - minimale Polyfills
+# Reduziert Bundle-Größe und entfernt Legacy-Transforms
 
-# Production
-> 0.5%
-last 2 versions
-not dead
+# Chrome/Edge mit ES2022+ Support
+Chrome >= 96
+Edge >= 96
+
+# Safari mit ES2022+ Support
+Safari >= 15
+iOS >= 15
+
+# Firefox mit ES2022+ Support
+Firefox >= 95
+
+# Exclude legacy browsers
 not IE 11
 not op_mini all
-Firefox ESR
-
-# Chrome/Edge mit ES2020+ Support
-Chrome >= 90
-Edge >= 90
-
-# Safari mit ES2020+ Support
-Safari >= 14
-iOS >= 14
-
-# Firefox mit ES2020+ Support
-Firefox >= 88

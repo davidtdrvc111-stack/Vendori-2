@@ -1,19 +1,26 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { StickyHeader } from '@/sections/sticky_header';
 import { FooterSection } from '@/sections/footer_section';
 import { Breadcrumb } from '@/components/ui/Breadcrumb';
 import { BreadcrumbJsonLd } from '@/components/seo/JsonLd';
-import { motion, useScroll, useSpring } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 export function DatenschutzContent() {
-    const { scrollYProgress } = useScroll();
-    const scaleX = useSpring(scrollYProgress, {
-        stiffness: 100,
-        damping: 30,
-        restDelta: 0.001
-    });
+    // Scroll progress with CSS (fallback for older browsers via useEffect)
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = window.scrollY / scrollHeight;
+            document.documentElement.style.setProperty('--scroll-progress', String(progress));
+        };
+
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        handleScroll(); // Initial calculation
+
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
     const content = `Datenschutz
 
@@ -358,10 +365,10 @@ https://help.instagram.com/519522125107875`;
 
     return (
         <main id="main-content" className="min-h-screen bg-slate-50 dark:bg-zinc-950 transition-colors duration-700 font-[family-name:var(--font-inter)] relative scroll-smooth selection:bg-primary-500/30">
-            {/* Reading Progress Indicator */}
-            <motion.div
-                className="fixed top-0 left-0 right-0 h-1.5 bg-primary-600 z-[100] origin-left"
-                style={{ scaleX }}
+            {/* Reading Progress Indicator - CSS-only */}
+            <div
+                className="fixed top-0 left-0 right-0 h-1.5 bg-primary-600 z-[100] origin-left transition-transform duration-100"
+                style={{ transform: `scaleX(var(--scroll-progress, 0))` }}
             />
 
             {/* Premium Background Layer */}
