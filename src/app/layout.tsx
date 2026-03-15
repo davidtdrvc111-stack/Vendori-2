@@ -10,28 +10,23 @@ const CookieBanner = dynamic(
   { ssr: false }
 );
 
-// Geist Mono - Headlines (h1, h2) - DSGVO-konform (lokal gehostet)
-const geistMono = localFont({
-  src: '../../public/fonts/GeistMonoVF.woff2',
-  variable: '--font-geist-mono',
-  display: 'swap',
-  weight: '100 900',
-});
-
-// Plus Jakarta Sans - Body & Sub-Headers - DSGVO-konform (lokal gehostet)
+// Plus Jakarta Sans - All text (Body, Headers, Display) - DSGVO-konform (lokal gehostet)
 const plusJakartaSans = localFont({
   src: [
     {
-      path: '../../public/fonts/PlusJakartaSans-Variable.woff2',
+      path: './fonts/PlusJakartaSans-Variable.woff2',
+      weight: '100 900',
       style: 'normal',
     },
     {
-      path: '../../public/fonts/PlusJakartaSans-VariableItalic.woff2',
+      path: './fonts/PlusJakartaSans-VariableItalic.woff2',
+      weight: '100 900',
       style: 'italic',
     },
   ],
   variable: '--font-plus-jakarta',
   display: 'swap',
+  preload: true, // Critical font - sofort laden
 });
 
 export const metadata: Metadata = {
@@ -72,23 +67,16 @@ export default function RootLayout({
   return (
     <html lang="de" suppressHydrationWarning>
       <head>
-        {/* Preload critical above-the-fold assets */}
-        <link
-          rel="preload"
-          href="/fonts/PlusJakartaSans-Variable.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
+        {/* Critical above-the-fold assets - Logo SVG */}
         <link
           rel="preload"
           href="/Logo_Vendori_rgb_anthrazit.svg"
           as="image"
           type="image/svg+xml"
         />
-        {/* GeistMono wird lazy geladen (nur für Sub-Headers below-the-fold) */}
+        {/* Fonts werden via next/font/local optimiert geladen */}
       </head>
-      <body className={`${plusJakartaSans.className} ${plusJakartaSans.variable} ${geistMono.variable}`}>
+      <body className={`${plusJakartaSans.className} ${plusJakartaSans.variable}`}>
         {/* Skip Link für Tastaturnavigation */}
         <a
           href="#main-content"

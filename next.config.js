@@ -14,6 +14,14 @@ const nextConfig = {
     optimizeCss: true, // CSS optimization
   },
 
+  // Modular Imports - Better tree-shaking
+  modularizeImports: {
+    'lucide-react': {
+      transform: 'lucide-react/dist/esm/icons/{{kebabCase member}}',
+      skipDefaultConversion: true,
+    },
+  },
+
   // Compiler Optimierung - Moderne Browser nur
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production', // Remove console.* in production
