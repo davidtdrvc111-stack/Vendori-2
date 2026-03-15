@@ -30,6 +30,38 @@ const nextConfig = {
   // SWC Minifier ist bereits Standard in Next.js 14
   swcMinify: true,
 
+  // Webpack Bundle Optimization - Aggressive code splitting
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      // Client-side bundle optimization
+      config.optimization = {
+        ...config.optimization,
+        splitChunks: {
+          ...config.optimization.splitChunks,
+          chunks: 'all',
+          cacheGroups: {
+            ...config.optimization.splitChunks?.cacheGroups,
+            // Separate framer-motion into its own chunk
+            framerMotion: {
+              test: /[\\/]node_modules[\\/](framer-motion)[\\/]/,
+              name: 'framer-motion',
+              priority: 30,
+              reuseExistingChunk: true,
+            },
+            // Separate lucide-react into its own chunk
+            lucide: {
+              test: /[\\/]node_modules[\\/](lucide-react)[\\/]/,
+              name: 'lucide',
+              priority: 30,
+              reuseExistingChunk: true,
+            },
+          },
+        },
+      };
+    }
+    return config;
+  },
+
   // Image optimization
   images: {
     formats: ['image/avif', 'image/webp'],

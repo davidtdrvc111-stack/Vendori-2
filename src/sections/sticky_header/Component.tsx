@@ -107,13 +107,11 @@ export function StickyHeader({ className = '' }: StickyHeaderProps) {
               alt="VENDORi Logo"
               width={364}
               height={121}
-              className={`
-                h-[98px] md:h-[121px] w-auto transition-all duration-500
-                ${isDarkText
-                  ? 'brightness-0 dark:brightness-100 dark:invert'
-                  : 'brightness-0 invert'
-                }
-              `}
+              className={`h-[98px] md:h-[121px] w-auto ${isDarkText ? 'dark:invert' : 'invert'}`}
+              style={{
+                filter: isDarkText ? undefined : 'invert(1)',
+                willChange: 'auto'
+              }}
               priority
             />
           </Link>
