@@ -1,0 +1,21 @@
+# Moderne Browser - keine Legacy-Polyfills
+# Reduziert Bundle-Größe und entfernt unnötige Transforms
+
+# Production
+> 0.5%
+last 2 versions
+not dead
+not IE 11
+not op_mini all
+Firefox ESR
+
+# Chrome/Edge mit ES2020+ Support
+Chrome >= 90
+Edge >= 90
+
+# Safari mit ES2020+ Support
+Safari >= 14
+iOS >= 14
+
+# Firefox mit ES2020+ Support
+Firefox >= 88

@@ -1,13 +1,10 @@
 import dynamic from 'next/dynamic';
 import type { Metadata } from 'next';
 import { JsonLd } from '@/components/seo/JsonLd';
-import { StickyHeader } from '@/sections/sticky_header';  // Nicht lazy
+import { StickyHeader } from '@/sections/sticky_header';
+import { HeroSection } from '@/sections/hero_section'; // Above-the-fold - sofort laden!
 
-// Dynamic Imports für below-fold
-const HeroSection = dynamic(() =>
-  import('@/sections/hero_section').then(mod => ({ default: mod.HeroSection })),
-  { loading: () => <div className="h-screen bg-zinc-900" /> }
-);
+// Dynamic Imports NUR für below-fold
 
 const ServicesSection = dynamic(() =>
   import('@/sections/services_section').then(mod => ({ default: mod.ServicesSection })),

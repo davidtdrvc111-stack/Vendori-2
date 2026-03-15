@@ -1,22 +1,12 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import { AuroraBackground } from '@/components/ui/aurora-background';
 import { HeroSectionProps } from './types';
 
 export function HeroSection({ className = '' }: HeroSectionProps) {
   return (
     <AuroraBackground className={className}>
-      <motion.div
-        initial={{ opacity: 0.0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{
-          delay: 0.3,
-          duration: 0.8,
-          ease: 'easeInOut',
-        }}
-        className="relative flex flex-col gap-4 items-center justify-center px-4"
-      >
+      <div className="hero-content relative flex flex-col gap-4 items-center justify-center px-4">
         {/* Content */}
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
           <div className="max-w-4xl mx-auto space-y-6 md:space-y-8">
@@ -53,7 +43,7 @@ export function HeroSection({ className = '' }: HeroSectionProps) {
           </div>
         </div>
 
-      </motion.div>
+      </div>
     </AuroraBackground>
   );
 }

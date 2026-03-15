@@ -6,8 +6,18 @@ const nextConfig = {
 
   // Performance Optimierung
   experimental: {
-    optimizePackageImports: ['framer-motion', 'lucide-react'], // Tree-shaking für große Packages
+    optimizePackageImports: ['lucide-react'], // Tree-shaking für große Packages
+    // framer-motion entfernt - wird nur on-demand für Cookie-Banner/Impressum geladen
   },
+
+  // Compiler Optimierung - Moderne Browser nur
+  compiler: {
+    // Entfernt console.* in Production (optional)
+    // removeConsole: process.env.NODE_ENV === 'production',
+  },
+
+  // SWC Minifier ist bereits Standard in Next.js 14
+  swcMinify: true,
 
   // Image optimization
   images: {
