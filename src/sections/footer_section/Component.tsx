@@ -25,6 +25,8 @@ export function FooterSection({ className = '' }: FooterSectionProps) {
                                 width={140}
                                 height={40}
                                 className="h-10 w-auto brightness-0 invert"
+                                loading="lazy"
+                                sizes="140px"
                             />
                         </Link>
                         <p className="text-neutral-400 leading-relaxed max-w-sm">
@@ -34,18 +36,19 @@ export function FooterSection({ className = '' }: FooterSectionProps) {
 
                     {/* Column 2: Quick Links */}
                     <div className="space-y-6">
-                        <h3 className="text-lg font-bold font-display font-bold">Navigation</h3>
+                        <h2 className="text-lg font-bold font-display font-bold">Navigation</h2>
                         <nav className="flex flex-col space-y-3">
-                            <Link href="#about" className="text-neutral-400 hover:text-primary-400 transition-colors">Über uns</Link>
-                            <Link href="#services" className="text-neutral-400 hover:text-primary-400 transition-colors">Services</Link>
-                            <Link href="#awards" className="text-neutral-400 hover:text-primary-400 transition-colors">Erfolge</Link>
-                            <Link href="#contact" className="text-neutral-400 hover:text-primary-400 transition-colors">Kontakt</Link>
+                            <Link href="/ueber-uns" className="text-neutral-400 hover:text-primary-400 transition-colors">Über uns</Link>
+                            <Link href="/#services" className="text-neutral-400 hover:text-primary-400 transition-colors">Services</Link>
+                            <Link href="/#shops" className="text-neutral-400 hover:text-primary-400 transition-colors">Unsere Shops</Link>
+                            <Link href="/#contact" className="text-neutral-400 hover:text-primary-400 transition-colors">Kontakt</Link>
+                            <Link href="/impressum" className="text-neutral-400 hover:text-primary-400 transition-colors">Impressum</Link>
                         </nav>
                     </div>
 
                     {/* Column 3: Contact & Hours */}
                     <div className="space-y-6">
-                        <h3 className="text-lg font-bold font-display font-bold">Unsere Adresse</h3>
+                        <h2 className="text-lg font-bold font-display font-bold">Unsere Adresse</h2>
                         <div className="space-y-4 text-neutral-400">
                             <div className="space-y-1">
                                 <p className="text-white font-medium">VENDORi GmbH</p>

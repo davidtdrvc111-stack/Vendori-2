@@ -9,6 +9,7 @@ import { StickyHeaderProps, NavItem } from './types';
 
 const baseNavigationItems: NavItem[] = [
   { label: 'Services', href: '/#services' },
+  { label: 'Shops', href: '/#shops' },
   { label: 'Über uns', href: '/#about' },
   { label: 'Kontakt', href: '/#contact' },
 ];
@@ -89,7 +90,7 @@ export function StickyHeader({ className = '' }: StickyHeaderProps) {
           </Link>
 
           {/* Desktop Navigation - Center (Hidden on Mobile) */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav aria-label="Hauptnavigation" className="hidden md:flex items-center gap-8">
             {navigationItems.map((item) => (
               <Link
                 key={item.href}
@@ -122,7 +123,8 @@ export function StickyHeader({ className = '' }: StickyHeaderProps) {
                   : 'text-white'
                 }
               `}
-              aria-label="Menu"
+              aria-label={isMobileMenuOpen ? 'Menü schließen' : 'Menü öffnen'}
+              aria-expanded={isMobileMenuOpen}
             >
               <svg
                 className="w-6 h-6"

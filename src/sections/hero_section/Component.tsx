@@ -44,10 +44,10 @@ export function HeroSection({ className = '' }: HeroSectionProps) {
                 Beratung anfragen
               </a>
               <a
-                href="#about"
+                href="#services"
                 className="px-8 py-3 bg-transparent text-primary-400 font-semibold rounded-lg transition-colors border-2 border-primary-400 hover:bg-primary-950/20"
               >
-                Mehr erfahren
+                Unsere Services
               </a>
             </div>
           </div>

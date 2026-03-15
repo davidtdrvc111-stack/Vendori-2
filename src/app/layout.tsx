@@ -29,12 +29,29 @@ const plusJakartaSans = localFont({
 });
 
 export const metadata: Metadata = {
-  title: 'VENDORi GmbH',
-  description: 'Ihre Partner für digitale Lösungen und innovative Technologie',
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
-    { media: '(prefers-color-scheme: dark)', color: '#1e293b' }, // neutral-800
-  ],
+  metadataBase: new URL('https://vendori.eu'),
+  title: {
+    default: 'VENDORi GmbH — E-Commerce Wachstum aus der Praxis',
+    template: '%s | VENDORi GmbH',
+  },
+  description: 'VENDORi skaliert Ihren E-Commerce mit D2C-Strategien, Marketplace-Know-how und 22+ Jahren Erfahrung — kein Experiment, sondern echte Ergebnisse.',
+  icons: {
+    icon: [{ url: '/favicon.svg', type: 'image/svg+xml' }],
+    shortcut: '/favicon.svg',
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'de_DE',
+    siteName: 'VENDORi GmbH',
+    url: '/',
+    // TODO: OG-Bild (1200×630px) erstellen und /og-image.jpg ersetzen
+    images: [{ url: '/VENDORi-Logo.png', width: 1200, height: 630, alt: 'VENDORi GmbH' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    // TODO: Twitter-Bild durch /og-image.jpg ersetzen sobald OG-Bild erstellt ist
+    images: ['/VENDORi-Logo.png'],
+  },
 };
 
 export default function RootLayout({
@@ -45,6 +62,14 @@ export default function RootLayout({
   return (
     <html lang="de" suppressHydrationWarning>
       <body className={`${plusJakartaSans.className} ${plusJakartaSans.variable} ${geistMono.variable}`}>
+        {/* Skip Link für Tastaturnavigation */}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[200] focus:px-4 focus:py-2 focus:bg-white focus:text-neutral-900 focus:rounded-lg focus:shadow-lg"
+        >
+          Zum Hauptinhalt springen
+        </a>
+        {/* JsonLd per-Seite eingebunden (nicht global, da noindex-Seiten kein Schema haben sollen) */}
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

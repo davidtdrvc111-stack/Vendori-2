@@ -1,0 +1,21 @@
+# VENDORi GmbH
+
+> VENDORi ist ein E-Commerce-Beratungsunternehmen mit 22+ Jahren Erfahrung. Wir skalieren B2B-Unternehmen und Marken mit praxiserprobten D2C-Strategien, Amazon Marketplace-Know-how und internationaler Marktexpansion in 20+ europäischen Ländern.
+
+## Docs
+
+## Pages
+
+- /: Homepage — E-Commerce Services, D2C-Strategien, Marketplace-Expansion und Kontaktformular
+- /ueber-uns: Über uns — Unternehmensgeschichte, Team und Werte
+
+## Optional
+
+- /impressum: Impressum (noindex) — Angaben gemäß § 5 TMG
+- /datenschutz: Datenschutzerklärung (noindex) — DSGVO-Informationen
+
+## Contact
+
+- Email: info@vendori.eu
+- Phone: +49 (0) 6274 9278157
+- Address: Hahnenfeldstr. 25, 69429 Waldbrunn, Deutschland

@@ -3,18 +3,7 @@
 import { cn } from '@/lib/utils';
 import { ShopShowcaseSectionProps, Shop } from './types';
 import Image from 'next/image';
-
-// Noise Overlay Component für subtile Textur
-function NoiseOverlay() {
-  return (
-    <div
-      className="absolute inset-0 opacity-[0.02] mix-blend-overlay pointer-events-none rounded-3xl"
-      style={{
-        backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
-      }}
-    />
-  );
-}
+import { NoiseOverlay } from '@/components/ui/NoiseOverlay';
 
 // Shop Data - Konsolidiert und optimiert
 const SHOPS: Shop[] = [
@@ -98,7 +87,7 @@ function ShopCard({ shop }: { shop: Shop }) {
         shop.spanColumns === 3 && 'lg:col-span-3'
       )}
     >
-      <NoiseOverlay />
+      <NoiseOverlay opacity="opacity-[0.02]" />
 
       {/* Gradient-Lichteffekt beim Hover */}
       <div
@@ -136,7 +125,7 @@ function ShopCard({ shop }: { shop: Shop }) {
             width={192}
             height={128}
             className="object-contain w-full h-full"
-            priority
+            loading="lazy"
           />
         </div>
       </div>

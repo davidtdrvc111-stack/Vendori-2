@@ -5,18 +5,7 @@ import { cn } from '@/lib/utils';
 import { ContactSectionProps, FormData, FormErrors, FormStatus } from './types';
 import { validateField, validateForm, sanitizeInput } from './validation';
 import { Send, Loader2, Check, AlertCircle } from 'lucide-react';
-
-// Noise Overlay Component
-function NoiseOverlay() {
-  return (
-    <div
-      className="absolute inset-0 opacity-[0.03] mix-blend-overlay pointer-events-none rounded-3xl"
-      style={{
-        backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
-      }}
-    />
-  );
-}
+import { NoiseOverlay } from '@/components/ui/NoiseOverlay';
 
 // Form Field Component
 interface FormFieldProps {
@@ -180,7 +169,7 @@ Nachricht:
 ${sanitizedData.message}`;
 
     // Open email client
-    window.location.href = `mailto:info@vendori.de?subject=${encodeURIComponent(
+    window.location.href = `mailto:info@vendori.eu?subject=${encodeURIComponent(
       subject
     )}&body=${encodeURIComponent(body)}`;
 
