@@ -356,7 +356,7 @@ https://help.instagram.com/519522125107875`;
     };
 
     return (
-        <main className="min-h-screen bg-slate-50 dark:bg-zinc-950 transition-colors duration-700 font-[family-name:var(--font-inter)] relative scroll-smooth selection:bg-primary-500/30">
+        <main id="main-content" className="min-h-screen bg-slate-50 dark:bg-zinc-950 transition-colors duration-700 font-[family-name:var(--font-inter)] relative scroll-smooth selection:bg-primary-500/30">
             {/* Reading Progress Indicator */}
             <motion.div
                 className="fixed top-0 left-0 right-0 h-1.5 bg-primary-600 z-[100] origin-left"

@@ -19,7 +19,7 @@ export function ThemeToggle({ darkText = false }: ThemeToggleProps) {
 
   if (!mounted) {
     return (
-      <div className="h-9 w-9" aria-hidden="true" />
+      <div className="h-11 w-11" aria-hidden="true" />
     );
   }
 
@@ -29,7 +29,7 @@ export function ThemeToggle({ darkText = false }: ThemeToggleProps) {
     <button
       onClick={() => setTheme(isDark ? 'light' : 'dark')}
       className={`
-        relative inline-flex h-9 w-9 items-center justify-center
+        relative inline-flex h-11 w-11 items-center justify-center
         rounded-lg
         ${darkText
           ? 'text-neutral-700 hover:bg-neutral-100 dark:text-white dark:hover:bg-white/10'
@@ -38,13 +38,10 @@ export function ThemeToggle({ darkText = false }: ThemeToggleProps) {
         transition-colors
         focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2
       `}
-      aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+      aria-label={isDark ? 'Zu hellem Modus wechseln' : 'Zu dunklem Modus wechseln'}
     >
-      <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-      <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-      <span className="sr-only">
-        {isDark ? 'Switch to light mode' : 'Switch to dark mode'}
-      </span>
+      <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" aria-hidden="true" />
+      <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" aria-hidden="true" />
     </button>
   );
 }

@@ -39,13 +39,13 @@ export function HeroSection({ className = '' }: HeroSectionProps) {
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
               <a
                 href="#contact"
-                className="px-8 py-3 bg-primary-600 text-white font-semibold rounded-lg transition-colors shadow-lg hover:bg-primary-700 dark:bg-primary-600 dark:hover:bg-primary-700 border-2 border-transparent"
+                className="px-8 py-3 bg-primary-600 text-white font-semibold rounded-lg transition-colors shadow-lg hover:bg-primary-700 dark:bg-primary-600 dark:hover:bg-primary-700 border-2 border-transparent focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2 focus:ring-offset-zinc-900"
               >
                 Beratung anfragen
               </a>
               <a
                 href="#services"
-                className="px-8 py-3 bg-transparent text-primary-400 font-semibold rounded-lg transition-colors border-2 border-primary-400 hover:bg-primary-950/20"
+                className="px-8 py-3 bg-transparent text-primary-400 font-semibold rounded-lg transition-colors border-2 border-primary-400 hover:bg-primary-950/20 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2 focus:ring-offset-zinc-900"
               >
                 Unsere Services
               </a>

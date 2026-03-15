@@ -97,7 +97,8 @@ export function AboutSection({ className = '' }: AboutSectionProps) {
               'font-semibold rounded-xl',
               'transition-all duration-200',
               'hover:bg-primary-700 hover:scale-105',
-              'shadow-lg shadow-primary-600/20'
+              'shadow-lg shadow-primary-600/20',
+              'focus:outline-none focus:ring-2 focus:ring-primary-600 focus:ring-offset-2'
             )}
           >
             <span>Unsere ganze Geschichte</span>
@@ -106,6 +107,7 @@ export function AboutSection({ className = '' }: AboutSectionProps) {
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
+              aria-hidden="true"
             >
               <path
                 strokeLinecap="round"

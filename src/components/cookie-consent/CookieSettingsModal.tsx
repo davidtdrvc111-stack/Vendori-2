@@ -5,7 +5,7 @@
 
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { CookieSettingsModalProps, CookieCategoryInfo } from './types';
 import { CookieToggle } from './CookieToggle';
@@ -45,6 +45,10 @@ export function CookieSettingsModal({ isOpen, onClose }: CookieSettingsModalProp
   const [analytics, setAnalytics] = useState(false);
   const [marketing, setMarketing] = useState(false);
 
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const previousFocusRef = useRef<HTMLElement | null>(null);
+  const modalRef = useRef<HTMLDivElement>(null);
+
   // Sync local state with consent when modal opens
   useEffect(() => {
     if (isOpen && consent) {
@@ -53,16 +57,48 @@ export function CookieSettingsModal({ isOpen, onClose }: CookieSettingsModalProp
     }
   }, [isOpen, consent]);
 
-  // Handle ESC key
+  // Fokus-Management: beim Öffnen Fokus auf Close-Button setzen, beim Schließen zurücksetzen
   useEffect(() => {
-    const handleEscape = (e: KeyboardEvent) => {
+    if (isOpen) {
+      previousFocusRef.current = document.activeElement as HTMLElement;
+      setTimeout(() => closeButtonRef.current?.focus(), 50);
+    } else if (previousFocusRef.current) {
+      previousFocusRef.current.focus();
+      previousFocusRef.current = null;
+    }
+  }, [isOpen]);
+
+  // Handle ESC key + Focus-Trap
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape' && isOpen) {
         onClose();
+        return;
+      }
+
+      if (e.key === 'Tab' && isOpen && modalRef.current) {
+        const focusable = modalRef.current.querySelectorAll<HTMLElement>(
+          'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+        );
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+
+        if (e.shiftKey) {
+          if (document.activeElement === first) {
+            e.preventDefault();
+            last.focus();
+          }
+        } else {
+          if (document.activeElement === last) {
+            e.preventDefault();
+            first.focus();
+          }
+        }
       }
     };
 
-    document.addEventListener('keydown', handleEscape);
-    return () => document.removeEventListener('keydown', handleEscape);
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
   }, [isOpen, onClose]);
 
   // Prevent body scroll when modal is open
@@ -112,6 +148,7 @@ export function CookieSettingsModal({ isOpen, onClose }: CookieSettingsModalProp
           {/* Modal */}
           <div className="fixed inset-0 z-[70] flex items-center justify-center p-4">
             <motion.div
+              ref={modalRef}
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
@@ -143,8 +180,9 @@ export function CookieSettingsModal({ isOpen, onClose }: CookieSettingsModalProp
                     </p>
                   </div>
                   <button
+                    ref={closeButtonRef}
                     onClick={onClose}
-                    aria-label="Schließen"
+                    aria-label="Cookie-Einstellungen schließen"
                     className="
                       p-2 rounded-lg transition-colors
                       text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-300
@@ -160,6 +198,7 @@ export function CookieSettingsModal({ isOpen, onClose }: CookieSettingsModalProp
                       strokeWidth="2"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
+                      aria-hidden="true"
                     >
                       <path d="M6 18L18 6M6 6l12 12" />
                     </svg>

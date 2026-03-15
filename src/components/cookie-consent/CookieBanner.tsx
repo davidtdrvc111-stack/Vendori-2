@@ -41,6 +41,9 @@ export function CookieBanner({ className = '' }: CookieBannerProps) {
             {/* Banner Container - Zentral und breiter */}
             <div className="container mx-auto px-4 pb-6 md:pb-8 flex justify-center">
               <div
+                role="region"
+                aria-label="Cookie-Einwilligung"
+                aria-live="polite"
                 className="
                   bg-white/95 dark:bg-neutral-800/90 backdrop-blur-2xl shadow-2xl rounded-2xl
                   border border-neutral-200/50 dark:border-neutral-700/50

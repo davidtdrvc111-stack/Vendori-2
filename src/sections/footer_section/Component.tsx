@@ -69,7 +69,7 @@ export function FooterSection({ className = '' }: FooterSectionProps) {
                 </div>
 
                 {/* Bottom Bar: Copyright & Legal Links */}
-                <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-neutral-500">
+                <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-neutral-400">
                     <p>© {new Date().getFullYear()} VENDORi GmbH. Alle Rechte vorbehalten.</p>
                     <div className="flex gap-8">
                         <Link href="/impressum" className="hover:text-white transition-colors">Impressum</Link>

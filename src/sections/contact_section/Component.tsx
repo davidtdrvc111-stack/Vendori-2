@@ -71,8 +71,10 @@ function FormField({
           id={`${name}-error`}
           className="text-error-500 text-sm mt-1 flex items-center gap-1"
           role="alert"
+          aria-live="polite"
+          aria-atomic="true"
         >
-          <AlertCircle className="w-4 h-4" />
+          <AlertCircle className="w-4 h-4" aria-hidden="true" />
           <span>{error}</span>
         </p>
       )}
@@ -227,13 +229,16 @@ ${sanitizedData.message}`;
           {/* Success Message */}
           {status === 'success' && (
             <div
+              role="alert"
+              aria-live="polite"
+              aria-atomic="true"
               className={cn(
                 'p-6 rounded-lg mb-6',
                 'bg-success-500/10 border border-success-500/20',
                 'flex items-start gap-3'
               )}
             >
-              <Check className="w-6 h-6 text-success-500 flex-shrink-0" />
+              <Check className="w-6 h-6 text-success-500 flex-shrink-0" aria-hidden="true" />
               <div>
                 <h3 className="font-semibold text-success-500 mb-1">
                   Nachricht gesendet!
@@ -315,7 +320,7 @@ ${sanitizedData.message}`;
               onChange={(e) => setHoneypot(e.target.value)}
               tabIndex={-1}
               autoComplete="off"
-              style={{ display: 'none' }}
+              style={{ position: 'absolute', left: '-9999px', width: '1px', height: '1px', opacity: 0 }}
               aria-hidden="true"
             />
 
@@ -377,8 +382,10 @@ ${sanitizedData.message}`;
                   id="privacy-error"
                   className="text-error-500 text-sm mt-1 flex items-center gap-1"
                   role="alert"
+                  aria-live="polite"
+                  aria-atomic="true"
                 >
-                  <AlertCircle className="w-4 h-4" />
+                  <AlertCircle className="w-4 h-4" aria-hidden="true" />
                   <span>{errors.privacyAccepted}</span>
                 </p>
               )}
@@ -404,13 +411,13 @@ ${sanitizedData.message}`;
               >
                 {status === 'loading' ? (
                   <>
-                    <Loader2 className="w-5 h-5 animate-spin" />
+                    <Loader2 className="w-5 h-5 animate-spin" aria-hidden="true" />
                     <span>Wird gesendet...</span>
                   </>
                 ) : (
                   <>
                     <span>Nachricht senden</span>
-                    <Send className="w-5 h-5" />
+                    <Send className="w-5 h-5" aria-hidden="true" />
                   </>
                 )}
               </button>

@@ -5,6 +5,7 @@ export interface Market {
   domainExtension: string;  // e.g., '.de'
   url: string;              // e.g., 'https://www.mytoolstore.de'
   flag?: string;            // Optional: Country flag emoji
+  country?: string;         // Optional: Country name in German (e.g., 'Deutschland')
 }
 
 export interface Shop {

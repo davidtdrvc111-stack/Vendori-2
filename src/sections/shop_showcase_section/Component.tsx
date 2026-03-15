@@ -18,30 +18,35 @@ const SHOPS: Shop[] = [
         domainExtension: '.de',
         url: 'https://www.mytoolstore.de',
         flag: '🇩🇪',
+        country: 'Deutschland',
       },
       {
         domain: 'mytoolstore.fr',
         domainExtension: '.fr',
         url: 'https://www.mytoolstore.fr',
         flag: '🇫🇷',
+        country: 'Frankreich',
       },
       {
         domain: 'mytoolstore.nl',
         domainExtension: '.nl',
         url: 'https://www.mytoolstore.nl',
         flag: '🇳🇱',
+        country: 'Niederlande',
       },
       {
         domain: 'mytoolstore.at',
         domainExtension: '.at',
         url: 'https://www.mytoolstore.at',
         flag: '🇦🇹',
+        country: 'Österreich',
       },
       {
         domain: 'mytoolstore.be',
         domainExtension: '.be',
         url: 'https://www.mytoolstore.be',
         flag: '🇧🇪',
+        country: 'Belgien',
       },
     ],
     metrics: ['1,5 Mio.+', 'Erfolgreiche Bestellungen'],
@@ -172,6 +177,7 @@ function ShopCard({ shop }: { shop: Shop }) {
               href={market.url}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label={`${shop.name} ${market.country ?? market.domain} öffnen (neues Fenster)`}
               className={cn(
                 'inline-flex items-center gap-1.5',
                 'px-4 py-2',
@@ -186,8 +192,8 @@ function ShopCard({ shop }: { shop: Shop }) {
                 'hover:shadow-lg hover:shadow-primary-500/30'
               )}
             >
-              {market.flag && <span className="text-sm">{market.flag}</span>}
-              <span>{market.domainExtension}</span>
+              {market.flag && <span className="text-sm" aria-hidden="true">{market.flag}</span>}
+              <span aria-hidden="true">{market.domainExtension}</span>
             </a>
           ))}
         </div>

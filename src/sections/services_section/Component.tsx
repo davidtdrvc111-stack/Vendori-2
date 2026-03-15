@@ -66,7 +66,7 @@ export function ServicesSection({ className = '' }: ServicesSectionProps) {
                 'flex items-center justify-center',
                 'ring-1 ring-primary-600/20'
               )}>
-                <Store className="w-6 h-6 md:w-8 md:h-8 text-primary-600" strokeWidth={1.5} />
+                <Store className="w-6 h-6 md:w-8 md:h-8 text-primary-600" strokeWidth={1.5} aria-hidden="true" />
               </div>
             </div>
 
@@ -94,7 +94,7 @@ export function ServicesSection({ className = '' }: ServicesSectionProps) {
             <div className="space-y-3 md:space-y-4 mb-8 md:mb-10">
               <div className="flex items-start gap-3">
                 <div className="flex-shrink-0 mt-1">
-                  <Check className="w-5 h-5 text-primary-400" strokeWidth={2.5} />
+                  <Check className="w-5 h-5 text-primary-400" strokeWidth={2.5} aria-hidden="true" />
                 </div>
                 <span className="text-base md:text-lg text-white font-medium">
                   Praxiserprobte D2C-Strategien
@@ -103,7 +103,7 @@ export function ServicesSection({ className = '' }: ServicesSectionProps) {
 
               <div className="flex items-start gap-3">
                 <div className="flex-shrink-0 mt-1">
-                  <Check className="w-5 h-5 text-primary-400" strokeWidth={2.5} />
+                  <Check className="w-5 h-5 text-primary-400" strokeWidth={2.5} aria-hidden="true" />
                 </div>
                 <span className="text-base md:text-lg text-white font-medium">
                   Marktplatz-Know-how (Amazon & Co.)
@@ -112,7 +112,7 @@ export function ServicesSection({ className = '' }: ServicesSectionProps) {
 
               <div className="flex items-start gap-3">
                 <div className="flex-shrink-0 mt-1">
-                  <Check className="w-5 h-5 text-primary-400" strokeWidth={2.5} />
+                  <Check className="w-5 h-5 text-primary-400" strokeWidth={2.5} aria-hidden="true" />
                 </div>
                 <span className="text-base md:text-lg text-white font-medium">
                   Live-optimierte Prozesse
@@ -134,11 +134,12 @@ export function ServicesSection({ className = '' }: ServicesSectionProps) {
                   'rounded-xl',
                   'transition-all duration-200',
                   'text-base md:text-lg',
-                  'group'
+                  'group',
+                  'focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2 focus:ring-offset-stone-800'
                 )}
               >
                 <span>Unsere Methode entdecken</span>
-                <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+                <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" aria-hidden="true" />
               </a>
             </div>
           </div>
@@ -168,7 +169,7 @@ export function ServicesSection({ className = '' }: ServicesSectionProps) {
                   'flex items-center justify-center',
                   'ring-1 ring-primary-600/20'
                 )}>
-                  <Compass className="w-5 h-5 md:w-6 md:h-6 text-primary-600" strokeWidth={1.5} />
+                  <Compass className="w-5 h-5 md:w-6 md:h-6 text-primary-600" strokeWidth={1.5} aria-hidden="true" />
                 </div>
               </div>
 
@@ -201,7 +202,7 @@ export function ServicesSection({ className = '' }: ServicesSectionProps) {
               <div className="grid grid-cols-2 gap-x-3 gap-y-2 md:gap-y-3 mb-6 md:mb-8">
                 <div className="flex items-start gap-2">
                   <div className="flex-shrink-0 mt-0.5">
-                    <Check className="w-4 h-4 text-primary-400" strokeWidth={2.5} />
+                    <Check className="w-4 h-4 text-primary-400" strokeWidth={2.5} aria-hidden="true" />
                   </div>
                   <span className="text-sm md:text-base text-white font-medium">
                     Alle Übersetzungen
@@ -210,7 +211,7 @@ export function ServicesSection({ className = '' }: ServicesSectionProps) {
 
                 <div className="flex items-start gap-2">
                   <div className="flex-shrink-0 mt-0.5">
-                    <Check className="w-4 h-4 text-primary-400" strokeWidth={2.5} />
+                    <Check className="w-4 h-4 text-primary-400" strokeWidth={2.5} aria-hidden="true" />
                   </div>
                   <span className="text-sm md:text-base text-white font-medium">
                     Den Kundenservice
@@ -219,7 +220,7 @@ export function ServicesSection({ className = '' }: ServicesSectionProps) {
 
                 <div className="flex items-start gap-2">
                   <div className="flex-shrink-0 mt-0.5">
-                    <Check className="w-4 h-4 text-primary-400" strokeWidth={2.5} />
+                    <Check className="w-4 h-4 text-primary-400" strokeWidth={2.5} aria-hidden="true" />
                   </div>
                   <span className="text-sm md:text-base text-white font-medium">
                     Die Selling-Bilder
@@ -228,7 +229,7 @@ export function ServicesSection({ className = '' }: ServicesSectionProps) {
 
                 <div className="flex items-start gap-2">
                   <div className="flex-shrink-0 mt-0.5">
-                    <Check className="w-4 h-4 text-primary-400" strokeWidth={2.5} />
+                    <Check className="w-4 h-4 text-primary-400" strokeWidth={2.5} aria-hidden="true" />
                   </div>
                   <span className="text-sm md:text-base text-white font-medium">
                     Impressum/Verkauf
@@ -247,11 +248,12 @@ export function ServicesSection({ className = '' }: ServicesSectionProps) {
                   'font-medium',
                   'transition-colors duration-200',
                   'text-sm md:text-base',
-                  'group'
+                  'group',
+                  'focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2 focus:ring-offset-stone-800 rounded'
                 )}
               >
                 <span>Expansions-Check starten</span>
-                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
               </a>
             </div>
           </div>
@@ -281,7 +283,7 @@ export function ServicesSection({ className = '' }: ServicesSectionProps) {
                   'flex items-center justify-center',
                   'ring-1 ring-primary-600/20'
                 )}>
-                  <Users className="w-5 h-5 md:w-6 md:h-6 text-primary-600" strokeWidth={1.5} />
+                  <Users className="w-5 h-5 md:w-6 md:h-6 text-primary-600" strokeWidth={1.5} aria-hidden="true" />
                 </div>
               </div>
 
@@ -316,11 +318,12 @@ export function ServicesSection({ className = '' }: ServicesSectionProps) {
                   'font-medium',
                   'transition-colors duration-200',
                   'text-sm md:text-base',
-                  'group'
+                  'group',
+                  'focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2 focus:ring-offset-stone-800 rounded'
                 )}
               >
                 <span>So funktioniert's</span>
-                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
               </a>
             </div>
           </div>
