@@ -27,9 +27,6 @@ const nextConfig = {
     removeConsole: process.env.NODE_ENV === 'production', // Remove console.* in production
   },
 
-  // SWC Minifier ist bereits Standard in Next.js 14
-  swcMinify: true,
-
   // Webpack Bundle Optimization - Aggressive code splitting
   webpack: (config, { isServer }) => {
     if (!isServer) {

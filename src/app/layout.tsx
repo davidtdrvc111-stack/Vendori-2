@@ -7,7 +7,7 @@ import { ThemeProvider } from '@/components/theme-provider';
 // Lazy load CookieBanner (includes framer-motion) - not critical for initial render
 const CookieBanner = dynamic(
   () => import('@/components/cookie-consent').then(mod => ({ default: mod.CookieBanner })),
-  { ssr: false }
+  { loading: () => null }
 );
 
 // Plus Jakarta Sans - All text (Body, Headers, Display) - DSGVO-konform (lokal gehostet)
