@@ -44,13 +44,17 @@ export const metadata: Metadata = {
     locale: 'de_DE',
     siteName: 'VENDORi GmbH',
     url: '/',
-    // TODO: OG-Bild (1200×630px) erstellen und /og-image.jpg ersetzen
-    images: [{ url: '/VENDORi-Logo.png', width: 1200, height: 630, alt: 'VENDORi GmbH' }],
+    images: [{
+      url: '/og-image.webp',
+      width: 1200,
+      height: 630,
+      alt: 'VENDORi GmbH — E-Commerce Wachstum aus der Praxis',
+      type: 'image/webp'
+    }],
   },
   twitter: {
     card: 'summary_large_image',
-    // TODO: Twitter-Bild durch /og-image.jpg ersetzen sobald OG-Bild erstellt ist
-    images: ['/VENDORi-Logo.png'],
+    images: ['/og-image.webp'],
   },
 };
 

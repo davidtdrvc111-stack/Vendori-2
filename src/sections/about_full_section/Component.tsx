@@ -68,14 +68,15 @@ export function AboutFullSection({ className = '' }: AboutFullSectionProps) {
                   'ring-1 ring-white/5'
                 )}
               >
-                {/* LCP-Element: teamfoto.png — TODO: WebP-Version erstellen (public/teamfoto.webp) für ~70% kleinere Dateigröße */}
+                {/* LCP-Element: teamfoto.webp — Optimiert: 140KB statt 2.6MB (-95%) */}
                 <Image
-                  src="/teamfoto.png"
-                  alt="VENDORi Team"
+                  src="/teamfoto.webp"
+                  alt="VENDORi GmbH Team — E-Commerce Experten mit 22+ Jahren Erfahrung"
                   fill
                   className="object-contain"
                   sizes="(max-width: 768px) 100vw, 40vw"
                   priority
+                  quality={90}
                 />
               </div>
             </div>

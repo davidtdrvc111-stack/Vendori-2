@@ -5,7 +5,7 @@ export const metadata: Metadata = {
     title: 'Impressum — Rechtliche Angaben',
     description: 'Impressum der VENDORi GmbH — Angaben gemäß § 5 TMG.',
     robots: { index: false, follow: false },
-    alternates: { canonical: '/impressum' },
+    alternates: { canonical: 'https://vendori.eu/impressum' },
 };
 
 export default function ImpressumPage() {
