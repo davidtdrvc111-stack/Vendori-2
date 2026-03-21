@@ -24,8 +24,8 @@ export const metadata: Metadata = {
 export default async function AboutPage() {
   return (
     <main id="main-content" className="min-h-screen">
-      <JsonLd />
-      <BreadcrumbJsonLd items={[{ name: 'Über uns', url: 'https://vendori.eu/ueber-uns' }]} />
+      {await JsonLd()}
+      {await BreadcrumbJsonLd({ items: [{ name: 'Über uns', url: 'https://vendori.eu/ueber-uns' }] })}
       <StickyHeader />
       <div className="hidden">
         <Breadcrumb items={[{ label: 'Über uns' }]} />

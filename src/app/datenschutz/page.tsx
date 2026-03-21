@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default async function DatenschutzPage() {
     return (
         <>
-            <BreadcrumbJsonLd items={[{ name: 'Datenschutz', url: 'https://vendori.eu/datenschutz' }]} />
+            {await BreadcrumbJsonLd({ items: [{ name: 'Datenschutz', url: 'https://vendori.eu/datenschutz' }] })}
             <DatenschutzContent />
         </>
     );

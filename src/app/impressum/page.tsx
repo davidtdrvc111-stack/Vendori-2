@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default async function ImpressumPage() {
     return (
         <>
-            <BreadcrumbJsonLd items={[{ name: 'Impressum', url: 'https://vendori.eu/impressum' }]} />
+            {await BreadcrumbJsonLd({ items: [{ name: 'Impressum', url: 'https://vendori.eu/impressum' }] })}
             <ImpressumContent />
         </>
     );
