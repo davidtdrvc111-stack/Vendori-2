@@ -32,7 +32,7 @@ const FooterSection = dynamic(() =>
 );
 
 export const metadata: Metadata = {
-  title: 'E-Commerce Wachstum aus der Praxis',
+  title: 'E-Commerce Wachstum aus der Praxis | VENDORi GmbH',
   description: 'Wir skalieren Ihren Umsatz mit D2C-Strategien, Marketplace-Know-how und 22+ Jahren Erfahrung. Kein Agentur-Experiment — echte Ergebnisse.',
   alternates: {
     canonical: 'https://vendori.eu',

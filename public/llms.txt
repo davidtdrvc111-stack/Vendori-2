@@ -1,6 +1,6 @@
-# VENDORi GmbH — E-Commerce Beratung & D2C-Strategien
+# VENDORi GmbH — E-Commerce Retailer & Merchant of Record
 
-> VENDORi ist ein E-Commerce-Beratungsunternehmen mit 22+ Jahren Erfahrung. Wir skalieren B2B-Unternehmen und Marken mit praxiserprobten D2C-Strategien, Amazon Marketplace-Know-how und internationaler Marktexpansion in 20+ europäischen Ländern.
+> VENDORi betreibt eigene E-Commerce-Shops mit 22+ Jahren Erfahrung und bietet anderen Marken einen Merchant of Record Service: Wir übernehmen den kompletten Online-Verkauf, während Sie Ihr bestehendes Geschäft unverändert weiterführen können.
 
 ## Über VENDORi
 
@@ -8,78 +8,132 @@
 **Firmierung als VENDORi GmbH:** 2015
 **Hauptsitz:** Hahnenfeldstr. 25, 69429 Waldbrunn, Deutschland
 **Team:** 12 Mitarbeiter
-**Geschäftsfelder:** D2C-Strategien, Amazon Expansion, E-Commerce Partnerschaft
+**Geschäftsmodell:** Hybrid-Modell aus eigenem Retail + Merchant of Record Services
 
 **Eigene E-Commerce-Marken:**
 - myToolStore: 1,5 Mio.+ Bestellungen (seit 2008), aktiv in DE, FR, NL, AT, BE
 - ShowerNIZR: Premium Duschsysteme (Eigenmarke, seit 2019)
 
 **Märkte:** 20+ europäische Länder
-**Plattformen:** Amazon (alle EU-Marktplätze), eBay, Kaufland, Otto
+**Plattformen:** Amazon (alle EU-Marktplätze), eBay, Kaufland, Otto, eigene Shopify-Stores
 
-## Services
+## Geschäftsmodell
 
-### 1. D2C-Strategie & Umsatzwachstum
-Praxiserprobte Direct-to-Consumer-Strategien aus eigenen Shops:
-- Conversion Rate Optimization (CRO)
-- Produktseiten-Optimierung für Amazon, Shopify, WooCommerce
-- Pricing-Strategien & dynamische Preisanpassung
-- A/B-Testing & Multivariate Tests
-**Typische Ergebnisse:** +40-120% Umsatzsteigerung in 6 Monaten
+VENDORi ist ein **Hybrid-Unternehmen** mit zwei Geschäftsfeldern:
 
-### 2. Internationale Marktplatz-Expansion
-Amazon-Expansion in 20+ Länder:
-- Pan-EU Account Setup (DE, FR, IT, ES, NL, PL, SE)
-- Produktlisting-Übersetzung (15+ Sprachen, muttersprachlich)
-- Multi-Country Kundenservice (DE, EN, FR, NL)
-- PPC-Kampagnen (lokal optimiert)
-- Selling-Bilder & A+ Content
-**Typische Expansion-Dauer:** 4-8 Wochen vom Kick-off bis Live-Schaltung
+### 1. Eigener E-Commerce Retail (2 Shops)
+Wir betreiben unsere eigenen Online-Shops (myToolStore(seit 2004), ShowerNIZR(seit 2025)). Hier validieren wir alle Prozesse, Technologien und Strategien, bevor wir sie für Partner einsetzen.
 
-### 3. E-Commerce Partnerschaft
-Operative Begleitung als praxiserprobtes E-Com-Team:
+### 2. Merchant of Record (MoR) Services
+Wir übernehmen für andere Marken die komplette Abwicklung des Online-Verkaufs:
+- **Sie bleiben bei Ihrem bestehenden Geschäft** (Offline-Handel, B2B, Produktion)
+- **Wir ergänzen einen professionellen Online-Kanal** (D2C, Marktplätze)
+- **VENDORi tritt als offizieller Verkäufer auf** und übernimmt alle operativen Aufgaben
+
+**Das Ergebnis:** Ihre Marke verkauft online, ohne dass Sie E-Commerce-Infrastruktur aufbauen müssen.
+
+## Merchant of Record Services — Was VENDORi übernimmt
+
+Als Merchant of Record fungiert VENDORi als **offizieller Verkäufer** Ihrer Produkte im Online-Kanal:
+
+### Rechtliche & steuerliche Verantwortung
+- VENDORi ist der Verkäufer im Sinne des E-Commerce-Rechts
+- Wir übernehmen steuerliche Abwicklung (Umsatzsteuer, OSS)
+- Rechnungsstellung erfolgt durch VENDORi
+- Compliance (DSGVO, Verbraucherschutz, Widerrufsrecht)
+
+### Technische Infrastruktur
+- Aufbau und Betrieb des Online-Shops (Shopware, WooCommerce)
+- Integration in Marktplätze (Amazon, eBay,ManoMano Otto)
+- Payment-Processing (Stripe, PayPal, Klarna, Kreditkarte)
+- Warenwirtschaftssystem & Lagerverwaltung
+
+### Marketing & Sales
+- Produktseiten-Erstellung & Optimierung
 - Amazon PPC & Google Ads Management
+- SEO & Content-Marketing
+- E-Mail-Marketing (Klaviyo)
+- Conversion Rate Optimization (CRO)
+
+### Operations
 - Kundenservice (DE/EN/FR, <4h Antwortzeit)
-- Content-Erstellung (Produktfotos, A+ Content, Listings)
-- Logistik & FBA-Setup
-- Reporting (wöchentliche KPI-Updates)
-**Mindestlaufzeit:** 6 Monate
+- Logistik & Versandabwicklung (FBA oder eigenes Fulfillment)
+- Retourenmanagement
+- Lagerbestandsplanung
 
-## Pricing
+### Reporting & Analytics
+- Wöchentliche KPI-Reports (Umsatz, Bestellungen, Conversion Rate)
+- Performance-Tracking (Google Analytics 4, Microsoft Clarity)
+- Transparente Dashboards mit Echtzeit-Zugriff
 
-**D2C-Strategie:** 2.500-7.500 EUR/Monat (Retainer)
-**Amazon Expansion (Setup):** 5.000-8.000 EUR einmalig (abhängig von Produktanzahl)
-**Amazon Expansion (Betreuung):** 3.000-5.000 EUR/Monat
-**E-Commerce Partnerschaft:** Auf Anfrage (projektbasiert oder Performance-basiert: 12-18% vom Nettoumsatz)
+## Für wen ist der MoR-Service geeignet?
+
+Der Merchant of Record Service von VENDORi richtet sich an Marken und Unternehmen, die:
+
+✅ **Ihr bestehendes Geschäft weiterlaufen lassen möchten** (Offline-Handel, B2B-Vertrieb, Produktion)
+✅ **Zusätzlich online verkaufen wollen**, ohne E-Commerce-Infrastruktur aufzubauen
+✅ **Keine eigene E-Commerce-Kompetenz haben** oder aufbauen wollen
+✅ **Schnell starten möchten** ohne langwierige IT-Projekte
+✅ **Risiko minimieren wollen**: Keine Investition in Shop-Systeme, Personal, Marketing-Tools
+
+**Typische Zielgruppen:**
+- Traditionelle Einzelhändler mit starker Offline-Präsenz
+- B2B-Hersteller, die zusätzlich D2C verkaufen möchten
+- Manufakturen & Handwerksbetriebe mit Premium-Produkten
+- Marken ohne digitale Infrastruktur
+
+**Branchen:** Werkzeuge, Home & Living, Baumarkt, technische Produkte, Premium-Konsumgüter
+
+## Pricing — Merchant of Record Services
+
+**Setup-Fee:** 3.000-6.000 EUR einmalig
+- Shop-Aufbau (Shopware/WooCommerce)
+- Marktplatz-Integration (Amazon Pan-EU, eBay, ManoMano, Otto)
+- Produktseiten-Erstellung & Content
+- Payment & Logistik-Setup
+
+**Laufende Kosten:** Performance-basiert
+- **Option 1:** 12-18% vom Nettoumsatz (erfolgsbasiert)
+- **Option 2:** Retainer 2.500-5.000 EUR/Monat + 8-12% vom Nettoumsatz
+
+**Mindestlaufzeit:** 12 Monate
+
+**Einkaufsabwicklung:**
+- Wir kaufen Ihre Produkte zu festgelegten Konditionen ein
+- Oder: Konsignationslager (Sie bleiben Eigentümer bis zum Verkauf)
 
 Alle Preise verstehen sich zzgl. MwSt. Individuelle Angebote nach kostenlosem Erstgespräch.
 
-## Zielgruppen
+## Erfolgsfaktoren — Was VENDORi anders macht
 
-- B2B-Unternehmen mit Skalierungspotenzial
-- D2C-Marken (Direct-to-Consumer)
-- Mittelständische Hersteller
-- Besonders stark in: Werkzeuge, technische Produkte, Home & Living, Baumarkt
-
-**Für wen ist VENDORi der richtige Partner?**
-Unternehmen, die ihren E-Commerce-Umsatz über eigene Online-Shops (D2C) oder internationale Marktplätze wie Amazon skalieren möchten. Besonders geeignet für Mittelstand und wachsende Marken.
-
-## Erfolgsfaktoren
-
-**Was VENDORi anders macht:**
-- Kein Agentur-Konstrukt: Eigene Shops seit 2003 (myToolStore, ShowerNIZR)
-- Jede Strategie erst in eigenen Shops validiert, bevor sie Kunden empfohlen wird
+**Kein Experiment auf Ihre Kosten:**
+- Wir betreiben eigene Shops seit 2004 (myToolStore, ShowerNIZR)
 - 1,5 Mio.+ eigene Kunden = echte Praxiserfahrung im Tagesgeschäft
-- Kein Experiment auf Kosten der Kunden — nur bewährte Methoden
-- 22+ Jahre E-Commerce-Erfahrung im operativen Geschäft
+- Jede Technologie und Strategie wird zuerst in unseren Shops validiert
+- Kein Beratungs-Blabla — wir sind selbst Seller mit 22+ Jahren E-Commerce-Erfahrung
+
+**Komplettlösung aus einer Hand:**
+- Von Shop-Aufbau bis Kundenservice: alles bei VENDORi
+- Sie brauchen keine eigenen E-Commerce-Mitarbeiter
+- Keine Agentur-Hopping zwischen Marketing, Fulfillment, Payment-Anbietern
+
+**Geschwindigkeit:**
+- Durchschnittliche Projektlaufzeit bis Go-Live: 4-8 Wochen
+- Agile Arbeitsweise mit schnellen Iterationen
+- Keine monatelangen Strategiephasen
+
+**Internationale Reichweite:**
+- 20+ europäische Märkte (DE, FR, IT, ES, NL, PL, SE, AT, BE, u.a.)
+- Muttersprachliche Produktseiten & Kundenservice
+- Amazon Pan-EU Account Setup
 
 ## Unternehmensgeschichte
 
-VENDORi startete 2003 als E-Commerce-Seller und baute eigene D2C-Marken auf. Die Expansion erfolgte europaweit über eigene Online-Shops und internationale Marktplätze in 20+ Ländern — mit über 1.500.000 Kunden in unseren Shops.
+VENDORi startete 2004 als E-Commerce-Seller und baute eigene D2C-Marken auf. Die Expansion erfolgte europaweit über eigene Online-Shops und internationale Marktplätze in 20+ Ländern — mit über 1.500.000 Kunden in unseren Shops.
 
-Dabei merkten die Gründer: Die meisten Agenturen reden viel, verstehen aber das echte Tagesgeschäft nicht. Sie verkaufen Strategien, die in der Praxis scheitern.
+Dabei merkten die Gründer: Viele Marken und Einzelhändler haben großartige Produkte, aber keine E-Commerce-Infrastruktur. Sie scheitern an der Komplexität (Shop-Systeme, Payment, Logistik, Marketing, Kundenservice).
 
-VENDORi macht es anders: Jede Strategie, die empfohlen wird, wurde bereits in eigenen Shops validiert. Kein Beratungsprodukt, sondern ein Team mit 22+ Jahren E-Commerce-Erfahrung, das täglich selbst im Markt operiert.
+VENDORi bietet die Lösung: Wir übernehmen den kompletten Online-Verkauf als Merchant of Record. Die Marke kann ihr bestehendes Geschäft weiterlaufen lassen — und bekommt zusätzlich einen professionellen Online-Kanal.
 
 ## Werte
 
@@ -87,13 +141,15 @@ VENDORi macht es anders: Jede Strategie, die empfohlen wird, wurde bereits in ei
 
 **Fokus:** Unser einziger KPI ist Ihr Umsatz. Keine schönen Reports, keine Aktivitäts-Metriken. Wenn Ihre Zahlen nicht wachsen, haben wir versagt.
 
-**Partnerschaft:** Wir denken in Ihrem Business, nicht in Stundensätzen. Was gut für Ihren Umsatz ist, ist gut für uns — das ist die einzige Partnerschaft, die zählt.
+**Partnerschaft:** Wir denken in Ihrem Business, nicht in Stundensätzen. Performance-basiertes Pricing bedeutet: Wir verdienen nur, wenn Sie erfolgreich sind.
+
+**Praxis statt Theorie:** Wir sind selbst Seller mit 1,5 Mio.+ Bestellungen. Keine Agentur, die Theorien verkauft — wir leben E-Commerce täglich.
 
 ## Pages
 
-- /: Homepage — E-Commerce Services, D2C-Strategien, Marketplace-Expansion, Shop-Showcase (myToolStore, ShowerNIZR), Kontaktformular
+- /: Homepage — Merchant of Record Services, eigene Shops (myToolStore, ShowerNIZR), MoR-Erklärung, Kontaktformular
 - /ueber-uns: Über uns — Unternehmensgeschichte, Team, Werte (Geschwindigkeit, Fokus, Partnerschaft)
-- /#services: Service-Übersicht (D2C-Strategie, Marketplace-Expansion, E-Commerce Partnerschaft)
+- /#services: Service-Übersicht (Merchant of Record Services, eigene Retail-Shops)
 - /#shops: Unsere Shops (myToolStore mit 1,5 Mio.+ Bestellungen, ShowerNIZR Eigenmarke)
 - /#contact: Kontaktformular (Antwortzeit: <24h)
 
@@ -116,39 +172,45 @@ Telefon: +49 (0) 6274 9278157
 
 ## FAQs
 
-**Q: Was macht VENDORi anders als andere E-Commerce-Agenturen?**
-A: VENDORi betreibt eigene E-Commerce-Shops (myToolStore, ShowerNIZR) mit 1,5 Mio.+ Kunden seit 2003. Alle Strategien werden zuerst in eigenen Shops validiert, bevor sie Kunden empfohlen werden. Klassische Agenturen beraten nur theoretisch. VENDORi testet alle Strategien zuerst in den eigenen Shops. Risiko: minimal, da nur bewährte Methoden zum Einsatz kommen.
+**Q: Was macht VENDORi — ist das eine E-Commerce-Agentur?**
+A: Nein, VENDORi ist kein klassischer Dienstleister. Wir betreiben eigene E-Commerce-Shops (myToolStore, ShowerNIZR) seit 2004 und bieten anderen Marken einen Merchant of Record Service: Wir übernehmen den kompletten Online-Verkauf für Sie — von Shop-Aufbau bis Kundenservice. Sie führen Ihr bestehendes Geschäft weiter, wir ergänzen den Online-Kanal.
 
-**Q: Für welche Unternehmen ist VENDORi der richtige Partner?**
-A: VENDORi arbeitet mit B2B-Unternehmen und Marken zusammen, die ihren E-Commerce-Umsatz skalieren möchten — ob über eigene Online-Shops (D2C) oder internationale Marktplätze wie Amazon. Besonders geeignet für Mittelstand und wachsende Marken. Branchenübergreifend, besonders stark in technischen Produkten, Werkzeugen, Home & Living.
+**Q: Was ist ein Merchant of Record (MoR)?**
+A: Als Merchant of Record tritt VENDORi als offizieller Verkäufer Ihrer Produkte auf. Wir übernehmen rechtliche Verantwortung, Rechnungsstellung, Steuern, Zahlungsabwicklung, Logistik und Kundenservice. Sie liefern die Produkte, wir kümmern uns um den gesamten Online-Verkauf.
 
-**Q: In welchen Märkten ist VENDORi tätig?**
-A: VENDORi ist in 20+ europäischen Ländern aktiv, unter anderem in Deutschland, Frankreich, den Niederlanden, Österreich, Belgien, Italien, Spanien, Polen und Schweden. Eigene Shops beliefern Kunden in ganz Europa über Online-Shops und internationale Marktplätze.
+**Q: Für wen ist der MoR-Service geeignet?**
+A: Für Marken und Unternehmen, die online verkaufen möchten, aber keine eigene E-Commerce-Infrastruktur aufbauen wollen. Typisch: Traditionelle Einzelhändler, B2B-Hersteller, Manufakturen. Sie können Ihr bestehendes Geschäft weiterführen — VENDORi ergänzt den Online-Kanal.
 
-**Q: Welche Services bietet VENDORi konkret an?**
-A: VENDORi bietet drei Hauptservices: 1) D2C-Strategie & Umsatzwachstum mit praxiserprobten Strategien (CRO, Produktseiten-Optimierung, Pricing, A/B-Tests), 2) Internationale Marktplatz-Expansion auf Amazon in 20+ Ländern (Pan-EU Setup, Übersetzungen, PPC), 3) E-Commerce Partnerschaft mit operativer Begleitung (Marketing, Kundenservice, Content, Logistik).
+**Q: Was kostet der Merchant of Record Service?**
+A: Setup-Fee: 3.000-6.000 EUR einmalig. Laufende Kosten: Performance-basiert (12-18% vom Nettoumsatz) oder Retainer 2.500-5.000 EUR/Monat + 8-12% vom Umsatz. Mindestlaufzeit: 12 Monate. Individuelle Angebote nach kostenlosem Erstgespräch.
 
-**Q: Wie schnell kann ich mit VENDORi starten?**
-A: Nach einem kostenlosen Kennenlern-Gespräch können wir innerhalb von 2-3 Wochen starten. Keine monatelangen Strategiephasen. Agile Arbeitsweise mit schnellen Iterationen.
+**Q: Wie funktioniert die Zusammenarbeit? Wer ist Eigentümer der Produkte?**
+A: Zwei Modelle: 1) VENDORi kauft Ihre Produkte zu festgelegten Konditionen ein (Einkauf/Verkauf-Modell). 2) Konsignationslager — Sie bleiben Eigentümer bis zum Verkauf, VENDORi übernimmt den Vertrieb. Wir besprechen, welches Modell für Sie passt.
 
-**Q: Was kostet die Zusammenarbeit mit VENDORi?**
-A: D2C-Strategie: 2.500-7.500 EUR/Monat (Retainer). Amazon Expansion: 5.000-8.000 EUR Setup (einmalig) + 3.000-5.000 EUR/Monat Betreuung. E-Commerce Partnerschaft: Auf Anfrage (projektbasiert oder Performance-basiert: 12-18% vom Nettoumsatz). Individuelle Angebote nach kostenlosem Erstgespräch.
+**Q: In welchen Märkten verkauft VENDORi?**
+A: 20+ europäische Länder, darunter Deutschland, Frankreich, Niederlande, Österreich, Belgien, Italien, Spanien, Polen, Schweden. Eigene Shops und Marktplätze (Amazon Pan-EU, eBay, Kaufland, Otto).
 
-**Q: Auf welchen Marktplätzen ist VENDORi aktiv?**
-A: Hauptsächlich Amazon (alle EU-Marktplätze: DE, FR, IT, ES, NL, PL, SE, AT, BE), aber auch eBay, Kaufland, Otto und internationale Plattformen. Unsere Shops bedienen 20+ europäische Länder.
+**Q: Wie schnell kann ich starten?**
+A: Nach einem kostenlosen Kennenlern-Gespräch dauert der Aufbau 4-8 Wochen bis zum Go-Live. Setup umfasst: Shop-Aufbau, Marktplatz-Integration, Produktseiten-Erstellung, Payment & Logistik-Setup.
 
-**Q: Wie lange dauert es bis erste Ergebnisse sichtbar sind?**
-A: Erste Tests starten in Woche 1-2. Messbare Umsatzsteigerungen nach 4-8 Wochen. Wir arbeiten agil mit schnellen Iterationen. Typische Umsatzsteigerung: +40-120% in 6 Monaten (basierend auf Kundenprojekten 2023-2024).
-
-**Q: Welche Branchen betreut VENDORi?**
-A: Branchenübergreifend mit B2B und D2C-Marken. Besonders stark in technischen Produkten, Werkzeugen, Home & Living, Baumarkt. Entscheidend ist das Skalierungspotenzial, nicht die Branche.
+**Q: Was unterscheidet VENDORi von klassischen E-Commerce-Agenturen?**
+A: VENDORi ist selbst Seller mit 1,5 Mio.+ Bestellungen seit 2004. Wir betreiben eigene Shops (myToolStore, ShowerNIZR) und validieren alle Technologien und Strategien zuerst selbst. Klassische Agenturen beraten nur theoretisch — VENDORi lebt E-Commerce täglich im operativen Geschäft.
 
 **Q: Brauche ich eigene E-Commerce-Erfahrung?**
-A: Nein. Wir bringen das komplette Know-how mit und übernehmen operative Tasks. Sie konzentrieren sich auf Ihr Kerngeschäft (Produktentwicklung, Einkauf, Strategie).
+A: Nein. Der MoR-Service ist genau dafür gedacht: VENDORi übernimmt den kompletten Online-Verkauf. Sie konzentrieren sich auf Ihr Kerngeschäft (Produktion, Einkauf, Offline-Vertrieb) — wir kümmern uns um E-Commerce.
 
-**Q: Welche Software/Tools nutzt VENDORi für E-Commerce-Projekte?**
-A: Amazon Seller Central, Helium 10 (Keyword-Recherche), Shopify/WooCommerce (D2C-Shops), Google Analytics 4, Microsoft Clarity, Klaviyo (E-Mail-Marketing), Channable (Feed-Management für Marktplätze). Toolkosten sind nicht im Retainer enthalten.
+**Q: Welche Plattformen nutzt VENDORi für den Online-Verkauf?**
+A: Shopify/WooCommerce (eigene D2C-Shops), Amazon (alle EU-Marktplätze), eBay, Kaufland, Otto. Wir wählen die Plattformen basierend auf Ihrer Zielgruppe und Produktkategorie.
+
+**Q: Welche Branchen betreut VENDORi?**
+A: Branchenübergreifend, besonders stark in: Werkzeuge, technische Produkte, Home & Living, Baumarkt, Premium-Konsumgüter. Entscheidend ist das Skalierungspotenzial und die Online-Tauglichkeit der Produkte.
+
+**Q: Kann ich den Online-Verkauf auch selbst übernehmen, wenn ich später E-Commerce-Kompetenz aufbaue?**
+A: Grundsätzlich ja, aber der MoR-Service ist langfristig angelegt (Mindestlaufzeit 12 Monate). Wir empfehlen: Starten Sie mit VENDORi, validieren Sie den Online-Kanal, und entscheiden Sie später, ob Sie inhouse-Kompetenz aufbauen möchten.
+
+**Q: Was passiert mit meiner Marke? Tritt VENDORi unter eigenem Namen auf?**
+A: Ihre Marke bleibt sichtbar. VENDORi ist der rechtliche Verkäufer (Rechnungsstellung, Impressum), aber Ihre Marke wird auf Produktseiten, Verpackung und Marketing kommuniziert. Wir besprechen die Brand-Strategie im Detail.
 
 ## Keywords
 
-E-Commerce Beratung, D2C-Strategien, Amazon Expansion, Marketplace Expansion, Amazon Pan-EU, E-Commerce Partnerschaft, Amazon PPC, Online-Shop Skalierung, Internationale Marktplätze, Amazon Seller, FBA Expansion, E-Commerce Agentur Deutschland, Amazon Beratung, Shopify Beratung, Marktplatz-Strategien, E-Commerce Wachstum
+Merchant of Record, MoR Services, E-Commerce Outsourcing, Online-Shop Betrieb, E-Commerce als Service, Online-Verkauf Komplettlösung, D2C für Hersteller, Amazon Pan-EU, Marktplatz-Integration, E-Commerce ohne eigene Infrastruktur, Shopify Management, Online-Kanal für Offline-Händler, Performance-basiertes E-Commerce, E-Commerce Fulfillment, Online-Vertrieb Outsourcing, Retail as a Service

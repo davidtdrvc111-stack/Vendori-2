@@ -8,7 +8,7 @@ import { BreadcrumbJsonLd } from '@/components/seo/JsonLd';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Über uns - VENDORi GmbH',
+  title: 'Über VENDORi GmbH | 22+ Jahre E-Commerce Erfahrung',
   description:
     'Vom Seller zum Partner: Erfahren Sie, wie VENDORi aus der Praxis entstand und warum unsere Hands-on-Erfahrung den Unterschied macht.',
   alternates: {

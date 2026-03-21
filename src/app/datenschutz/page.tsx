@@ -3,7 +3,7 @@ import { DatenschutzContent } from './DatenschutzContent';
 import { BreadcrumbJsonLd } from '@/components/seo/JsonLd';
 
 export const metadata: Metadata = {
-    title: 'Datenschutzerklärung',
+    title: 'Datenschutzerklärung | VENDORi GmbH — Datenschutz',
     description: 'Datenschutzerklärung der VENDORi GmbH — Informationen zur Verarbeitung Ihrer personenbezogenen Daten gemäß DSGVO.',
     robots: { index: false, follow: false },
     alternates: { canonical: 'https://vendori.eu/datenschutz' },
