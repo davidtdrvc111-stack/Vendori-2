@@ -1,8 +1,12 @@
 import dynamic from 'next/dynamic';
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { StickyHeader } from '@/sections/sticky_header';
 import { HeroSection } from '@/sections/hero_section'; // Above-the-fold - sofort laden!
+import { getFeaturedFAQs } from '@/data/faq-unified';
+
+const faqData = getFeaturedFAQs();
 
 // Dynamic Imports NUR für below-fold
 
@@ -26,6 +30,11 @@ const ContactSection = dynamic(() =>
   { loading: () => <div className="min-h-screen bg-zinc-900" /> }
 );
 
+const FAQAccordion = dynamic(() =>
+  import('@/components/ui/FAQAccordion').then(mod => ({ default: mod.FAQAccordion })),
+  { loading: () => <div className="min-h-screen bg-zinc-900" /> }
+);
+
 const FooterSection = dynamic(() =>
   import('@/sections/footer_section').then(mod => ({ default: mod.FooterSection })),
   { loading: () => <div className="bg-zinc-900" /> }
@@ -45,91 +54,19 @@ export const metadata: Metadata = {
   },
 };
 
+// Dynamisch generiertes Schema.org FAQPage-Markup aus faq.ts
+// Vorteil: Single Source of Truth, automatische Synchronisation bei Änderungen
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'Was macht VENDORi anders als andere E-Commerce-Agenturen?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'VENDORi ist kein Agentur-Konstrukt. Wir started als E-Commerce-Seller und betreiben bis heute eigene D2C-Shops mit über 1.500.000 Kunden. Jede Strategie, die wir empfehlen, haben wir bereits in unseren eigenen Shops validiert — kein Experiment auf Ihre Kosten.',
-      },
+  mainEntity: faqData.map((faq) => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: faq.answer,
     },
-    {
-      '@type': 'Question',
-      name: 'Für welche Unternehmen ist VENDORi der richtige Partner?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'VENDORi arbeitet mit B2B-Unternehmen und Marken zusammen, die ihren E-Commerce-Umsatz skalieren möchten — ob über eigene Online-Shops (D2C) oder internationale Marktplätze wie Amazon. Besonders geeignet für Mittelstand und wachsende Marken.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'In welchen Märkten ist VENDORi tätig?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'VENDORi ist in 20+ europäischen Ländern aktiv, unter anderem in Deutschland, Frankreich, den Niederlanden, Österreich und Belgien. Unsere eigenen Shops beliefern Kunden in ganz Europa über Online-Shops und internationale Marktplätze.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Welche Services bietet VENDORi konkret an?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'VENDORi bietet drei Hauptservices: 1) D2C-Strategie & Umsatzwachstum mit praxiserprobten Strategien, 2) Internationale Marktplatz-Expansion auf Amazon in 20+ Ländern, 3) E-Commerce Partnerschaft mit operativer Begleitung.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Wie schnell kann ich mit VENDORi starten?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Nach einem kostenlosen Kennenlern-Gespräch können wir innerhalb von 2-3 Wochen starten. Keine monatelangen Strategiephasen.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Was kostet die Zusammenarbeit mit VENDORi?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Die Kosten richten sich nach Ihrem individuellen Bedarf. Wir arbeiten projektbasiert oder im Retainer-Modell. Im Erstgespräch erstellen wir ein transparentes Angebot.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Auf welchen Marktplätzen ist VENDORi aktiv?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Hauptsächlich Amazon (alle EU-Marktplätze), aber auch eBay, Kaufland, Otto und internationale Plattformen. Unsere Shops bedienen 20+ europäische Länder.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Wie lange dauert es bis erste Ergebnisse sichtbar sind?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Erste Tests starten in Woche 1-2. Messbare Umsatzsteigerungen nach 4-8 Wochen. Wir arbeiten agil mit schnellen Iterationen.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Welche Branchen betreut VENDORi?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Branchenübergreifend mit B2B und D2C-Marken. Besonders stark in technischen Produkten, Werkzeugen, Home & Living. Entscheidend ist das Skalierungspotenzial.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Brauche ich eigene E-Commerce-Erfahrung?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Nein. Wir bringen das komplette Know-how mit und übernehmen operative Tasks. Sie konzentrieren sich auf Ihr Kerngeschäft.',
-      },
-    },
-  ],
+  })),
 };
 
 export default async function Home() {
@@ -154,6 +91,38 @@ export default async function Home() {
       <ShopShowcaseSection />
       <AboutSection />
       <ContactSection />
+
+      {/* FAQ Section */}
+      <section id="faq" className="bg-zinc-900 py-20 md:py-32">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary-600/10 border border-primary-600/20 text-primary-600 dark:text-primary-400 text-[10px] font-black uppercase tracking-widest font-heading font-bold mb-6">
+              FAQ
+            </div>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white font-heading leading-tight tracking-tighter mb-6">
+              Häufig gestellte Fragen
+            </h2>
+            <p className="text-lg md:text-xl text-neutral-400 max-w-2xl mx-auto leading-relaxed">
+              Antworten auf die wichtigsten Fragen zu VENDORi und unseren Services
+            </p>
+          </div>
+
+          <FAQAccordion items={faqData} />
+
+          <div className="text-center mt-12">
+            <Link
+              href="/faq"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-primary-600 hover:bg-primary-700 text-white rounded-2xl font-bold text-base transition-all duration-300 hover:scale-105 shadow-xl shadow-primary-600/20 active:scale-95"
+            >
+              Alle FAQs anzeigen
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <FooterSection />
     </main>
   );

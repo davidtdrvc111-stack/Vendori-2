@@ -5,9 +5,6 @@ const organizationSchema = {
   url: 'https://vendori.eu',
   logo: 'https://vendori.eu/Logo_Vendori_rgb_anthrazit.svg',
   email: 'info@vendori.eu',
-  sameAs: [
-    'https://www.linkedin.com/company/vendori',
-  ],
   contactPoint: {
     '@type': 'ContactPoint',
     telephone: '+49-6274-9278157',
@@ -139,7 +136,7 @@ const productSchemaMyToolStore = {
   '@context': 'https://schema.org',
   '@type': 'Product',
   name: 'myToolStore - Werkzeug & Baumarkt Online Shop',
-  description: 'Multi-Market Shop für Werkzeuge mit 1,5 Mio.+ Bestellungen.',
+  description: 'Multi-Market Shop für Werkzeuge und Regenwassermanagementlösungen mit über 1,5 Mio. Bestellungen.',
   brand: { '@type': 'Brand', name: 'myToolStore' },
   offers: {
     '@type': 'AggregateOffer',

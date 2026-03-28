@@ -4,8 +4,6 @@ import React, { useEffect } from 'react';
 import { StickyHeader } from '@/sections/sticky_header';
 import { FooterSection } from '@/sections/footer_section';
 import { Breadcrumb } from '@/components/ui/Breadcrumb';
-import { FAQAccordion } from '@/components/ui/FAQAccordion';
-import { faqData } from '@/data/faq';
 import { motion } from 'framer-motion';
 
 export function ImpressumContent() {
@@ -191,45 +189,6 @@ export function ImpressumContent() {
                             </a>
                         </div>
                     </div>
-
-                    {/* FAQ Section */}
-                    <motion.section
-                        initial={{ opacity: 0, y: 40 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="mt-20"
-                    >
-                        <div className="text-center mb-12">
-                            <motion.div
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary-600/10 border border-primary-600/20 text-primary-600 dark:text-primary-400 text-[10px] font-black uppercase tracking-widest font-heading font-bold mb-6"
-                            >
-                                Häufig gestellte Fragen
-                            </motion.div>
-                            <motion.h2
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: 0.1 }}
-                                className="text-4xl md:text-5xl lg:text-6xl font-black text-neutral-900 dark:text-white font-heading font-bold leading-tight tracking-tighter"
-                            >
-                                Häufig gestellte Fragen
-                            </motion.h2>
-                            <motion.p
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: 0.2 }}
-                                className="mt-6 text-lg text-neutral-500 dark:text-neutral-400 max-w-2xl mx-auto"
-                            >
-                                Antworten auf die wichtigsten Fragen zu VENDORi und unseren Services
-                            </motion.p>
-                        </div>
-
-                        <FAQAccordion items={faqData} />
-                    </motion.section>
                 </div>
             </div>
 

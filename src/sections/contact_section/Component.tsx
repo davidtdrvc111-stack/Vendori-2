@@ -132,7 +132,7 @@ export function ContactSection({ className = '' }: ContactSectionProps) {
     setHoneypot('');
   };
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
 
     // Mark all fields as touched
@@ -167,37 +167,45 @@ export function ContactSection({ className = '' }: ContactSectionProps) {
 
     setStatus('loading');
 
-    // Sanitize inputs
-    const sanitizedData = {
-      firstName: sanitizeInput(formData.firstName),
-      lastName: sanitizeInput(formData.lastName),
-      email: sanitizeInput(formData.email),
-      message: sanitizeInput(formData.message),
-    };
+    // Set loading state
+    setStatus('loading');
 
-    // Get contact email from environment variable (fallback to default)
-    const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'info@vendori.eu';
+    try {
+      // Send form data to API
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
 
-    // Create mailto link with pre-filled data
-    const subject = `Kontaktanfrage von ${sanitizedData.firstName} ${sanitizedData.lastName}`;
-    const body = `Name: ${sanitizedData.firstName} ${sanitizedData.lastName}
-E-Mail: ${sanitizedData.email}
+      const data = await response.json();
 
-Nachricht:
-${sanitizedData.message}`;
+      if (!response.ok) {
+        // Handle API errors
+        throw new Error(data.error || 'Fehler beim Senden der Nachricht');
+      }
 
-    // Open email client
-    window.location.href = `mailto:${contactEmail}?subject=${encodeURIComponent(
-      subject
-    )}&body=${encodeURIComponent(body)}`;
+      // Show success state
+      setStatus('success');
 
-    // Show success state
-    setStatus('success');
-
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      resetForm();
-    }, 3000);
+      // Reset form after 3 seconds
+      setTimeout(() => {
+        resetForm();
+      }, 3000);
+    } catch (error) {
+      // Handle errors
+      console.error('Contact form error:', error);
+      setStatus('error');
+      setErrors({
+        ...errors,
+        general:
+          error instanceof Error
+            ? error.message
+            : 'Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es später erneut.',
+      });
+    }
   };
 
   return (

@@ -12,6 +12,7 @@ const baseNavigationItems: NavItem[] = [
   { label: 'Shops', href: '/#shops' },
   { label: 'Über uns', href: '/#about' },
   { label: 'Kontakt', href: '/#contact' },
+  { label: 'FAQ', href: '/#faq' },
 ];
 
 export function StickyHeader({ className = '' }: StickyHeaderProps) {
