@@ -73,7 +73,14 @@ Der Nutzer hat in Bezug auf die vom Anbieter nachfolgend wiedergegebene Verarbei
 
 4. dass er die ihn betreffenden und von ihm bereitgestellten Daten nach Maßgabe des Art. 20 DSGVO erhält und deren Übermittlung an andere Verantwortliche zu fordern;
 
-5. eine Beschwerde bei der Aufsichtsbehörde nach Art. 77 DSGVO einzureichen, falls der Nutzer der Ansicht ist, dass die Verarbeitung seiner Daten durch den Anbieter gegen die DSGVO verstößt.
+5. eine Beschwerde bei der zuständigen Aufsichtsbehörde nach Art. 77 DSGVO einzureichen, falls der Nutzer der Ansicht ist, dass die Verarbeitung seiner Daten durch den Anbieter gegen die DSGVO verstößt. Die zuständige Aufsichtsbehörde ist:
+
+Landesbeauftragte für den Datenschutz und die Informationsfreiheit Baden-Württemberg (LfDI BW)
+Lautenschlagerstraße 20
+70173 Stuttgart
+Tel: +49 711 615541-0
+E-Mail: poststelle@lfdi.bwl.de
+https://www.baden-wuerttemberg.datenschutz.de/
 
 _________________________
 
@@ -114,7 +121,7 @@ Der Einsatz erlaubt es dem Verantwortlichen seine Website bedienfreundlicher, ef
 
 Die "Persistente"-Cookies erlauben es der Webseite, den Nutzer über seinen Browser bei einem zeitnahen wiederholten Besuch der Webseite wiederzuerkennen um die schon vorgenommene Einstellung des Nutzers in Bezug auf die Cookies nicht nochmals darzustellen bzw. abzufragen.
 
-Die Verarbeitung dient dem berechtigten Interesse des Verantwortlichen an einer Verbesserung der Funktionalität der Website sowie der Erfüllung gesetzlicher Vorgaben und beruht auf der Rechtsgrundlage des Art. 6 Abs. 1 lit. f DSGVO.
+Technisch notwendige Cookies werden auf Basis des berechtigten Interesses des Verantwortlichen an einem sicheren und funktionsfähigen Betrieb der Website verarbeitet (Art. 6 Abs. 1 lit. f DSGVO). Für analytische und Marketing-Cookies ist die Rechtsgrundlage die ausdrückliche Einwilligung des Nutzers gemäß Art. 6 Abs. 1 lit. a DSGVO i.V.m. § 25 TTDSG. Die Einwilligung kann jederzeit über die Cookie-Einstellungen widerrufen werden.
 
 Die „Session"-Cookies werden gelöscht, wenn der Nutzer seinen Browser schließt. Die "Persistente"-Cookies werden automatisiert nach 12 Monaten gelöscht. Diese Frist ist je nach Cookie unterschiedlich, überschreitet jedoch nicht eine Frist von 12 Monaten.
 
@@ -133,6 +140,14 @@ Die Daten des Nutzers werden gelöscht, sofern die Anfrage des Nutzers abschlie�
 Rechtsgrundlage kann auch eine Einwilligung des Nutzers gemäß Art. 6 Abs. 1 lit. a DSGVO sein.
 
 Eine erteilte Einwilligung für die Kontaktanfrage kann der Nutzer nach Art. 7 Abs. 3 DSGVO jederzeit durch eine Mitteilung an den Anbieter widerrufen. Die im Zusammenhang verarbeiteten Daten werden gelöscht, sobald ihre Verarbeitung nicht mehr erforderlich ist.
+
+Vercel (Hosting)
+
+Die Website wird auf der Infrastruktur der Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, USA gehostet. Beim Aufruf der Website werden Serverlogdaten (inkl. IP-Adresse) durch Vercel verarbeitet. Vercel verarbeitet diese Daten als Auftragsverarbeiter gemäß Art. 28 DSGVO. Die Datenübermittlung in die USA erfolgt auf Grundlage von Standardvertragsklauseln (Standard Contractual Clauses, SCC) gemäß Art. 46 Abs. 2 lit. c DSGVO. Weitere Informationen: https://vercel.com/legal/privacy-policy
+
+Webhook-Verarbeitung (n8n)
+
+Im Zuge der Bearbeitung von Kontaktanfragen werden die übermittelten Daten (Name, E-Mail-Adresse, Nachricht) über einen Webhook an n8n weitergeleitet, um die anschließende E-Mail-Kommunikation zu ermöglichen. n8n agiert hierbei als Auftragsverarbeiter gemäß Art. 28 DSGVO. Die Verarbeitung erfolgt auf Basis von Art. 6 Abs. 1 lit. b bzw. lit. a DSGVO. Die Daten werden ausschließlich zur Bearbeitung der Anfrage verwendet und nach Abschluss der Kommunikation gelöscht, sofern keine gesetzlichen Aufbewahrungspflichten entgegenstehen (max. 6 Jahre nach HGB § 257).
 
 Amazon Cloudfront
 

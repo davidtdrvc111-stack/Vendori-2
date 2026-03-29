@@ -96,10 +96,7 @@ export default async function Home() {
       <section id="faq" className="bg-gradient-to-b from-zinc-950 via-zinc-900 to-zinc-950 py-20 md:py-32">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary-600/10 border border-primary-600/20 text-primary-600 dark:text-primary-400 text-[10px] font-black uppercase tracking-widest font-heading font-bold mb-6">
-              FAQ
-            </div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white font-heading leading-tight tracking-tighter mb-6">
+<h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white font-heading leading-tight tracking-tighter mb-6">
               Häufig gestellte Fragen
             </h2>
             <p className="text-lg md:text-xl text-neutral-400 max-w-2xl mx-auto leading-relaxed">

@@ -86,7 +86,7 @@ export function ImpressumContent() {
                             transition={{ delay: 0.3 }}
                             className="text-xl text-neutral-500 dark:text-neutral-400 font-light max-w-2xl mx-auto leading-relaxed"
                         >
-                            Angaben gemäß § 5 TMG und rechtliche Informationen zur VENDORi GmbH
+                            Angaben gemäß § 5 DDG und rechtliche Informationen zur VENDORi GmbH
                         </motion.p>
                     </header>
 
@@ -104,11 +104,12 @@ export function ImpressumContent() {
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-base md:text-lg text-neutral-700 dark:text-neutral-400 leading-[1.8] font-light tracking-wide">
                                 <section className="space-y-8">
                                     <div>
-                                        <h2 className="text-2xl font-black text-neutral-900 dark:text-white mb-4 font-heading font-bold">Angaben gemäß § 5 TMG</h2>
+                                        <h2 className="text-2xl font-black text-neutral-900 dark:text-white mb-4 font-heading font-bold">Angaben gemäß § 5 DDG</h2>
                                         <p className="font-medium">
                                             VENDORi GmbH<br />
                                             Hahnenfeldstr. 25<br />
-                                            69429 Waldbrunn
+                                            69429 Waldbrunn<br />
+                                            Deutschland
                                         </p>
                                     </div>
 
