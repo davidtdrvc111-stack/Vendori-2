@@ -93,7 +93,7 @@ export default async function Home() {
       <ContactSection />
 
       {/* FAQ Section */}
-      <section id="faq" className="bg-zinc-900 py-20 md:py-32">
+      <section id="faq" className="bg-gradient-to-b from-zinc-950 via-zinc-900 to-zinc-950 py-20 md:py-32">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary-600/10 border border-primary-600/20 text-primary-600 dark:text-primary-400 text-[10px] font-black uppercase tracking-widest font-heading font-bold mb-6">

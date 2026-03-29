@@ -84,15 +84,7 @@ export default function FAQPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
           {/* Hero Header */}
           <header className="mb-20 space-y-6 text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary-600/10 border border-primary-600/20 text-primary-600 dark:text-primary-400 text-[10px] font-black uppercase tracking-widest font-heading font-bold"
-            >
-              Häufig gestellte Fragen
-            </motion.div>
-            <motion.h1
+<motion.h1
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
