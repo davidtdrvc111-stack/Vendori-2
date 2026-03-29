@@ -97,7 +97,7 @@ export async function POST(request: NextRequest) {
     let body: Record<string, unknown>;
     try {
       body = await request.json();
-    } catch (_error) {
+    } catch {
       return NextResponse.json(
         {
           success: false,
