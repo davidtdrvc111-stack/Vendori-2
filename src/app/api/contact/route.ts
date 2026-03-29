@@ -94,10 +94,10 @@ export async function POST(request: NextRequest) {
     }
 
     // 4. Request Body parsen
-    let body: any;
+    let body: Record<string, unknown>;
     try {
       body = await request.json();
-    } catch (error) {
+    } catch (_error) {
       return NextResponse.json(
         {
           success: false,

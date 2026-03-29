@@ -3,7 +3,7 @@
 import { useState, FormEvent, ChangeEvent } from 'react';
 import { cn } from '@/lib/utils';
 import { ContactSectionProps, FormData, FormErrors, FormStatus } from './types';
-import { validateField, validateForm, sanitizeInput } from './validation';
+import { validateField, validateForm } from './validation';
 import { Send, Loader2, Check, AlertCircle } from 'lucide-react';
 import { NoiseOverlay } from '@/components/ui/NoiseOverlay';
 

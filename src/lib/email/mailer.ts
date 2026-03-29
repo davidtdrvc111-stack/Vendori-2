@@ -86,7 +86,7 @@ function createTransporter(): Transporter {
 
     // Verbindung in Entwicklung testen
     if (process.env.NODE_ENV === 'development') {
-      transporter.verify((error, success) => {
+      transporter.verify((error, _success) => {
         if (error) {
           console.error('[Mailer] SMTP-Verbindung fehlgeschlagen:', error);
         } else {

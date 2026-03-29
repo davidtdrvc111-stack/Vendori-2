@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect } from 'react';
+import Link from 'next/link';
 import { StickyHeader } from '@/sections/sticky_header';
 import { FooterSection } from '@/sections/footer_section';
 import { FAQAccordion } from '@/components/ui/FAQAccordion';
@@ -151,12 +152,12 @@ export default function FAQPage() {
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a
+              <Link
                 href="/#contact"
                 className="px-8 py-4 bg-primary-700 hover:bg-primary-800 text-white rounded-2xl font-black text-sm transition-all hover:scale-105 shadow-xl shadow-primary-700/20 active:scale-95 whitespace-nowrap"
               >
                 Jetzt Kontaktieren
-              </a>
+              </Link>
             </div>
           </motion.div>
         </div>
