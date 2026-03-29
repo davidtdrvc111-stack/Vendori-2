@@ -110,7 +110,8 @@ export async function POST(request: NextRequest) {
     // 5. Honeypot prüfen (Silent Fail)
     // Das "website"-Feld ist für Menschen unsichtbar
     // Bots füllen es automatisch aus
-    if (body.website && body.website.trim() !== '') {
+    const websiteField = body.website as string | undefined;
+    if (websiteField && websiteField.trim() !== '') {
       console.warn('[Contact API] Honeypot ausgelöst von IP:', clientIP);
 
       // Täusche Erfolg vor, um Bot nicht zu enthüllen
@@ -126,11 +127,11 @@ export async function POST(request: NextRequest) {
     // 6. Server-seitige Validierung
     // NIEMALS nur Client-Validierung vertrauen!
     const formData: FormData = {
-      firstName: body.firstName || '',
-      lastName: body.lastName || '',
-      email: body.email || '',
-      message: body.message || '',
-      privacyAccepted: body.privacyAccepted || false,
+      firstName: (body.firstName as string) || '',
+      lastName: (body.lastName as string) || '',
+      email: (body.email as string) || '',
+      message: (body.message as string) || '',
+      privacyAccepted: (body.privacyAccepted as boolean) || false,
     };
 
     const validationErrors = validateForm(formData);
