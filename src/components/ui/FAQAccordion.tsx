@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useDeferredValue, useCallback } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -17,9 +17,13 @@ interface FAQAccordionProps {
 export function FAQAccordion({ items, className = '' }: FAQAccordionProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
-  const toggleItem = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
+  // useDeferredValue für bessere Performance bei vielen FAQs
+  const deferredOpenIndex = useDeferredValue(openIndex);
+
+  // useCallback um Re-Renders zu vermeiden
+  const toggleItem = useCallback((index: number) => {
+    setOpenIndex((prev) => prev === index ? null : index);
+  }, []);
 
   return (
     <div className={cn('space-y-4', className)}>
@@ -32,7 +36,7 @@ export function FAQAccordion({ items, className = '' }: FAQAccordionProps) {
             'shadow-sm dark:shadow-none',
             'backdrop-blur-sm',
             'transition-all duration-300',
-            openIndex === index && 'ring-2 ring-primary-500/30'
+            deferredOpenIndex === index && 'ring-2 ring-primary-500/30'
           )}
         >
           <button
@@ -43,24 +47,32 @@ export function FAQAccordion({ items, className = '' }: FAQAccordionProps) {
               'hover:bg-neutral-100 dark:hover:bg-white/5',
               'focus:outline-none focus:ring-2 focus:ring-primary-500/50'
             )}
-            aria-expanded={openIndex === index}
+            aria-expanded={deferredOpenIndex === index}
+            aria-controls={`faq-content-${index}`}
+            id={`faq-button-${index}`}
+            type="button"
           >
-            <span className="text-lg md:text-xl font-semibold text-neutral-900 dark:text-white pr-8">
+            <h3 className="text-lg md:text-xl font-semibold text-neutral-900 dark:text-white pr-8">
               {item.question}
-            </span>
+            </h3>
             <ChevronDown
               className={cn(
                 'w-5 h-5 text-primary-500 flex-shrink-0',
                 'transition-transform duration-300',
-                openIndex === index && 'rotate-180'
+                deferredOpenIndex === index && 'rotate-180'
               )}
+              aria-hidden="true"
             />
           </button>
 
           <div
+            id={`faq-content-${index}`}
+            role="region"
+            aria-labelledby={`faq-button-${index}`}
+            aria-hidden={deferredOpenIndex !== index}
             className={cn(
               'overflow-hidden transition-all duration-300 ease-in-out',
-              openIndex === index ? 'max-h-[1200px] opacity-100' : 'max-h-0 opacity-0'
+              deferredOpenIndex === index ? 'max-h-[1200px] opacity-100' : 'max-h-0 opacity-0'
             )}
           >
             <div className="px-6 pb-6 pt-2">

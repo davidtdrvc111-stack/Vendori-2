@@ -125,7 +125,17 @@ Technisch notwendige Cookies werden auf Basis des berechtigten Interesses des Ve
 
 Die „Session"-Cookies werden gelöscht, wenn der Nutzer seinen Browser schließt. Die "Persistente"-Cookies werden automatisiert nach 12 Monaten gelöscht. Diese Frist ist je nach Cookie unterschiedlich, überschreitet jedoch nicht eine Frist von 12 Monaten.
 
-b) Beseitigungsmöglichkeit
+b) Übersicht der eingesetzten Cookies
+
+Folgende Tabelle gibt Ihnen eine Übersicht über alle auf dieser Website eingesetzten Cookies:
+
+| Cookie-Name | Anbieter | Zweck | Kategorie | Laufzeit | Rechtsgrundlage |
+|------------|---------|-------|-----------|---------|-----------------|
+| vendori_cookie_consent | VENDORi GmbH (First-Party) | Speichert die Cookie-Einstellungen des Nutzers (necessary, analytics, marketing, timestamp, version) im localStorage | Notwendig | 12 Monate | Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse) |
+
+Hinweis: Analytische und Marketing-Cookies werden derzeit nicht aktiv eingesetzt. Sollten diese zukünftig hinzugefügt werden, wird diese Tabelle entsprechend aktualisiert und erneute Einwilligung eingeholt.
+
+c) Beseitigungsmöglichkeit
 
 Der Nutzer kann die Installation der Cookies durch eine entsprechende Einstellung des Browsers verhindern oder einschränken. Bereits gespeicherte Cookies können ebenfalls jederzeit gelöscht werden. Die Einstellungen hierzu sind vom jeweiligen Browser abhängig. Sollte der Nutzer die Installation der Cookies verhindern oder einschränken, kann dies dazu führen, dass nicht sämtliche Funktionen der Website vollumfänglich nutzbar sind.
 
@@ -141,31 +151,74 @@ Rechtsgrundlage kann auch eine Einwilligung des Nutzers gemäß Art. 6 Abs. 1 li
 
 Eine erteilte Einwilligung für die Kontaktanfrage kann der Nutzer nach Art. 7 Abs. 3 DSGVO jederzeit durch eine Mitteilung an den Anbieter widerrufen. Die im Zusammenhang verarbeiteten Daten werden gelöscht, sobald ihre Verarbeitung nicht mehr erforderlich ist.
 
+Speicherdauer für Kontaktanfragen
+
+Wir speichern Ihre Kontaktdaten nur so lange, wie es für die Bearbeitung Ihrer Anfrage erforderlich ist:
+
+1. Allgemeine Anfragen (Informationen, Fragen):
+   30 Tage nach abschließender Beantwortung
+
+2. Angebotsanfragen ohne Vertragsabschluss:
+   6 Monate nach letzter Kommunikation (für mögliche Rückfragen)
+
+3. Geschäftliche Korrespondenz mit Vertragsabschluss:
+   6 Jahre nach Ende des Geschäftsjahres gemäß HGB § 257 Abs. 1 Nr. 2 (Aufbewahrungspflicht für Geschäftsbriefe)
+
+   Hinweis: In diesem Fall ist eine vorzeitige Löschung auf Ihr Verlangen nicht möglich (Art. 17 Abs. 3 lit. b DSGVO - gesetzliche Aufbewahrungspflicht). Die Daten werden jedoch nach Ablauf der Frist automatisch gelöscht.
+
+4. Technische Logs (n8n-Workflow, Vercel-Server):
+   7 Tage nach der Anfrage
+
+Sie können jederzeit die Löschung Ihrer Daten beantragen. Wir prüfen dann, ob einer Löschung gesetzliche Aufbewahrungspflichten entgegenstehen.
+
+Spam- und Missbrauchsschutz (Rate-Limiting)
+
+Zum Schutz vor Spam und automatisierten Missbrauchsversuchen setzen wir ein Rate-Limiting-System ein, das die Anzahl der Kontaktanfragen pro IP-Adresse begrenzt (maximal 5 Anfragen pro Minute).
+
+Dabei werden folgende Daten vorübergehend verarbeitet:
+- IP-Adresse des Nutzers
+- Zeitstempel der Anfragen
+
+Rechtsgrundlage für diese Verarbeitung ist Art. 6 Abs. 1 lit. f DSGVO. Das berechtigte Interesse liegt im Schutz unserer IT-Infrastruktur vor Überlastung und Missbrauch sowie im Schutz vor Spam.
+
+Die Daten werden ausschließlich im Arbeitsspeicher (In-Memory) gespeichert und automatisch nach spätestens 1 Stunde gelöscht. Es erfolgt keine dauerhafte Speicherung.
+
 Vercel (Hosting)
 
 Die Website wird auf der Infrastruktur der Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, USA gehostet. Beim Aufruf der Website werden Serverlogdaten (inkl. IP-Adresse) durch Vercel verarbeitet. Vercel verarbeitet diese Daten als Auftragsverarbeiter gemäß Art. 28 DSGVO. Die Datenübermittlung in die USA erfolgt auf Grundlage von Standardvertragsklauseln (Standard Contractual Clauses, SCC) gemäß Art. 46 Abs. 2 lit. c DSGVO. Weitere Informationen: https://vercel.com/legal/privacy-policy
 
 Webhook-Verarbeitung (n8n)
 
-Im Zuge der Bearbeitung von Kontaktanfragen werden die übermittelten Daten (Name, E-Mail-Adresse, Nachricht) über einen Webhook an n8n weitergeleitet, um die anschließende E-Mail-Kommunikation zu ermöglichen. n8n agiert hierbei als Auftragsverarbeiter gemäß Art. 28 DSGVO. Die Verarbeitung erfolgt auf Basis von Art. 6 Abs. 1 lit. b bzw. lit. a DSGVO. Die Daten werden ausschließlich zur Bearbeitung der Anfrage verwendet und nach Abschluss der Kommunikation gelöscht, sofern keine gesetzlichen Aufbewahrungspflichten entgegenstehen (max. 6 Jahre nach HGB § 257).
+Im Zuge der Bearbeitung von Kontaktanfragen werden die übermittelten Daten (Name, E-Mail-Adresse, Nachricht) über einen Webhook an unseren eigenen Server weitergeleitet, um die anschließende E-Mail-Kommunikation zu ermöglichen.
 
-Amazon Cloudfront
+Wir betreiben n8n als selbst-gehostete Lösung auf einem Server der Hetzner Online GmbH, Industriestr. 25, 91710 Gunzenhausen, Deutschland.
 
-Der Anbieter setzt für die Abrufgeschwindigkeit, die Gestaltung und die Darstellung der angebotenen Inhalte das Content Delivery Network (CDN) „Cloudfront" ein.
+Hetzner agiert hierbei als Auftragsverarbeiter gemäß Art. 28 DSGVO. Mit Hetzner wurde ein Auftragsverarbeitungsvertrag (AVV) abgeschlossen.
 
-„Cloudfront" ist ein Dienst der Amazon Web Services EMEA SARL, 38 Avenue John F. Kennedy, L-1855 Luxemburg, einem Tochterunternehmen der Amazon Web Services Inc., 410 Terry Avenue North, Seattle, WA 98109-5210.
+Die Verarbeitung erfolgt ausschließlich auf Servern in Deutschland (Rechenzentrum Nürnberg/Falkenstein). Es findet keine Übermittlung in Drittländer statt.
 
-Cloudfront stellt Duplikate von Daten einer Website auf verschiedenen weltweit verteilten Amazon Web Services (AWS) Servern zur Verfügung. Dadurch wird eine schnellere Ladezeit der Website, eine höhere Ausfallsicherheit und ein erhöhter Schutz vor Datenverlust erreicht. Dies führt dazu, dass der jeweilige Server, auch außerhalb der EU, die IP-Adresse des Nutzers erfasst.
+Die Verarbeitung erfolgt auf Basis von Art. 6 Abs. 1 lit. b bzw. lit. a DSGVO. Die Daten werden ausschließlich zur Bearbeitung der Anfrage verwendet und nach Abschluss der Kommunikation gelöscht, sofern keine gesetzlichen Aufbewahrungspflichten entgegenstehen (max. 6 Jahre nach HGB § 257).
 
-Rechtsgrundlage für den Einsatz dieser Technologie ist Art. 6 Abs. 1 lit. f DSGVO. Das berechtigte Interesse des Anbieters besteht an der Verbesserung der Nutzungsqualität und der Ladegeschwindigkeit der Website.
+Weitere Informationen: https://www.hetzner.com/de/rechtliches/datenschutz
 
-Mehr über die Datenschutzmaßnahmen von Amazon Web Services, insbesondere in Bezug auf eine Verarbeitung außerhalb der EU:
+E-Mail-Versand (Gmail/Google Workspace)
 
-https://aws.amazon.com/de/compliance/germany-data-protection/
+Der Versand von E-Mails (Kontaktbestätigungen, Antworten auf Anfragen) erfolgt über Gmail, bereitgestellt von Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland.
 
-Die aktuelle Datenschutzerklärung von Amazon Web Services:
+Verarbeitete Daten:
+- E-Mail-Adresse des Absenders
+- Name (falls angegeben)
+- E-Mail-Inhalt (Nachricht)
 
-https://aws.amazon.com/de/privacy/
+Google agiert hierbei als Auftragsverarbeiter gemäß Art. 28 DSGVO. Mit Google wurde ein Auftragsverarbeitungsvertrag (Data Processing Agreement) abgeschlossen.
+
+Die Datenverarbeitung erfolgt ausschließlich auf Servern in der EU (Dublin, Irland). Es findet keine Übermittlung in Drittländer statt.
+
+Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (Vertragsanbahnung/Kommunikation)
+Speicherdauer: Siehe "Speicherdauer für Kontaktanfragen" (oben)
+
+Weitere Informationen:
+Google Workspace Datenschutzerklärung: https://workspace.google.com/intl/de/terms/dpa_terms.html
 
 Einbindung Social-Media
 

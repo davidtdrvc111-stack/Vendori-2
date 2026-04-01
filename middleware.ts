@@ -33,6 +33,11 @@ export function middleware(request: NextRequest) {
     "form-action 'self' mailto:",
     "frame-ancestors 'self'",
     "upgrade-insecure-requests",
+    // Additional CSP directives for A+ security rating
+    "worker-src 'self'",
+    "manifest-src 'self'",
+    "media-src 'none'",
+    "child-src 'none'",
   ].join('; ');
 
   response.headers.set('Content-Security-Policy', cspHeader);
@@ -44,7 +49,7 @@ export function middleware(request: NextRequest) {
   response.headers.set('X-Content-Type-Options', 'nosniff');
   response.headers.set('X-XSS-Protection', '1; mode=block');
   response.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin');
-  response.headers.set('Permissions-Policy', 'camera=(), microphone=(), geolocation=()');
+  response.headers.set('Permissions-Policy', 'camera=(), microphone=(), geolocation=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=(), interest-cohort=()');
   response.headers.set('X-Download-Options', 'noopen');
   response.headers.set('X-Permitted-Cross-Domain-Policies', 'none');
 
@@ -52,6 +57,9 @@ export function middleware(request: NextRequest) {
   response.headers.set('Cross-Origin-Embedder-Policy', 'credentialless');
   response.headers.set('Cross-Origin-Opener-Policy', 'same-origin');
   response.headers.set('Cross-Origin-Resource-Policy', 'same-origin');
+
+  // Remove server header to minimize information disclosure
+  response.headers.delete('Server');
 
   return response;
 }

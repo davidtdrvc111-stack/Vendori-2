@@ -72,8 +72,9 @@ export function AboutFullSection({ className = '' }: AboutFullSectionProps) {
                 <Image
                   src="/teamfoto.webp"
                   alt="VENDORi GmbH Team — E-Commerce Experten mit 22+ Jahren Erfahrung"
-                  fill
-                  className="object-contain"
+                  width={1200}
+                  height={900}
+                  className="w-full h-full object-contain"
                   sizes="(max-width: 768px) 100vw, 40vw"
                   priority
                   quality={90}

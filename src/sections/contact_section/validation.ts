@@ -76,6 +76,9 @@ export function sanitizeInput(value: string): string {
   // Remove dangerous characters that could be used for injection attacks
   return value
     .trim()
-    .replace(/[<>'"&\n\r\t]/g, '') // Remove HTML/script injection characters and control chars
+    // Remove Bidi-Override characters (Unicode direction manipulation for phishing)
+    .replace(/[\u202A-\u202E\u2066-\u2069]/g, '')
+    // Remove HTML/script injection characters, control chars, and null bytes
+    .replace(/[<>'"&\n\r\t\0]/g, '')
     .substring(0, 500); // Enforce maximum length as additional safety measure
 }

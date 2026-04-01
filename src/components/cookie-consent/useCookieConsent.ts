@@ -7,7 +7,14 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import { CookieConsent, CookieCategory, ConsentChangedEventDetail } from './types';
-import { getConsent, setConsent, hasConsentRecord } from './storage';
+import {
+  getConsent,
+  setConsent,
+  hasConsentRecord,
+  needsReconsent,
+  clearConsent,
+  CURRENT_CONSENT_VERSION
+} from './storage';
 
 /**
  * Custom Hook für Cookie Consent Management
@@ -19,11 +26,24 @@ export function useCookieConsent() {
   const [isInitialized, setIsInitialized] = useState(false);
 
   // Initialize consent from localStorage on mount
+  // Check if re-consent is needed (expired or outdated version)
   useEffect(() => {
     const stored = getConsent();
-    if (stored) {
+
+    // Check if re-consent is needed
+    if (stored && needsReconsent(stored)) {
+      // Clear outdated consent to show banner again
+      clearConsent();
+      setConsentState(null);
+
+      if (process.env.NODE_ENV === 'development') {
+        console.info('[Cookie Consent] Re-consent required (expired or outdated version)');
+      }
+    } else if (stored) {
+      // Valid consent found
       setConsentState(stored);
     }
+
     setIsInitialized(true);
   }, []);
 
@@ -60,7 +80,7 @@ export function useCookieConsent() {
       analytics: true,
       marketing: true,
       timestamp: Date.now(),
-      version: 1,
+      version: CURRENT_CONSENT_VERSION,
     };
     updateConsent(newConsent);
   }, [updateConsent]);
@@ -74,7 +94,7 @@ export function useCookieConsent() {
       analytics: false,
       marketing: false,
       timestamp: Date.now(),
-      version: 1,
+      version: CURRENT_CONSENT_VERSION,
     };
     updateConsent(newConsent);
   }, [updateConsent]);
@@ -106,7 +126,7 @@ export function useCookieConsent() {
         analytics: preferences.analytics ?? false,
         marketing: preferences.marketing ?? false,
         timestamp: Date.now(),
-        version: 1,
+        version: CURRENT_CONSENT_VERSION,
       };
       updateConsent(newConsent);
     },

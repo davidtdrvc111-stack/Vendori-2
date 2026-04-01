@@ -1,3 +1,5 @@
+'use server';
+
 /**
  * API Route für Kontaktformular
  *
@@ -20,32 +22,60 @@ import type { FormData } from '@/sections/contact_section/types';
 
 /**
  * Sanitisiert E-Mail-Header um Injection-Angriffe zu verhindern
+ * Entfernt CRLF und Tab-Zeichen (Header Injection Prevention)
  */
 function sanitizeEmailHeader(value: string): string {
-  return value.replace(/[\r\n]/g, '').trim();
+  return value.replace(/[\r\n\t]/g, '').trim();
 }
 
 /**
- * Extrahiert IP-Adresse aus Request
- * Berücksichtigt Proxy-Header (x-forwarded-for, x-real-ip)
+ * Extrahiert IP-Adresse aus Request (Vercel-optimiert)
+ * Priorisiert Vercel-spezifische Header die nicht gefälscht werden können
  */
 function getClientIP(request: NextRequest): string {
-  // Vercel/Cloudflare forwarded IP
-  const forwardedFor = request.headers.get('x-forwarded-for');
-  if (forwardedFor) {
-    // x-forwarded-for kann mehrere IPs enthalten (client, proxy1, proxy2, ...)
-    // Die erste IP ist die Client-IP
-    return forwardedFor.split(',')[0].trim();
-  }
-
-  // Alternative Headers
+  // PRIORITÄT 1: Vercel-spezifischer Header (NICHT fälschbar)
+  // Dieser Header wird von Vercel's Edge Network gesetzt
   const realIP = request.headers.get('x-real-ip');
   if (realIP) {
     return realIP;
   }
 
-  // Fallback (bei lokalem Development)
+  // PRIORITÄT 2: x-forwarded-for (nur erste IP, von Vercel gesetzt)
+  const forwardedFor = request.headers.get('x-forwarded-for');
+  if (forwardedFor) {
+    // Nur die ERSTE IP ist vertrauenswürdig (vom Load Balancer)
+    const ips = forwardedFor.split(',').map(ip => ip.trim());
+    return ips[0];
+  }
+
+  // PRIORITÄT 3: Cloudflare IP (falls Cloudflare vor Vercel)
+  const cfConnectingIP = request.headers.get('cf-connecting-ip');
+  if (cfConnectingIP) {
+    return cfConnectingIP;
+  }
+
+  // Fallback (nur Development)
+  if (process.env.NODE_ENV === 'development') {
+    return '127.0.0.1';
+  }
+
+  // WARNUNG: Keine IP gefunden
+  if (process.env.NODE_ENV === 'development') {
+    console.error('[Security] Keine vertrauenswürdige IP gefunden - verwende Fallback');
+  }
   return 'unknown';
+}
+
+/**
+ * Erstellt einen eindeutigen Fingerprint aus IP + User-Agent
+ * Erschwert Rate-Limit-Bypass durch IP-Rotation
+ */
+function getClientFingerprint(request: NextRequest): string {
+  const ip = getClientIP(request);
+  const userAgent = request.headers.get('user-agent') || 'unknown';
+
+  // Simple Fingerprint: IP + erste 50 Zeichen des User-Agents
+  return `${ip}:${userAgent.substring(0, 50)}`;
 }
 
 /**
@@ -54,17 +84,20 @@ function getClientIP(request: NextRequest): string {
  */
 export async function POST(request: NextRequest) {
   try {
-    // 1. IP-Adresse für Rate Limiting abrufen
+    // 1. IP-Adresse und Fingerprint für Rate Limiting abrufen
     const clientIP = getClientIP(request);
+    const clientFingerprint = getClientFingerprint(request);
 
     if (process.env.NODE_ENV === 'development') {
       console.log('[Contact API] Neue Anfrage von IP:', clientIP);
     }
 
-    // 2. Rate Limiting prüfen
-    const rateLimitResult = checkRateLimit(clientIP);
+    // 2. Rate Limiting prüfen (mit Fingerprint statt nur IP)
+    const rateLimitResult = checkRateLimit(clientFingerprint);
     if (!rateLimitResult.success) {
-      console.warn(`[Contact API] Rate limit überschritten für IP: ${clientIP}`);
+      if (process.env.NODE_ENV === 'development') {
+        console.warn(`[Contact API] Rate limit überschritten für IP: ${clientIP}`);
+      }
 
       return NextResponse.json(
         {
@@ -108,11 +141,13 @@ export async function POST(request: NextRequest) {
     }
 
     // 5. Honeypot prüfen (Silent Fail)
-    // Das "website"-Feld ist für Menschen unsichtbar
+    // Das "company_info"-Feld ist für Menschen unsichtbar
     // Bots füllen es automatisch aus
-    const websiteField = body.website as string | undefined;
-    if (websiteField && websiteField.trim() !== '') {
-      console.warn('[Contact API] Honeypot ausgelöst von IP:', clientIP);
+    const honeypotField = body.company_info as string | undefined;
+    if (honeypotField && honeypotField.trim() !== '') {
+      if (process.env.NODE_ENV === 'development') {
+        console.warn('[Contact API] Honeypot (Feld) ausgelöst von IP:', clientIP);
+      }
 
       // Täusche Erfolg vor, um Bot nicht zu enthüllen
       return NextResponse.json(
@@ -122,6 +157,30 @@ export async function POST(request: NextRequest) {
         },
         { status: 200 }
       );
+    }
+
+    // 5b. Zeit-basiertes Honeypot prüfen
+    // Menschen brauchen mindestens 3 Sekunden zum Ausfüllen
+    // Bots sind schneller
+    const formStartTime = body.formStartTime as number | undefined;
+    if (formStartTime) {
+      const now = Date.now();
+      const timeDiff = now - formStartTime;
+
+      if (timeDiff < 3000) {
+        if (process.env.NODE_ENV === 'development') {
+          console.warn('[Contact API] Honeypot (Zeit) ausgelöst von IP:', clientIP, 'Zeit:', timeDiff, 'ms');
+        }
+
+        // Silent fail - täusche Erfolg vor
+        return NextResponse.json(
+          {
+            success: true,
+            message: 'Nachricht erfolgreich gesendet',
+          },
+          { status: 200 }
+        );
+      }
     }
 
     // 6. Server-seitige Validierung
@@ -163,39 +222,72 @@ export async function POST(request: NextRequest) {
     // n8n kümmert sich um beide E-Mails (an VENDORi + Bestätigung an Absender)
     try {
       const webhookUrl = process.env.N8N_WEBHOOK_URL;
+      const webhookSecret = process.env.N8N_WEBHOOK_SECRET;
 
       if (!webhookUrl) {
         throw new Error('N8N_WEBHOOK_URL ist nicht konfiguriert');
       }
 
-      const webhookResponse = await fetch(webhookUrl, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          // Optional: Webhook Secret für zusätzliche Sicherheit
-          ...(process.env.N8N_WEBHOOK_SECRET && {
-            'Vendori.eu-Webhook-Secret': process.env.N8N_WEBHOOK_SECRET,
-          }),
-        },
-        body: JSON.stringify({
-          body: sanitizedData,
-        }),
-      });
-
-      if (!webhookResponse.ok) {
-        const errorText = await webhookResponse.text();
-        throw new Error(
-          `Webhook fehlgeschlagen (${webhookResponse.status}): ${errorText}`
-        );
+      // Webhook-Secret ist VERPFLICHTEND für Produktionssicherheit
+      if (!webhookSecret) {
+        throw new Error('N8N_WEBHOOK_SECRET ist nicht konfiguriert - Webhook-Secret ist verpflichtend');
       }
 
-      const webhookResult = await webhookResponse.json();
+      // Timeout-Controller für Webhook (10 Sekunden)
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 10000);
 
-      if (process.env.NODE_ENV === 'development') {
-        console.log('[Contact API] n8n Webhook Response:', webhookResult);
+      try {
+        const webhookResponse = await fetch(webhookUrl, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            // Webhook Secret für Authentifizierung (verpflichtend)
+            'Vendori.eu-Webhook-Secret': webhookSecret,
+          },
+          body: JSON.stringify({
+            body: sanitizedData,
+          }),
+          signal: controller.signal, // Timeout Signal
+        });
+
+        clearTimeout(timeoutId);
+
+        if (!webhookResponse.ok) {
+          const errorText = await webhookResponse.text();
+          throw new Error(
+            `Webhook fehlgeschlagen (${webhookResponse.status}): ${errorText}`
+          );
+        }
+
+        const webhookResult = await webhookResponse.json();
+
+        if (process.env.NODE_ENV === 'development') {
+          console.log('[Contact API] n8n Webhook Response:', webhookResult);
+        }
+      } catch (error) {
+        clearTimeout(timeoutId);
+
+        // Spezielle Behandlung für Timeout-Fehler
+        if (error instanceof Error && error.name === 'AbortError') {
+          if (process.env.NODE_ENV === 'development') {
+            console.error('[Contact API] Webhook timeout exceeded');
+          }
+          return NextResponse.json(
+            {
+              success: false,
+              error: 'Anfrage dauerte zu lange. Bitte versuchen Sie es erneut.',
+            },
+            { status: 504 }
+          );
+        }
+
+        throw error; // Re-throw für outer catch
       }
     } catch (error) {
-      console.error('[Contact API] Fehler beim n8n Webhook-Aufruf:', error);
+      if (process.env.NODE_ENV === 'development') {
+        console.error('[Contact API] Fehler beim n8n Webhook-Aufruf:', error);
+      }
 
       return NextResponse.json(
         {
@@ -226,7 +318,9 @@ export async function POST(request: NextRequest) {
     );
   } catch (error) {
     // Unerwarteter Fehler
-    console.error('[Contact API] Unerwarteter Fehler:', error);
+    if (process.env.NODE_ENV === 'development') {
+      console.error('[Contact API] Unerwarteter Fehler:', error);
+    }
 
     return NextResponse.json(
       {
@@ -243,20 +337,56 @@ export async function POST(request: NextRequest) {
 
 /**
  * GET /api/contact
- * Gibt Informationen über die API zurück (nur in Development)
+ * Blockiert GET-Requests (nur POST erlaubt)
  */
 export async function GET() {
-  if (process.env.NODE_ENV === 'development') {
-    return NextResponse.json({
-      message: 'Contact Form API',
-      methods: ['POST'],
-      endpoint: '/api/contact',
-      version: '1.0.0',
-    });
-  }
-
   return NextResponse.json(
     { error: 'Method not allowed' },
-    { status: 405 }
+    {
+      status: 405,
+      headers: { 'Allow': 'POST' }, // RFC 2616 konform
+    }
+  );
+}
+
+/**
+ * PUT /api/contact
+ * Blockiert PUT-Requests (nur POST erlaubt)
+ */
+export async function PUT() {
+  return NextResponse.json(
+    { error: 'Method not allowed' },
+    {
+      status: 405,
+      headers: { 'Allow': 'POST' },
+    }
+  );
+}
+
+/**
+ * DELETE /api/contact
+ * Blockiert DELETE-Requests (nur POST erlaubt)
+ */
+export async function DELETE() {
+  return NextResponse.json(
+    { error: 'Method not allowed' },
+    {
+      status: 405,
+      headers: { 'Allow': 'POST' },
+    }
+  );
+}
+
+/**
+ * PATCH /api/contact
+ * Blockiert PATCH-Requests (nur POST erlaubt)
+ */
+export async function PATCH() {
+  return NextResponse.json(
+    { error: 'Method not allowed' },
+    {
+      status: 405,
+      headers: { 'Allow': 'POST' },
+    }
   );
 }

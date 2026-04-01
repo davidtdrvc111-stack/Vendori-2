@@ -15,16 +15,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: 'https://vendori.eu/impressum',
-      lastModified: '2026-01-01',
-      changeFrequency: 'yearly',
-      priority: 0.3,
+      url: 'https://vendori.eu/faq',
+      lastModified: '2026-03-15',
+      changeFrequency: 'weekly',
+      priority: 0.9,
     },
     {
-      url: 'https://vendori.eu/datenschutz',
+      url: 'https://vendori.eu/barrierefreiheit',
       lastModified: '2026-01-01',
       changeFrequency: 'yearly',
-      priority: 0.3,
+      priority: 0.5,
     },
   ];
 }

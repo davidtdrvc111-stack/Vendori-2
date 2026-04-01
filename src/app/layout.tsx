@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'de_DE',
     siteName: 'VENDORi GmbH',
-    url: '/',
+    url: 'https://vendori.eu',
     images: [{
       url: '/og-image.webp',
       width: 1200,

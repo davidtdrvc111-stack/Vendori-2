@@ -19,21 +19,21 @@ const COOKIE_CATEGORIES: CookieCategoryInfo[] = [
     id: 'necessary',
     label: 'Notwendige Cookies',
     description:
-      'Diese Cookies sind für den Betrieb der Website erforderlich und können nicht deaktiviert werden. Sie speichern keine persönlichen Daten.',
+      'Diese Cookies sind für den Betrieb der Website erforderlich und können nicht deaktiviert werden. Sie speichern Ihre Cookie-Einstellungen lokal in Ihrem Browser (localStorage). Anbieter: VENDORi GmbH (First-Party).',
     required: true,
   },
   {
     id: 'analytics',
     label: 'Analytische Cookies',
     description:
-      'Diese Cookies helfen uns zu verstehen, wie Sie unsere Website nutzen, damit wir sie weiter verbessern können.',
+      'Derzeit werden keine Analytics-Cookies eingesetzt. Falls zukünftig Analysetools (z.B. Google Analytics, Matomo) hinzugefügt werden, werden Sie erneut um Einwilligung gebeten.',
     required: false,
   },
   {
     id: 'marketing',
     label: 'Marketing Cookies',
     description:
-      'Diese Cookies werden verwendet, um Ihnen relevante Werbung anzuzeigen. Sie werden nur mit Ihrer Zustimmung gesetzt.',
+      'Derzeit werden keine Marketing-Cookies eingesetzt. Falls zukünftig Werbe- oder Tracking-Tools (z.B. Facebook Pixel, Google Ads) hinzugefügt werden, werden Sie erneut um Einwilligung gebeten.',
     required: false,
   },
 ];
@@ -183,7 +183,16 @@ export function CookieSettingsModal({ isOpen, onClose }: CookieSettingsModalProp
                     </h2>
                     <p className="text-sm md:text-base text-neutral-600 dark:text-neutral-400 mt-2">
                       Wir respektieren Ihre Privatsphäre. Sie können selbst entscheiden, welche
-                      Cookies Sie zulassen möchten.
+                      Cookies Sie zulassen möchten.{' '}
+                      <a
+                        href="/datenschutz"
+                        className="text-primary-600 dark:text-primary-400 underline hover:no-underline"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Weitere Informationen
+                      </a>
+                      .
                     </p>
                   </div>
                   <button

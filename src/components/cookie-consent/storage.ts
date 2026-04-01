@@ -12,6 +12,18 @@ import { CookieConsent } from './types';
 const STORAGE_KEY = 'vendori_cookie_consent';
 
 /**
+ * Aktuelle Consent-Version
+ * Erhöhen wenn sich Cookie-Richtlinien ändern um Re-Consent zu erzwingen
+ */
+export const CURRENT_CONSENT_VERSION = 1;
+
+/**
+ * Consent-Ablaufdauer in Millisekunden (12 Monate)
+ * Nach DSGVO sollte Consent regelmäßig erneuert werden
+ */
+export const CONSENT_EXPIRY_MS = 12 * 30 * 24 * 60 * 60 * 1000; // 12 Monate
+
+/**
  * Default Consent State (Privacy-First)
  * Nur notwendige Cookies sind standardmäßig aktiviert
  */
@@ -20,7 +32,7 @@ export const DEFAULT_CONSENT: CookieConsent = {
   analytics: false,
   marketing: false,
   timestamp: Date.now(),
-  version: 1,
+  version: CURRENT_CONSENT_VERSION,
 };
 
 /**
@@ -117,4 +129,43 @@ export function clearConsent(): void {
       console.error('[Cookie Consent] Error clearing consent from localStorage:', error);
     }
   }
+}
+
+/**
+ * Prüft ob der Consent älter als 12 Monate ist
+ * Nach DSGVO Art. 7 Abs. 3 sollte Consent regelmäßig erneuert werden
+ *
+ * @param consent - Cookie Consent State
+ * @returns true wenn Consent abgelaufen, false sonst
+ */
+export function isConsentExpired(consent: CookieConsent): boolean {
+  const now = Date.now();
+  const age = now - consent.timestamp;
+  return age > CONSENT_EXPIRY_MS;
+}
+
+/**
+ * Prüft ob der Consent eine veraltete Version hat
+ * Wird benötigt wenn sich Cookie-Richtlinien ändern
+ *
+ * @param consent - Cookie Consent State
+ * @returns true wenn Version veraltet, false sonst
+ */
+export function isConsentVersionOutdated(consent: CookieConsent): boolean {
+  return consent.version < CURRENT_CONSENT_VERSION;
+}
+
+/**
+ * Prüft ob ein Re-Consent erforderlich ist
+ * (wegen Ablauf ODER veralteter Version)
+ *
+ * @param consent - Cookie Consent State oder null
+ * @returns true wenn Re-Consent erforderlich, false sonst
+ */
+export function needsReconsent(consent: CookieConsent | null): boolean {
+  if (!consent) {
+    return true; // Kein Consent vorhanden
+  }
+
+  return isConsentExpired(consent) || isConsentVersionOutdated(consent);
 }

@@ -1,13 +1,13 @@
 'use client';
 
-import { useState, FormEvent, ChangeEvent } from 'react';
+import { useState, FormEvent, ChangeEvent, useTransition, memo } from 'react';
 import { cn } from '@/lib/utils';
 import { ContactSectionProps, FormData, FormErrors, FormStatus } from './types';
 import { validateField, validateForm } from './validation';
 import { Send, Loader2, Check, AlertCircle } from 'lucide-react';
 import { NoiseOverlay } from '@/components/ui/NoiseOverlay';
 
-// Form Field Component
+// Form Field Component - Memoized für bessere Performance
 interface FormFieldProps {
   name: keyof FormData;
   label: string;
@@ -20,7 +20,7 @@ interface FormFieldProps {
   onBlur: () => void;
 }
 
-function FormField({
+const FormField = memo(function FormField({
   name,
   label,
   type = 'text',
@@ -66,24 +66,27 @@ function FormField({
         aria-invalid={!!showError}
         aria-describedby={showError ? `${name}-error` : undefined}
       />
-      {showError && (
-        <p
-          id={`${name}-error`}
-          className="text-error-500 text-sm mt-1 flex items-center gap-1"
-          role="alert"
-          aria-live="polite"
-          aria-atomic="true"
-        >
-          <AlertCircle className="w-4 h-4" aria-hidden="true" />
-          <span>{error}</span>
-        </p>
-      )}
+      {/* Error message mit Platzreservierung (CLS-Fix) */}
+      <p
+        id={`${name}-error`}
+        className={cn(
+          'text-sm mt-1 flex items-center gap-1 min-h-[20px] transition-opacity duration-200',
+          showError ? 'text-error-500 opacity-100' : 'text-transparent opacity-0'
+        )}
+        role={showError ? 'alert' : undefined}
+        aria-live={showError ? 'polite' : undefined}
+        aria-atomic={showError ? 'true' : undefined}
+      >
+        <AlertCircle className="w-4 h-4" aria-hidden="true" />
+        <span>{error || '\u00A0'}</span>
+      </p>
     </div>
   );
-}
+});
 
 // Main Contact Section Component
 export function ContactSection({ className = '' }: ContactSectionProps) {
+  const [isPending, startTransition] = useTransition();
   const [formData, setFormData] = useState<FormData>({
     firstName: '',
     lastName: '',
@@ -94,7 +97,8 @@ export function ContactSection({ className = '' }: ContactSectionProps) {
   const [errors, setErrors] = useState<FormErrors>({});
   const [status, setStatus] = useState<FormStatus>('idle');
   const [touched, setTouched] = useState<Set<keyof FormData>>(new Set());
-  const [honeypot, setHoneypot] = useState(''); // Bot-Schutz
+  const [honeypot, setHoneypot] = useState(''); // Bot-Schutz (Feld)
+  const [formStartTime] = useState<number>(Date.now()); // Zeit-basiertes Honeypot
   const [lastSubmission, setLastSubmission] = useState<number>(0); // Rate limiting
 
   const handleChange = (name: keyof FormData, value: string | boolean) => {
@@ -111,11 +115,13 @@ export function ContactSection({ className = '' }: ContactSectionProps) {
   const handleBlur = (name: keyof FormData) => {
     setTouched((prev) => new Set(prev).add(name));
 
-    // Validate on blur
-    const error = validateField(name, formData[name]);
-    if (error) {
-      setErrors((prev) => ({ ...prev, [name]: error }));
-    }
+    // Validate on blur with useTransition for better INP
+    startTransition(() => {
+      const error = validateField(name, formData[name]);
+      if (error) {
+        setErrors((prev) => ({ ...prev, [name]: error }));
+      }
+    });
   };
 
   const resetForm = () => {
@@ -177,7 +183,11 @@ export function ContactSection({ className = '' }: ContactSectionProps) {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          company_info: honeypot, // Honeypot-Feld
+          formStartTime, // Zeit-basiertes Honeypot
+        }),
       });
 
       const data = await response.json();
@@ -196,7 +206,9 @@ export function ContactSection({ className = '' }: ContactSectionProps) {
       }, 3000);
     } catch (error) {
       // Handle errors
-      console.error('Contact form error:', error);
+      if (process.env.NODE_ENV === 'development') {
+        console.error('Contact form error:', error);
+      }
       setStatus('error');
       setErrors({
         ...errors,
@@ -250,54 +262,59 @@ export function ContactSection({ className = '' }: ContactSectionProps) {
         >
           <NoiseOverlay />
 
-          {/* Success Message */}
-          {status === 'success' && (
-            <div
-              role="alert"
-              aria-live="polite"
-              aria-atomic="true"
-              className={cn(
-                'p-6 rounded-lg mb-6',
-                'bg-success-500/10 border border-success-500/20',
-                'flex items-start gap-3'
-              )}
-            >
-              <Check className="w-6 h-6 text-success-500 flex-shrink-0" aria-hidden="true" />
-              <div>
-                <h3 className="font-semibold text-success-500 mb-1">
-                  Nachricht gesendet!
-                </h3>
-                <p className="text-sm text-success-600 dark:text-success-400">
-                  Ihr E-Mail-Client öffnet sich gleich mit Ihrer vorausgefüllten
-                  Nachricht.
-                </p>
+          {/* Alert Container mit Platzreservierung (CLS-Fix) */}
+          <div className="min-h-[96px] mb-6 overflow-hidden transition-all duration-300">
+            {/* Success Message */}
+            {status === 'success' && (
+              <div
+                role="alert"
+                aria-live="polite"
+                aria-atomic="true"
+                className={cn(
+                  'p-6 rounded-lg',
+                  'bg-success-500/10 border border-success-500/20',
+                  'flex items-start gap-3',
+                  'animate-in fade-in slide-in-from-top-2 duration-300'
+                )}
+              >
+                <Check className="w-6 h-6 text-success-500 flex-shrink-0" aria-hidden="true" />
+                <div>
+                  <h3 className="font-semibold text-success-500 mb-1">
+                    Nachricht gesendet!
+                  </h3>
+                  <p className="text-sm text-success-600 dark:text-success-400">
+                    Ihr E-Mail-Client öffnet sich gleich mit Ihrer vorausgefüllten
+                    Nachricht.
+                  </p>
+                </div>
               </div>
-            </div>
-          )}
+            )}
 
-          {/* General Error Message (e.g., rate limiting) */}
-          {errors.general && (
-            <div
-              role="alert"
-              aria-live="polite"
-              aria-atomic="true"
-              className={cn(
-                'p-6 rounded-lg mb-6',
-                'bg-error-500/10 border border-error-500/20',
-                'flex items-start gap-3'
-              )}
-            >
-              <AlertCircle className="w-6 h-6 text-error-500 flex-shrink-0" aria-hidden="true" />
-              <div>
-                <h3 className="font-semibold text-error-500 mb-1">
-                  Fehler
-                </h3>
-                <p className="text-sm text-error-600 dark:text-error-400">
-                  {errors.general}
-                </p>
+            {/* General Error Message (e.g., rate limiting) */}
+            {errors.general && (
+              <div
+                role="alert"
+                aria-live="polite"
+                aria-atomic="true"
+                className={cn(
+                  'p-6 rounded-lg',
+                  'bg-error-500/10 border border-error-500/20',
+                  'flex items-start gap-3',
+                  'animate-in fade-in slide-in-from-top-2 duration-300'
+                )}
+              >
+                <AlertCircle className="w-6 h-6 text-error-500 flex-shrink-0" aria-hidden="true" />
+                <div>
+                  <h3 className="font-semibold text-error-500 mb-1">
+                    Fehler
+                  </h3>
+                  <p className="text-sm text-error-600 dark:text-error-400">
+                    {errors.general}
+                  </p>
+                </div>
               </div>
-            </div>
-          )}
+            )}
+          </div>
 
           {/* Privacy Notice */}
           <p className="text-sm text-neutral-400 mb-6">
@@ -363,12 +380,17 @@ export function ContactSection({ className = '' }: ContactSectionProps) {
             {/* Honeypot Field - Hidden from users, bots will fill it */}
             <input
               type="text"
-              name="website"
+              name="company_info"
               value={honeypot}
               onChange={(e) => setHoneypot(e.target.value)}
               tabIndex={-1}
               autoComplete="off"
-              className="absolute opacity-0 pointer-events-none w-0 h-0"
+              style={{
+                position: 'absolute',
+                left: '-9999px',
+                width: '1px',
+                height: '1px',
+              }}
               aria-hidden="true"
             />
 
@@ -444,6 +466,11 @@ export function ContactSection({ className = '' }: ContactSectionProps) {
               <button
                 type="submit"
                 disabled={status === 'loading'}
+                aria-label={
+                  status === 'loading'
+                    ? 'Nachricht wird gesendet, bitte warten'
+                    : 'Nachricht absenden'
+                }
                 className={cn(
                   'w-full md:w-auto md:min-w-[200px]',
                   'px-8 py-4',

@@ -4,6 +4,7 @@ import { cn } from '@/lib/utils';
 import { FooterSectionProps } from './types';
 import Image from 'next/image';
 import Link from 'next/link';
+import { CookieSettingsLink } from '@/components/cookie-consent/CookieSettingsLink';
 
 export function FooterSection({ className = '' }: FooterSectionProps) {
     return (
@@ -20,10 +21,10 @@ export function FooterSection({ className = '' }: FooterSectionProps) {
                     <div className="space-y-6">
                         <Link href="/" className="inline-block">
                             <Image
-                                src="/VENDORi-Logo.png"
+                                src="/Logo_Vendori_rgb_anthrazit.svg"
                                 alt="VENDORi Logo"
-                                width={140}
-                                height={40}
+                                width={364}
+                                height={121}
                                 className="h-10 w-auto brightness-0 invert"
                                 loading="lazy"
                                 sizes="140px"
@@ -38,11 +39,10 @@ export function FooterSection({ className = '' }: FooterSectionProps) {
                     <div className="space-y-6">
                         <h2 className="text-lg font-bold font-display font-bold">Navigation</h2>
                         <nav className="flex flex-col space-y-3">
-                            <Link href="/ueber-uns" className="text-neutral-400 hover:text-primary-400 transition-colors">Über uns</Link>
+                            <Link href="/#about" className="text-neutral-400 hover:text-primary-400 transition-colors">Über uns</Link>
                             <Link href="/#services" className="text-neutral-400 hover:text-primary-400 transition-colors">Services</Link>
                             <Link href="/#shops" className="text-neutral-400 hover:text-primary-400 transition-colors">Unsere Shops</Link>
                             <Link href="/#contact" className="text-neutral-400 hover:text-primary-400 transition-colors">Kontakt</Link>
-                            <Link href="/impressum" className="text-neutral-400 hover:text-primary-400 transition-colors">Impressum</Link>
                         </nav>
                     </div>
 
@@ -73,7 +73,9 @@ export function FooterSection({ className = '' }: FooterSectionProps) {
                     <p>© {new Date().getFullYear()} VENDORi GmbH. Alle Rechte vorbehalten.</p>
                     <div className="flex gap-8">
                         <Link href="/impressum" className="hover:text-white transition-colors">Impressum</Link>
-                        <Link href="/datenschutz" className="hover:text-white transition-colors">Datenschutz</Link>
+                        <Link href="/datenschutz" className="hover:text-white transition-colors">Datenschutzerklärung</Link>
+                        <Link href="/barrierefreiheit" className="hover:text-white transition-colors">Barrierefreiheit</Link>
+                        <CookieSettingsLink className="hover:text-white transition-colors" />
                     </div>
                 </div>
             </div>

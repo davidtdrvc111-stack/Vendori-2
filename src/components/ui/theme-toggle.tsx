@@ -27,6 +27,7 @@ export function ThemeToggle({ darkText = false }: ThemeToggleProps) {
 
   return (
     <button
+      type="button"
       onClick={() => setTheme(isDark ? 'light' : 'dark')}
       className={`
         relative inline-flex h-11 w-11 items-center justify-center

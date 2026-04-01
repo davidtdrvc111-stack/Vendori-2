@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -30,22 +30,23 @@ export function StickyHeader({ className = '' }: StickyHeaderProps) {
     href: pathname === '/' ? item.href.replace('/', '') : item.href
   }));
 
-  useEffect(() => {
+  // useCallback für handleScroll um Re-Renders zu vermeiden
+  const handleScroll = useCallback(() => {
     let ticking = false;
 
-    const handleScroll = () => {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          setIsScrolled(window.scrollY > 20);
-          ticking = false;
-        });
-        ticking = true;
-      }
-    };
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        setIsScrolled(window.scrollY > 20);
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, []);
 
+  useEffect(() => {
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [handleScroll]);
 
   // Escape-Taste schließt Mobile Menu
   useEffect(() => {
@@ -192,20 +193,31 @@ export function StickyHeader({ className = '' }: StickyHeaderProps) {
           </div>
         </div>
 
-        {/* Mobile Navigation Menu */}
-        {isMobileMenuOpen && (
-          <nav
-            id="mobile-menu"
-            aria-label="Mobile Navigation"
-            role="navigation"
-            className="py-4 transition-colors duration-300"
-          >
+        {/* Mobile Navigation Menu - Fixed Overlay (kein CLS) */}
+        <nav
+          id="mobile-menu"
+          aria-label="Mobile Navigation"
+          role="navigation"
+          aria-hidden={!isMobileMenuOpen}
+          className={`
+            fixed left-0 right-0 top-16 md:top-20 bottom-0 z-40
+            bg-neutral-800/95 backdrop-blur-2xl
+            overflow-y-auto
+            transition-all duration-300 md:hidden
+            ${isMobileMenuOpen
+              ? 'opacity-100 visible translate-y-0'
+              : 'opacity-0 invisible -translate-y-4 pointer-events-none'
+            }
+          `}
+        >
+          <div className="py-4 px-4">
             {navigationItems.map((item, index) => (
               <Link
                 key={item.href}
                 href={item.href}
                 ref={index === 0 ? firstMenuLinkRef : undefined}
                 onClick={() => setIsMobileMenuOpen(false)}
+                tabIndex={isMobileMenuOpen ? 0 : -1}
                 className={`
                   block py-3 font-medium transition-colors duration-300 text-center
                   focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-inset
@@ -223,15 +235,16 @@ export function StickyHeader({ className = '' }: StickyHeaderProps) {
             <Link
               href="/#contact"
               onClick={() => setIsMobileMenuOpen(false)}
+              tabIndex={isMobileMenuOpen ? 0 : -1}
               className="
-                block mt-4 py-3 px-4 text-center rounded-lg font-medium transition-all duration-300 md:hidden
+                block mt-4 py-3 px-4 text-center rounded-lg font-medium transition-all duration-300
                 bg-primary-700 text-white hover:bg-primary-800
               "
             >
               Kontakt aufnehmen
             </Link>
-          </nav>
-        )}
+          </div>
+        </nav>
       </div>
     </header>
   );

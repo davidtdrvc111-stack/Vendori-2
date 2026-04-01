@@ -59,7 +59,16 @@ export function CookieBanner({ className = '' }: CookieBannerProps) {
                   <p className="text-sm md:text-base text-neutral-700 dark:text-neutral-300 leading-relaxed">
                     Wir verwenden Cookies, um Ihre Erfahrung auf unserer Website zu verbessern.
                     Notwendige Cookies sind immer aktiv. Mit Ihrer Zustimmung können wir auch
-                    Analyse-Cookies verwenden, um unsere Website zu optimieren.
+                    Analyse-Cookies verwenden, um unsere Website zu optimieren.{' '}
+                    <a
+                      href="/datenschutz"
+                      className="text-primary-600 dark:text-primary-400 underline hover:no-underline"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Mehr erfahren in unserer Datenschutzerklärung
+                    </a>
+                    .
                   </p>
                 </div>
 
