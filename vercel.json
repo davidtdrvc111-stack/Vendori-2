@@ -5,8 +5,8 @@
   },
   "build": {
     "env": {
-      "NEXT_PUBLIC_SITE_URL": "@site-url",
-      "NEXT_PUBLIC_SITE_NAME": "@site-name"
+      "NEXT_PUBLIC_SITE_URL": "https://vendori.eu",
+      "NEXT_PUBLIC_SITE_NAME": "VENDORi GmbH"
     }
   },
   "headers": [
