@@ -1,0 +1,23 @@
+{
+  "regions": ["fra1"],
+  "env": {
+    "NODE_ENV": "production"
+  },
+  "build": {
+    "env": {
+      "NEXT_PUBLIC_SITE_URL": "@site-url",
+      "NEXT_PUBLIC_SITE_NAME": "@site-name"
+    }
+  },
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "index, follow"
+        }
+      ]
+    }
+  ]
+}

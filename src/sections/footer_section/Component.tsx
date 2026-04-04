@@ -25,9 +25,9 @@ export function FooterSection({ className = '' }: FooterSectionProps) {
                                 alt="VENDORi Logo"
                                 width={364}
                                 height={121}
-                                className="h-10 w-auto brightness-0 invert"
+                                className="h-[120px] w-auto brightness-0 invert"
                                 loading="lazy"
-                                sizes="140px"
+                                sizes="420px"
                             />
                         </Link>
                         <p className="text-neutral-400 leading-relaxed max-w-sm">
@@ -69,7 +69,7 @@ export function FooterSection({ className = '' }: FooterSectionProps) {
                 </div>
 
                 {/* Bottom Bar: Copyright & Legal Links */}
-                <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-neutral-400">
+                <div className="pt-8 pb-24 md:pb-0 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-neutral-400">
                     <p>© {new Date().getFullYear()} VENDORi GmbH. Alle Rechte vorbehalten.</p>
                     <div className="flex gap-8">
                         <Link href="/impressum" className="hover:text-white transition-colors">Impressum</Link>

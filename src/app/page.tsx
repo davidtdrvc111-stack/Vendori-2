@@ -42,13 +42,13 @@ const FooterSection = dynamic(() =>
 
 export const metadata: Metadata = {
   title: 'E-Commerce Wachstum aus der Praxis | VENDORi GmbH',
-  description: 'Wir skalieren Ihren Umsatz mit D2C-Strategien, Marketplace-Know-how und 22+ Jahren Erfahrung. Kein Agentur-Experiment — echte Ergebnisse.',
+  description: 'E-Commerce-Skalierung aus der Praxis: D2C-Strategien, Marketplace-Know-how und 22+ Jahre Erfahrung. Erprobte Methoden statt Theorie.',
   alternates: {
     canonical: 'https://vendori.eu',
   },
   openGraph: {
     title: 'VENDORi GmbH — E-Commerce Wachstum aus der Praxis',
-    description: 'Wir skalieren Ihren Umsatz mit D2C-Strategien, Marketplace-Know-how und 22+ Jahren Erfahrung. Kein Agentur-Experiment — echte Ergebnisse.',
+    description: 'E-Commerce-Skalierung aus der Praxis: D2C-Strategien, Marketplace-Know-how und 22+ Jahre Erfahrung. Erprobte Methoden statt Theorie.',
     url: 'https://vendori.eu',
     type: 'website',
   },

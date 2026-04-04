@@ -27,8 +27,8 @@ export function AboutSection({ className = '' }: AboutSectionProps) {
               'text-3xl md:text-4xl lg:text-5xl xl:text-6xl'
             )}
           >
-            <span className="block">Wir reden nicht.</span>
-            <span className="block">Wir <span className="text-primary-600">verkaufen.</span></span>
+            <span className="block">Von Sellern für Seller.</span>
+            <span className="block">Praxiserfahrung, die <span className="text-primary-600">zählt.</span></span>
           </h2>
           <p className="text-lg md:text-xl text-neutral-600 dark:text-neutral-300 leading-relaxed">
             Unsere Shops laufen. Unsere Zahlen stimmen. Und genau diese Erfahrung bringen wir in Ihr Business.
@@ -49,7 +49,7 @@ export function AboutSection({ className = '' }: AboutSectionProps) {
               1.500.000<span className="text-primary-600">+</span>
             </div>
             <p className="text-sm md:text-base text-slate-600 dark:text-slate-300">
-              Kunden in unseren Shops
+              Kunden in eigenen Online-Shops
             </p>
           </div>
 
@@ -81,7 +81,7 @@ export function AboutSection({ className = '' }: AboutSectionProps) {
               22<span className="text-primary-600">+</span>
             </div>
             <p className="text-sm md:text-base text-slate-600 dark:text-slate-300">
-              Jahre im E-Commerce
+              Jahre Gründer-Erfahrung
             </p>
           </div>
         </div>

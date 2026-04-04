@@ -47,7 +47,7 @@ const SHOPS: Shop[] = [
         country: 'Belgien',
       },
     ],
-    metrics: ['1,5 Mio.+', 'Erfolgreiche Bestellungen'],
+    metrics: ['2,5 Mio.+', 'Erfolgreiche Bestellungen'],
     isOwnBrand: false,
     spanColumns: 2, // Nimmt 2 Spalten auf Desktop ein
   },

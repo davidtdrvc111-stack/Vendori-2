@@ -22,6 +22,7 @@ export function StickyHeader({ className = '' }: StickyHeaderProps) {
   const [isInLightSection, setIsInLightSection] = useState(false);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
   const firstMenuLinkRef = useRef<HTMLAnchorElement>(null);
+  const tickingRef = useRef(false);
 
   // Dynamische Navigation-Items basierend auf aktuellem Pfad
   // Auf Homepage: verwende #hash, auf anderen Seiten: verwende /#hash
@@ -32,14 +33,12 @@ export function StickyHeader({ className = '' }: StickyHeaderProps) {
 
   // useCallback für handleScroll um Re-Renders zu vermeiden
   const handleScroll = useCallback(() => {
-    let ticking = false;
-
-    if (!ticking) {
+    if (!tickingRef.current) {
+      tickingRef.current = true;
       window.requestAnimationFrame(() => {
         setIsScrolled(window.scrollY > 20);
-        ticking = false;
+        tickingRef.current = false;
       });
-      ticking = true;
     }
   }, []);
 

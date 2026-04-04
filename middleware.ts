@@ -61,6 +61,19 @@ export function middleware(request: NextRequest) {
   // Remove server header to minimize information disclosure
   response.headers.delete('Server');
 
+  // Cache-Control Headers für bessere Performance & bfcache
+  const url = new URL(request.url);
+  const pathname = url.pathname;
+
+  // Static Assets (bereits durch matcher.config ausgeschlossen, aber zur Sicherheit)
+  if (pathname.match(/\.(jpg|jpeg|png|gif|svg|webp|woff2|woff|ttf|ico)$/)) {
+    response.headers.set('Cache-Control', 'public, max-age=31536000, immutable');
+  }
+  // HTML Pages & Dynamic Routes
+  else if (!pathname.startsWith('/_next/') && !pathname.startsWith('/api/')) {
+    response.headers.set('Cache-Control', 'public, max-age=0, must-revalidate');
+  }
+
   return response;
 }
 

@@ -11,9 +11,9 @@ export function HeroSection({ className = '' }: HeroSectionProps) {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
           <div className="max-w-4xl mx-auto space-y-6 md:space-y-8">
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold text-white leading-[1.1] tracking-tight">
-              Wir skalieren keine Theorie, sondern{' '}
+              E-Commerce-Wachstum direkt aus der Praxis{' '}
               <span className="text-primary-400">
-                echte Umsätze
+                – für messbare Umsätze
               </span>
               <span className="text-primary-400">.</span>
             </h1>

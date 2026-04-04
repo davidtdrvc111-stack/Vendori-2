@@ -247,8 +247,8 @@ export const unifiedFAQData: UnifiedFAQItem[] = [
   // Featured FAQs (Homepage)
   {
     question: 'Was macht VENDORi anders als andere E-Commerce-Agenturen?',
-    answer: `<p>VENDORi ist selbst <strong>E-Commerce-Seller mit über 1,5 Millionen betreuten Kunden</strong> – kein Agentur-Konstrukt. Wir betreiben bis heute eigene Shops und D2C-Brands mit eigener Infrastruktur.</p>
-<p>Jede Strategie, die wir empfehlen, haben wir bereits in unseren eigenen Shops validiert und skaliert — <strong>kein Experiment auf Ihre Kosten.</strong></p>`,
+    answer: `<p>VENDORi ist selbst <strong>aktiver E-Commerce-Seller mit über 1,5 Millionen Kunden in den eigenen D2C-Shops</strong> – kein Agentur-Konstrukt. Wir betreiben täglich eigene Shops und D2C-Brands mit vollständiger technischer Infrastruktur.</p>
+<p>Jede Strategie, die wir empfehlen, haben wir bereits in unseren eigenen Shops validiert und skaliert — <strong>erprobte Methoden, kein Experiment auf Ihre Kosten.</strong></p>`,
     featured: true,
     category: 'Allgemein',
     priority: 1,
@@ -287,7 +287,7 @@ export const unifiedFAQData: UnifiedFAQItem[] = [
     answer: `<p>Start innerhalb von <strong>2–3 Wochen</strong> nach kostenlosem Kennenlern-Gespräch – keine monatelangen Strategiephasen.</p>
 <ul>
   <li><span class="bullet">›</span><span>Erste Tests starten in <strong>Woche 1–2</strong> nach Beauftragung</span></li>
-  <li><span class="bullet">›</span><span>Messbare Umsatzsteigerungen nach <strong>4–8 Wochen</strong> sichtbar</span></li>
+  <li><span class="bullet">›</span><span>Erste Daten und Kennzahlen nach <strong>4–8 Wochen</strong> verfügbar</span></li>
   <li><span class="bullet">›</span><span>Wir arbeiten agil mit <strong>schnellen Iterationen</strong></span></li>
 </ul>`,
     featured: false,
@@ -322,10 +322,10 @@ export const unifiedFAQData: UnifiedFAQItem[] = [
   },
   {
     question: 'Wie lange dauert es bis erste Ergebnisse sichtbar sind?',
-    answer: `<p>Wir arbeiten mit schnellen, agilen Iterationen – keine monatelangen Strategiephasen ohne messbare Ergebnisse:</p>
+    answer: `<p>Wir arbeiten mit schnellen, agilen Iterationen – keine monatelangen Strategiephasen ohne Transparenz:</p>
 <ul>
   <li><span class="bullet">›</span><span>Erste Tests starten in <strong>Woche 1–2</strong> nach Beauftragung</span></li>
-  <li><span class="bullet">›</span><span>Messbare Umsatzsteigerungen nach <strong>4–8 Wochen</strong></span></li>
+  <li><span class="bullet">›</span><span>Erste Daten und Kennzahlen nach <strong>4–8 Wochen</strong> verfügbar</span></li>
   <li><span class="bullet">›</span><span>Schnelles Testing → schnelles Learning → schnelle Optimierung</span></li>
 </ul>`,
     featured: false,
@@ -352,6 +352,21 @@ export const unifiedFAQData: UnifiedFAQItem[] = [
     featured: false,
     category: 'Allgemein',
     priority: 10,
+  },
+  {
+    question: 'Wie entstand VENDORi? Woher kommt die Erfahrung?',
+    answer: `<p>VENDORi wurde <strong>2023 gegründet</strong>, basierend auf über <strong>22 Jahren praktischer E-Commerce-Erfahrung</strong> des Gründers Dejan Todorovic (seit 2002).</p>
+<p>Die Gründung war kein theoretisches Konzept, sondern entstand aus der Praxis:</p>
+<ul>
+  <li><span class="bullet">›</span><span><strong>2002–2023:</strong> Aufbau und Skalierung eigener E-Commerce-Shops in Deutschland, Frankreich und darüber hinaus</span></li>
+  <li><span class="bullet">›</span><span><strong>Praktisches Know-how:</strong> Über 1,5 Millionen Kunden in eigenen D2C-Shops betreut</span></li>
+  <li><span class="bullet">›</span><span><strong>Operator-Mentalität:</strong> Täglich operativ in Marktplätzen und eigenen Shops aktiv</span></li>
+  <li><span class="bullet">›</span><span><strong>2023:</strong> VENDORi GmbH gegründet, um diese Expertise anderen Herstellern zugänglich zu machen</span></li>
+</ul>
+<p>Das ist nicht Theorie, das ist Praxis – von jemanden, der selbst täglich im E-Commerce arbeitet.</p>`,
+    featured: false,
+    category: 'Allgemein',
+    priority: 11,
   },
 ];
 

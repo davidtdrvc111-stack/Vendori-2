@@ -23,10 +23,10 @@ export function ServicesSection({ className = '' }: ServicesSectionProps) {
             'mb-4',
             'font-heading font-bold'
           )}>
-            E-Commerce-Wachstum ohne Agentur-Experimente.
+            Von Sellern für Seller: E-Commerce-Wachstum aus der Praxis.
           </h2>
           <p className="text-lg md:text-xl text-neutral-200 dark:text-neutral-200">
-            Statt auf Annahmen setzen wir auf Fakten: die praxiserprobten Hebel aus unseren eigenen, erfolgreichen E-Commerce-Marken.
+            Wir setzen Strategien ein, die wir täglich selbst in unseren eigenen E-Commerce-Marken erfolgreich anwenden und validieren.
           </p>
         </div>
 
@@ -85,7 +85,7 @@ export function ServicesSection({ className = '' }: ServicesSectionProps) {
               'mb-8 md:mb-12',
               'leading-relaxed'
             )}>
-              Keine Experimente mit Ihrem Budget. Sie profitieren von den Hebeln, die sich in unseren eigenen D2C-Marken bereits bewährt haben.
+              Methoden, die sich in der Praxis bewährt haben. Sie profitieren von den Hebeln, die sich in unseren eigenen D2C-Marken bereits bewährt haben.
             </p>
 
             {/* Key Features / Bullet Points */}

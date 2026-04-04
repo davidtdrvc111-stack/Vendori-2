@@ -39,16 +39,16 @@ export function AboutFullSection({ className = '' }: AboutFullSectionProps) {
             <div>
               <div className="space-y-4 md:space-y-5 text-base md:text-lg text-neutral-600 dark:text-neutral-300 leading-relaxed">
                 <p>
-                  VENDORi ist <span className="text-primary-600 dark:text-primary-400 font-medium">kein Agentur-Konstrukt</span>. Wir starteten als E-Commerce-Seller, bauen eigene D2C-Marken auf und expandierten europaweit über eigene Online-Shops und internationale Marktplätze in <span className="text-primary-600 dark:text-primary-400 font-medium">20+ Ländern</span>¹ – mit über <span className="text-primary-600 dark:text-primary-400 font-medium">1.500.000 Kunden</span> in unseren Shops.
+                  VENDORi ist <span className="text-primary-600 dark:text-primary-400 font-medium">kein Agentur-Konstrukt</span>. Wir sind selbst E-Commerce-Seller, bauen eigene D2C-Marken auf und expandierten europaweit – heute betreuen wir über <span className="text-primary-600 dark:text-primary-400 font-medium">1.500.000 Kunden</span> in unseren eigenen Online-Shops über eigene Kanäle und internationale Marktplätze in <span className="text-primary-600 dark:text-primary-400 font-medium">20+ Ländern</span>¹.
                 </p>
                 <p>
-                  Dabei merkten wir: Die meisten Agenturen reden viel, verstehen aber das echte Tagesgeschäft nicht. Sie verkaufen Strategien, die <span className="text-primary-600 dark:text-primary-400 font-medium">in der Praxis scheitern</span>.
+                  Dabei haben wir gelernt: Erfolgreicher E-Commerce braucht praktische Erfahrung. Als aktive Seller kennen wir die <span className="text-primary-600 dark:text-primary-400 font-medium">Herausforderungen des Tagesgeschäfts</span> aus erster Hand.
                 </p>
                 <p className="font-semibold text-neutral-900 dark:text-white">
-                  Wir machen es anders. Jede Strategie, die wir empfehlen, haben wir bereits in unseren eigenen Shops validiert. Kein Experiment auf Ihre Kosten.
+                  Wir machen es anders. Jede Strategie, die wir empfehlen, haben wir bereits in unseren eigenen Shops getestet und validiert. Praxiserprobt, nicht theoretisch.
                 </p>
                 <p>
-                  Das ist VENDORi. Kein Beratungsprodukt. Ein Team mit <span className="text-primary-600 dark:text-primary-400 font-medium">22+ Jahren E-Commerce-Erfahrung</span>, das täglich selbst im Markt operiert – und genau deshalb die Hebel kennt, die Ihren Umsatz tatsächlich skalieren. <span className="text-primary-600 dark:text-primary-400 font-medium">Ohne Umwege. Ohne Theorie.</span>
+                  Das ist VENDORi. Kein Beratungsprodukt. Geschäftsführer <span className="text-primary-600 dark:text-primary-400 font-medium">Dejan Todorovic</span> bringt <span className="text-primary-600 dark:text-primary-400 font-medium">22+ Jahre persönliche E-Commerce-Erfahrung</span> mit (seit 2002). VENDORi GmbH wurde 2023 gegründet, um diese bewährte Expertise zugänglich zu machen. Ein Team, das täglich selbst im Markt operiert – und genau deshalb die Hebel kennt, die Ihren Umsatz tatsächlich skalieren.
                 </p>
                 <p className="text-sm text-neutral-600 dark:text-neutral-400">
                   ¹ Aus eigenen Shops und direkten Anbindungen auf relevanten Marktplätzen.
@@ -196,7 +196,7 @@ export function AboutFullSection({ className = '' }: AboutFullSectionProps) {
               </h3>
 
               <p className="text-sm md:text-base text-neutral-300 leading-relaxed">
-                Unser einziger KPI ist Ihr Umsatz. Keine schönen Reports, keine Aktivitäts-Metriken. Wenn Ihre Zahlen nicht wachsen, haben wir versagt.
+                Umsatz ist unser wichtigster KPI. Wir arbeiten ergebnisorientiert an messbarer Skalierung Ihres Geschäfts.
               </p>
             </div>
 

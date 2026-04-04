@@ -1,6 +1,6 @@
 "use client";
 import { cn } from "@/lib/utils";
-import React, { ReactNode, useEffect, useState } from "react";
+import React, { ReactNode, useEffect, useState, useRef } from "react";
 
 interface AuroraBackgroundProps extends React.HTMLProps<HTMLDivElement> {
   children: ReactNode;
@@ -14,6 +14,8 @@ export const AuroraBackground = ({
   ...props
 }: AuroraBackgroundProps) => {
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+  const [isInView, setIsInView] = useState(true); // Start true für Above-the-fold
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -23,8 +25,22 @@ export const AuroraBackground = ({
     return () => mq.removeEventListener('change', handler);
   }, []);
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsInView(entry.isIntersecting),
+      { threshold: 0.1, rootMargin: '100px' } // 100px Vorlauf
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div
+      ref={containerRef}
       className={cn(
         "relative flex flex-col h-[100vh] items-center justify-center bg-zinc-900 text-white transition-bg",
         className
@@ -57,9 +73,9 @@ export const AuroraBackground = ({
             `[mask-image:radial-gradient(ellipse_at_100%_0%,black_20%,var(--transparent)_80%)]`
           )}
           style={{
-            animationDuration: prefersReducedMotion ? '0s' : 'var(--aurora-speed)',
-            animation: prefersReducedMotion ? 'none' : undefined,
-            willChange: prefersReducedMotion ? 'auto' : 'transform',
+            animationDuration: prefersReducedMotion || !isInView ? '0s' : 'var(--aurora-speed)',
+            animation: prefersReducedMotion || !isInView ? 'none' : undefined,
+            willChange: prefersReducedMotion || !isInView ? 'auto' : 'transform',
             filter: prefersReducedMotion ? 'blur(5px)' : 'blur(8px)',
           } as React.CSSProperties}
         ></div>

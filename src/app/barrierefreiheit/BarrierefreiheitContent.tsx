@@ -6,7 +6,7 @@ import { StickyHeader } from '@/sections/sticky_header';
 import { FooterSection } from '@/sections/footer_section';
 import { Breadcrumb } from '@/components/ui/Breadcrumb';
 import { motion } from 'framer-motion';
-import { CheckCircle, ExternalLink, Mail, Phone } from 'lucide-react';
+import { CheckCircle, ExternalLink, Mail } from 'lucide-react';
 
 export function BarrierefreiheitContent() {
     // Scroll progress with CSS (fallback for older browsers via useEffect)

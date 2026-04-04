@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     default: 'VENDORi GmbH — E-Commerce Wachstum aus der Praxis',
     template: '%s | VENDORi GmbH',
   },
-  description: 'VENDORi skaliert Ihren E-Commerce mit D2C-Strategien, Marketplace-Know-how und 22+ Jahren Erfahrung — kein Experiment, sondern echte Ergebnisse.',
+  description: 'VENDORi skaliert Ihren E-Commerce mit D2C-Strategien, Marketplace-Know-how und 22+ Jahren Praxiserfahrung — erprobte Methoden aus eigenen Shops.',
   icons: {
     icon: [{ url: '/favicon.svg', type: 'image/svg+xml' }],
     shortcut: '/favicon.svg',

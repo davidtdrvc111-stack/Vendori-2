@@ -86,7 +86,7 @@ const FormField = memo(function FormField({
 
 // Main Contact Section Component
 export function ContactSection({ className = '' }: ContactSectionProps) {
-  const [isPending, startTransition] = useTransition();
+  const [_isPending, startTransition] = useTransition();
   const [formData, setFormData] = useState<FormData>({
     firstName: '',
     lastName: '',

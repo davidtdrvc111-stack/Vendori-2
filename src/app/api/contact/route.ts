@@ -56,13 +56,11 @@ function getClientIP(request: NextRequest): string {
 
   // Fallback (nur Development)
   if (process.env.NODE_ENV === 'development') {
+    console.warn('[Security] Keine vertrauenswürdige IP gefunden - verwende Fallback 127.0.0.1');
     return '127.0.0.1';
   }
 
-  // WARNUNG: Keine IP gefunden
-  if (process.env.NODE_ENV === 'development') {
-    console.error('[Security] Keine vertrauenswürdige IP gefunden - verwende Fallback');
-  }
+  // Production: unknown
   return 'unknown';
 }
 

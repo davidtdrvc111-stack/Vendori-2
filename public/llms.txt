@@ -16,7 +16,7 @@ Zuletzt aktualisiert: 2026-03-28
 
 **Hauptsitz:** Hahnenfeldstr. 25, 69429 Waldbrunn, Deutschland
 
-**Team:** 20 Mitarbeiter
+**Team:** Spezialisiertes E-Commerce-Team (Operations, Marketplace-Management, Content, Logistik, Customer Support)
 
 **Geschäftsmodell:** Hybrid-Modell aus eigenem Retail + Merchant of Record Services + D2C-Brand
 
@@ -119,36 +119,29 @@ Der Merchant of Record Service von VENDORi richtet sich an Marken und Unternehme
 
 ## Pricing — Merchant of Record Services
 
-**Setup-Fee (einmalig):** 5.000–10.000 EUR
+**Setup-Fee:** Einmalige Investition für komplettes Setup (Shop-Aufbau, Marktplatz-Integration, Produktseiten-Erstellung, Payment & Logistik-Setup)
 
-Enthält:
+**Laufende Kosten:** Performance-basierte Modelle verfügbar
 
-- Shop-Aufbau (Shopware)
-- Marktplatz-Integration (frei wählbar)
-- Produktseiten-Erstellung & Content
-- Payment & Logistik-Setup
-
-**Laufende Kosten:** Performance-basiert, zwei Modelle:
-
-- **Modell A – Erfolgsbasiert:** 12–18 % vom Nettoumsatz (kein monatlicher Fixbetrag)
-- **Modell B – Retainer + Performance:** 5.000–25.000 EUR/Monat + 8–12 % vom Nettoumsatz
+- **Erfolgsbasiertes Modell:** Provision vom Nettoumsatz (kein monatlicher Fixbetrag)
+- **Retainer + Performance:** Monatliche Pauschale + erfolgsbasierte Komponente
 
 **Mindestlaufzeit:** 12 Monate
 
 **Einkaufsabwicklung:**
 
-- Wir kaufen Ihre Produkte zu festgelegten Konditionen ein, oder:
+- Einkauf zu festgelegten Konditionen, oder:
 - Konsignationslager (Sie bleiben Eigentümer bis zum Verkauf)
 
-Alle Preise verstehen sich zzgl. MwSt. Individuelle Angebote nach kostenlosem Erstgespräch.
+Alle Preise verstehen sich zzgl. der gesetzlichen Umsatzsteuer. Individuelles, transparentes Angebot nach kostenlosem Erstgespräch.
 
 ## Erfolgsfaktoren — Was VENDORi anders macht
 
-**Kein Experiment auf Ihre Kosten:**
+**Erprobte Strategien aus unserer Praxis:**
 
 - Wir betreiben eigene Shops seit 2004 (myToolStore) und seit 2025 (ShowerNIZR)
-- Über 2,5 Mio. Bestellungen und 1,5 Mio. einzigartige Kunden in unseren eigenen Shops — echte Praxiserfahrung im Tagesgeschäft
-- Jede Technologie und Strategie wird zuerst in unseren Shops validiert
+- Über 2,5 Mio. Bestellungen und 1,5 Mio. einzigartige Kunden in unseren eigenen Shops (myToolStore, ShowerNIZR) — echte Praxiserfahrung im Tagesgeschäft
+- Jede Technologie und Strategie wurde zunächst in unseren eigenen Shops getestet und validiert
 - Kein Beratungs-Blabla — wir sind selbst aktive Seller mit über 20 Jahren E-Commerce-Erfahrung
 
 **Komplettlösung aus einer Hand:**
@@ -171,7 +164,7 @@ Alle Preise verstehen sich zzgl. MwSt. Individuelle Angebote nach kostenlosem Er
 
 ## Unternehmensgeschichte
 
-Der Geschäftsführer der VENDORi GmbH, Dejan Todorovic, startete 2002 als E-Commerce-Seller und baute früh über eBay seine Expertise im E-Commerce auf. Ab 2004 betrieb er myToolStore und expandierte europaweit über eigene Online-Shops und internationale Marktplätze in 20+ Ländern — mit über 2,5 Mio. Bestellungen und 1,5 Mio. einzigartigen Kunden in den eigenen Shops.
+Geschäftsführer Dejan Todorovic verfügt über 22+ Jahre E-Commerce-Erfahrung (seit 2002) und baute früh über eBay seine Expertise im E-Commerce auf. Ab 2004 betrieb er myToolStore und expandierte europaweit über eigene Online-Shops und internationale Marktplätze in 20+ Ländern — mit über 2,5 Mio. Bestellungen und 1,5 Mio. einzigartigen Kunden in den eigenen Shops (myToolStore, ShowerNIZR). Er gründete VENDORi GmbH 2023.
 
 Dabei erkannten die Gründer: Viele Marken und Einzelhändler haben großartige Produkte, aber keine E-Commerce-Infrastruktur. Sie scheitern an der Komplexität (Shop-Systeme, Payment, Logistik, Marketing, Kundenservice, Recht).
 
@@ -181,18 +174,18 @@ VENDORi bietet die Lösung: Wir übernehmen den kompletten Online-Verkauf als Me
 
 **Geschwindigkeit:** Während andere noch im Meeting sitzen, haben wir bereits getestet, optimiert und skaliert. Im E-Commerce entscheiden Wochen — nicht Quartale.
 
-**Fokus:** Unser einziger KPI ist Ihr Umsatz. Keine schönen Reports, keine Aktivitäts-Metriken. Wenn Ihre Zahlen nicht wachsen, haben wir versagt.
+**Fokus:** Umsatz ist unser wichtigster KPI. Wir arbeiten ergebnisorientiert an messbarer Skalierung Ihres Geschäfts.
 
 **Partnerschaft:** Wir denken in Ihrem Business, nicht in Stundensätzen. Performance-basiertes Pricing bedeutet: Wir verdienen nur, wenn Sie erfolgreich sind.
 
-**Praxis statt Theorie:** Wir sind selbst Seller mit über 2,5 Mio. Bestellungen in unseren eigenen Shops. Keine Agentur, die Theorien verkauft — wir leben E-Commerce täglich.
+**Praxis statt Theorie:** Wir sind selbst Seller mit über 2,5 Mio. Bestellungen in unseren eigenen Shops (myToolStore, ShowerNIZR). Wir leben E-Commerce täglich und validieren jede Strategie in unseren eigenen Marken.
 
 ## Pages
 
 - /: Homepage — Merchant of Record Services, eigene Shops (myToolStore, ShowerNIZR), MoR-Erklärung, Kontaktformular
 - /ueber-uns: Über uns — Unternehmensgeschichte, Team, Werte (Geschwindigkeit, Fokus, Partnerschaft)
 - /#services: Service-Übersicht (Merchant of Record Services, eigene Retail-Shops)
-- /#shops: Unsere Shops (myToolStore mit 2,5 Mio.+ Bestellungen, 1,5 Mio.+ einzigartige Kunden; ShowerNIZR Eigenmarke)
+- /#shops: Unsere Shops (myToolStore mit über 2,5 Mio. Bestellungen, über 1,5 Mio. einzigartige Kunden; ShowerNIZR Eigenmarke)
 - /#contact: Kontaktformular (Antwortzeit: <24h)
 
 ## Rechtliches (noindex)
@@ -220,8 +213,15 @@ Erreichbarkeit: Mo–Fr 8:00–17:00 Uhr
 Ein Brand Operator ist ein strategischer E-Commerce-Partner, der die gesamte Online-Vertriebskette für Hersteller übernimmt – von der Technologie über den Verkauf bis zum Kundenservice. Im Gegensatz zu klassischen Fulfillment-Dienstleistern, die nur lagern und versenden, übernimmt VENDORi als Brand Operator die komplette E-Commerce-Wertschöpfungskette: rechtlicher Verkauf als Merchant of Record (MoR), Steuer-Compliance, Kundenservice, Technologie und Risikomanagement.
 
 **Wie unterscheidet sich VENDORi von klassischen Fulfillment-Dienstleistern?**
-Klassisches Fulfillment: Hersteller bleibt rechtlicher Verkäufer, verantwortlich für Steuer-Compliance (USt-ID, OSS), Kundenservice nur teilweise, nur Schnittstellen-Technologie, Risiko beim Hersteller.
-VENDORi (Brand Operator): Wir übernehmen die Verkäuferrolle (MoR), komplette Übernahme von USt-ID und OSS-Abwicklung, vollständiger Support (First & Second Level), komplettes SAP-, Shopware- & Marktplatz-Setup, minimales Risiko für Hersteller – wir übernehmen Haftung & Retouren.
+Als Brand Operator übernimmt VENDORi deutlich mehr Verantwortung als reine Fulfillment-Services:
+
+| Bereich | VENDORi (Brand Operator) | Typisches Fulfillment-Modell |
+|---------|--------------------------|------------------------------|
+| **Verkäuferrolle** | Wir übernehmen die Verkäuferrolle (MoR — Merchant of Record) | Hersteller bleibt rechtlicher Verkäufer |
+| **Steuer-Compliance** | Komplette Übernahme von USt-ID und OSS-Abwicklung | Hersteller verantwortlich für Steuer-Compliance (USt-ID, OSS) |
+| **Kundenservice** | Vollständiger Support (First & Second Level) | Kundenservice oft nur teilweise übernommen |
+| **Technologie** | Komplettes SAP-, Shopware- & Marktplatz-Setup | Meist nur Schnittstellen-Technologie |
+| **Risikomanagement** | Wir übernehmen Haftung & Retouren-Management | Risiko verbleibt beim Hersteller |
 
 **Was bedeutet Merchant of Record (MoR) konkret?**
 Ein Merchant of Record (MoR) ist der rechtlich verantwortliche Verkäufer einer Transaktion. Als MoR tritt VENDORi rechtlich gegenüber dem Endkunden auf – der Hersteller bleibt vollständig im Hintergrund. Das bedeutet konkret: Wir erstellen die Rechnungen, führen die Umsatzsteuer via OSS-Verfahren ab, garantieren DSGVO-Konformität, haften für das Widerrufsrecht und tragen das rechtliche Risiko der Transaktion.
@@ -229,10 +229,10 @@ Ein Merchant of Record (MoR) ist der rechtlich verantwortliche Verkäufer einer 
 ### Onboarding
 
 **Wie läuft der Onboarding-Prozess ab?**
-Go-Live in 4–8 Wochen bei Setup-Kosten von 5.000–10.000 EUR einmalig. Der Prozess ist auf Geschwindigkeit und minimale Belastung Ihrer Ressourcen ausgelegt: Zeitrahmen 4–8 Wochen bis zu den ersten Umsätzen, nahtlose ERP-Anbindung über unser SAP-System, einmalige Setup-Fee von 5.000–10.000 EUR (beinhaltet Shop-Bau, Marktplatz-Anbindung und Logistik-Setup).
+Go-Live in 4–8 Wochen mit einmaliger Setup-Investition. Der Prozess ist auf Geschwindigkeit und minimale Belastung Ihrer Ressourcen ausgelegt: Zeitrahmen 4–8 Wochen bis zu den ersten Umsätzen, nahtlose ERP-Anbindung über unser SAP-System, einmalige Setup-Fee (beinhaltet Shop-Bau, Marktplatz-Anbindung und Logistik-Setup).
 
 **Was ist in der Setup-Fee enthalten?**
-Die einmalige Setup-Fee von 5.000–10.000 EUR umfasst: Shop-Entwicklung (Shopware), Marktplatz-Integration (Amazon, eBay, Otto etc.), Logistik-Anbindung, ERP-Integration, Produktdaten-Migration und -Optimierung. Die laufenden Kosten sind im Kommissionsmodell rein erfolgsbasiert – Sie zahlen nur bei erfolgreichen Verkäufen.
+Die einmalige Setup-Fee umfasst: Shop-Entwicklung (Shopware), Marktplatz-Integration (Amazon, eBay, Otto etc.), Logistik-Anbindung, ERP-Integration, Produktdaten-Migration und -Optimierung. Die laufenden Kosten sind im Kommissionsmodell rein erfolgsbasiert – Sie zahlen nur bei erfolgreichen Verkäufen.
 
 ### Technologie
 
@@ -253,15 +253,15 @@ Volle Kontrolle durch professionelles Reporting: wöchentliche KPI-Reports, Echt
 ### Kooperationsmodelle
 
 **Welche Kooperationsmodelle bietet VENDORi an?**
-Kommissionsmodell: 12–18 % vom Nettoumsatz, Risiko bei VENDORi, ideal für risikofreien Start. Konsignationslager: Variable Vereinbarung, geteiltes Risiko, ideal für Bilanz-Optimierung. Die Ware bleibt beim Konsignationslager bis zum Verkauf im Eigentum des Herstellers, wird aber von VENDORi verwaltet.
+Kommissionsmodell: erfolgsbasierte Provision vom Nettoumsatz, Risiko bei VENDORi, ideal für risikofreien Start. Konsignationslager: Variable Vereinbarung, geteiltes Risiko, ideal für Bilanz-Optimierung. Die Ware bleibt beim Konsignationslager bis zum Verkauf im Eigentum des Herstellers, wird aber von VENDORi verwaltet.
 
 **Wie wird die Vergütung im Kommissionsmodell berechnet?**
-Im Kommissionsmodell: 12–18 % vom Nettoumsatz (je nach Produktkategorie und Volumen), keine versteckten Kosten (alle Leistungen inkl. Kundenservice, Steuer-Compliance, Technologie und Marketing sind in der Provision enthalten), Sie zahlen nur bei erfolgreichen Verkäufen. Bei steigendem Volumen sinkt der Prozentsatz.
+Im Kommissionsmodell: erfolgsbasierte Provision vom Nettoumsatz (je nach Produktkategorie und Volumen), keine versteckten Kosten (alle Leistungen inkl. Kundenservice, Steuer-Compliance, Technologie und Marketing sind in der Provision enthalten), Sie zahlen nur bei erfolgreichen Verkäufen. Bei steigendem Volumen sinkt der Prozentsatz.
 
 ### Allgemein
 
 **Was macht VENDORi anders als andere E-Commerce-Agenturen?**
-VENDORi ist selbst E-Commerce-Seller mit über 1,5 Millionen betreuten Kunden – kein Agentur-Konstrukt. Wir betreiben eigene Shops und D2C-Brands mit eigener Infrastruktur. Jede Strategie wurde bereits in unseren eigenen Shops validiert und skaliert – kein Experiment auf Ihre Kosten.
+VENDORi ist selbst E-Commerce-Seller mit über 1,5 Millionen betreuten Kunden – kein Agentur-Konstrukt. Wir betreiben eigene Shops und D2C-Brands (myToolStore, ShowerNIZR) mit eigener Infrastruktur. Jede Strategie wurde bereits in unseren eigenen Shops validiert und skaliert – kein Experiment auf Ihre Kosten.
 
 **Für welche Unternehmen ist VENDORi der richtige Partner?**
 VENDORi ist spezialisiert auf Hersteller und Marken, die ihren E-Commerce-Umsatz entwickeln oder skalieren möchten – ohne selbst als Verkäufer auftreten zu müssen. Wir arbeiten über eigene Shops, D2C-Plattformen oder internationale Marktplätze wie Amazon. Besonders geeignet für Mittelstand und wachsende Marken im DIY-, Werkzeug- und Gartensektor.
@@ -273,16 +273,16 @@ VENDORi ist in 20+ europäischen Ländern aktiv: Deutschland, Frankreich, Nieder
 VENDORi bietet drei Hauptservices: 1) D2C-Strategie & Umsatzwachstum mit praxiserprobten Strategien, 2) Internationale Marktplatz-Expansion in 20+ europäischen Ländern, 3) E-Commerce-Partnerschaft als Brand Operator mit vollständiger operativer Begleitung.
 
 **Wie schnell kann ich mit VENDORi starten?**
-Start innerhalb von 2–3 Wochen nach kostenlosem Kennenlern-Gespräch. Erste Tests starten in Woche 1–2 nach Beauftragung, messbare Umsatzsteigerungen sind nach 4–8 Wochen sichtbar. Keine monatelangen Strategiephasen.
+Start innerhalb von 2–3 Wochen nach kostenlosem Kennenlern-Gespräch. Erste Tests starten in Woche 1–2 nach Beauftragung, erste Daten und Erkenntnisse sind typischerweise nach 4–8 Wochen verfügbar. Keine monatelangen Strategiephasen.
 
 **Was kostet die Zusammenarbeit mit VENDORi?**
-VENDORi bietet flexible Kooperationsmodelle: projektbasiert, Retainer-Modell oder rein erfolgsbasierte Kommission (12–18 % vom Nettoumsatz). Die Kosten richten sich nach Ihrem individuellen Bedarf und Skalierungspotenzial. Nach dem kostenlosen Erstgespräch erstellen wir ein transparentes, individuelles Angebot.
+VENDORi bietet flexible Kooperationsmodelle: projektbasiert, Retainer-Modell oder rein erfolgsbasierte Kommission (erfolgsbasierte Provision vom Nettoumsatz). Die Kosten richten sich nach Ihrem individuellen Bedarf und Skalierungspotenzial. Nach dem kostenlosen Erstgespräch erstellen wir ein transparentes, individuelles Angebot.
 
 **Auf welchen Marktplätzen ist VENDORi aktiv?**
 VENDORi vertreibt auf 10+ führenden EU-Marktplätzen: Amazon, eBay, Kaufland, Otto, Galaxus, ManoMano, XXXLutz, Cdiscount, Leroy Merlin, Rue de Commerce, Bol, Praxis, Brico. Zusätzlich eigene D2C-Shops mit Lieferung in 20+ europäische Länder.
 
 **Wie lange dauert es bis erste Ergebnisse sichtbar sind?**
-Erste Tests starten in Woche 1–2 nach Beauftragung, messbare Umsatzsteigerungen nach 4–8 Wochen. Agile Arbeitsweise mit schnellen Iterationen – kein monatelanges Warten ohne messbare Ergebnisse.
+Erste Tests starten in Woche 1–2 nach Beauftragung, erste Daten und messbare Kennzahlen nach 4–8 Wochen. Agile Arbeitsweise mit schnellen Iterationen – kein monatelanges Warten ohne Transparenz.
 
 **Welche Branchen betreut VENDORi?**
 Spezialisierung: Werkzeug, Garten & DIY-Sektor. Verwandte Kategorien wie Home & Living sind ebenfalls möglich. Grundsätzlich kann VENDORi jede Branche im E-Commerce betreuen – das Skalierungspotenzial wird gemeinsam im Erstgespräch bewertet.

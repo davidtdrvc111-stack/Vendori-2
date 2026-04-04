@@ -13,7 +13,18 @@
     "screenshots": "node scripts/take-screenshots.js",
     "security:audit": "npm audit --audit-level=moderate",
     "security:check": "npm run type-check && npm run lint && npm run security:audit",
-    "prebuild": "npm run security:check"
+    "prebuild": "npm run security:check",
+    "test:e2e": "playwright test",
+    "test:e2e:headed": "playwright test --headed",
+    "test:e2e:ui": "playwright test --ui",
+    "test:e2e:debug": "playwright test --debug",
+    "test:critical": "playwright test tests/e2e/01-contact-form.spec.ts tests/e2e/02-cookie-consent.spec.ts tests/e2e/03-navigation.spec.ts",
+    "test:static": "node scripts/verify-static-tests.js",
+    "test:lighthouse": "playwright test tests/e2e/09-lighthouse.spec.ts",
+    "test:axe": "playwright test tests/e2e/10-accessibility-axe.spec.ts",
+    "test:integration": "playwright test tests/e2e/11-integration.spec.ts",
+    "test:report": "playwright show-report",
+    "test:codegen": "playwright codegen http://localhost:3000"
   },
   "dependencies": {
     "clsx": "^2.1.0",
@@ -26,6 +37,7 @@
     "tailwind-merge": "^2.2.0"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.10.2",
     "@playwright/test": "^1.58.2",
     "@types/node": "^20.11.0",
     "@types/nodemailer": "^7.0.11",
@@ -36,6 +48,7 @@
     "eslint": "^9.39.4",
     "eslint-config-next": "^15.5.12",
     "playwright": "^1.58.2",
+    "playwright-lighthouse": "^4.0.0",
     "postcss": "^8.4.0",
     "prettier": "^3.2.0",
     "prettier-plugin-tailwindcss": "^0.5.0",
