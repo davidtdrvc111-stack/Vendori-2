@@ -29,15 +29,15 @@ export function CookieToggle({
   };
 
   return (
-    <div className="py-4 border-b border-neutral-200 dark:border-neutral-700 last:border-b-0">
-      <div className="flex items-start justify-between gap-4">
-        <div className="flex-1">
-          <h3 className="text-base md:text-lg font-semibold text-neutral-800 dark:text-neutral-200 mb-1">
+    <div className="py-3 md:py-4 border-b border-neutral-200 dark:border-neutral-700 last:border-b-0">
+      <div className="flex items-start justify-between gap-3 md:gap-4">
+        <div className="flex-1 min-w-0">
+          <h3 className="text-sm md:text-base lg:text-lg font-semibold text-neutral-800 dark:text-neutral-200 mb-0.5 md:mb-1">
             {label}
           </h3>
-          <p className="text-xs md:text-sm text-neutral-600 dark:text-neutral-400">{description}</p>
+          <p className="text-xs md:text-sm text-neutral-600 dark:text-neutral-400 leading-snug md:leading-normal">{description}</p>
           {disabled && (
-            <p className="text-xs text-neutral-500 dark:text-neutral-500 mt-1 italic">Immer aktiv</p>
+            <p className="text-xs text-neutral-500 dark:text-neutral-500 mt-0.5 md:mt-1 italic">Immer aktiv</p>
           )}
         </div>
 
