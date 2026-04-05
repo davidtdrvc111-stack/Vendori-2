@@ -136,7 +136,7 @@ const productSchemaMyToolStore = {
   '@context': 'https://schema.org',
   '@type': 'Product',
   name: 'myToolStore - Werkzeug & Baumarkt Online Shop',
-  description: 'Multi-Market Shop für Werkzeuge und Regenwassermanagementlösungen mit über 1,5 Mio. Bestellungen.',
+  description: 'Multi-Market Shop für Werkzeuge und Regenwassermanagementlösungen mit über 2,5 Mio. Bestellungen.',
   brand: { '@type': 'Brand', name: 'myToolStore' },
   offers: {
     '@type': 'AggregateOffer',

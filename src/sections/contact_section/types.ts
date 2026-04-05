@@ -1,5 +1,6 @@
 export interface ContactSectionProps {
   className?: string;
+  csrfToken: string; // CSRF token from server (required for form submission)
 }
 
 export interface FormData {

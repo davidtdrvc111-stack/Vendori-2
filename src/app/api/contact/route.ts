@@ -12,6 +12,7 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 import { checkRateLimit } from '@/lib/email/rate-limiter';
+import { validateCSRFToken } from '@/lib/csrf/token';
 
 /**
  * Validierung und Sanitisierung
@@ -138,7 +139,45 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // 5. Honeypot prüfen (Silent Fail)
+    // 5. CSRF Token Validierung
+    const csrfToken = body.csrf_token as string | undefined;
+
+    if (!csrfToken) {
+      if (process.env.NODE_ENV === 'development') {
+        console.warn('[Contact API] Missing CSRF token from IP:', clientIP);
+      }
+
+      return NextResponse.json(
+        {
+          success: false,
+          error: 'Sicherheitsvalidierung fehlgeschlagen. Bitte laden Sie die Seite neu.',
+        },
+        { status: 403 }
+      );
+    }
+
+    // Validate CSRF token signature and expiry (1 hour)
+    const isValidToken = validateCSRFToken(csrfToken, 3600000);
+
+    if (!isValidToken) {
+      if (process.env.NODE_ENV === 'development') {
+        console.warn('[Contact API] Invalid or expired CSRF token from IP:', clientIP);
+      }
+
+      return NextResponse.json(
+        {
+          success: false,
+          error: 'Sicherheitstoken ungültig oder abgelaufen. Bitte laden Sie die Seite neu.',
+        },
+        { status: 403 }
+      );
+    }
+
+    if (process.env.NODE_ENV === 'development') {
+      console.log('[Contact API] CSRF token validated successfully');
+    }
+
+    // 6. Honeypot prüfen (Silent Fail)
     // Das "company_info"-Feld ist für Menschen unsichtbar
     // Bots füllen es automatisch aus
     const honeypotField = body.company_info as string | undefined;

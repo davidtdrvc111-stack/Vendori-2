@@ -10,6 +10,8 @@ Zuletzt aktualisiert: 2026-03-28
 
 > VENDORi betreibt eigene E-Commerce-Shops mit über 22 Jahren Betriebserfahrung (myToolStore seit 2004) und bietet anderen Marken einen Merchant of Record Service: Wir übernehmen den kompletten Online-Verkauf, während Sie Ihr bestehendes Geschäft unverändert weiterführen können.
 
+Website: https://www.vendori.eu
+
 ## Unternehmens-Kurzprofil
 
 **Firmierung:** VENDORi GmbH (gegründet 2023)
@@ -22,8 +24,8 @@ Zuletzt aktualisiert: 2026-03-28
 
 **Eigene E-Commerce-Marken:**
 
-- myToolStore: aktiv in DE, FR, NL, AT, BE (seit 2004)
-- ShowerNIZR: Premium Duschsysteme (Eigenmarke, seit 2025)
+- myToolStore: Multi-Market Shop für Werkzeuge, Garten & Regenwassermanagementlösungen — aktiv in DE, FR, NL, AT, BE (seit 2004) — https://www.mytoolstore.de
+- ShowerNIZR: Premium Duschsysteme (Eigenmarke, seit 2025) — https://www.showernizr.com
 
 **Märkte:** 20+ europäische Länder
 
@@ -42,7 +44,7 @@ VENDORi ist ein **Hybrid-Unternehmen** mit zwei Geschäftsfeldern:
 
 ### 1. Eigener E-Commerce Retail (2 Shops)
 
-Wir betreiben unsere eigenen Online-Shops (myToolStore seit 2004, ShowerNIZR seit 2025). Hier validieren wir alle Prozesse, Technologien und Strategien, bevor wir sie für Partner einsetzen.
+Wir betreiben unsere eigenen Online-Shops (myToolStore seit 2004 — https://www.mytoolstore.de, ShowerNIZR seit 2025 — https://www.showernizr.com). Hier validieren wir alle Prozesse, Technologien und Strategien, bevor wir sie für Partner einsetzen.
 
 ### 2. Merchant of Record (MoR) Services
 
@@ -119,12 +121,23 @@ Der Merchant of Record Service von VENDORi richtet sich an Marken und Unternehme
 
 ## Pricing — Merchant of Record Services
 
-**Setup-Fee:** Einmalige Investition für komplettes Setup (Shop-Aufbau, Marktplatz-Integration, Produktseiten-Erstellung, Payment & Logistik-Setup)
+**Setup-Fee:** 5.000-10.000 EUR einmalig
 
-**Laufende Kosten:** Performance-basierte Modelle verfügbar
+- Shop-Aufbau (Shopware)
 
-- **Erfolgsbasiertes Modell:** Provision vom Nettoumsatz (kein monatlicher Fixbetrag)
-- **Retainer + Performance:** Monatliche Pauschale + erfolgsbasierte Komponente
+- Marktplatz-Integration (frei wählbar)
+
+- Produktseiten-Erstellung & Content
+
+- Payment & Logistik-Setup
+
+ 
+
+**Laufende Kosten:** Performance-basiert
+
+- **Option 1:** 12-18% vom Nettoumsatz (erfolgsbasiert)
+
+- **Option 2:** Retainer 5.000-25.000 EUR/Monat + 8-12% vom Nettoumsatz
 
 **Mindestlaufzeit:** 12 Monate
 
@@ -139,7 +152,7 @@ Alle Preise verstehen sich zzgl. der gesetzlichen Umsatzsteuer. Individuelles, t
 
 **Erprobte Strategien aus unserer Praxis:**
 
-- Wir betreiben eigene Shops seit 2004 (myToolStore) und seit 2025 (ShowerNIZR)
+- Wir betreiben eigene Shops seit 2004 (myToolStore — https://www.mytoolstore.de) und seit 2025 (ShowerNIZR — https://www.showernizr.com)
 - Über 2,5 Mio. Bestellungen und 1,5 Mio. einzigartige Kunden in unseren eigenen Shops (myToolStore, ShowerNIZR) — echte Praxiserfahrung im Tagesgeschäft
 - Jede Technologie und Strategie wurde zunächst in unseren eigenen Shops getestet und validiert
 - Kein Beratungs-Blabla — wir sind selbst aktive Seller mit über 20 Jahren E-Commerce-Erfahrung
@@ -182,16 +195,18 @@ VENDORi bietet die Lösung: Wir übernehmen den kompletten Online-Verkauf als Me
 
 ## Pages
 
-- /: Homepage — Merchant of Record Services, eigene Shops (myToolStore, ShowerNIZR), MoR-Erklärung, Kontaktformular
-- /ueber-uns: Über uns — Unternehmensgeschichte, Team, Werte (Geschwindigkeit, Fokus, Partnerschaft)
-- /#services: Service-Übersicht (Merchant of Record Services, eigene Retail-Shops)
-- /#shops: Unsere Shops (myToolStore mit über 2,5 Mio. Bestellungen, über 1,5 Mio. einzigartige Kunden; ShowerNIZR Eigenmarke)
-- /#contact: Kontaktformular (Antwortzeit: <24h)
+- /: Homepage — Merchant of Record Services, eigene Shops (myToolStore, ShowerNIZR), MoR-Erklärung, Kontaktformular — https://www.vendori.eu
+- /ueber-uns: Über uns — Unternehmensgeschichte, Team, Werte (Geschwindigkeit, Fokus, Partnerschaft) — https://www.vendori.eu/ueber-uns
+- /#services: Service-Übersicht (Merchant of Record Services, eigene Retail-Shops) — https://www.vendori.eu/#services
+- /#shops: Unsere Shops (myToolStore mit über 2,5 Mio. Bestellungen, über 1,5 Mio. einzigartige Kunden; ShowerNIZR Eigenmarke) — https://www.vendori.eu/#shops
+- /#contact: Kontaktformular (Antwortzeit: <24h) — https://www.vendori.eu/#contact
+- /faq: FAQ-Seite — Häufig gestellte Fragen zu Merchant of Record Services, Onboarding, Technologie, Internationalisierung — https://www.vendori.eu/faq
+- /barrierefreiheit: Barrierefreiheit — Erklärung zur Barrierefreiheit der Website — https://www.vendori.eu/barrierefreiheit
 
 ## Rechtliches (noindex)
 
-- /impressum: Impressum — Angaben gemäß § 5 TMG
-- /datenschutz: Datenschutzerklärung — DSGVO-Informationen
+- /impressum: Impressum — Angaben gemäß § 5 DDG — https://www.vendori.eu/impressum
+- /datenschutz: Datenschutzerklärung — DSGVO-Informationen — https://www.vendori.eu/datenschutz
 
 ## Kontakt
 
@@ -201,9 +216,11 @@ Hahnenfeldstr. 25
 69429 Waldbrunn
 Deutschland
 
+Website: https://www.vendori.eu
 E-Mail: info@vendori.eu
 Telefon: +49 (0) 6274 9278157
 Erreichbarkeit: Mo–Fr 8:00–17:00 Uhr
+Kontaktformular: https://www.vendori.eu/#contact
 
 ## Häufig gestellte Fragen (FAQ)
 
@@ -261,7 +278,7 @@ Im Kommissionsmodell: erfolgsbasierte Provision vom Nettoumsatz (je nach Produkt
 ### Allgemein
 
 **Was macht VENDORi anders als andere E-Commerce-Agenturen?**
-VENDORi ist selbst E-Commerce-Seller mit über 1,5 Millionen betreuten Kunden – kein Agentur-Konstrukt. Wir betreiben eigene Shops und D2C-Brands (myToolStore, ShowerNIZR) mit eigener Infrastruktur. Jede Strategie wurde bereits in unseren eigenen Shops validiert und skaliert – kein Experiment auf Ihre Kosten.
+VENDORi ist selbst E-Commerce-Seller mit über 1,5 Millionen betreuten Kunden – kein Agentur-Konstrukt. Wir betreiben eigene Shops und D2C-Brands (myToolStore — https://www.mytoolstore.de, ShowerNIZR — https://www.showernizr.com) mit eigener Infrastruktur. Jede Strategie wurde bereits in unseren eigenen Shops validiert und skaliert – kein Experiment auf Ihre Kosten.
 
 **Für welche Unternehmen ist VENDORi der richtige Partner?**
 VENDORi ist spezialisiert auf Hersteller und Marken, die ihren E-Commerce-Umsatz entwickeln oder skalieren möchten – ohne selbst als Verkäufer auftreten zu müssen. Wir arbeiten über eigene Shops, D2C-Plattformen oder internationale Marktplätze wie Amazon. Besonders geeignet für Mittelstand und wachsende Marken im DIY-, Werkzeug- und Gartensektor.

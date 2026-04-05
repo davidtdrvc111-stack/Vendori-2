@@ -183,7 +183,7 @@ export function ImpressumContent() {
                         </div>
                         <div className="flex flex-col sm:flex-row gap-4">
                             <a
-                                href="mailto:info@vendori.eu"
+                                href="/kontakt"
                                 className="px-8 py-4 bg-primary-700 hover:bg-primary-800 text-white rounded-2xl font-black text-sm transition-all hover:scale-105 shadow-xl shadow-primary-700/20 active:scale-95 whitespace-nowrap"
                             >
                                 Jetzt Kontaktieren

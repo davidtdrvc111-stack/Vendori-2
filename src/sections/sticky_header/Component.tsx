@@ -86,7 +86,7 @@ export function StickyHeader({ className = '' }: StickyHeaderProps) {
   // Blur-Effekt wenn gescrollt ODER Menu offen ODER in About-Section (heller Hintergrund)
   const showBlurredHeader = isScrolled || isMobileMenuOpen || isInLightSection || pathname === '/faq';
   // Dunkle Schrift auf Seiten mit hellem Hintergrund im Ghost-Zustand
-  const isDarkText = (pathname === '/impressum' || pathname === '/datenschutz' || pathname === '/ueber-uns') && !isScrolled;
+  const isDarkText = (pathname === '/impressum' || pathname === '/datenschutz' || pathname === '/ueber-uns' || pathname === '/barrierefreiheit') && !isScrolled;
 
   return (
     <header
