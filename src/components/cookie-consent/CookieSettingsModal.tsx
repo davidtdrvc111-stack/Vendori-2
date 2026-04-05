@@ -19,21 +19,27 @@ const COOKIE_CATEGORIES: CookieCategoryInfo[] = [
     id: 'necessary',
     label: 'Notwendige Cookies',
     description:
-      'Diese Cookies sind für den Betrieb der Website erforderlich und können nicht deaktiviert werden. Sie speichern Ihre Cookie-Einstellungen lokal in Ihrem Browser (localStorage). Anbieter: VENDORi GmbH (First-Party).',
+      'Erforderlich für die wesentlichen Website-Funktionen.',
+    mobileDescription:
+      'Erforderlich für die wesentlichen Website-Funktionen.',
     required: true,
   },
   {
     id: 'analytics',
     label: 'Analytische Cookies',
     description:
-      'Derzeit werden keine Analytics-Cookies eingesetzt. Falls zukünftig Analysetools (z.B. Google Analytics, Matomo) hinzugefügt werden, werden Sie erneut um Einwilligung gebeten.',
+      'Diese Cookies helfen uns, die Website zu verbessern. Hierfür verwenden wir Dienste von Drittanbietern.',
+    mobileDescription:
+      'Hilft uns, die Website zu verbessern. Wir nutzen Drittanbieter-Dienste.',
     required: false,
   },
   {
     id: 'marketing',
     label: 'Marketing Cookies',
     description:
-      'Derzeit werden keine Marketing-Cookies eingesetzt. Falls zukünftig Werbe- oder Tracking-Tools (z.B. Facebook Pixel, Google Ads) hinzugefügt werden, werden Sie erneut um Einwilligung gebeten.',
+      'Derzeit nicht aktiv. Für personalisierte Werbung.',
+    mobileDescription:
+      'Derzeit nicht aktiv. Für personalisierte Werbung.',
     required: false,
   },
 ];
@@ -232,6 +238,7 @@ export function CookieSettingsModal({ isOpen, onClose }: CookieSettingsModalProp
                       category={category.id}
                       label={category.label}
                       description={category.description}
+                      mobileDescription={category.mobileDescription}
                       enabled={
                         category.id === 'necessary'
                           ? true

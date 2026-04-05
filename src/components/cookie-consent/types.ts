@@ -45,6 +45,7 @@ export interface CookieToggleProps {
   category: CookieCategory;
   label: string;
   description: string;
+  mobileDescription?: string;
   enabled: boolean;
   disabled?: boolean;
   onChange: (enabled: boolean) => void;
@@ -58,6 +59,7 @@ export interface CookieCategoryInfo {
   id: CookieCategory;
   label: string;
   description: string;
+  mobileDescription?: string;
   required: boolean;
 }
 

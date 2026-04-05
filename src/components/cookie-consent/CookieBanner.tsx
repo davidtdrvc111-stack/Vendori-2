@@ -34,7 +34,7 @@ export function CookieBanner({ className = '' }: CookieBannerProps) {
             exit={{ y: 100, opacity: 0 }}
             transition={{ duration: 0.4, ease: 'easeOut' }}
             className={`
-              fixed bottom-0 left-0 right-0 z-40
+              fixed bottom-4 sm:bottom-0 left-0 right-0 z-40
               ${className}
             `}
           >

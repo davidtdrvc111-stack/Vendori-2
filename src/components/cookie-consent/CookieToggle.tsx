@@ -11,6 +11,7 @@ export function CookieToggle({
   category: _category,
   label,
   description,
+  mobileDescription,
   enabled,
   disabled = false,
   onChange,
@@ -35,7 +36,16 @@ export function CookieToggle({
           <h3 className="text-sm md:text-base lg:text-lg font-semibold text-neutral-800 dark:text-neutral-200 mb-0.5 md:mb-1">
             {label}
           </h3>
-          <p className="text-xs md:text-sm text-neutral-600 dark:text-neutral-400 leading-snug md:leading-normal">{description}</p>
+          {/* Mobile: Kurzbeschreibung */}
+          {mobileDescription && (
+            <p className="md:hidden text-xs text-neutral-600 dark:text-neutral-400 leading-snug">
+              {mobileDescription}
+            </p>
+          )}
+          {/* Desktop: Vollständige Beschreibung */}
+          <p className={`text-xs md:text-sm text-neutral-600 dark:text-neutral-400 leading-snug md:leading-normal ${mobileDescription ? 'hidden md:block' : ''}`}>
+            {description}
+          </p>
           {disabled && (
             <p className="text-xs text-neutral-500 dark:text-neutral-500 mt-0.5 md:mt-1 italic">Immer aktiv</p>
           )}
