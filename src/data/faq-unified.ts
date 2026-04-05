@@ -2,6 +2,8 @@
 // FAQ UNIFIED DATA - Single Source of Truth
 // ============================================
 
+import { sanitizeFAQItems } from '@/lib/sanitize-faq';
+
 export interface UnifiedFAQItem {
   question: string;
   answer: string;
@@ -19,7 +21,8 @@ export interface FAQCategory {
 // ZENTRALE FAQ-DATENQUELLE
 // ============================================
 
-export const unifiedFAQData: UnifiedFAQItem[] = [
+// Raw FAQ data (internal) - will be sanitized before export
+const rawFAQData: UnifiedFAQItem[] = [
   // ========================================
   // KATEGORIE: Geschäftsmodell
   // ========================================
@@ -369,6 +372,10 @@ export const unifiedFAQData: UnifiedFAQItem[] = [
     priority: 11,
   },
 ];
+
+// Export sanitized FAQ data (HTML is sanitized at build time)
+// This protects against XSS attacks if FAQ data ever comes from external sources
+export const unifiedFAQData: UnifiedFAQItem[] = sanitizeFAQItems(rawFAQData);
 
 // ============================================
 // UTILITY FUNCTIONS

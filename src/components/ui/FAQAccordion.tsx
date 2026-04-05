@@ -76,6 +76,7 @@ export function FAQAccordion({ items, className = '' }: FAQAccordionProps) {
             )}
           >
             <div className="px-6 pb-6 pt-2">
+              {/* HTML is sanitized at build time via sanitizeFAQHTML() in faq-unified.ts */}
               <div
                 className="text-base md:text-lg text-neutral-600 dark:text-neutral-300 leading-relaxed prose prose-neutral dark:prose-invert max-w-none
                   [&_p]:my-2 [&_p]:leading-relaxed [&_p]:text-neutral-600 dark:[&_p]:text-neutral-300
