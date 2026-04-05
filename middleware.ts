@@ -11,7 +11,8 @@ import type { NextRequest } from 'next/server';
  */
 export function middleware(request: NextRequest) {
   // Generate cryptographically secure nonce for CSP
-  const nonce = Buffer.from(crypto.randomUUID()).toString('base64');
+  // Use Web Crypto API (Edge Runtime compatible)
+  const nonce = crypto.randomUUID().replace(/-/g, '');
 
   // Create response
   const response = NextResponse.next();
