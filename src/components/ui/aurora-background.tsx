@@ -65,15 +65,15 @@ export const AuroraBackground = ({
 
             /* Einheitliche Farben für alle Breakpoints - Titanium Edge Industrial Gradient */
             [--aurora:repeating-linear-gradient(100deg,var(--aurora-steel-blue)_10%,var(--aurora-warm-bronze)_15%,var(--aurora-deep-slate)_20%,var(--aurora-copper-glow)_25%,var(--aurora-charcoal)_30%)]
-            blur-[4px] md:blur-[8px] opacity-40 md:opacity-50
+            blur-[5px] md:blur-[8px] opacity-[0.48] md:opacity-50
             [--aurora-speed:27s] md:[--aurora-speed:60s]
 
             [background-image:var(--dark-gradient),var(--aurora)]
-            [background-size:200%,_150%] md:[background-size:300%,_200%]
+            [background-size:250%,_180%] md:[background-size:300%,_200%]
             [background-position:50%_50%,50%_50%]
             invert-0
             after:content-[""] after:absolute after:inset-0 after:[background-image:var(--dark-gradient),var(--aurora)]
-            after:[background-size:150%,_80%] md:after:[background-size:200%,_100%]
+            after:[background-size:180%,_90%] md:after:[background-size:200%,_100%]
             after:animate-aurora after:[background-attachment:fixed] after:mix-blend-difference
             pointer-events-none
             absolute -inset-[10px] will-change-transform transform translate-z-0`,
@@ -85,7 +85,7 @@ export const AuroraBackground = ({
             animationDuration: prefersReducedMotion || !isInView ? '0s' : 'var(--aurora-speed)',
             animation: prefersReducedMotion || !isInView ? 'none' : undefined,
             willChange: prefersReducedMotion || !isInView ? 'auto' : 'transform',
-            filter: prefersReducedMotion ? 'blur(5px)' : isMobile ? 'blur(4px)' : 'blur(8px)',
+            filter: prefersReducedMotion ? 'blur(5px)' : isMobile ? 'blur(5px)' : 'blur(8px)',
           } as React.CSSProperties}
         ></div>
         {/* Soft transition fade at the bottom */}
