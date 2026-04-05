@@ -1,13 +1,32 @@
 /**
  * FAQ HTML Sanitization Utility
  *
- * Sanitizes FAQ HTML at build time using DOMPurify.
+ * Sanitizes FAQ HTML at build time using a custom whitelist-based approach.
  * Configured to allow only safe tags used in existing FAQ markup.
+ * No external dependencies - pure JavaScript implementation.
  *
  * @module sanitize-faq
  */
 
-import DOMPurify from 'isomorphic-dompurify';
+/**
+ * Allowed HTML tags for FAQ content
+ */
+const ALLOWED_TAGS = new Set([
+  'p', 'strong', 'span',
+  'ul', 'li',
+  'table', 'thead', 'tbody', 'tr', 'th', 'td',
+  'div'
+]);
+
+/**
+ * Allowed HTML attributes
+ */
+const ALLOWED_ATTRS = new Set(['class']);
+
+/**
+ * Dangerous protocols that should be blocked
+ */
+const DANGEROUS_PROTOCOLS = /^(javascript|data|vbscript):/i;
 
 /**
  * Sanitize FAQ HTML with custom whitelist
@@ -25,6 +44,7 @@ import DOMPurify from 'isomorphic-dompurify';
  * - Script tags and event handlers
  * - Iframes and embeds
  * - Unsafe protocols (javascript:, data:)
+ * - Event handler attributes (onclick, onerror, etc.)
  * - Data attributes
  *
  * @param html - Raw HTML string to sanitize
@@ -37,23 +57,56 @@ import DOMPurify from 'isomorphic-dompurify';
  * ```
  */
 export function sanitizeFAQHTML(html: string): string {
-  // Configure DOMPurify for FAQ-specific needs
-  const config = {
-    ALLOWED_TAGS: [
-      'p', 'strong', 'span',
-      'ul', 'li',
-      'table', 'thead', 'tbody', 'tr', 'th', 'td',
-      'div'
-    ],
-    ALLOWED_ATTR: ['class'], // Only allow class attributes for styling
-    KEEP_CONTENT: true, // Preserve text content if tags are removed
-    ALLOW_DATA_ATTR: false, // Block data-* attributes
-    ALLOW_UNKNOWN_PROTOCOLS: false, // Block javascript:, data: URLs
-    SAFE_FOR_TEMPLATES: true, // Extra protection against template injection
-  };
-
   try {
-    const sanitized = DOMPurify.sanitize(html, config);
+    // Remove script tags and their content
+    let sanitized = html.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '');
+
+    // Remove style tags and their content
+    sanitized = sanitized.replace(/<style\b[^<]*(?:(?!<\/style>)<[^<]*)*<\/style>/gi, '');
+
+    // Remove event handler attributes (onclick, onerror, etc.)
+    sanitized = sanitized.replace(/\s*on\w+\s*=\s*["'][^"']*["']/gi, '');
+    sanitized = sanitized.replace(/\s*on\w+\s*=\s*[^\s>]*/gi, '');
+
+    // Remove dangerous protocols from href and src
+    sanitized = sanitized.replace(/\s*(href|src)\s*=\s*["']?(javascript|data|vbscript):[^"'\s>]*/gi, '');
+
+    // Remove data-* attributes
+    sanitized = sanitized.replace(/\s*data-\w+\s*=\s*["'][^"']*["']/gi, '');
+
+    // Filter tags: keep only allowed tags
+    sanitized = sanitized.replace(/<\/?([a-z][a-z0-9]*)\b[^>]*>/gi, (match, tagName) => {
+      const tag = tagName.toLowerCase();
+
+      // If tag is not allowed, remove it but keep content
+      if (!ALLOWED_TAGS.has(tag)) {
+        return '';
+      }
+
+      // For allowed tags, filter attributes
+      return match.replace(/\s+([a-z-]+)\s*=\s*["']?([^"'\s>]*)["']?/gi, (attrMatch, attrName, attrValue) => {
+        const attr = attrName.toLowerCase();
+
+        // Only keep allowed attributes
+        if (!ALLOWED_ATTRS.has(attr)) {
+          return '';
+        }
+
+        // Check for dangerous protocols in attribute values
+        if (DANGEROUS_PROTOCOLS.test(attrValue)) {
+          return '';
+        }
+
+        // Return sanitized attribute
+        return ` ${attr}="${attrValue.replace(/["'<>]/g, '')}"`;
+      });
+    });
+
+    // Remove any remaining dangerous patterns
+    sanitized = sanitized
+      .replace(/javascript:/gi, '')
+      .replace(/data:/gi, '')
+      .replace(/vbscript:/gi, '');
 
     // Development warning for removed content
     if (process.env.NODE_ENV === 'development' && sanitized !== html) {

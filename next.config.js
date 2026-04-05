@@ -8,14 +8,6 @@ const nextConfig = {
   output: 'standalone', // Smaller deployment bundles
   productionBrowserSourceMaps: false, // No source maps in production
 
-  // External packages for server components (fixes ESM/CommonJS compatibility issues)
-  serverComponentsExternalPackages: [
-    'isomorphic-dompurify',
-    'dompurify',
-    'html-encoding-sniffer',
-    '@exodus/bytes'
-  ],
-
   // Performance Optimierung
   experimental: {
     optimizePackageImports: ['lucide-react', 'framer-motion'], // Tree-shaking
@@ -37,17 +29,6 @@ const nextConfig = {
 
   // Webpack Bundle Optimization - Aggressive code splitting
   webpack: (config, { isServer }) => {
-    // Fix ESM/CommonJS compatibility issues on server
-    if (isServer) {
-      config.externals = config.externals || [];
-      config.externals.push({
-        'isomorphic-dompurify': 'commonjs isomorphic-dompurify',
-        'dompurify': 'commonjs dompurify',
-        'html-encoding-sniffer': 'commonjs html-encoding-sniffer',
-        '@exodus/bytes': 'commonjs @exodus/bytes'
-      });
-    }
-
     if (!isServer) {
       // Client-side bundle optimization
       config.optimization = {
