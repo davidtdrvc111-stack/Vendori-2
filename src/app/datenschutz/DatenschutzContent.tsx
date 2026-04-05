@@ -132,12 +132,70 @@ Folgende Tabelle gibt Ihnen eine Übersicht über alle auf dieser Website einges
 | Cookie-Name | Anbieter | Zweck | Kategorie | Laufzeit | Rechtsgrundlage |
 |------------|---------|-------|-----------|---------|-----------------|
 | vendori_cookie_consent | VENDORi GmbH (First-Party) | Speichert die Cookie-Einstellungen des Nutzers (necessary, analytics, marketing, timestamp, version) im localStorage | Notwendig | 12 Monate | Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse) |
-
-Hinweis: Analytische und Marketing-Cookies werden derzeit nicht aktiv eingesetzt. Sollten diese zukünftig hinzugefügt werden, wird diese Tabelle entsprechend aktualisiert und erneute Einwilligung eingeholt.
+| _ga | Google Ireland Limited | Eindeutige Benutzer-ID zur Unterscheidung von Website-Besuchern (Google Analytics 4) | Analytisch | 2 Jahre | Art. 6 Abs. 1 lit. a DSGVO i.V.m. § 25 TTDSG (Einwilligung) |
+| _ga_* | Google Ireland Limited | Speichert Session-Informationen und Zeitstempel (Google Analytics 4) | Analytisch | 2 Jahre | Art. 6 Abs. 1 lit. a DSGVO i.V.m. § 25 TTDSG (Einwilligung) |
+| _clck | Microsoft Corporation | Eindeutige Benutzer-ID für Microsoft Clarity zur Session-Zuordnung | Analytisch | 1 Jahr | Art. 6 Abs. 1 lit. a DSGVO i.V.m. § 25 TTDSG (Einwilligung) |
+| _clsk | Microsoft Corporation | Verbindet mehrere Seitenaufrufe eines Nutzers zu einer einzelnen Clarity-Session | Analytisch | 1 Tag | Art. 6 Abs. 1 lit. a DSGVO i.V.m. § 25 TTDSG (Einwilligung) |
+| CLID | Microsoft Corporation | Microsoft Clarity User-ID zur plattformübergreifenden Zuordnung | Analytisch | 1 Jahr | Art. 6 Abs. 1 lit. a DSGVO i.V.m. § 25 TTDSG (Einwilligung) |
 
 c) Beseitigungsmöglichkeit
 
 Der Nutzer kann die Installation der Cookies durch eine entsprechende Einstellung des Browsers verhindern oder einschränken. Bereits gespeicherte Cookies können ebenfalls jederzeit gelöscht werden. Die Einstellungen hierzu sind vom jeweiligen Browser abhängig. Sollte der Nutzer die Installation der Cookies verhindern oder einschränken, kann dies dazu führen, dass nicht sämtliche Funktionen der Website vollumfänglich nutzbar sind.
+
+Google Analytics 4
+
+Diese Website nutzt Google Analytics 4, einen Webanalysedienst der Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland („Google").
+
+Google Analytics verwendet Cookies, um das Nutzerverhalten zu analysieren und die Website-Nutzung auszuwerten. Die durch die Cookies erzeugten Informationen über die Benutzung dieser Website (einschließlich der IP-Adresse) werden an einen Server von Google übertragen und dort gespeichert.
+
+Verarbeitete Daten:
+- IP-Adresse (anonymisiert)
+- Besuchte Seiten und Verweildauer
+- Browsertyp und -version
+- Betriebssystem
+- Referrer-URL (zuvor besuchte Seite)
+- Datum und Uhrzeit des Zugriffs
+- Geräteinformationen (Desktop, Mobil, Tablet)
+
+IP-Anonymisierung: Wir haben die IP-Anonymisierung („anonymize_ip: true") aktiviert. Dadurch wird Ihre IP-Adresse von Google innerhalb der EU vor der Übermittlung gekürzt. Nur in Ausnahmefällen wird die volle IP-Adresse an einen Server von Google in den USA übertragen und dort gekürzt.
+
+Datenübermittlung in Drittländer: Google verarbeitet die Daten auch in den USA. Die Übermittlung erfolgt auf Grundlage von Art. 46 Abs. 2 lit. c DSGVO (Standardvertragsklauseln) sowie zusätzlichen Garantien gemäß Art. 46 Abs. 3 lit. a DSGVO.
+
+Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO i.V.m. § 25 TTDSG (Einwilligung). Die Einwilligung kann jederzeit über die Cookie-Einstellungen widerrufen werden.
+
+Zweck: Analyse der Website-Nutzung, Verbesserung der Benutzerfreundlichkeit und Optimierung unserer Inhalte.
+
+Speicherdauer: Die Cookies werden nach maximal 2 Jahren automatisch gelöscht. Server-seitige Daten werden von Google nach 14 Monaten automatisch gelöscht.
+
+Datenschutzerklärung von Google: https://policies.google.com/privacy?hl=de
+Opt-Out: Sie können die Erfassung durch Google Analytics verhindern, indem Sie die Analytics-Cookies in den Cookie-Einstellungen deaktivieren oder ein Browser-Add-on installieren: https://tools.google.com/dlpage/gaoptout?hl=de
+
+Microsoft Clarity
+
+Diese Website nutzt Microsoft Clarity, einen Webanalysedienst der Microsoft Corporation, One Microsoft Way, Redmond, WA 98052, USA („Microsoft").
+
+Microsoft Clarity verwendet Cookies und andere Technologien, um Session-Aufzeichnungen und Heatmaps zu erstellen. Diese helfen uns zu verstehen, wie Nutzer mit unserer Website interagieren.
+
+Verarbeitete Daten:
+- Mausbewegungen, Klicks und Scroll-Verhalten
+- Besuchte Seiten und Verweildauer
+- IP-Adresse (anonymisiert)
+- Browsertyp und -version
+- Betriebssystem und Geräteinformationen
+- Referrer-URL
+
+Hinweis: Microsoft Clarity zeichnet KEINE Tastatureingaben in Formularfeldern auf. Passwörter, Kreditkartendaten und andere sensible Eingaben werden nicht erfasst.
+
+Datenübermittlung in Drittländer: Microsoft verarbeitet die Daten auch in den USA. Die Übermittlung erfolgt auf Grundlage von Art. 46 Abs. 2 lit. c DSGVO (Standardvertragsklauseln).
+
+Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO i.V.m. § 25 TTDSG (Einwilligung). Die Einwilligung kann jederzeit über die Cookie-Einstellungen widerrufen werden.
+
+Zweck: Verbesserung der Benutzerfreundlichkeit durch Analyse des Nutzerverhaltens, Identifikation von Usability-Problemen und Optimierung der Website-Navigation.
+
+Speicherdauer: Die Daten werden nach maximal 1 Jahr automatisch gelöscht.
+
+Datenschutzerklärung von Microsoft: https://privacy.microsoft.com/de-de/privacystatement
+Opt-Out: Sie können die Erfassung durch Microsoft Clarity verhindern, indem Sie die Analytics-Cookies in den Cookie-Einstellungen deaktivieren.
 
 Kontaktanfragen
 

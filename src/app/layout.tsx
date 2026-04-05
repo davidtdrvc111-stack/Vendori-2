@@ -10,6 +10,12 @@ const CookieBanner = dynamic(
   { loading: () => null }
 );
 
+// Lazy load Analytics (only loads after consent) - client-side only
+const AnalyticsScripts = dynamic(
+  () => import('@/components/analytics').then(mod => ({ default: mod.AnalyticsScripts })),
+  { ssr: false }
+);
+
 // Plus Jakarta Sans - All text (Body, Headers, Display) - DSGVO-konform (lokal gehostet)
 const plusJakartaSans = localFont({
   src: [
@@ -84,6 +90,8 @@ export default function RootLayout({
         >
           Zum Hauptinhalt springen
         </a>
+        {/* Analytics Scripts - only loaded after consent */}
+        <AnalyticsScripts />
         {/* JsonLd per-Seite eingebunden (nicht global, da noindex-Seiten kein Schema haben sollen) */}
         <ThemeProvider
           attribute="class"

@@ -23,11 +23,11 @@ export function middleware(request: NextRequest) {
   // Content Security Policy with nonce support
   const cspHeader = [
     "default-src 'self'",
-    `script-src 'self' 'nonce-${nonce}' 'strict-dynamic'`,
+    `script-src 'self' 'nonce-${nonce}' 'strict-dynamic' https://www.googletagmanager.com https://www.clarity.ms https://c.clarity.ms`,
     "style-src 'self' 'unsafe-inline'", // Tailwind requires unsafe-inline
-    "img-src 'self' data: blob: https://images.unsplash.com",
+    "img-src 'self' data: blob: https://images.unsplash.com https://www.google-analytics.com",
     "font-src 'self'",
-    "connect-src 'self'",
+    "connect-src 'self' https://www.google-analytics.com https://*.clarity.ms",
     "frame-src 'none'",
     "object-src 'none'",
     "base-uri 'self'",
