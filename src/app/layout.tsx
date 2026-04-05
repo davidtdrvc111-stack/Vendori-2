@@ -13,7 +13,7 @@ const CookieBanner = dynamic(
 // Lazy load Analytics (only loads after consent) - client-side only
 const AnalyticsScripts = dynamic(
   () => import('@/components/analytics').then(mod => ({ default: mod.AnalyticsScripts })),
-  { ssr: false }
+  { loading: () => null }
 );
 
 // Plus Jakarta Sans - All text (Body, Headers, Display) - DSGVO-konform (lokal gehostet)
@@ -34,6 +34,12 @@ const plusJakartaSans = localFont({
   display: 'swap',
   preload: true, // Critical font - sofort laden
 });
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://vendori.eu'),

@@ -57,7 +57,7 @@ export const AuroraBackground = ({
             /* Einheitliche Farben für alle Breakpoints - Titanium Edge Industrial Gradient */
             [--aurora:repeating-linear-gradient(100deg,var(--aurora-steel-blue)_10%,var(--aurora-warm-bronze)_15%,var(--aurora-deep-slate)_20%,var(--aurora-copper-glow)_25%,var(--aurora-charcoal)_30%)]
             blur-[8px] opacity-50
-            [--aurora-speed:32s] md:[--aurora-speed:60s]
+            [--aurora-speed:27s] md:[--aurora-speed:60s]
 
             [background-image:var(--dark-gradient),var(--aurora)]
             [background-size:300%,_200%]

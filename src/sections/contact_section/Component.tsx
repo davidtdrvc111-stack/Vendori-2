@@ -244,8 +244,7 @@ export function ContactSection({ className = '', csrfToken }: ContactSectionProp
             Lassen Sie uns sprechen
           </h2>
           <p className="text-lg md:text-xl text-neutral-600 dark:text-neutral-300">
-            Wir freuen uns auf Ihre Nachricht und melden uns innerhalb von 24
-            Stunden bei Ihnen.
+            Wir melden uns innerhalb von 24 Stunden.
           </p>
         </div>
 
@@ -264,7 +263,7 @@ export function ContactSection({ className = '', csrfToken }: ContactSectionProp
           <NoiseOverlay />
 
           {/* Alert Container mit Platzreservierung (CLS-Fix) */}
-          <div className="min-h-[96px] mb-6 overflow-hidden transition-all duration-300">
+          <div className="min-h-0 mb-0 overflow-hidden transition-all duration-300">
             {/* Success Message */}
             {status === 'success' && (
               <div
