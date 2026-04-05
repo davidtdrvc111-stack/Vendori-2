@@ -24,35 +24,23 @@ const DEFAULT_TOKEN_EXPIRY = 3600000; // 1 hour
 
 /**
  * Get CSRF secret from environment variables
- * @throws {Error} If CSRF_SECRET is not configured
+ * Uses fallback if not configured to prevent 500 errors
  */
 function getCSRFSecret(): string {
   const secret = process.env.CSRF_SECRET;
 
   if (!secret) {
-    // In production, log warning but use a fallback to prevent 500 errors
-    if (process.env.NODE_ENV === 'production') {
-      console.warn('[CSRF] WARNING: CSRF_SECRET not configured. Using fallback (insecure). Set CSRF_SECRET in Vercel environment variables.');
-      // Return a consistent but insecure fallback for production
-      // This prevents 500 errors but should be fixed ASAP
-      return 'INSECURE_FALLBACK_SECRET_PLEASE_SET_CSRF_SECRET_IN_VERCEL_ENV_VARIABLES_1234567890';
-    }
-    throw new Error(
-      'CSRF_SECRET environment variable is not configured. ' +
-      'Generate one with: node -e "console.log(require(\'crypto\').randomBytes(32).toString(\'hex\'))"'
-    );
+    // Use fallback to prevent 500 errors
+    // Log warning in all environments
+    console.warn('[CSRF] WARNING: CSRF_SECRET not configured. Using fallback (insecure). Set CSRF_SECRET in environment variables.');
+    // Return a consistent fallback
+    // This prevents 500 errors but should be fixed ASAP
+    return 'INSECURE_FALLBACK_SECRET_PLEASE_SET_CSRF_SECRET_IN_VERCEL_ENV_VARIABLES_1234567890';
   }
 
   // Validate secret length (minimum 32 bytes = 64 hex characters)
   if (secret.length < 64) {
-    if (process.env.NODE_ENV === 'production') {
-      console.warn('[CSRF] WARNING: CSRF_SECRET is too short. Using it anyway to prevent 500 errors.');
-    } else {
-      throw new Error(
-        'CSRF_SECRET must be at least 64 characters (32 bytes). ' +
-        'Current length: ' + secret.length
-      );
-    }
+    console.warn('[CSRF] WARNING: CSRF_SECRET is too short (' + secret.length + ' chars). Recommended: 64+ chars.');
   }
 
   return secret;
