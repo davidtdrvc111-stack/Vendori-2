@@ -166,10 +166,12 @@ const productSchemaShowerNIZR = {
   },
 };
 
+import { headers } from 'next/headers';
+
 export async function JsonLd() {
   // Get nonce from headers for CSP compliance
-  const { headers } = await import('next/headers');
-  const nonce = (await headers()).get('x-nonce') || '';
+  const headersList = await headers();
+  const nonce = headersList.get('x-nonce') || '';
 
   return (
     <>
@@ -210,8 +212,8 @@ export async function JsonLd() {
 // Wiederverwendbare BreadcrumbList-Komponente für Unterseiten
 export async function BreadcrumbJsonLd({ items }: { items: { name: string; url: string }[] }) {
   // Get nonce from headers for CSP compliance
-  const { headers } = await import('next/headers');
-  const nonce = (await headers()).get('x-nonce') || '';
+  const headersList = await headers();
+  const nonce = headersList.get('x-nonce') || '';
 
   const schema = {
     '@context': 'https://schema.org',

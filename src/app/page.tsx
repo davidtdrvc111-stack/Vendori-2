@@ -1,6 +1,7 @@
 import dynamic from 'next/dynamic';
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { headers } from 'next/headers';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { StickyHeader } from '@/sections/sticky_header';
 import { HeroSection } from '@/sections/hero_section'; // Above-the-fold - sofort laden!
@@ -71,8 +72,8 @@ const faqSchema = {
 
 export default async function Home() {
   // Get nonce from headers for CSP compliance
-  const { headers } = await import('next/headers');
-  const nonce = (await headers()).get('x-nonce') || '';
+  const headersList = await headers();
+  const nonce = headersList.get('x-nonce') || '';
 
   return (
     <main id="main-content" className="min-h-screen">
