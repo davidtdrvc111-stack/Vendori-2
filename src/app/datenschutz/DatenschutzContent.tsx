@@ -376,6 +376,7 @@ https://help.instagram.com/519522125107875`;
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-primary-600 dark:text-primary-400 hover:underline font-medium break-all transition-all duration-300 decoration-primary-600/30 underline-offset-4"
+                            aria-label={`${part} (öffnet in neuem Tab)`}
                         >
                             {part}
                         </a>
@@ -528,7 +529,7 @@ https://help.instagram.com/519522125107875`;
                         </div>
                         <div className="flex flex-col sm:flex-row gap-4">
                             <a
-                                href="mailto:info@vendori.eu"
+                                href="/kontakt"
                                 className="px-8 py-4 bg-primary-700 hover:bg-primary-800 text-white rounded-2xl font-black text-sm transition-all hover:scale-105 shadow-xl shadow-primary-700/20 active:scale-95 whitespace-nowrap"
                             >
                                 Jetzt Kontaktieren

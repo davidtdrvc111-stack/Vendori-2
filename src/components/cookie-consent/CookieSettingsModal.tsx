@@ -191,6 +191,7 @@ export function CookieSettingsModal({ isOpen, onClose }: CookieSettingsModalProp
                         rel="noopener noreferrer"
                       >
                         Weitere Informationen
+                        <span className="sr-only"> (öffnet in neuem Tab)</span>
                       </a>
                       .
                     </p>

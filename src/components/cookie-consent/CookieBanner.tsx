@@ -67,6 +67,7 @@ export function CookieBanner({ className = '' }: CookieBannerProps) {
                       rel="noopener noreferrer"
                     >
                       Mehr erfahren in unserer Datenschutzerklärung
+                      <span className="sr-only"> (öffnet in neuem Tab)</span>
                     </a>
                     .
                   </p>

@@ -56,7 +56,7 @@ const FormField = memo(function FormField({
           'w-full min-h-[44px] px-4 py-3',
           'text-base md:text-lg rounded-lg',
           'bg-neutral-800 border border-neutral-700 text-white',
-          'placeholder:text-neutral-400',
+          'placeholder:text-neutral-500',
           'focus:outline-none focus:ring-2 focus:ring-primary-600',
           'transition-colors duration-200',
           showError && 'border-error-500',
@@ -85,7 +85,7 @@ const FormField = memo(function FormField({
 });
 
 // Main Contact Section Component
-export function ContactSection({ className = '' }: ContactSectionProps) {
+export function ContactSection({ className = '', csrfToken }: ContactSectionProps) {
   const [_isPending, startTransition] = useTransition();
   const [formData, setFormData] = useState<FormData>({
     firstName: '',
@@ -187,6 +187,7 @@ export function ContactSection({ className = '' }: ContactSectionProps) {
           ...formData,
           company_info: honeypot, // Honeypot-Feld
           formStartTime, // Zeit-basiertes Honeypot
+          csrf_token: csrfToken, // CSRF Token für Security
         }),
       });
 
@@ -328,6 +329,7 @@ export function ContactSection({ className = '' }: ContactSectionProps) {
               rel="noopener noreferrer"
             >
               Datenschutzerklärung
+              <span className="sr-only"> (öffnet in neuem Tab)</span>
             </a>
             .
           </p>
@@ -394,6 +396,15 @@ export function ContactSection({ className = '' }: ContactSectionProps) {
               aria-hidden="true"
             />
 
+            {/* CSRF Token - Hidden field for security */}
+            <input
+              type="hidden"
+              name="csrf_token"
+              value={csrfToken}
+              readOnly
+              aria-hidden="true"
+            />
+
             {/* Message Field */}
             <FormField
               name="message"
@@ -442,6 +453,7 @@ export function ContactSection({ className = '' }: ContactSectionProps) {
                     rel="noopener noreferrer"
                   >
                     Datenschutzerklärung
+                    <span className="sr-only"> (öffnet in neuem Tab)</span>
                   </a>{' '}
                   zur Kenntnis genommen. Ich stimme zu, dass meine Angaben zur
                   Kontaktaufnahme und für Rückfragen gespeichert werden.*
