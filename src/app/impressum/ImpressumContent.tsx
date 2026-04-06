@@ -115,8 +115,6 @@ export function ImpressumContent() {
 
                                     <div className="space-y-3">
                                         <h2 className="text-2xl font-black text-neutral-900 dark:text-white mb-4 font-heading font-bold">Kontakt</h2>
-                                        <p>Telefon: + 49 (0) 6274 9278157</p>
-                                        <p>E-Mail: <a href="mailto:info@vendori.eu" className="text-primary-600 dark:text-primary-400 hover:underline transition-all duration-300 decoration-primary-600/30 underline-offset-4">info@vendori.eu</a></p>
                                         <p>Internet: <a href="https://vendori.eu" className="text-primary-600 dark:text-primary-400 hover:underline transition-all duration-300 decoration-primary-600/30 underline-offset-4">vendori.eu</a></p>
                                     </div>
 

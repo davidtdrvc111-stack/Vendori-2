@@ -280,7 +280,7 @@ export async function POST(request: NextRequest) {
           headers: {
             'Content-Type': 'application/json',
             // Webhook Secret für Authentifizierung (verpflichtend)
-            'Vendori.eu-Webhook-Secret': webhookSecret,
+            'VENDORi-Website-Secret': webhookSecret,
           },
           body: JSON.stringify({
             body: sanitizedData,
