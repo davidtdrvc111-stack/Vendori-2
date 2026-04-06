@@ -37,9 +37,9 @@ const COOKIE_CATEGORIES: CookieCategoryInfo[] = [
     id: 'marketing',
     label: 'Marketing Cookies',
     description:
-      'Derzeit nicht aktiv. Für personalisierte Werbung.',
+      'Marketing-Cookies werden nicht verwendet.',
     mobileDescription:
-      'Derzeit nicht aktiv. Für personalisierte Werbung.',
+      'Marketing-Cookies werden nicht verwendet.',
     required: false,
   },
 ];
