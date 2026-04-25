@@ -8,7 +8,7 @@
 import { CookieToggleProps } from './types';
 
 export function CookieToggle({
-  category: _category,
+  category,
   label,
   description,
   mobileDescription,
@@ -33,7 +33,10 @@ export function CookieToggle({
     <div className="py-3 md:py-4 border-b border-neutral-200 dark:border-neutral-700 last:border-b-0">
       <div className="flex items-start justify-between gap-3 md:gap-4">
         <div className="flex-1 min-w-0">
-          <h3 className="text-sm md:text-base lg:text-lg font-semibold text-neutral-800 dark:text-neutral-200 mb-0.5 md:mb-1">
+          <h3
+            id={`cookie-toggle-label-${category}`}
+            className="text-sm md:text-base lg:text-lg font-semibold text-neutral-800 dark:text-neutral-200 mb-0.5 md:mb-1"
+          >
             {label}
           </h3>
           {/* Mobile: Kurzbeschreibung */}
@@ -56,7 +59,7 @@ export function CookieToggle({
           type="button"
           role="switch"
           aria-checked={enabled}
-          aria-label={`${label} ${enabled ? 'aktiviert' : 'deaktiviert'}`}
+          aria-labelledby={`cookie-toggle-label-${category}`}
           disabled={disabled}
           onClick={handleToggle}
           onKeyDown={handleKeyDown}

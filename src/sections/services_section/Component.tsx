@@ -50,8 +50,7 @@ export function ServicesSection({ className = '' }: ServicesSectionProps) {
             'overflow-hidden',
             'flex flex-col',
             'transition-all duration-300 ease-in-out',
-            'hover:bg-stone-700 hover:scale-[1.01]',
-            'cursor-pointer'
+            'hover:bg-stone-700 hover:scale-[1.01]'
           )}>
             <NoiseOverlay />
 
@@ -152,8 +151,7 @@ export function ServicesSection({ className = '' }: ServicesSectionProps) {
             'overflow-hidden',
             'flex flex-col justify-between',
             'transition-all duration-300 ease-in-out',
-            'hover:bg-stone-700 hover:scale-[1.02]',
-            'cursor-pointer'
+            'hover:bg-stone-700 hover:scale-[1.02]'
           )}>
             <NoiseOverlay />
 
@@ -266,8 +264,7 @@ export function ServicesSection({ className = '' }: ServicesSectionProps) {
             'overflow-hidden',
             'flex flex-col justify-between',
             'transition-all duration-300 ease-in-out',
-            'hover:bg-stone-700 hover:scale-[1.02]',
-            'cursor-pointer'
+            'hover:bg-stone-700 hover:scale-[1.02]'
           )}>
             <NoiseOverlay />
 

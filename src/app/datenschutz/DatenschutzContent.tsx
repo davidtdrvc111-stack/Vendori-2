@@ -452,10 +452,13 @@ https://help.instagram.com/519522125107875`;
                 return null;
             }
 
-            // Pattern for main headers (A., B., I., II., III.)
-            const isMainHeader = /^[A-Z]\.\s+/.test(trimmedLine) || /^[IVX]+\.\s+/.test(trimmedLine);
+            // h2: Top-level sections (A., B.)
+            const isTopHeader = /^[A-Z]\.\s+/.test(trimmedLine);
 
-            // Pattern for subheaders (Serverdaten, Cookies, a), etc.)
+            // h3: Sub-sections with Roman numerals (I., II., III., IV., ...)
+            const isRomanHeader = /^[IVX]+\.\s+/.test(trimmedLine);
+
+            // h4: Named sub-sections (Serverdaten, Cookies, a), etc.)
             const isSubHeader = (
                 trimmedLine.length > 0 &&
                 trimmedLine.length < 60 &&
@@ -463,10 +466,12 @@ https://help.instagram.com/519522125107875`;
                 !trimmedLine.includes(';') &&
                 !trimmedLine.includes('://') &&
                 !/^\d+\./.test(trimmedLine) &&
-                !trimmedLine.startsWith('-')
+                !trimmedLine.startsWith('-') &&
+                !isTopHeader &&
+                !isRomanHeader
             ) || /^[a-z]\)\s+/.test(trimmedLine);
 
-            if (isMainHeader) {
+            if (isTopHeader) {
                 return (
                     <h2 key={index} className="block mt-16 mb-8 first:mt-0">
                         <span className="text-3xl md:text-4xl font-black text-neutral-900 dark:text-white font-display font-bold tracking-tight">
@@ -477,11 +482,22 @@ https://help.instagram.com/519522125107875`;
                 );
             }
 
+            if (isRomanHeader) {
+                return (
+                    <h3 key={index} className="block mt-12 mb-6 first:mt-0">
+                        <span className="text-2xl md:text-3xl font-black text-neutral-900 dark:text-white font-display font-bold tracking-tight">
+                            {renderLineContent(line)}
+                        </span>
+                        <div className="h-1 w-12 bg-primary-500 rounded-full mt-2" />
+                    </h3>
+                );
+            }
+
             if (isSubHeader) {
                 return (
-                    <h3 key={index} className="block mt-10 mb-5 font-black text-xl md:text-2xl text-neutral-800 dark:text-neutral-200 font-display font-bold">
+                    <h4 key={index} className="block mt-10 mb-5 font-black text-xl md:text-2xl text-neutral-800 dark:text-neutral-200 font-display font-bold">
                         {renderLineContent(line)}
-                    </h3>
+                    </h4>
                 );
             }
 

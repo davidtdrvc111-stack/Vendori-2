@@ -264,7 +264,8 @@ export function AboutFullSection({ className = '' }: AboutFullSectionProps) {
               'font-semibold rounded-xl',
               'transition-all duration-200',
               'hover:bg-primary-800 hover:scale-105',
-              'shadow-lg shadow-primary-700/20'
+              'shadow-lg shadow-primary-700/20',
+              'focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary-700'
             )}
           >
             <span>Kennenlern-Gespräch vereinbaren</span>

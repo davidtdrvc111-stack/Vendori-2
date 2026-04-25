@@ -34,12 +34,15 @@ export function BarrierefreiheitContent() {
         <main id="main-content" className="min-h-screen bg-slate-50 dark:bg-zinc-950 transition-colors duration-700 font-[family-name:var(--font-inter)] relative scroll-smooth selection:bg-primary-500/30">
             {/* Reading Progress Indicator - CSS-only */}
             <div
+                role="progressbar"
+                aria-label="Lesefortschritt"
+                aria-hidden="true"
                 className="fixed top-0 left-0 right-0 h-1.5 bg-primary-600 z-[100] origin-left transition-transform duration-100"
                 style={{ transform: `scaleX(var(--scroll-progress, 0))` }}
             />
 
             {/* Premium Background Layer */}
-            <div className="fixed inset-0 overflow-hidden pointer-events-none">
+            <div aria-hidden="true" className="fixed inset-0 overflow-hidden pointer-events-none">
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_50%_0%,rgba(79,70,229,0.08),transparent_50%)]" />
                 <motion.div
                     animate={{
@@ -62,7 +65,7 @@ export function BarrierefreiheitContent() {
             </div>
 
             <StickyHeader />
-            <div className="hidden">
+            <div aria-hidden="true" style={{ display: 'none' }}>
                 <Breadcrumb items={[{ label: 'Barrierefreiheit' }]} />
             </div>
 

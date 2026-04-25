@@ -12,22 +12,22 @@ export const metadata: Metadata = {
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-zinc-950 via-zinc-900 to-zinc-950 flex items-center justify-center px-4">
+    <main className="min-h-screen bg-gradient-to-b from-zinc-950 via-zinc-900 to-zinc-950 flex items-center justify-center px-4">
       <div className="max-w-2xl w-full text-center">
         {/* 404 Number */}
         <div className="mb-8">
           <div className="relative inline-block">
             <div className="absolute inset-0 bg-primary-600/20 blur-3xl" />
-            <h1 className="relative text-8xl md:text-9xl font-black text-transparent bg-clip-text bg-gradient-to-br from-primary-400 via-primary-600 to-primary-800 font-heading tracking-tighter">
+            <p className="relative text-8xl md:text-9xl font-black text-transparent bg-clip-text bg-gradient-to-br from-primary-400 via-primary-600 to-primary-800 font-heading tracking-tighter" aria-hidden="true">
               404
-            </h1>
+            </p>
           </div>
         </div>
 
         {/* Error Message */}
-        <h2 className="text-3xl md:text-4xl font-black text-white font-heading mb-6 tracking-tight">
+        <h1 className="text-3xl md:text-4xl font-black text-white font-heading mb-6 tracking-tight">
           Seite nicht gefunden
-        </h2>
+        </h1>
 
         <p className="text-lg md:text-xl text-neutral-400 mb-12 leading-relaxed max-w-xl mx-auto">
           Die angeforderte Seite existiert nicht oder wurde verschoben. Kehren Sie zur Startseite zurück oder nutzen Sie die Navigation.
@@ -111,6 +111,6 @@ export default function NotFound() {
           </nav>
         </div>
       </div>
-    </div>
+    </main>
   );
 }

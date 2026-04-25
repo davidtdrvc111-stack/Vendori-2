@@ -78,6 +78,7 @@ export function CookieBanner({ className = '' }: CookieBannerProps) {
                   {/* Primary: Accept All */}
                   <button
                     onClick={acceptAll}
+                    aria-label="Alle Cookies akzeptieren"
                     className="
                       flex-1 px-8 py-3 min-h-[44px]
                       bg-primary-700 text-white font-semibold rounded-lg

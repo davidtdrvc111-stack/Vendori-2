@@ -175,7 +175,7 @@ function ShopCard({ shop }: { shop: Shop }) {
               href={market.url}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label={`${shop.name} ${market.country ?? market.domain} öffnen (neues Fenster)`}
+              aria-label={`${shop.name}${market.domainExtension}${market.country ? ` – ${market.country}` : ''} öffnen (neues Fenster)`}
               className={cn(
                 'inline-flex items-center gap-1.5',
                 'px-4 py-2',
@@ -187,7 +187,8 @@ function ShopCard({ shop }: { shop: Shop }) {
                 'transition-all duration-300',
                 'hover:scale-110',
                 'cursor-pointer',
-                'hover:shadow-lg hover:shadow-primary-500/30'
+                'hover:shadow-lg hover:shadow-primary-500/30',
+                'focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-400 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-900'
               )}
             >
               {market.flag && <span className="text-sm" aria-hidden="true">{market.flag}</span>}

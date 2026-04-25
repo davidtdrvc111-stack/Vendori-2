@@ -114,19 +114,19 @@ export function ImpressumContent() {
                                     </div>
 
                                     <div className="space-y-3">
-                                        <h2 className="text-2xl font-black text-neutral-900 dark:text-white mb-4 font-heading font-bold">Kontakt</h2>
+                                        <h3 className="text-2xl font-black text-neutral-900 dark:text-white mb-4 font-heading font-bold">Kontakt</h3>
                                         <p>Internet: <a href="https://vendori.eu" className="text-primary-600 dark:text-primary-400 hover:underline transition-all duration-300 decoration-primary-600/30 underline-offset-4">vendori.eu</a></p>
                                     </div>
 
                                     <div>
-                                        <h2 className="text-2xl font-black text-neutral-900 dark:text-white mb-4 font-heading font-bold">Öffnungszeiten</h2>
+                                        <h3 className="text-2xl font-black text-neutral-900 dark:text-white mb-4 font-heading font-bold">Öffnungszeiten</h3>
                                         <p>Mo-Fr. 8:00 - 17:00 Uhr</p>
                                     </div>
                                 </section>
 
                                 <section className="space-y-8">
                                     <div>
-                                        <h2 className="text-2xl font-black text-neutral-900 dark:text-white mb-4 font-heading font-bold">Retouren-Adresse</h2>
+                                        <h3 className="text-2xl font-black text-neutral-900 dark:text-white mb-4 font-heading font-bold">Retouren-Adresse</h3>
                                         <p>
                                             VENDORi GmbH<br />
                                             Hahnenfeldstr. 25<br />
@@ -135,19 +135,19 @@ export function ImpressumContent() {
                                     </div>
 
                                     <div className="space-y-3">
-                                        <h2 className="text-2xl font-black text-neutral-900 dark:text-white mb-4 font-heading font-bold">Vertreten durch</h2>
+                                        <h3 className="text-2xl font-black text-neutral-900 dark:text-white mb-4 font-heading font-bold">Vertreten durch</h3>
                                         <p>Dejan Todorovic (Geschäftsführer)</p>
                                     </div>
 
                                     <div className="space-y-3">
-                                        <h2 className="text-2xl font-black text-neutral-900 dark:text-white mb-4 font-heading font-bold">Registereintrag</h2>
+                                        <h3 className="text-2xl font-black text-neutral-900 dark:text-white mb-4 font-heading font-bold">Registereintrag</h3>
                                         <p>Eintragung im Handelsregister.</p>
                                         <p>Registergericht: Amtsgericht Mannheim</p>
                                         <p>Registernummer: HRB 749014</p>
                                     </div>
 
                                     <div className="space-y-3">
-                                        <h2 className="text-2xl font-black text-neutral-900 dark:text-white mb-4 font-heading font-bold">Umsatzsteuer-ID</h2>
+                                        <h3 className="text-2xl font-black text-neutral-900 dark:text-white mb-4 font-heading font-bold">Umsatzsteuer-ID</h3>
                                         <p>Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:</p>
                                         <p>DE364269226</p>
                                     </div>

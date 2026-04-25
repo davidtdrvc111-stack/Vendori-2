@@ -18,7 +18,7 @@ export default function Error({
   }, [error]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-zinc-950 via-zinc-900 to-zinc-950 flex items-center justify-center px-4">
+    <main className="min-h-screen bg-gradient-to-b from-zinc-950 via-zinc-900 to-zinc-950 flex items-center justify-center px-4">
       <div className="max-w-2xl w-full text-center">
         {/* Error Icon */}
         <div className="mb-8 flex justify-center">
@@ -104,6 +104,6 @@ export default function Error({
           </p>
         )}
       </div>
-    </div>
+    </main>
   );
 }

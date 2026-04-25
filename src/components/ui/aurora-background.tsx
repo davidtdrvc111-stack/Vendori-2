@@ -88,6 +88,7 @@ export const AuroraBackground = ({
             filter: prefersReducedMotion ? 'blur(5px)' : isMobile ? 'blur(5px)' : 'blur(8px)',
           } as React.CSSProperties}
         ></div>
+        <div className="absolute inset-0 bg-black/40 z-[2]" />
         {/* Soft transition fade at the bottom */}
         <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-zinc-900 via-zinc-900/80 to-transparent z-[5]" />
       </div>
