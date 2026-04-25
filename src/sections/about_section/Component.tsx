@@ -81,7 +81,7 @@ export function AboutSection({ className = '' }: AboutSectionProps) {
               22<span className="text-primary-600">+</span>
             </div>
             <p className="text-sm md:text-base text-slate-600 dark:text-slate-300">
-              Jahre Gründer-Erfahrung
+              Jahre E-Commerce-Erfahrung
             </p>
           </div>
         </div>

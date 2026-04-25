@@ -1,8 +1,5 @@
 import type { Config } from 'tailwindcss'
-
-const {
-  default: flattenColorPalette,
-} = require("tailwindcss/lib/util/flattenColorPalette");
+import flattenColorPalette from 'tailwindcss/lib/util/flattenColorPalette';
 
 const config: Config = {
   darkMode: 'class',
