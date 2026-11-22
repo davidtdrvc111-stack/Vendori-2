@@ -11,6 +11,22 @@ const SLIDES = [
   { label: '3 von 3: yourNOVA', src: '/images/shop-yournova.jpg', alt: 'Startseite von yourNOVA' },
 ];
 
+// AVIF in zwei Breiten, JPG als Rückfall für Browser ohne AVIF.
+// Laptop-Bildschirm: Desktop max. ca. 620 px breit, mobil ca. 88 % der Seitenbreite.
+function SlideImage({ src, alt }: { src: string; alt: string }) {
+  const base = src.replace(/\.jpg$/, '');
+  return (
+    <picture>
+      <source
+        type="image/avif"
+        srcSet={`${base}-720.avif 720w, ${base}-1440.avif 1440w`}
+        sizes="(min-width: 960px) 620px, 88vw"
+      />
+      <img src={src} width="1440" height="900" alt={alt} />
+    </picture>
+  );
+}
+
 export function Showcase() {
   const rootRef = useRef<HTMLElement>(null);
 
@@ -134,12 +150,12 @@ export function Showcase() {
             <div className="slides">
               {SLIDES.map((s) => (
                 <div key={s.src} className="slide" role="group" aria-roledescription="Folie" aria-label={s.label}>
-                  <img src={s.src} width="1440" height="900" alt={s.alt} />
+                  <SlideImage src={s.src} alt={s.alt} />
                 </div>
               ))}
               {/* Klon der ersten Folie -> nahtloser Übergang von der letzten zur ersten */}
               <div className="slide" aria-hidden="true">
-                <img src={SLIDES[0].src} width="1440" height="900" alt={SLIDES[0].alt} />
+                <SlideImage src={SLIDES[0].src} alt={SLIDES[0].alt} />
               </div>
             </div>
           </div>
@@ -152,13 +168,19 @@ export function Showcase() {
       <div className="showcase__bar">
         <div className="showcase__tabs">
           <button type="button" className="tab" aria-current="true">
-            <img className="tab__logo tab__logo--mts" src="/images/logo-mytoolstore.png" width="923" height="308" alt="myToolStore" />
+            <picture>
+              <source type="image/avif" srcSet="/images/logo-mytoolstore.avif" />
+              <img className="tab__logo tab__logo--mts" src="/images/logo-mytoolstore.png" width="923" height="308" alt="myToolStore" />
+            </picture>
           </button>
           <button type="button" className="tab">
             <img className="tab__logo tab__logo--snz" src="/images/logo-showernizr.svg" width="683" height="293" alt="ShowerNIZR®" />
           </button>
           <button type="button" className="tab">
-            <img className="tab__logo tab__logo--nova" src="/images/logo-yournova.png" width="261" height="61" alt="yourNOVA" />
+            <picture>
+              <source type="image/avif" srcSet="/images/logo-yournova.avif" />
+              <img className="tab__logo tab__logo--nova" src="/images/logo-yournova.png" width="261" height="61" alt="yourNOVA" />
+            </picture>
           </button>
         </div>
         <button type="button" className="showcase__toggle" aria-label="Automatischen Wechsel anhalten">

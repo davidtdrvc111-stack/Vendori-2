@@ -1,6 +1,10 @@
 /* Ergänzungen zum Prototyp-CSS (prototype.css) für Elemente, die nur die Live-Seite braucht.
    Nutzt ausschließlich die Tokens aus prototype.css. */
 
+/* ---------- Bilder: <picture> (AVIF + Rückfall) layoutneutral, damit die Prototyp-Regeln
+   für das <img> (z. B. .slide img { height: 100% }) unverändert greifen ---------- */
+picture { display: contents; }
+
 /* ---------- Kontaktformular: Fehler und Status ---------- */
 .field__error { font-size: var(--fs-small); line-height: 1.4; color: var(--error); }
 .consent + .field__error { margin-top: var(--space-2); padding-left: calc(18px + var(--space-3)); }

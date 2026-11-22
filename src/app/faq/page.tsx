@@ -25,7 +25,7 @@ const faqSchema = {
       "name": "Was macht VENDORi anders als andere E-Commerce-Agenturen?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "VENDORi verbindet operative E-Commerce-Erfahrung mit Dienstleistungen für Hersteller und Marken. Wir betreiben mit myToolStore einen internationalen Onlineshop, entwickeln mit ShowerNIZR® eine eigene Produktmarke und führen mit yourNOVA einen spezialisierten Shop für den Biomülleimer Nova. Diese praktische Erfahrung nutzen wir für die Entwicklung, Umsetzung und Optimierung von E-Commerce-Strategien, von Shop-Technologie und Produktdaten bis zum internationalen Vertrieb und Kundenservice."
+        "text": "VENDORi verbindet operative E-Commerce-Erfahrung mit Dienstleistungen für Hersteller und Marken. Wir betreiben mit myToolStore einen internationalen Onlineshop, entwickeln mit ShowerNIZR® eine eigene Produktmarke und führen mit yourNOVA einen spezialisierten Shop für den Küchenkomposter Nova. Diese praktische Erfahrung nutzen wir für die Entwicklung, Umsetzung und Optimierung von E-Commerce-Strategien, von Shop-Technologie und Produktdaten bis zum internationalen Vertrieb und Kundenservice."
       }
     },
     {
@@ -328,7 +328,7 @@ export default async function FAQPage() {
                       <strong>
                         yourNOVA
                       </strong>
-                      {' '}einen spezialisierten Shop für den Biomülleimer Nova.
+                      {' '}einen spezialisierten Shop für den Küchenkomposter Nova.
                     </p>
                     <p>
                       Diese praktische Erfahrung nutzen wir für die Entwicklung, Umsetzung und Optimierung von E-Commerce-Strategien, von Shop-Technologie und Produktdaten bis zum internationalen Vertrieb und Kundenservice.

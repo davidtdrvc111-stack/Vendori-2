@@ -142,7 +142,10 @@ export default async function AboutPage() {
             <li>
               <a className="shopline" href="https://www.mytoolstore.de/" target="_blank" rel="noopener">
                 <span className="shopline__logo shopline__logo--mts">
-                  <img src="/images/logo-mytoolstore.png" width="923" height="308" alt="myToolStore" />
+                  <picture>
+                    <source type="image/avif" srcSet="/images/logo-mytoolstore.avif" />
+                    <img src="/images/logo-mytoolstore.png" width="923" height="308" alt="myToolStore" />
+                  </picture>
                 </span>
                 <span>
                   <span className="shopline__type">
@@ -184,7 +187,10 @@ export default async function AboutPage() {
             <li>
               <a className="shopline" href="https://www.yournova.eu/" target="_blank" rel="noopener">
                 <span className="shopline__logo shopline__logo--nova">
-                  <img src="/images/logo-yournova.png" width="261" height="61" alt="yourNOVA" />
+                  <picture>
+                    <source type="image/avif" srcSet="/images/logo-yournova.avif" />
+                    <img src="/images/logo-yournova.png" width="261" height="61" alt="yourNOVA" />
+                  </picture>
                 </span>
                 <span>
                   <span className="shopline__type">

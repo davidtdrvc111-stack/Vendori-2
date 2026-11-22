@@ -30,7 +30,7 @@ const faqSchema = {
       "name": "Was macht VENDORi anders als andere E-Commerce-Agenturen?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "VENDORi verbindet operative E-Commerce-Erfahrung mit Dienstleistungen für Hersteller und Marken. Wir betreiben mit myToolStore einen internationalen Onlineshop, entwickeln mit ShowerNIZR® eine eigene Produktmarke und führen mit yourNOVA einen spezialisierten Shop für den Biomülleimer Nova. Diese praktische Erfahrung nutzen wir für die Entwicklung, Umsetzung und Optimierung von E-Commerce-Strategien, von Shop-Technologie und Produktdaten bis zum internationalen Vertrieb und Kundenservice."
+        "text": "VENDORi verbindet operative E-Commerce-Erfahrung mit Dienstleistungen für Hersteller und Marken. Wir betreiben mit myToolStore einen internationalen Onlineshop, entwickeln mit ShowerNIZR® eine eigene Produktmarke und führen mit yourNOVA einen spezialisierten Shop für den Küchenkomposter Nova. Diese praktische Erfahrung nutzen wir für die Entwicklung, Umsetzung und Optimierung von E-Commerce-Strategien, von Shop-Technologie und Produktdaten bis zum internationalen Vertrieb und Kundenservice."
       }
     },
     {
@@ -128,13 +128,22 @@ export default async function Home() {
             </p>
             <ul className="platforms" aria-label="Marktplätze, über die wir verkaufen">
               <li>
-                <img className="platform platform--amazon" src="/images/marketplace-amazon.svg" alt="Amazon" />
+                <picture>
+                  <source type="image/avif" srcSet="/images/marketplace-amazon.avif" />
+                  <img className="platform platform--amazon" src="/images/marketplace-amazon.svg" alt="Amazon" />
+                </picture>
               </li>
               <li>
-                <img className="platform platform--ebay" src="/images/marketplace-ebay.svg" alt="eBay" />
+                <picture>
+                  <source type="image/avif" srcSet="/images/marketplace-ebay.avif" />
+                  <img className="platform platform--ebay" src="/images/marketplace-ebay.svg" alt="eBay" />
+                </picture>
               </li>
               <li>
-                <img className="platform platform--kaufland" src="/images/marketplace-kaufland.svg" alt="Kaufland" />
+                <picture>
+                  <source type="image/avif" srcSet="/images/marketplace-kaufland.avif" />
+                  <img className="platform platform--kaufland" src="/images/marketplace-kaufland.svg" alt="Kaufland" />
+                </picture>
               </li>
               <li className="platforms__more">
                 und viele weitere
@@ -378,7 +387,10 @@ export default async function Home() {
                       mytoolstore.de
                     </span>
                   </div>
-                  <img src="/images/shop-mytoolstore.jpg" width="1440" height="900" alt="Startseite von myToolStore" loading="lazy" />
+                  <picture>
+                    <source type="image/avif" srcSet="/images/shop-mytoolstore-720.avif 720w, /images/shop-mytoolstore-1440.avif 1440w" sizes="(min-width: 960px) 600px, calc(100vw - 40px)" />
+                    <img src="/images/shop-mytoolstore.jpg" width="1440" height="900" alt="Startseite von myToolStore" loading="lazy" />
+                  </picture>
                 </div>
               </figure>
               <div className="case__body">
@@ -386,7 +398,10 @@ export default async function Home() {
                   Internationaler Onlinehandel
                 </p>
                 <h3 className="case__title">
-                  <img className="case__logo case__logo--mts" src="/images/logo-mytoolstore.png" width="923" height="308" alt="myToolStore" />
+                  <picture>
+                    <source type="image/avif" srcSet="/images/logo-mytoolstore.avif" />
+                    <img className="case__logo case__logo--mts" src="/images/logo-mytoolstore.png" width="923" height="308" alt="myToolStore" />
+                  </picture>
                 </h3>
                 <p className="case__text">
                   Mit myToolStore betreiben wir eigene Onlineshops in fünf europäischen Märkten. Von der technischen Infrastruktur bis zum internationalen Online-Vertrieb.
@@ -420,7 +435,10 @@ export default async function Home() {
                       showernizr.com
                     </span>
                   </div>
-                  <img src="/images/shop-showernizr.jpg" width="1440" height="900" alt="Startseite von ShowerNIZR®" loading="lazy" />
+                  <picture>
+                    <source type="image/avif" srcSet="/images/shop-showernizr-720.avif 720w, /images/shop-showernizr-1440.avif 1440w" sizes="(min-width: 960px) 600px, calc(100vw - 40px)" />
+                    <img src="/images/shop-showernizr.jpg" width="1440" height="900" alt="Startseite von ShowerNIZR®" loading="lazy" />
+                  </picture>
                 </div>
               </figure>
               <div className="case__body">
@@ -462,7 +480,10 @@ export default async function Home() {
                       yournova.eu
                     </span>
                   </div>
-                  <img src="/images/shop-yournova.jpg" width="1440" height="900" alt="Startseite von yourNOVA" loading="lazy" />
+                  <picture>
+                    <source type="image/avif" srcSet="/images/shop-yournova-720.avif 720w, /images/shop-yournova-1440.avif 1440w" sizes="(min-width: 960px) 600px, calc(100vw - 40px)" />
+                    <img src="/images/shop-yournova.jpg" width="1440" height="900" alt="Startseite von yourNOVA" loading="lazy" />
+                  </picture>
                 </div>
               </figure>
               <div className="case__body">
@@ -470,7 +491,10 @@ export default async function Home() {
                   Spezialisierter Produktshop
                 </p>
                 <h3 className="case__title">
-                  <img className="case__logo case__logo--nova" src="/images/logo-yournova.png" width="261" height="61" alt="yourNOVA" />
+                  <picture>
+                    <source type="image/avif" srcSet="/images/logo-yournova.avif" />
+                    <img className="case__logo case__logo--nova" src="/images/logo-yournova.png" width="261" height="61" alt="yourNOVA" />
+                  </picture>
                 </h3>
                 <p className="case__text">
                   Mit yourNOVA.eu betreiben wir den mehrsprachigen Onlineshop für den Küchenkomposter Nova. Von der Produktpräsentation bis zum direkten Online-Vertrieb.
@@ -642,7 +666,7 @@ export default async function Home() {
                   <strong>
                     yourNOVA
                   </strong>
-                  {' '}einen spezialisierten Shop für den Biomülleimer Nova.
+                  {' '}einen spezialisierten Shop für den Küchenkomposter Nova.
                 </p>
                 <p>
                   Diese praktische Erfahrung nutzen wir für die Entwicklung, Umsetzung und Optimierung von E-Commerce-Strategien, von Shop-Technologie und Produktdaten bis zum internationalen Vertrieb und Kundenservice.
