@@ -1,53 +1,36 @@
 import type { Metadata } from 'next';
-import localFont from 'next/font/local';
 import dynamic from 'next/dynamic';
-import '@/styles/globals.css';
-import { ThemeProvider } from '@/components/theme-provider';
+import { headers } from 'next/headers';
+import '@/styles/prototype.css';
+import '@/styles/site.css';
+import { IconSprite } from '@/components/site/IconSprite';
+import { Header } from '@/components/site/Header';
+import { Footer } from '@/components/site/Footer';
 
-// Lazy load CookieBanner (includes framer-motion) - not critical for initial render
-const CookieBanner = dynamic(
-  () => import('@/components/cookie-consent').then(mod => ({ default: mod.CookieBanner })),
-  { loading: () => null }
-);
-
-// Lazy load Analytics (only loads after consent) - client-side only
-const AnalyticsScripts = dynamic(
-  () => import('@/components/analytics').then(mod => ({ default: mod.AnalyticsScripts })),
-  { loading: () => null }
-);
-
-// Plus Jakarta Sans - All text (Body, Headers, Display) - DSGVO-konform (lokal gehostet)
-const plusJakartaSans = localFont({
-  src: [
-    {
-      path: './fonts/PlusJakartaSans-Variable.woff2',
-      weight: '100 900',
-      style: 'normal',
-    },
-    {
-      path: './fonts/PlusJakartaSans-VariableItalic.woff2',
-      weight: '100 900',
-      style: 'italic',
-    },
-  ],
-  variable: '--font-plus-jakarta',
-  display: 'swap',
-  preload: true, // Critical font - sofort laden
+// Cookie-Banner und Analytics erst im Browser laden (Analytics nur nach Einwilligung)
+const CookieBanner = dynamic(() => import('@/components/cookie-consent').then((m) => ({ default: m.CookieBanner })), {
+  loading: () => null,
 });
+const AnalyticsScripts = dynamic(
+  () => import('@/components/analytics').then((m) => ({ default: m.AnalyticsScripts })),
+  { loading: () => null }
+);
 
 export const viewport = {
   width: 'device-width',
   initialScale: 1,
   maximumScale: 5,
+  themeColor: '#FAFAF7',
 };
+
+const TITLE = 'VENDORi GmbH | E-Commerce-Partner für Hersteller und Marken';
+const DESCRIPTION =
+  'VENDORi betreibt eigene Onlineshops, entwickelt Eigenmarken und unterstützt Hersteller und Marken beim digitalen Vertrieb.';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://vendori.eu'),
-  title: {
-    default: 'VENDORi GmbH — E-Commerce Wachstum aus der Praxis',
-    template: '%s | VENDORi GmbH',
-  },
-  description: 'VENDORi skaliert Ihren E-Commerce mit D2C-Strategien, Marketplace-Know-how und 22+ Jahren Praxiserfahrung — erprobte Methoden aus eigenen Shops.',
+  title: { default: TITLE, template: '%s | VENDORi GmbH' },
+  description: DESCRIPTION,
   icons: {
     icon: [{ url: '/favicon.svg', type: 'image/svg+xml' }],
     shortcut: '/favicon.svg',
@@ -57,57 +40,33 @@ export const metadata: Metadata = {
     locale: 'de_DE',
     siteName: 'VENDORi GmbH',
     url: 'https://vendori.eu',
-    images: [{
-      url: '/og-image.webp',
-      width: 1200,
-      height: 630,
-      alt: 'VENDORi GmbH — E-Commerce Wachstum aus der Praxis',
-      type: 'image/webp'
-    }],
+    title: TITLE,
+    description: DESCRIPTION,
+    images: [{ url: '/og-image.webp', width: 1200, height: 630, alt: TITLE, type: 'image/webp' }],
   },
-  twitter: {
-    card: 'summary_large_image',
-    images: ['/og-image.webp'],
-  },
+  twitter: { card: 'summary_large_image', images: ['/og-image.webp'] },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  // Dynamisches Rendering erzwingen: nur dann kann Next.js die CSP-Nonce aus src/middleware.ts
+  // an seine Skripte hängen (statisch vorgerenderte Seiten hätten keine Nonce und würden blockiert).
+  await headers();
   return (
-    <html lang="de" suppressHydrationWarning>
+    <html lang="de" data-scroll-behavior="smooth">
       <head>
-        {/* Critical above-the-fold assets - Logo SVG */}
-        <link
-          rel="preload"
-          href="/Logo_Vendori_rgb_anthrazit.svg"
-          as="image"
-          type="image/svg+xml"
-        />
-        {/* Fonts werden via next/font/local optimiert geladen */}
+        {/* Inter (selbst gehostet, OFL): lateinischer Grundzeichensatz sofort laden */}
+        <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
       </head>
-      <body className={`${plusJakartaSans.className} ${plusJakartaSans.variable}`}>
-        {/* Skip Link für Tastaturnavigation */}
-        <a
-          href="#main-content"
-          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[200] focus:px-4 focus:py-2 focus:bg-white focus:text-neutral-900 focus:rounded-lg focus:shadow-lg"
-        >
+      <body>
+        <IconSprite />
+        <a className="skip-link" href="#main-content">
           Zum Hauptinhalt springen
         </a>
-        {/* Analytics Scripts - only loaded after consent */}
         <AnalyticsScripts />
-        {/* JsonLd per-Seite eingebunden (nicht global, da noindex-Seiten kein Schema haben sollen) */}
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-          <CookieBanner />
-        </ThemeProvider>
+        <Header />
+        <main id="main-content">{children}</main>
+        <Footer />
+        <CookieBanner />
       </body>
     </html>
   );

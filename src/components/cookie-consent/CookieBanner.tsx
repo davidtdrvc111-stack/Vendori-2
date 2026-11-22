@@ -1,13 +1,13 @@
 /**
  * Cookie Banner Component
- * Hauptkomponente für Cookie Consent Banner
- * Erscheint beim ersten Besuch, versteckt sich nach Consent
+ * Erscheint beim ersten Besuch, versteckt sich nach Consent.
+ * Texte und Logik unverändert; Gestaltung im Designsystem des Redesigns (Klassen in src/styles/site.css).
  */
 
 'use client';
 
 import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import Link from 'next/link';
 import { CookieBannerProps } from './types';
 import { useCookieConsent } from './useCookieConsent';
 import { CookieSettingsModal } from './CookieSettingsModal';
@@ -16,118 +16,35 @@ export function CookieBanner({ className = '' }: CookieBannerProps) {
   const { isInitialized, isFirstVisit, acceptAll, acceptNecessary } = useCookieConsent();
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
 
-  // Don't render until initialized (avoid flash)
-  if (!isInitialized) {
-    return null;
-  }
-
-  // Don't show banner if user has already given consent
+  if (!isInitialized) return null;
   const showBanner = isFirstVisit();
 
   return (
     <>
-      <AnimatePresence>
-        {showBanner && (
-          <motion.div
-            initial={{ y: 100, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ y: 100, opacity: 0 }}
-            transition={{ duration: 0.4, ease: 'easeOut' }}
-            className={`
-              fixed bottom-4 sm:bottom-0 left-0 right-0 z-40
-              ${className}
-            `}
-          >
-            {/* Banner Container - Zentral und breiter */}
-            <div className="container mx-auto px-4 pb-6 md:pb-8 flex justify-center">
-              <div
-                role="region"
-                aria-label="Cookie-Einwilligung"
-                aria-live="polite"
-                className="
-                  bg-white/95 dark:bg-neutral-800/90 backdrop-blur-2xl shadow-2xl rounded-2xl
-                  border border-neutral-200/50 dark:border-neutral-700/50
-                  p-6 md:p-8
-                  w-full max-w-3xl
-                "
-              >
-                {/* Content */}
-                <div className="mb-6">
-                  <h2 className="text-lg md:text-xl lg:text-2xl font-bold text-neutral-900 dark:text-white mb-3 font-display font-bold">
-                    Diese Website nutzt Cookies
-                  </h2>
-                  <p className="text-sm md:text-base text-neutral-700 dark:text-neutral-300 leading-relaxed">
-                    Wir verwenden Cookies, um Ihre Erfahrung auf unserer Website zu verbessern.
-                    Notwendige Cookies sind immer aktiv. Mit Ihrer Zustimmung können wir auch
-                    Analyse-Cookies verwenden, um unsere Website zu optimieren.{' '}
-                    <a
-                      href="/datenschutz"
-                      className="text-primary-600 dark:text-primary-400 underline hover:no-underline"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Mehr erfahren in unserer Datenschutzerklärung
-                      <span className="sr-only"> (öffnet in neuem Tab)</span>
-                    </a>
-                    .
-                  </p>
-                </div>
-
-                {/* Buttons */}
-                <div className="flex flex-col sm:flex-row gap-3">
-                  {/* Primary: Accept All */}
-                  <button
-                    onClick={acceptAll}
-                    aria-label="Alle Cookies akzeptieren"
-                    className="
-                      flex-1 px-8 py-3 min-h-[44px]
-                      bg-primary-700 text-white font-semibold rounded-lg
-                      transition-colors shadow-lg
-                      hover:bg-primary-800
-                      dark:bg-primary-700 dark:hover:bg-primary-800
-                      border-2 border-transparent
-                      focus:outline-none focus:ring-2 focus:ring-primary-700 focus:ring-offset-2
-                    "
-                  >
-                    Alle akzeptieren
-                  </button>
-
-                  {/* Secondary: Settings */}
-                  <button
-                    onClick={() => setIsSettingsOpen(true)}
-                    className="
-                      flex-1 px-8 py-3 min-h-[44px]
-                      bg-transparent text-primary-700 dark:text-primary-400 font-semibold rounded-lg
-                      transition-colors
-                      border-2 border-primary-500 dark:border-primary-400
-                      hover:bg-primary-50 dark:hover:bg-primary-950/20
-                      focus:outline-none focus:ring-2 focus:ring-primary-600 focus:ring-offset-2
-                    "
-                  >
-                    Einstellungen
-                  </button>
-
-                  {/* Tertiary: Only Necessary */}
-                  <button
-                    onClick={acceptNecessary}
-                    className="
-                      flex-1 px-8 py-3 min-h-[44px]
-                      bg-transparent text-primary-700 dark:text-primary-400 font-semibold rounded-lg
-                      transition-colors
-                      hover:bg-primary-50 dark:hover:bg-primary-950/20
-                      focus:outline-none focus:ring-2 focus:ring-primary-600 focus:ring-offset-2
-                    "
-                  >
-                    Nur Notwendige
-                  </button>
-                </div>
-              </div>
+      {showBanner && (
+        <div className={`cookie-banner ${className}`}>
+          <div className="cookie-banner__box" role="region" aria-label="Cookie-Einwilligung" aria-live="polite">
+            <h2 className="cookie-banner__title">Diese Website nutzt Cookies</h2>
+            <p className="cookie-banner__text">
+              Wir verwenden Cookies, um Ihre Erfahrung auf unserer Website zu verbessern. Notwendige Cookies sind immer
+              aktiv. Mit Ihrer Zustimmung können wir auch Analyse-Cookies verwenden, um unsere Website zu optimieren.{' '}
+              <Link href="/datenschutz">Mehr erfahren in unserer Datenschutzerklärung</Link>.
+            </p>
+            <div className="cookie-banner__actions">
+              {/* Zustimmen und Ablehnen gleichwertig gestaltet (keine Hervorhebung einer Option) */}
+              <button type="button" className="btn btn--secondary btn--sm" onClick={acceptAll}>
+                Alle akzeptieren
+              </button>
+              <button type="button" className="btn btn--secondary btn--sm" onClick={acceptNecessary}>
+                Nur Notwendige
+              </button>
+              <button type="button" className="btn btn--secondary btn--sm" onClick={() => setIsSettingsOpen(true)}>
+                Einstellungen
+              </button>
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      {/* Settings Modal */}
+          </div>
+        </div>
+      )}
       <CookieSettingsModal isOpen={isSettingsOpen} onClose={() => setIsSettingsOpen(false)} />
     </>
   );

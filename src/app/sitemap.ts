@@ -4,19 +4,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: 'https://vendori.eu',
-      lastModified: '2026-03-15',
+      lastModified: '2026-11-22',
       changeFrequency: 'monthly',
       priority: 1.0,
     },
     {
       url: 'https://vendori.eu/ueber-uns',
-      lastModified: '2026-03-15',
+      lastModified: '2026-11-22',
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
       url: 'https://vendori.eu/faq',
-      lastModified: '2026-03-15',
+      lastModified: '2026-11-22',
       changeFrequency: 'weekly',
       priority: 0.9,
     },

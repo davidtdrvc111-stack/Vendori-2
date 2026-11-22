@@ -112,6 +112,37 @@ export function hasConsentRecord(): boolean {
 }
 
 /**
+ * Analyse-Cookies, die auf unserer eigenen Domain liegen (Google Analytics 4, Microsoft Clarity).
+ * Cookies auf fremden Domains (z. B. clarity.ms) kann eine Website technisch nicht löschen.
+ */
+const ANALYTICS_COOKIE_PATTERN = /^(_ga|_ga_.*|_gid|_gat.*|_clck|_clsk)$/;
+
+/**
+ * Löscht alle Analyse-Cookies der eigenen Domain (Widerruf nach Art. 7 Abs. 3 DSGVO).
+ * Löscht für den Host und alle übergeordneten Domains (z. B. www.vendori.eu und .vendori.eu),
+ * weil Google Analytics seine Cookies auf der obersten möglichen Domain setzt.
+ *
+ * @returns Namen der gelöschten Cookies
+ */
+export function deleteAnalyticsCookies(): string[] {
+  if (typeof document === 'undefined') return [];
+  const names = document.cookie
+    .split(';')
+    .map((c) => c.split('=')[0].trim())
+    .filter((n) => ANALYTICS_COOKIE_PATTERN.test(n));
+  const parts = window.location.hostname.split('.');
+  const domains: (string | null)[] = [null];
+  for (let i = 0; i < parts.length - 1; i++) domains.push('.' + parts.slice(i).join('.'));
+  const expired = 'expires=Thu, 01 Jan 1970 00:00:00 GMT; max-age=0; path=/';
+  for (const name of names) {
+    for (const d of domains) {
+      document.cookie = `${name}=; ${expired}${d ? `; domain=${d}` : ''}`;
+    }
+  }
+  return names;
+}
+
+/**
  * Löscht Consent aus localStorage
  * Nützlich für Testing oder Reset
  */

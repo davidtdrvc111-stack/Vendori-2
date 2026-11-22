@@ -13,6 +13,7 @@ import {
   hasConsentRecord,
   needsReconsent,
   clearConsent,
+  deleteAnalyticsCookies,
   CURRENT_CONSENT_VERSION
 } from './storage';
 
@@ -45,6 +46,12 @@ export function useCookieConsent() {
     }
 
     setIsInitialized(true);
+
+    // Alle Instanzen des Hooks (Banner, Dialog, Analytics) synchron halten:
+    // sonst lädt Analytics erst nach einem Neuladen bzw. bemerkt einen Widerruf nicht.
+    const onChanged = (e: Event) => setConsentState((e as CustomEvent<ConsentChangedEventDetail>).detail.consent);
+    window.addEventListener('consentChanged', onChanged);
+    return () => window.removeEventListener('consentChanged', onChanged);
   }, []);
 
   /**
@@ -64,9 +71,28 @@ export function useCookieConsent() {
    */
   const updateConsent = useCallback(
     (newConsent: CookieConsent) => {
+      const previous = getConsent();
       setConsentState(newConsent);
       setConsent(newConsent);
       emitConsentChangedEvent(newConsent);
+
+      // Widerruf (Art. 7 Abs. 3 DSGVO): Analyse war erlaubt und ist es jetzt nicht mehr.
+      // Dienste informieren, eigene Analyse-Cookies löschen und neu laden, damit bereits
+      // geladene Tracking-Skripte nicht weiterlaufen.
+      if (previous?.analytics && !newConsent.analytics) {
+        const w = window as unknown as {
+          gtag?: (...args: unknown[]) => void;
+          clarity?: (...args: unknown[]) => void;
+        };
+        try {
+          w.gtag?.('consent', 'update', { analytics_storage: 'denied' });
+          w.clarity?.('consent', false);
+        } catch {
+          /* Dienste nicht geladen */
+        }
+        deleteAnalyticsCookies();
+        window.location.reload();
+      }
     },
     [emitConsentChangedEvent]
   );

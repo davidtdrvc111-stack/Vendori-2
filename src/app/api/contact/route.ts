@@ -18,8 +18,8 @@ import { validateCSRFToken } from '@/lib/csrf/token';
  * Validierung und Sanitisierung
  * Importiert aus der bestehenden Kontaktformular-Validierung
  */
-import { validateForm, sanitizeInput } from '@/sections/contact_section/validation';
-import type { FormData } from '@/sections/contact_section/types';
+import { validateForm, sanitizeInput } from '@/lib/contact/validation';
+import type { FormData } from '@/lib/contact/types';
 
 /**
  * Sanitisiert E-Mail-Header um Injection-Angriffe zu verhindern

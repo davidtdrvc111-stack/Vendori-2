@@ -156,8 +156,8 @@ const productSchemaMyToolStore = {
 const productSchemaShowerNIZR = {
   '@context': 'https://schema.org',
   '@type': 'Product',
-  name: 'ShowerNIZR - Premium Duschsysteme',
-  description: 'Eigenmarke für innovative Duschsysteme von VENDORi.',
+  name: 'ShowerNIZR® - Duschregale für Glasduschwände',
+  description: 'Eigene Produktmarke von VENDORi: Duschregale für Glasduschwände, ohne Bohren oder Kleben.',
   brand: { '@type': 'Brand', name: 'ShowerNIZR' },
   offers: {
     '@type': 'Offer',
