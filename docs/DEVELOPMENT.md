@@ -238,11 +238,13 @@ npm run type-check  # oder: npx tsc --noEmit
 
 ## Deployment
 
-Die Website ist für **Vercel** optimiert:
+Die Website läuft auf **Hetzner** (Apache vor Node/PM2, `output: 'standalone'`, siehe
+`ecosystem.config.js`). Ein Push auf `main` deployt **nicht** automatisch.
 
-1. Push zu main-Branch
-2. Vercel deployt automatisch
-3. Preview-Deployments für Pull Requests
+1. `NEXT_PUBLIC_*`-Variablen (GA, Clarity) beim Build setzen, dann `npx next build`
+2. `public/` nach `.next/standalone/` und `.next/static/` nach `.next/standalone/.next/` kopieren
+3. Laufzeitvariablen setzen (`CSRF_SECRET`, `N8N_WEBHOOK_URL`, `N8N_WEBHOOK_SECRET`)
+4. PM2 neu starten (`vendori-website-app`)
 
 ## Hilfreiche Ressourcen
 

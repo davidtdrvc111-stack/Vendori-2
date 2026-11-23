@@ -7,6 +7,13 @@
  * - Validiert Formular-Daten
  * - Prüft Rate Limiting und Honeypot
  * - Sendet Daten an n8n Webhook (ersetzt direkten E-Mail-Versand)
+ *
+ * TODO Petar: n8n wird abgelöst (Entscheidung Dejan, 23.11.2026).
+ * Bitte den Versand in Schritt 8 (unten) durch einen neuen Weg ersetzen.
+ * Übergeben werden: firstName, lastName, email, message (bereits validiert und sanitisiert).
+ * Der Ersatz muss leisten: 1) Mail an VENDORi, 2) Bestätigungsmail an den Absender.
+ * Erst nach erfolgreichem Zustelltest n8n-Code und N8N_WEBHOOK_URL / N8N_WEBHOOK_SECRET
+ * (hier, in .env.example und auf dem Server) entfernen.
  */
 
 import { NextResponse } from 'next/server';
@@ -30,26 +37,28 @@ function sanitizeEmailHeader(value: string): string {
 }
 
 /**
- * Extrahiert IP-Adresse aus Request (Vercel-optimiert)
- * Priorisiert Vercel-spezifische Header die nicht gefälscht werden können
+ * Extrahiert IP-Adresse aus Request (für Rate Limiting)
+ *
+ * TODO Petar: Hosting ist Hetzner (Apache vor Node/PM2). Die Header unten stammen aus der
+ * früheren Vercel-Annahme. Prüfen, welche Header Apache setzt bzw. überschreibt. Setzt Apache
+ * x-real-ip nicht selbst, kann ein Client den Wert frei vorgeben und das Rate Limit umgehen.
+ * Bei mod_proxy ist in x-forwarded-for der LETZTE Eintrag der von Apache gesetzte.
  */
 function getClientIP(request: NextRequest): string {
-  // PRIORITÄT 1: Vercel-spezifischer Header (NICHT fälschbar)
-  // Dieser Header wird von Vercel's Edge Network gesetzt
+  // PRIORITÄT 1: x-real-ip (nur vertrauenswürdig, wenn der Proxy ihn setzt)
   const realIP = request.headers.get('x-real-ip');
   if (realIP) {
     return realIP;
   }
 
-  // PRIORITÄT 2: x-forwarded-for (nur erste IP, von Vercel gesetzt)
+  // PRIORITÄT 2: x-forwarded-for (derzeit erste IP, siehe TODO oben)
   const forwardedFor = request.headers.get('x-forwarded-for');
   if (forwardedFor) {
-    // Nur die ERSTE IP ist vertrauenswürdig (vom Load Balancer)
     const ips = forwardedFor.split(',').map(ip => ip.trim());
     return ips[0];
   }
 
-  // PRIORITÄT 3: Cloudflare IP (falls Cloudflare vor Vercel)
+  // PRIORITÄT 3: Cloudflare IP (falls Cloudflare vorgeschaltet ist)
   const cfConnectingIP = request.headers.get('cf-connecting-ip');
   if (cfConnectingIP) {
     return cfConnectingIP;
