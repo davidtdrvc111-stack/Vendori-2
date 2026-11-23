@@ -1,6 +1,6 @@
 'use client';
 
-// Shop-Karussell im Hero (1:1 aus dem Prototyp): Fortschrittsbalken füllt sich 10 s, dann Wechsel.
+// Shop-Karussell im Hero (1:1 aus dem Prototyp): Fortschrittsbalken füllt sich 10 s (mobil 3 s), dann Wechsel.
 // Der Wechsel hängt am Ende der Balken-Animation -> Pause/Hover halten beides synchron an (WCAG 2.2.2).
 // Steuerung bewusst imperativ wie im Prototyp, weil die CSS-Animation per Attributwechsel neu gestartet wird.
 import { useEffect, useRef } from 'react';
@@ -37,6 +37,8 @@ export function Showcase() {
     const all = Array.from(track.children) as HTMLElement[];
     const slides = all.slice(0, SLIDES.length); // letzter Eintrag ist der Klon der ersten Folie
     const dots = Array.from(root.querySelectorAll<HTMLButtonElement>('.tab'));
+    // Fortschrittsanzeige im Laptop-Bildschirm (mobil); rein visuell, steuert den Wechsel nicht
+    const segs = Array.from(root.querySelectorAll<HTMLElement>('.showcase__seg'));
     const toggle = root.querySelector<HTMLButtonElement>('.showcase__toggle')!;
     const n = slides.length;
     let index = 0;
@@ -54,6 +56,14 @@ export function Showcase() {
         if (i === real) {
           void d.offsetWidth;
           d.setAttribute('aria-current', 'true');
+        }
+      });
+      segs.forEach((g, i) => {
+        g.classList.remove('is-current');
+        g.classList.toggle('is-done', i < real);
+        if (i === real) {
+          void g.offsetWidth;
+          g.classList.add('is-current');
         }
       });
     }
@@ -157,6 +167,11 @@ export function Showcase() {
               <div className="slide" aria-hidden="true">
                 <SlideImage src={SLIDES[0].src} alt={SLIDES[0].alt} />
               </div>
+            </div>
+            <div className="showcase__progress" aria-hidden="true">
+              {SLIDES.map((s) => (
+                <span key={s.src} className="showcase__seg" />
+              ))}
             </div>
           </div>
         </div>

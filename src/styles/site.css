@@ -50,3 +50,50 @@ picture { display: contents; }
 
 /* ---------- Fehlerseiten (404, Fehler) ---------- */
 .error-page__actions { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-top: var(--space-8); }
+
+/* ---------- Hervorgehobener Hinweis mit mehreren Absätzen (z. B. Widerspruchsrecht in der Datenschutzerklärung) ---------- */
+.note--block { display: grid; gap: var(--space-3); padding: var(--space-5) var(--space-6); }
+.prose .note--block p { margin: 0; }
+
+/* ---------- Buttons im Fließtext (.prose): die Link-Regel .prose a darf Buttons nicht umfärben
+   (sonst Kupfer-Schrift auf Kupfer-Fläche, z. B. „E-Mail schreiben“ auf der Datenschutzseite) ---------- */
+.prose a.btn { text-decoration: none; overflow-wrap: normal; }
+.prose a.btn--primary, .prose a.btn--primary:hover { color: var(--on-dark); }
+.prose a.btn--secondary { color: var(--ink); }
+.prose a.btn--secondary:hover { color: var(--on-dark); }
+
+/* ---------- Hero-Showcase mobil: Wechsel nach 3 s, Fortschritt im Laptop-Bildschirm ---------- */
+/* Die Reiter mit Fortschrittsbalken sind auf kleinen Handys ausgeblendet -> der Wechsel war nicht erkennbar.
+   Die Segmente laufen mit derselben Dauer wie der (unsichtbare) Reiter-Balken, der den Wechsel auslöst. */
+.showcase__progress { display: none; }
+@media (max-width: 959px) {
+  .showcase { --slide-duration: 3s; }
+  .showcase__progress {
+    position: absolute; z-index: 1; left: 50%; bottom: 10px; transform: translateX(-50%);
+    display: flex; gap: 5px; padding: 6px 8px; border-radius: 999px;
+    background: rgba(22, 25, 29, 0.55);
+    -webkit-backdrop-filter: blur(2px); backdrop-filter: blur(2px);
+  }
+  .showcase__seg {
+    position: relative; width: 22px; height: 3px; border-radius: 2px; overflow: hidden;
+    background: rgba(255, 255, 255, 0.35);
+  }
+  .showcase__seg::after {
+    content: ""; position: absolute; inset: 0; border-radius: inherit;
+    background: #fff; transform: scaleX(0); transform-origin: left center;
+  }
+  .showcase__seg.is-done::after { transform: scaleX(1); }
+  .showcase__seg.is-current::after { animation: slide-progress var(--slide-duration) linear forwards; }
+  .showcase.is-held .showcase__seg.is-current::after { animation-play-state: paused; }
+}
+/* Pause-Knopf sitzt auf kleinen Handys unten rechts im Bildschirm -> Fortschritt nach links rücken */
+@media (max-width: 559px) and (max-height: 700px) {
+  .showcase__progress { left: 12px; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .showcase .showcase__seg.is-current::after { animation-duration: var(--slide-duration) !important; }
+  .showcase.is-paused .showcase__seg.is-current::after { animation: none !important; transform: scaleX(1); }
+}
+
+/* Shops-Karussell: ein Wisch rückt höchstens eine Karte weiter */
+.case { scroll-snap-stop: always; }
